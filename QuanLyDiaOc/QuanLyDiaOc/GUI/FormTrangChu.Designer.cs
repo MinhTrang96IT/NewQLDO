@@ -37,10 +37,10 @@
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.địaỐcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbNguoiDung = new System.Windows.Forms.Label();
             this.địaỐcToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiĐịaỐcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbNguoiDung = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +122,19 @@
             this.địaỐcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.địaỐcToolStripMenuItem.Text = "Địa ốc";
             // 
+            // địaỐcToolStripMenuItem1
+            // 
+            this.địaỐcToolStripMenuItem1.Name = "địaỐcToolStripMenuItem1";
+            this.địaỐcToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.địaỐcToolStripMenuItem1.Text = "Địa ốc";
+            // 
+            // loạiĐịaỐcToolStripMenuItem
+            // 
+            this.loạiĐịaỐcToolStripMenuItem.Name = "loạiĐịaỐcToolStripMenuItem";
+            this.loạiĐịaỐcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loạiĐịaỐcToolStripMenuItem.Text = "Loại địa ốc";
+            this.loạiĐịaỐcToolStripMenuItem.Click += new System.EventHandler(this.loạiĐịaỐcToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -142,18 +155,6 @@
             this.lbNguoiDung.TabIndex = 3;
             this.lbNguoiDung.Text = "Người dùng: Trần Thị Minh Trang - Giám đốc";
             this.lbNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // địaỐcToolStripMenuItem1
-            // 
-            this.địaỐcToolStripMenuItem1.Name = "địaỐcToolStripMenuItem1";
-            this.địaỐcToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.địaỐcToolStripMenuItem1.Text = "Địa ốc";
-            // 
-            // loạiĐịaỐcToolStripMenuItem
-            // 
-            this.loạiĐịaỐcToolStripMenuItem.Name = "loạiĐịaỐcToolStripMenuItem";
-            this.loạiĐịaỐcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.loạiĐịaỐcToolStripMenuItem.Text = "Loại địa ốc";
             // 
             // FormTrangChu
             // 

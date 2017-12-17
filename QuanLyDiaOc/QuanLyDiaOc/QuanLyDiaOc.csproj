@@ -71,11 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\KhachHangBLL.cs" />
+    <Compile Include="BLL\LoaiDiaOcBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\LoaiDiaOcDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\LoaiDiaOcDTO.cs" />
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +90,12 @@
     </Compile>
     <Compile Include="GUI\FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLoaiDiaOc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLoaiDiaOc.Designer.cs">
+      <DependentUpon>FormLoaiDiaOc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormTrangChu.cs">
       <SubType>Form</SubType>
@@ -101,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLoaiDiaOc.resx">
+      <DependentUpon>FormLoaiDiaOc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>

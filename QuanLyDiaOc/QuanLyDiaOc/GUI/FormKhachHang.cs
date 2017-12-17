@@ -171,7 +171,7 @@ namespace QuanLyDiaOc.GUI
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa thông tin khác hàng " + id, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa thông tin khách hàng số " + id, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (khachHangBLL.XoaKhachHang(Int32.Parse(id)))

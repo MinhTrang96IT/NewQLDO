@@ -88,5 +88,16 @@ namespace QuanLyDiaOc.GUI
         {
             lbNguoiDung.Text = "Người dùng: " + TenNhanVien + " - " + LoaiNhanVien;
         }
+
+        private void loạiĐịaỐcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLoaiDiaOc formLoaiDiaOc = new FormLoaiDiaOc();
+            formLoaiDiaOc.TopLevel = false;
+            formLoaiDiaOc.Visible = true;
+            formLoaiDiaOc.FormBorderStyle = FormBorderStyle.None;
+            formLoaiDiaOc.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Loại địa ốc");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiDiaOc);
+        }
     }
 }
