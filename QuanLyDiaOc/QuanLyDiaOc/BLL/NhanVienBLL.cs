@@ -16,5 +16,20 @@ namespace QuanLyDiaOc.BLL
         {
             return nhanVienDAL.KiemTraDangNhap(tk, mk);
         }
+
+        public string LayTenNhanVien(string tk)
+        {
+            return nhanVienDAL.LayTenNhanVien(tk);
+        }
+
+        public string LayTenLoaiNhanVien(string ma)
+        {
+            return nhanVienDAL.LayTenLoaiNhanVien(ma);
+        }
+
+        public string LayMaLoaiNhanVien(string tk)
+        {
+            return nhanVienDAL.LayMaLoaiNhanVien(tk);
+        }
     }
 }

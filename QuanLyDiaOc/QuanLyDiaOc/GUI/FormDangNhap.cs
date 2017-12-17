@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDiaOc.BLL;
-using QuanLyDiaOc.GUI;
 
 namespace QuanLyDiaOc.GUI
 {
@@ -26,8 +25,8 @@ namespace QuanLyDiaOc.GUI
             if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text) != null)
             {
                 FormTrangChu formTrangChu = new FormTrangChu();
-                //formTrangChu.user = user;
-                //formHome.type = loginBLL.GetType(user);
+                formTrangChu.TenNhanVien = nhanVienBLL.LayTenNhanVien(txtTaiKhoan.Text);
+                formTrangChu.LoaiNhanVien = nhanVienBLL.LayTenLoaiNhanVien(nhanVienBLL.LayMaLoaiNhanVien(txtTaiKhoan.Text));
                 formTrangChu.Show();
                 this.Hide();
             }

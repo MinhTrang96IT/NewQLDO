@@ -19,6 +19,9 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.ItemSize = new Size(150, 25);
         }
 
+        public string TenNhanVien { get; set; }
+        public string LoaiNhanVien { get; set; }
+
         int btnCloseSize = 16;
         int margin = 3;
 
@@ -79,6 +82,11 @@ namespace QuanLyDiaOc.GUI
             formKhachHang.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Khách hàng");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formKhachHang);
+        }
+
+        private void FormTrangChu_Load(object sender, EventArgs e)
+        {
+            lbNguoiDung.Text = "Người dùng: " + TenNhanVien + " - " + LoaiNhanVien;
         }
     }
 }

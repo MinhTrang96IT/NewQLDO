@@ -16,7 +16,7 @@ namespace QuanLyDiaOc.DAL
             {
                 OpenConnect();
                 DataTable data = new DataTable();
-                string store = "sp_NguoiDung_KiemTraDangNhap";
+                string store = "sp_NhanVien_KiemTraDangNhap";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@tk", tk));
@@ -33,6 +33,84 @@ namespace QuanLyDiaOc.DAL
             {
                 CloseConnect();
             }
+        }
+
+        public string LayTenNhanVien(string tk)
+        {
+            string s = null;
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_LayTenNhanVien";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@tk", tk));
+                var reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    s = reader["TenNhanVien"].ToString();
+                }
+            }
+            catch { }
+            finally
+            {
+                CloseConnect();
+            }
+            return s;
+        }
+
+        public string LayTenLoaiNhanVien(string ma)
+        {
+            string s = null;
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_LoaiNhanVien_LayLoaiNhanVien";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", Int32.Parse(ma)));
+                var reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    s = reader["TenLoaiNhanVien"].ToString();
+                }
+            }
+            catch { }
+            finally
+            {
+                CloseConnect();
+            }
+            return s;
+        }
+
+        public string LayMaLoaiNhanVien(string tk)
+        {
+            string s = null;
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_LayMaLoaiNhanVien";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@tk", tk));
+                var reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    s = reader["MaLoaiNhanVien"].ToString();
+                }
+            }
+            catch { }
+            finally
+            {
+                CloseConnect();
+            }
+            return s;
         }
     }
 }

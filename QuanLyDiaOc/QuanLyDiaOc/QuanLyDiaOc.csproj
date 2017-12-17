@@ -70,9 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\KhachHangBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
+    <Compile Include="DAL\KhachHangDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,10 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-cancel-48.png" />
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
