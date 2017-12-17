@@ -25,11 +25,11 @@ namespace QuanLyDiaOc.GUI
         {
             if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text) != null)
             {
-                this.Hide();
                 FormTrangChu formTrangChu = new FormTrangChu();
                 //formTrangChu.user = user;
                 //formHome.type = loginBLL.GetType(user);
                 formTrangChu.Show();
+                this.Hide();
             }
             else if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
