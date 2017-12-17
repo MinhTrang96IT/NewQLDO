@@ -1,47 +1,36 @@
-﻿INSERT INTO KhachHang VALUES(N'Hoàng Kim Tuấn', '251055042', 1, 1996, N'Dĩ An, Bình Dương', '0969987548', 'hoangkimtuan1996@gmail.com')
+﻿INSERT INTO LoaiDiaOc VALUES(N'Địa ốc chung cư', N'Địa ốc giá rẻ phải chăng tại chung cư Phú Mỹ Hưng quận 7')
 
-CREATE PROC sp_KhachHang_LayDanhSach
+CREATE PROC sp_LoaiDiaOc_LayDanhSach
 AS
-	SELECT * FROM KhachHang
+	SELECT * FROM LoaiDiaOc
 GO
 
-CREATE PROC sp_KhachHang_Them
+CREATE PROC sp_LoaiDiaOc_Them
 @ten nvarchar(100),
-@cmnd nvarchar(15),
-@gioitinh bit,
-@namsinh smallint,
-@diachi nvarchar(200),
-@sdt varchar(20),
-@email varchar(100)
-
+@mota nvarchar(500)
 AS
-	INSERT INTO KhachHang VALUES(@ten, @cmnd, @gioitinh, @namsinh, @diachi, @sdt, @email)
+	INSERT INTO LoaiDiaOc VALUES(@ten, @mota)
 GO
 
-CREATE PROC sp_KhachHang_Xoa
+CREATE PROC sp_LoaiDiaOc_Xoa
 @ma int
 
 AS
-	DELETE FROM KhachHang WHERE MaKhachHang=@ma
+	DELETE FROM LoaiDiaOc WHERE MaLoaiDiaOc=@ma
 GO
 
-CREATE PROC sp_KhachHang_Sua
+CREATE PROC sp_LoaiDiaOc_Sua
 @ma int,
 @ten nvarchar(100),
-@cmnd nvarchar(15),
-@gioitinh bit,
-@namsinh smallint,
-@diachi nvarchar(200),
-@sdt varchar(20),
-@email varchar(100)
+@mota nvarchar(500)
 
 AS
-	UPDATE KhachHang SET TenKhachHang=@ten, CMND=@cmnd, GioiTinh=@gioitinh, NamSinh=@namsinh, DiaChi=@diachi, SoDienthoai=@sdt, Email=@email WHERE MaKhachHang=@ma
+	UPDATE LoaiDiaOc SET TenLoaiDiaOc=@ten, MoTa=@mota WHERE MaLoaiDiaOc=@ma
 GO
 
-CREATE PROC sp_KhachHang_TimKiemTheoTen
+CREATE PROC sp_LoaiDiaOc_TimKiemTheoTen
 @ten nvarchar(100)
 
 AS
-	SELECT * FROM KhachHang WHERE TenKhachHang LIKE '%'+ @ten +'%'
+	SELECT * FROM LoaiDiaOc WHERE TenLoaiDiaOc LIKE '%'+ @ten +'%'
 GO

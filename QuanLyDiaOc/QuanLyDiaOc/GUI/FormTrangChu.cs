@@ -99,5 +99,16 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages.Add("Loại địa ốc");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiDiaOc);
         }
+
+        private void loạiNhàToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLoaiNha formLoaiNha = new FormLoaiNha();
+            formLoaiNha.TopLevel = false;
+            formLoaiNha.Visible = true;
+            formLoaiNha.FormBorderStyle = FormBorderStyle.None;
+            formLoaiNha.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Loại nhà");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiNha);
+        }
     }
 }
