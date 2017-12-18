@@ -16,13 +16,6 @@ AS
 	SELECT TenNhanVien FROM NhanVien WHERE TenDangNhap=@tk
 GO
 
-CREATE PROC sp_LoaiNhanVien_LayLoaiNhanVien
-@ma int
-
-AS
-	SELECT TenLoaiNhanVien FROM LoaiNhanVien WHERE MaLoaiNhanVien=@ma
-GO
-
 CREATE PROC sp_NhanVien_LayMaLoaiNhanVien
 @tk nvarchar(30)
 

@@ -34,3 +34,10 @@ CREATE PROC sp_LoaiNhanVien_TimKiemTheoTen
 AS
 	SELECT * FROM LoaiNhanVien WHERE TenLoaiNhanVien LIKE '%'+ @ten +'%'
 GO
+
+CREATE PROC sp_LoaiNhanVien_LayLoaiNhanVien
+@ma int
+
+AS
+	SELECT TenLoaiNhanVien FROM LoaiNhanVien WHERE MaLoaiNhanVien=@ma
+GO
