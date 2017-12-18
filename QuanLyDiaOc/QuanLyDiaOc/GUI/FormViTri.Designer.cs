@@ -36,16 +36,16 @@
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.gbDanhSachKH = new System.Windows.Forms.GroupBox();
             this.dgvViTri = new System.Windows.Forms.DataGridView();
+            this.MaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenViTri = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtMaViTri = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.MaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViTri)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(369, 156);
+            this.btnSua.Location = new System.Drawing.Point(444, 181);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 19;
@@ -63,7 +63,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(575, 159);
+            this.txtTimKiem.Location = new System.Drawing.Point(650, 184);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(139, 20);
             this.txtTimKiem.TabIndex = 22;
@@ -71,7 +71,7 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(93, 157);
+            this.btnTaoMoi.Location = new System.Drawing.Point(168, 182);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi.TabIndex = 21;
@@ -81,7 +81,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(275, 156);
+            this.btnXoa.Location = new System.Drawing.Point(350, 181);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 18;
@@ -91,7 +91,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(185, 157);
+            this.btnThem.Location = new System.Drawing.Point(260, 182);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 17;
@@ -101,7 +101,7 @@
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(335, 29);
+            this.txtMoTa.Location = new System.Drawing.Point(410, 54);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(379, 81);
@@ -110,9 +110,9 @@
             // gbDanhSachKH
             // 
             this.gbDanhSachKH.Controls.Add(this.dgvViTri);
-            this.gbDanhSachKH.Location = new System.Drawing.Point(17, 213);
+            this.gbDanhSachKH.Location = new System.Drawing.Point(185, 269);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
-            this.gbDanhSachKH.Size = new System.Drawing.Size(730, 210);
+            this.gbDanhSachKH.Size = new System.Drawing.Size(973, 328);
             this.gbDanhSachKH.TabIndex = 11;
             this.gbDanhSachKH.TabStop = false;
             this.gbDanhSachKH.Text = "Danh sách vị trí";
@@ -129,82 +129,9 @@
             this.dgvViTri.Location = new System.Drawing.Point(3, 16);
             this.dgvViTri.Name = "dgvViTri";
             this.dgvViTri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViTri.Size = new System.Drawing.Size(724, 191);
+            this.dgvViTri.Size = new System.Drawing.Size(967, 309);
             this.dgvViTri.TabIndex = 0;
             this.dgvViTri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViTri_CellClick);
-            // 
-            // txtTenViTri
-            // 
-            this.txtTenViTri.Location = new System.Drawing.Point(123, 83);
-            this.txtTenViTri.Name = "txtTenViTri";
-            this.txtTenViTri.Size = new System.Drawing.Size(139, 20);
-            this.txtTenViTri.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(292, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mô tả:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên vị trí:";
-            // 
-            // gbThongTinKH
-            // 
-            this.gbThongTinKH.Controls.Add(this.label9);
-            this.gbThongTinKH.Controls.Add(this.txtTimKiem);
-            this.gbThongTinKH.Controls.Add(this.btnTaoMoi);
-            this.gbThongTinKH.Controls.Add(this.btnSua);
-            this.gbThongTinKH.Controls.Add(this.btnXoa);
-            this.gbThongTinKH.Controls.Add(this.btnThem);
-            this.gbThongTinKH.Controls.Add(this.txtMoTa);
-            this.gbThongTinKH.Controls.Add(this.txtTenViTri);
-            this.gbThongTinKH.Controls.Add(this.txtMaViTri);
-            this.gbThongTinKH.Controls.Add(this.label3);
-            this.gbThongTinKH.Controls.Add(this.label2);
-            this.gbThongTinKH.Controls.Add(this.label1);
-            this.gbThongTinKH.Location = new System.Drawing.Point(16, 12);
-            this.gbThongTinKH.Name = "gbThongTinKH";
-            this.gbThongTinKH.Size = new System.Drawing.Size(731, 194);
-            this.gbThongTinKH.TabIndex = 10;
-            this.gbThongTinKH.TabStop = false;
-            this.gbThongTinKH.Text = "Thông tin vị trí";
-            // 
-            // txtMaViTri
-            // 
-            this.txtMaViTri.Enabled = false;
-            this.txtMaViTri.Location = new System.Drawing.Point(123, 39);
-            this.txtMaViTri.Name = "txtMaViTri";
-            this.txtMaViTri.Size = new System.Drawing.Size(139, 20);
-            this.txtMaViTri.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã vị trí:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Image = global::QuanLyDiaOc.Properties.Resources.search;
-            this.label9.Location = new System.Drawing.Point(556, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "   ";
             // 
             // MaViTri
             // 
@@ -227,11 +154,84 @@
             this.MoTaViTri.Name = "MoTaViTri";
             this.MoTaViTri.Width = 59;
             // 
+            // txtTenViTri
+            // 
+            this.txtTenViTri.Location = new System.Drawing.Point(198, 108);
+            this.txtTenViTri.Name = "txtTenViTri";
+            this.txtTenViTri.Size = new System.Drawing.Size(139, 20);
+            this.txtTenViTri.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(367, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mô tả:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(100, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên vị trí:";
+            // 
+            // gbThongTinKH
+            // 
+            this.gbThongTinKH.Controls.Add(this.label9);
+            this.gbThongTinKH.Controls.Add(this.txtTimKiem);
+            this.gbThongTinKH.Controls.Add(this.btnTaoMoi);
+            this.gbThongTinKH.Controls.Add(this.btnSua);
+            this.gbThongTinKH.Controls.Add(this.btnXoa);
+            this.gbThongTinKH.Controls.Add(this.btnThem);
+            this.gbThongTinKH.Controls.Add(this.txtMoTa);
+            this.gbThongTinKH.Controls.Add(this.txtTenViTri);
+            this.gbThongTinKH.Controls.Add(this.txtMaViTri);
+            this.gbThongTinKH.Controls.Add(this.label3);
+            this.gbThongTinKH.Controls.Add(this.label2);
+            this.gbThongTinKH.Controls.Add(this.label1);
+            this.gbThongTinKH.Location = new System.Drawing.Point(185, 11);
+            this.gbThongTinKH.Name = "gbThongTinKH";
+            this.gbThongTinKH.Size = new System.Drawing.Size(973, 245);
+            this.gbThongTinKH.TabIndex = 10;
+            this.gbThongTinKH.TabStop = false;
+            this.gbThongTinKH.Text = "Thông tin vị trí";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Image = global::QuanLyDiaOc.Properties.Resources.search;
+            this.label9.Location = new System.Drawing.Point(631, 188);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "   ";
+            // 
+            // txtMaViTri
+            // 
+            this.txtMaViTri.Enabled = false;
+            this.txtMaViTri.Location = new System.Drawing.Point(198, 64);
+            this.txtMaViTri.Name = "txtMaViTri";
+            this.txtMaViTri.Size = new System.Drawing.Size(139, 20);
+            this.txtMaViTri.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(100, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã vị trí:";
+            // 
             // FormViTri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 434);
+            this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormViTri";

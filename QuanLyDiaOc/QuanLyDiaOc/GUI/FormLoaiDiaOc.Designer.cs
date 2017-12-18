@@ -30,6 +30,9 @@
         {
             this.gbDanhSachKH = new System.Windows.Forms.GroupBox();
             this.dgvLoaiDiaOc = new System.Windows.Forms.DataGridView();
+            this.MaLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTaoMoi = new System.Windows.Forms.Button();
@@ -41,11 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaLoaiDiaOc = new System.Windows.Forms.TextBox();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.MaLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDiaOc)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -54,9 +54,9 @@
             // gbDanhSachKH
             // 
             this.gbDanhSachKH.Controls.Add(this.dgvLoaiDiaOc);
-            this.gbDanhSachKH.Location = new System.Drawing.Point(17, 213);
+            this.gbDanhSachKH.Location = new System.Drawing.Point(185, 269);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
-            this.gbDanhSachKH.Size = new System.Drawing.Size(730, 210);
+            this.gbDanhSachKH.Size = new System.Drawing.Size(973, 328);
             this.gbDanhSachKH.TabIndex = 3;
             this.gbDanhSachKH.TabStop = false;
             this.gbDanhSachKH.Text = "Danh sách loại địa ốc";
@@ -73,15 +73,36 @@
             this.dgvLoaiDiaOc.Location = new System.Drawing.Point(3, 16);
             this.dgvLoaiDiaOc.Name = "dgvLoaiDiaOc";
             this.dgvLoaiDiaOc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoaiDiaOc.Size = new System.Drawing.Size(724, 191);
+            this.dgvLoaiDiaOc.Size = new System.Drawing.Size(967, 309);
             this.dgvLoaiDiaOc.TabIndex = 0;
             this.dgvLoaiDiaOc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiDiaOc_CellClick);
+            // 
+            // MaLoaiDiaOc
+            // 
+            this.MaLoaiDiaOc.DataPropertyName = "MaLoaiDiaOc";
+            this.MaLoaiDiaOc.HeaderText = "Mã loại địa ốc";
+            this.MaLoaiDiaOc.Name = "MaLoaiDiaOc";
+            this.MaLoaiDiaOc.Width = 80;
+            // 
+            // TenLoaiDiaOc
+            // 
+            this.TenLoaiDiaOc.DataPropertyName = "TenLoaiDiaOc";
+            this.TenLoaiDiaOc.HeaderText = "Tên Loại Địa Ốc";
+            this.TenLoaiDiaOc.Name = "TenLoaiDiaOc";
+            this.TenLoaiDiaOc.Width = 88;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.Width = 47;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Image = global::QuanLyDiaOc.Properties.Resources.search;
-            this.label9.Location = new System.Drawing.Point(556, 163);
+            this.label9.Location = new System.Drawing.Point(674, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 13);
             this.label9.TabIndex = 23;
@@ -89,7 +110,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(575, 159);
+            this.txtTimKiem.Location = new System.Drawing.Point(693, 184);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(139, 20);
             this.txtTimKiem.TabIndex = 22;
@@ -97,7 +118,7 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(93, 157);
+            this.btnTaoMoi.Location = new System.Drawing.Point(211, 182);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi.TabIndex = 21;
@@ -107,7 +128,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(369, 156);
+            this.btnSua.Location = new System.Drawing.Point(487, 181);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 19;
@@ -117,7 +138,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(275, 156);
+            this.btnXoa.Location = new System.Drawing.Point(393, 181);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 18;
@@ -127,7 +148,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(185, 157);
+            this.btnThem.Location = new System.Drawing.Point(303, 182);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 17;
@@ -137,7 +158,7 @@
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(335, 29);
+            this.txtMoTa.Location = new System.Drawing.Point(453, 54);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(379, 81);
@@ -145,7 +166,7 @@
             // 
             // txtTenLoaiDiaOc
             // 
-            this.txtTenLoaiDiaOc.Location = new System.Drawing.Point(123, 83);
+            this.txtTenLoaiDiaOc.Location = new System.Drawing.Point(241, 108);
             this.txtTenLoaiDiaOc.Name = "txtTenLoaiDiaOc";
             this.txtTenLoaiDiaOc.Size = new System.Drawing.Size(139, 20);
             this.txtTenLoaiDiaOc.TabIndex = 8;
@@ -153,7 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 86);
+            this.label2.Location = new System.Drawing.Point(143, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 1;
@@ -162,7 +183,7 @@
             // txtMaLoaiDiaOc
             // 
             this.txtMaLoaiDiaOc.Enabled = false;
-            this.txtMaLoaiDiaOc.Location = new System.Drawing.Point(123, 39);
+            this.txtMaLoaiDiaOc.Location = new System.Drawing.Point(241, 64);
             this.txtMaLoaiDiaOc.Name = "txtMaLoaiDiaOc";
             this.txtMaLoaiDiaOc.Size = new System.Drawing.Size(139, 20);
             this.txtMaLoaiDiaOc.TabIndex = 7;
@@ -181,57 +202,36 @@
             this.gbThongTinKH.Controls.Add(this.label3);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
-            this.gbThongTinKH.Location = new System.Drawing.Point(16, 12);
+            this.gbThongTinKH.Location = new System.Drawing.Point(185, 11);
             this.gbThongTinKH.Name = "gbThongTinKH";
-            this.gbThongTinKH.Size = new System.Drawing.Size(731, 194);
+            this.gbThongTinKH.Size = new System.Drawing.Size(973, 245);
             this.gbThongTinKH.TabIndex = 2;
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin loại địa ốc";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã loại địa ốc:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(292, 62);
+            this.label3.Location = new System.Drawing.Point(410, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mô tả:";
             // 
-            // MaLoaiDiaOc
+            // label1
             // 
-            this.MaLoaiDiaOc.DataPropertyName = "MaLoaiDiaOc";
-            this.MaLoaiDiaOc.HeaderText = "Mã loại địa ốc";
-            this.MaLoaiDiaOc.Name = "MaLoaiDiaOc";
-            this.MaLoaiDiaOc.Width = 99;
-            // 
-            // TenLoaiDiaOc
-            // 
-            this.TenLoaiDiaOc.DataPropertyName = "TenLoaiDiaOc";
-            this.TenLoaiDiaOc.HeaderText = "Tên Loại Địa Ốc";
-            this.TenLoaiDiaOc.Name = "TenLoaiDiaOc";
-            this.TenLoaiDiaOc.Width = 88;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.Width = 47;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(143, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã loại địa ốc:";
             // 
             // FormLoaiDiaOc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 434);
+            this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormLoaiDiaOc";
