@@ -133,6 +133,12 @@
     <Compile Include="GUI\FormLoaiQuangCao.Designer.cs">
       <DependentUpon>FormLoaiQuangCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <EmbeddedResource Include="GUI\FormLoaiQuangCao.resx">
       <DependentUpon>FormLoaiQuangCao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormPhongBan.resx">
       <DependentUpon>FormPhongBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

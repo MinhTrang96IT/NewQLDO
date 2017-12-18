@@ -1,5 +1,4 @@
-﻿INSERT INTO NhanVien VALUES(N'Hoàng Kim Tuấn', 1, '251055042', '07/01/1996', N'Dĩ An, Bình Dương', 1, 'hoangkimtuan1996@gmail.com', 1, 'HoangKimTuan', '123456')
-INSERT INTO LoaiNhanVien VALUES(N'Nhân viên quảng cáo', N'Thêm Xóa Sửa')
+﻿INSERT INTO NhanVien VALUES(1, 1, N'Hoàng Kim Tuấn', '251055042', 1, '07/01/1996', N'Dĩ An, Bình Dương', '0969987548', 'hoangkimtuan1996@gmail.com', 'HoangKimTuan', '123456')
 
 CREATE PROC sp_NhanVien_KiemTraDangNhap
 @tk nvarchar(30),
@@ -21,4 +20,9 @@ CREATE PROC sp_NhanVien_LayMaLoaiNhanVien
 
 AS
 	SELECT MaLoaiNhanVien FROM NhanVien WHERE TenDangNhap=@tk
+GO
+
+CREATE PROC sp_NhanVien_LayDanhSach
+AS
+	SELECT * FROM NhanVien
 GO

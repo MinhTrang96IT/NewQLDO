@@ -31,5 +31,10 @@ namespace QuanLyDiaOc.BLL
         {
             return nhanVienDAL.LayMaLoaiNhanVien(tk);
         }
+
+        public DataTable LayDanhSachNhanVien()
+        {
+            return nhanVienDAL.LayDanhSachNhanVien();
+        }
     }
 }

@@ -112,5 +112,28 @@ namespace QuanLyDiaOc.DAL
             }
             return s;
         }
+
+        public DataTable LayDanhSachNhanVien()
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_LayDanhSach";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

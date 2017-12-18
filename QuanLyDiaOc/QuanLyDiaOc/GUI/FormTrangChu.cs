@@ -168,5 +168,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiQuangCao);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void nhânViênToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormNhanVien formNhanVien = new FormNhanVien();
+            formNhanVien.TopLevel = false;
+            formNhanVien.Visible = true;
+            formNhanVien.FormBorderStyle = FormBorderStyle.None;
+            formNhanVien.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Nhân viên");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formNhanVien);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
