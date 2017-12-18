@@ -68,11 +68,6 @@ namespace QuanLyDiaOc.GUI
             }
         }
 
-        private void demoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormKhachHang formKhachHang = new FormKhachHang();
@@ -82,6 +77,7 @@ namespace QuanLyDiaOc.GUI
             formKhachHang.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Khách hàng");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formKhachHang);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void FormTrangChu_Load(object sender, EventArgs e)
@@ -98,6 +94,7 @@ namespace QuanLyDiaOc.GUI
             formLoaiDiaOc.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Loại địa ốc");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiDiaOc);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void loạiNhàToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +106,7 @@ namespace QuanLyDiaOc.GUI
             formLoaiNha.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Loại nhà");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiNha);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,6 +118,7 @@ namespace QuanLyDiaOc.GUI
             formPhongBan.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Phòng ban");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhongBan);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void loạiNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,6 +130,7 @@ namespace QuanLyDiaOc.GUI
             formLoaiNhanVien.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Loại nhân viên");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiNhanVien);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void quyềnHạnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +142,7 @@ namespace QuanLyDiaOc.GUI
             formQuyenHan.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Quyền hạn");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formQuyenHan);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void vịTríToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,6 +154,7 @@ namespace QuanLyDiaOc.GUI
             formViTri.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Vị trí");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formViTri);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void loạiQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,6 +166,7 @@ namespace QuanLyDiaOc.GUI
             formLoaiQuangCao.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Loại quảng cáo");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiQuangCao);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
     }
 }

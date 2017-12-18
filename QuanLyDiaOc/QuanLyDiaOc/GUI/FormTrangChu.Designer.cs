@@ -31,7 +31,7 @@
             this.tabCtlChinh = new System.Windows.Forms.TabControl();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.nghiepVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.demoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngKýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngưngĐăngKýDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaHạnĐăngKýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,19 +80,18 @@
             // nghiepVuToolStripMenuItem
             // 
             this.nghiepVuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.demoToolStripMenuItem,
+            this.đăngKýToolStripMenuItem,
             this.ngưngĐăngKýDịchVụToolStripMenuItem,
             this.giaHạnĐăngKýToolStripMenuItem});
             this.nghiepVuToolStripMenuItem.Name = "nghiepVuToolStripMenuItem";
             this.nghiepVuToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.nghiepVuToolStripMenuItem.Text = "Nghiệp vụ";
             // 
-            // demoToolStripMenuItem
+            // đăngKýToolStripMenuItem
             // 
-            this.demoToolStripMenuItem.Name = "demoToolStripMenuItem";
-            this.demoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.demoToolStripMenuItem.Text = "Đăng ký quảng cáo";
-            this.demoToolStripMenuItem.Click += new System.EventHandler(this.demoToolStripMenuItem_Click);
+            this.đăngKýToolStripMenuItem.Name = "đăngKýToolStripMenuItem";
+            this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.đăngKýToolStripMenuItem.Text = "Đăng ký quảng cáo";
             // 
             // ngưngĐăngKýDịchVụToolStripMenuItem
             // 
@@ -262,7 +261,7 @@
         private System.Windows.Forms.TabControl tabCtlChinh;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem nghiepVuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem demoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngKýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngưngĐăngKýDịchVụToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giaHạnĐăngKýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
