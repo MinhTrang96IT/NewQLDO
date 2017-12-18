@@ -110,5 +110,60 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages.Add("Loại nhà");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiNha);
         }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhongBan formPhongBan = new FormPhongBan();
+            formPhongBan.TopLevel = false;
+            formPhongBan.Visible = true;
+            formPhongBan.FormBorderStyle = FormBorderStyle.None;
+            formPhongBan.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Phòng ban");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhongBan);
+        }
+
+        private void loạiNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLoaiNhanVien formLoaiNhanVien = new FormLoaiNhanVien();
+            formLoaiNhanVien.TopLevel = false;
+            formLoaiNhanVien.Visible = true;
+            formLoaiNhanVien.FormBorderStyle = FormBorderStyle.None;
+            formLoaiNhanVien.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Loại nhân viên");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiNhanVien);
+        }
+
+        private void quyềnHạnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQuyenHan formQuyenHan = new FormQuyenHan();
+            formQuyenHan.TopLevel = false;
+            formQuyenHan.Visible = true;
+            formQuyenHan.FormBorderStyle = FormBorderStyle.None;
+            formQuyenHan.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Quyền hạn");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formQuyenHan);
+        }
+
+        private void vịTríToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormViTri formViTri = new FormViTri();
+            formViTri.TopLevel = false;
+            formViTri.Visible = true;
+            formViTri.FormBorderStyle = FormBorderStyle.None;
+            formViTri.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Vị trí");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formViTri);
+        }
+
+        private void loạiQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLoaiQuangCao formLoaiQuangCao = new FormLoaiQuangCao();
+            formLoaiQuangCao.TopLevel = false;
+            formLoaiQuangCao.Visible = true;
+            formLoaiQuangCao.FormBorderStyle = FormBorderStyle.None;
+            formLoaiQuangCao.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Loại quảng cáo");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formLoaiQuangCao);
+        }
     }
 }

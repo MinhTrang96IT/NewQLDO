@@ -73,15 +73,30 @@
     <Compile Include="BLL\KhachHangBLL.cs" />
     <Compile Include="BLL\LoaiDiaOcBLL.cs" />
     <Compile Include="BLL\LoaiNhaBLL.cs" />
+    <Compile Include="BLL\LoaiNhanVienBLL.cs" />
+    <Compile Include="BLL\LoaiQuangCaoBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\PhongBanBLL.cs" />
+    <Compile Include="BLL\QuyenHanBLL.cs" />
+    <Compile Include="BLL\ViTriBLL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
     <Compile Include="DAL\LoaiDiaOcDAL.cs" />
     <Compile Include="DAL\LoaiNhaDAL.cs" />
+    <Compile Include="DAL\LoaiNhanVienDAL.cs" />
+    <Compile Include="DAL\LoaiQuangCaoDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhongBanDAL.cs" />
+    <Compile Include="DAL\QuyenHanDAL.cs" />
+    <Compile Include="DAL\ViTriDAL.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiDiaOcDTO.cs" />
     <Compile Include="DTO\LoaiNhaDTO.cs" />
+    <Compile Include="DTO\LoaiNhanVienDTO.cs" />
+    <Compile Include="DTO\LoaiQuangCaoDTO.cs" />
+    <Compile Include="DTO\PhongBanDTO.cs" />
+    <Compile Include="DTO\QuyenHanDTO.cs" />
+    <Compile Include="DTO\ViTriDTO.cs" />
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +121,41 @@
     <Compile Include="GUI\FormLoaiNha.Designer.cs">
       <DependentUpon>FormLoaiNha.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormLoaiNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLoaiNhanVien.Designer.cs">
+      <DependentUpon>FormLoaiNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLoaiQuangCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLoaiQuangCao.Designer.cs">
+      <DependentUpon>FormLoaiQuangCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPhongBan.Designer.cs">
+      <DependentUpon>FormPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQuyenHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQuyenHan.Designer.cs">
+      <DependentUpon>FormQuyenHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormTrangChu.Designer.cs">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormViTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormViTri.Designer.cs">
+      <DependentUpon>FormViTri.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,8 +171,23 @@
     <EmbeddedResource Include="GUI\FormLoaiNha.resx">
       <DependentUpon>FormLoaiNha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLoaiNhanVien.resx">
+      <DependentUpon>FormLoaiNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLoaiQuangCao.resx">
+      <DependentUpon>FormLoaiQuangCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPhongBan.resx">
+      <DependentUpon>FormPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQuyenHan.resx">
+      <DependentUpon>FormQuyenHan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormViTri.resx">
+      <DependentUpon>FormViTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
