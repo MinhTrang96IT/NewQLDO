@@ -36,5 +36,10 @@ namespace QuanLyDiaOc.BLL
         {
             return phongBanDAL.TimKiemPhongBanTheoTen(ten);
         }
+
+        public string LayTenPhongBan(string ma)
+        {
+            return phongBanDAL.LayTenPhongBan(ma);
+        }
     }
 }

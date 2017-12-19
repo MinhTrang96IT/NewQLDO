@@ -126,5 +126,31 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public string LayTenPhongBan(string ma)
+        {
+            string s = null;
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_PhongBan_LayPhongBan";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", Int32.Parse(ma)));
+                var reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    s = reader["TenLPhongBan"].ToString();
+                }
+            }
+            catch { }
+            finally
+            {
+                CloseConnect();
+            }
+            return s;
+        }
     }
 }

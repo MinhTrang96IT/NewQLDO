@@ -34,3 +34,10 @@ CREATE PROC sp_PhongBan_TimKiemTheoTen
 AS
 	SELECT * FROM PhongBan WHERE TenLPhongBan LIKE '%'+ @ten +'%'
 GO
+
+CREATE PROC sp_PhongBan_LayPhongBan
+@ma int
+
+AS
+	SELECT TenLPhongBan FROM PhongBan WHERE MaPhongBan=@ma
+GO
