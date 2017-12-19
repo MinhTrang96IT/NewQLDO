@@ -55,7 +55,7 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinTrong()
         {
-            if (txtMaNV.Text.ToString() == "" || txtTenNV.Text.ToString() == "" || txtCMND.Text.ToString() == "" || txtDiaChi.Text.ToString() == "" || txtEmail.Text.ToString() == "" || txtSoDienThoai.Text.ToString() == "" || txtTenDangNhap.Text.ToString() == "" || txtMatKhau.Text.ToString() == "")
+            if (txtTenNV.Text.ToString() == "" || txtCMND.Text.ToString() == "" || txtDiaChi.Text.ToString() == "" || txtEmail.Text.ToString() == "" || txtSoDienThoai.Text.ToString() == "" || txtTenDangNhap.Text.ToString() == "" || txtMatKhau.Text.ToString() == "")
             {
                 return true;
             }
@@ -144,7 +144,7 @@ namespace QuanLyDiaOc.GUI
                     txtMaNV.Text = row.Cells["MaNhanVien"].Value.ToString();
                     id = row.Cells["MaNhanVien"].Value.ToString();
                     cbLoaiNV.Text = row.Cells["TenLoaiNhanVien"].Value.ToString();
-                    cbLoaiNV.Text = row.Cells["TenLPhongBan"].Value.ToString();
+                    cbPhongBan.Text = row.Cells["TenLPhongBan"].Value.ToString();
                     txtTenNV.Text = row.Cells["TenNhanVien"].Value.ToString();
                     txtCMND.Text = row.Cells["CMND"].Value.ToString();
                     if (row.Cells["GioiTinh"].Value.ToString().Equals("True"))
@@ -275,8 +275,6 @@ namespace QuanLyDiaOc.GUI
             else
             {
                 cbLoaiNV.DataSource = loaiNhanVienBLL.LayDanhSachLoaiNhanVien();
-                cbLoaiNV.DisplayMember = "TenLoaiNhanVien";
-                cbLoaiNV.ValueMember = "MaLoaiNhanVien";
             }
         }
 
@@ -288,8 +286,6 @@ namespace QuanLyDiaOc.GUI
             else
             {
                 cbPhongBan.DataSource = phongBanBLL.LayDanhSachPhongBan();
-                cbPhongBan.DisplayMember = "TenLPhongBan";
-                cbPhongBan.ValueMember = "MaPhongBan";
             }
         }
     }
