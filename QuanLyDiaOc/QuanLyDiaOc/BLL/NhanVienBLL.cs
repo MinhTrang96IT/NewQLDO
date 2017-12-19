@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using QuanLyDiaOc.DAL;
+using QuanLyDiaOc.DTO;
 
 namespace QuanLyDiaOc.BLL
 {
@@ -35,6 +36,31 @@ namespace QuanLyDiaOc.BLL
         public DataTable LayDanhSachNhanVien()
         {
             return nhanVienDAL.LayDanhSachNhanVien();
+        }
+
+        public DataTable LayDanhSachNhanVienTheoTenLoai()
+        {
+            return nhanVienDAL.LayDanhSachNhanVienTheoTenLoai();
+        }
+
+        public bool ThemNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            return nhanVienDAL.ThemNhanVien(nhanVienDTO);
+        }
+
+        public bool XoaNhanVien(int ma)
+        {
+            return nhanVienDAL.XoaNhanVien(ma);
+        }
+
+        public bool SuaNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            return nhanVienDAL.SuaNhanVien(nhanVienDTO);
+        }
+
+        public DataTable TimKiemNVTheoTen(string ten)
+        {
+            return nhanVienDAL.TimKiemNVTheoTen(ten);
         }
     }
 }

@@ -26,3 +26,57 @@ CREATE PROC sp_NhanVien_LayDanhSach
 AS
 	SELECT * FROM NhanVien
 GO
+
+CREATE PROC sp_NhanVien_LayDanhSachTheoTenLoai
+AS
+	SELECT MaNhanVien, TenLoaiNhanVien, TenLPhongBan, TenNhanVien, CMND, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email, TenDangNhap, MatKhau FROM NhanVien, LoaiNhanVien, PhongBan WHERE NhanVien.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND NhanVien.MaPhongBan = PhongBan.MaPhongBan
+GO
+
+CREATE PROC sp_NhanVien_Them
+@maLoaiNV int,
+@maPB int,
+@ten nvarchar(50),
+@cmnd nvarchar(15),
+@gioitinh bit,
+@ngaysinh datetime,
+@diachi nvarchar(100),
+@sdt varchar(20),
+@email varchar(100),
+@tk varchar(30),
+@mk varchar(15)
+
+AS
+	INSERT INTO NhanVien VALUES(@maLoaiNV, @maPB, @ten, @cmnd, @gioitinh, @ngaysinh, @diachi, @sdt, @email, @tk, @mk)
+GO
+
+CREATE PROC sp_NhanVien_Xoa
+@ma int
+
+AS
+	DELETE FROM NhanVien WHERE MaNhanVien=@ma
+GO
+
+CREATE PROC sp_NhanVien_Sua
+@maNV int,
+@maLoaiNV int,
+@maPB int,
+@ten nvarchar(50),
+@cmnd nvarchar(15),
+@gioitinh bit,
+@ngaysinh datetime,
+@diachi nvarchar(100),
+@sdt varchar(20),
+@email varchar(100),
+@tk varchar(30),
+@mk varchar(15)
+
+AS
+	UPDATE NhanVien SET MaLoaiNhanVien=@maLoaiNV, MaPhongBan=@maPB, TenNhanVien=@ten, CMND=@cmnd, GioiTinh=@gioitinh, NgaySinh=@ngaysinh, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email, TenDangNhap=@tk, MatKhau=@mk WHERE MaNhanVien=@maNV
+GO
+
+CREATE PROC sp_NhanVien_TimKiemTheoTen
+@ten nvarchar(50)
+
+AS
+	SELECT * FROM NhanVien WHERE TenNhanVien LIKE '%'+ @ten +'%'
+GO

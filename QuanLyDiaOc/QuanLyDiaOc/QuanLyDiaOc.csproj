@@ -94,6 +94,7 @@
     <Compile Include="DTO\LoaiNhaDTO.cs" />
     <Compile Include="DTO\LoaiNhanVienDTO.cs" />
     <Compile Include="DTO\LoaiQuangCaoDTO.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\QuyenHanDTO.cs" />
     <Compile Include="DTO\ViTriDTO.cs" />
@@ -231,7 +232,7 @@
   <ItemGroup>
     <None Include="Resources\add.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <None Include="Resources\vforum.vn %2831%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

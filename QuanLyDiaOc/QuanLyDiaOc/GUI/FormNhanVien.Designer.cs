@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.gbThongTin = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThemLoaiPB = new System.Windows.Forms.Button();
+            this.btnThemLoaiNV = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnSua = new System.Windows.Forms.Button();
@@ -65,8 +65,8 @@
             this.gbDanhSanh = new System.Windows.Forms.GroupBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -83,8 +83,8 @@
             // 
             // gbThongTin
             // 
-            this.gbThongTin.Controls.Add(this.button2);
-            this.gbThongTin.Controls.Add(this.button1);
+            this.gbThongTin.Controls.Add(this.btnThemLoaiPB);
+            this.gbThongTin.Controls.Add(this.btnThemLoaiNV);
             this.gbThongTin.Controls.Add(this.label13);
             this.gbThongTin.Controls.Add(this.txtTimKiem);
             this.gbThongTin.Controls.Add(this.btnSua);
@@ -123,23 +123,25 @@
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin nhân viên";
             // 
-            // button2
+            // btnThemLoaiPB
             // 
-            this.button2.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.button2.Location = new System.Drawing.Point(359, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 32;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnThemLoaiPB.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemLoaiPB.Location = new System.Drawing.Point(359, 108);
+            this.btnThemLoaiPB.Name = "btnThemLoaiPB";
+            this.btnThemLoaiPB.Size = new System.Drawing.Size(20, 20);
+            this.btnThemLoaiPB.TabIndex = 32;
+            this.btnThemLoaiPB.UseVisualStyleBackColor = true;
+            this.btnThemLoaiPB.Click += new System.EventHandler(this.btnThemLoaiPB_Click);
             // 
-            // button1
+            // btnThemLoaiNV
             // 
-            this.button1.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.button1.Location = new System.Drawing.Point(360, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 31;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThemLoaiNV.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemLoaiNV.Location = new System.Drawing.Point(360, 81);
+            this.btnThemLoaiNV.Name = "btnThemLoaiNV";
+            this.btnThemLoaiNV.Size = new System.Drawing.Size(20, 20);
+            this.btnThemLoaiNV.TabIndex = 31;
+            this.btnThemLoaiNV.UseVisualStyleBackColor = true;
+            this.btnThemLoaiNV.Click += new System.EventHandler(this.btnThemLoaiNV_Click);
             // 
             // label13
             // 
@@ -157,6 +159,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(139, 20);
             this.txtTimKiem.TabIndex = 29;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // btnSua
             // 
@@ -166,6 +169,7 @@
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -175,6 +179,7 @@
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -184,6 +189,7 @@
             this.btnThem.TabIndex = 26;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTaoMoi
             // 
@@ -222,6 +228,7 @@
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(121, 20);
             this.txtSoDienThoai.TabIndex = 21;
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChiNhapSo);
             // 
             // rbNu
             // 
@@ -293,6 +300,7 @@
             // 
             // txtMaNV
             // 
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(232, 56);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(121, 20);
@@ -422,8 +430,8 @@
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNhanVien,
-            this.MaLoaiNhanVien,
-            this.MaPhongBan,
+            this.TenLoaiNhanVien,
+            this.TenLPhongBan,
             this.TenNhanVien,
             this.CMND,
             this.GioiTinh,
@@ -448,19 +456,19 @@
             this.MaNhanVien.Name = "MaNhanVien";
             this.MaNhanVien.Width = 89;
             // 
-            // MaLoaiNhanVien
+            // TenLoaiNhanVien
             // 
-            this.MaLoaiNhanVien.DataPropertyName = "MaLoaiNhanVien";
-            this.MaLoaiNhanVien.HeaderText = "Mã loại nhân viên";
-            this.MaLoaiNhanVien.Name = "MaLoaiNhanVien";
-            this.MaLoaiNhanVien.Width = 88;
+            this.TenLoaiNhanVien.DataPropertyName = "TenLoaiNhanVien";
+            this.TenLoaiNhanVien.HeaderText = "Mã loại nhân viên";
+            this.TenLoaiNhanVien.Name = "TenLoaiNhanVien";
+            this.TenLoaiNhanVien.Width = 88;
             // 
-            // MaPhongBan
+            // TenLPhongBan
             // 
-            this.MaPhongBan.DataPropertyName = "MaPhongBan";
-            this.MaPhongBan.HeaderText = "Mã phòng ban";
-            this.MaPhongBan.Name = "MaPhongBan";
-            this.MaPhongBan.Width = 93;
+            this.TenLPhongBan.DataPropertyName = "TenLPhongBan";
+            this.TenLPhongBan.HeaderText = "Mã phòng ban";
+            this.TenLPhongBan.Name = "TenLPhongBan";
+            this.TenLPhongBan.Width = 93;
             // 
             // TenNhanVien
             // 
@@ -581,9 +589,11 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox gbDanhSanh;
         private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.Button btnThemLoaiPB;
+        private System.Windows.Forms.Button btnThemLoaiNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhongBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLPhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
@@ -593,7 +603,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

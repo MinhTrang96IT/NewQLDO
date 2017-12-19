@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using QuanLyDiaOc.DTO;
 
 namespace QuanLyDiaOc.DAL
 {
@@ -122,6 +123,140 @@ namespace QuanLyDiaOc.DAL
                 string store = "sp_NhanVien_LayDanhSach";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public DataTable LayDanhSachNhanVienTheoTenLoai()
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_LayDanhSachTheoTenLoai";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public bool ThemNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_NhanVien_Them";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@maLoaiNV", nhanVienDTO.MaLoaiNhanVien));
+                sqlCommand.Parameters.Add(new SqlParameter("@maPB", nhanVienDTO.MaPhongBan));
+                sqlCommand.Parameters.Add(new SqlParameter("@ten", nhanVienDTO.TenNhanVien));
+                sqlCommand.Parameters.Add(new SqlParameter("@cmnd", nhanVienDTO.CMND));
+                sqlCommand.Parameters.Add(new SqlParameter("@gioitinh", nhanVienDTO.GioiTinh));
+                sqlCommand.Parameters.Add(new SqlParameter("@ngaysinh", nhanVienDTO.NgaySinh));
+                sqlCommand.Parameters.Add(new SqlParameter("@diachi", nhanVienDTO.DiaChi));
+                sqlCommand.Parameters.Add(new SqlParameter("@sdt", nhanVienDTO.SoDienThoai));
+                sqlCommand.Parameters.Add(new SqlParameter("@email", nhanVienDTO.Email));
+                sqlCommand.Parameters.Add(new SqlParameter("@tk", nhanVienDTO.TenDangNhap));
+                sqlCommand.Parameters.Add(new SqlParameter("@mk", nhanVienDTO.MatKhau));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public bool XoaNhanVien(int ma)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_NhanVien_Xoa";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", ma));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public bool SuaNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_NhanVien_Sua";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@maNV", nhanVienDTO.MaNhanVien));
+                sqlCommand.Parameters.Add(new SqlParameter("@maLoaiNV", nhanVienDTO.MaLoaiNhanVien));
+                sqlCommand.Parameters.Add(new SqlParameter("@maPB", nhanVienDTO.MaPhongBan));
+                sqlCommand.Parameters.Add(new SqlParameter("@ten", nhanVienDTO.TenNhanVien));
+                sqlCommand.Parameters.Add(new SqlParameter("@cmnd", nhanVienDTO.CMND));
+                sqlCommand.Parameters.Add(new SqlParameter("@gioitinh", nhanVienDTO.GioiTinh));
+                sqlCommand.Parameters.Add(new SqlParameter("@ngaysinh", nhanVienDTO.NgaySinh));
+                sqlCommand.Parameters.Add(new SqlParameter("@diachi", nhanVienDTO.DiaChi));
+                sqlCommand.Parameters.Add(new SqlParameter("@sdt", nhanVienDTO.SoDienThoai));
+                sqlCommand.Parameters.Add(new SqlParameter("@email", nhanVienDTO.Email));
+                sqlCommand.Parameters.Add(new SqlParameter("@tk", nhanVienDTO.TenDangNhap));
+                sqlCommand.Parameters.Add(new SqlParameter("@mk", nhanVienDTO.MatKhau));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public DataTable TimKiemNVTheoTen(string ten)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_TimKiemTheoTen";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ten", ten));
                 sqlAdapter = new SqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(data);
                 return data;
