@@ -139,13 +139,14 @@
             // địaỐcToolStripMenuItem1
             // 
             this.địaỐcToolStripMenuItem1.Name = "địaỐcToolStripMenuItem1";
-            this.địaỐcToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.địaỐcToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.địaỐcToolStripMenuItem1.Text = "Địa ốc";
+            this.địaỐcToolStripMenuItem1.Click += new System.EventHandler(this.địaỐcToolStripMenuItem1_Click);
             // 
             // loạiĐịaỐcToolStripMenuItem
             // 
             this.loạiĐịaỐcToolStripMenuItem.Name = "loạiĐịaỐcToolStripMenuItem";
-            this.loạiĐịaỐcToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.loạiĐịaỐcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loạiĐịaỐcToolStripMenuItem.Text = "Loại địa ốc";
             this.loạiĐịaỐcToolStripMenuItem.Click += new System.EventHandler(this.loạiĐịaỐcToolStripMenuItem_Click);
             // 
