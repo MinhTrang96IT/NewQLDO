@@ -180,5 +180,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formNhanVien);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void địaỐcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDiaOc formDiaOc = new FormDiaOc();
+            formDiaOc.TopLevel = false;
+            formDiaOc.Visible = true;
+            formDiaOc.FormBorderStyle = FormBorderStyle.None;
+            formDiaOc.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Địa ốc");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formDiaOc);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
