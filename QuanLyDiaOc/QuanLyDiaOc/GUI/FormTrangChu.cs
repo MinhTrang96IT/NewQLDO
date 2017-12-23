@@ -192,5 +192,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formDiaOc);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void quyĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQuyDinh formQuyDinh = new FormQuyDinh();
+            formQuyDinh.TopLevel = false;
+            formQuyDinh.Visible = true;
+            formQuyDinh.FormBorderStyle = FormBorderStyle.None;
+            formQuyDinh.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Quy định");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formQuyDinh);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
