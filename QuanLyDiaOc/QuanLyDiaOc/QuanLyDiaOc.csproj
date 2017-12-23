@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BaoBLL.cs" />
     <Compile Include="BLL\DiaOcBLL.cs" />
     <Compile Include="BLL\KhachHangBLL.cs" />
     <Compile Include="BLL\LoaiDiaOcBLL.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="BLL\QuyDinhBLL.cs" />
     <Compile Include="BLL\QuyenHanBLL.cs" />
     <Compile Include="BLL\ViTriBLL.cs" />
+    <Compile Include="DAL\BaoDAL.cs" />
     <Compile Include="DAL\DiaOcDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="DAL\QuyDinhDAL.cs" />
     <Compile Include="DAL\QuyenHanDAL.cs" />
     <Compile Include="DAL\ViTriDAL.cs" />
+    <Compile Include="DTO\BaoDTO.cs" />
     <Compile Include="DTO\DiaOcDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiDiaOcDTO.cs" />
@@ -103,6 +106,12 @@
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\QuyenHanDTO.cs" />
     <Compile Include="DTO\ViTriDTO.cs" />
+    <Compile Include="GUI\FormBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormBao.Designer.cs">
+      <DependentUpon>FormBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +192,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FormBao.resx">
+      <DependentUpon>FormBao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>

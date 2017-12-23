@@ -202,6 +202,17 @@ namespace QuanLyDiaOc.GUI
             formQuyDinh.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Quy định");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formQuyDinh);
+        }
+
+        private void báoChíToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBao formBao = new FormBao();
+            formBao.TopLevel = false;
+            formBao.Visible = true;
+            formBao.FormBorderStyle = FormBorderStyle.None;
+            formBao.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Báo chí");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formBao);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
     }
