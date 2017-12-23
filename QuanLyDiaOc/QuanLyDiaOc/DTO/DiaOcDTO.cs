@@ -13,20 +13,20 @@ namespace QuanLyDiaOc.DTO
         public int MaLoaiDiaOc { get; set; }
         public int MaLoaiNha { get; set; }
         public string DiaChi { get; set; }
-        public float DienTichKhuonVien { get; set; }
-        public float DienTichSuDung { get; set; }
+        public double DienTichKhuonVien { get; set; }
+        public double DienTichSuDung { get; set; }
         public string HuongNha { get; set; }
-        public float ChieuDaiDat { get; set; }
-        public float ChieuRongDat { get; set; }
-        public float ChieuDaiNha { get; set; }
-        public float ChieuRongNha { get; set; }
+        public double ChieuDaiDat { get; set; }
+        public double ChieuRongDat { get; set; }
+        public double ChieuDaiNha { get; set; }
+        public double ChieuRongNha { get; set; }
         public int SoTang { get; set; }
         public string MoTaChiTiet { get; set; }
-        public int GiaBan { get; set; }
-        public int TrangThaiKiemDuyen { get; set; }
+        public double GiaBan { get; set; }
+        public int TrangThaiKiemDuyet { get; set; }
         public int TrangThaiMuaBan { get; set; }
 
-        public DiaOcDTO(int maDiaOc, int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, float dienTichKhuonVien, float dienTichSuDung, string huongNha, float chieuDaiDat, float chieuRongDat, float chieuDaiNha, float chieuRongNha, int soTang, string moTaChiTiet, int giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
+        public DiaOcDTO(int maDiaOc, int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
         {
             MaDiaOc = maDiaOc;
             MaKhachHang = maKhachHang;
@@ -43,11 +43,11 @@ namespace QuanLyDiaOc.DTO
             SoTang = soTang;
             MoTaChiTiet = moTaChiTiet;
             GiaBan = giaBan;
-            TrangThaiKiemDuyen = trangThaiKiemDuyet;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TrangThaiMuaBan = trangThaiMuaBan;
         }
 
-        public DiaOcDTO( int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, float dienTichKhuonVien, float dienTichSuDung, string huongNha, float chieuDaiDat, float chieuRongDat, float chieuDaiNha, float chieuRongNha, int soTang, string moTaChiTiet, int giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
+        public DiaOcDTO( int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
         {
             MaKhachHang = maKhachHang;
             MaLoaiDiaOc = maLoaiDiaOc;
@@ -63,7 +63,7 @@ namespace QuanLyDiaOc.DTO
             SoTang = soTang;
             MoTaChiTiet = moTaChiTiet;
             GiaBan = giaBan;
-            TrangThaiKiemDuyen = trangThaiKiemDuyet;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TrangThaiMuaBan = trangThaiMuaBan;
         }
     }

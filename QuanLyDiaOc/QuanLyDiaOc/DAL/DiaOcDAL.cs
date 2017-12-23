@@ -79,7 +79,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@sotang", diaOcDTO.SoTang));
                 sqlCommand.Parameters.Add(new SqlParameter("@motachitiet", diaOcDTO.MoTaChiTiet));
                 sqlCommand.Parameters.Add(new SqlParameter("@giaban", diaOcDTO.GiaBan));
-                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", diaOcDTO.TrangThaiKiemDuyen));
+                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", diaOcDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaimuaban", diaOcDTO.TrangThaiMuaBan));
                 sqlCommand.ExecuteNonQuery();
                 return true;
@@ -124,7 +124,7 @@ namespace QuanLyDiaOc.DAL
                 string store = "sp_DiaOc_Sua";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.Add(new SqlParameter("@madioc", diaOcDTO.MaDiaOc));
+                sqlCommand.Parameters.Add(new SqlParameter("@madiaoc", diaOcDTO.MaDiaOc));
                 sqlCommand.Parameters.Add(new SqlParameter("@makhachhang", diaOcDTO.MaKhachHang));
                 sqlCommand.Parameters.Add(new SqlParameter("@maloaidiaoc", diaOcDTO.MaLoaiDiaOc));
                 sqlCommand.Parameters.Add(new SqlParameter("@maloainha", diaOcDTO.MaLoaiNha));
@@ -139,7 +139,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@sotang", diaOcDTO.SoTang));
                 sqlCommand.Parameters.Add(new SqlParameter("@motachitiet", diaOcDTO.MoTaChiTiet));
                 sqlCommand.Parameters.Add(new SqlParameter("@giaban", diaOcDTO.GiaBan));
-                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", diaOcDTO.TrangThaiKiemDuyen));
+                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", diaOcDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaimuaban", diaOcDTO.TrangThaiMuaBan));
                 sqlCommand.ExecuteNonQuery();
                 return true;

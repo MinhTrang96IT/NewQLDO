@@ -53,7 +53,22 @@ namespace QuanLyDiaOc.GUI
                     if (chkTrangThaiMuaBan.Checked)
                         trangThaiMuaBan = 1;
 
-                    DiaOcDTO diaOcDTO = new DiaOcDTO(Int32.Parse(cbKhachHang.SelectedValue.ToString()), Int32.Parse(cbLoaiDiaOc.SelectedValue.ToString()), Int32.Parse(cbLoaiNha.SelectedValue.ToString()), txtDiaChi.Text, (float)Convert.ToDouble(txtDienTichKhuonVien.Text.ToString()), (float)Convert.ToDouble(txtDienTichSuDung.Text.ToString()), txtHuongNha.Text.ToString(), (float)Convert.ToDouble(txtChieuDaiDat.Text.ToString()), (float)Convert.ToDouble(txtChieuRongDat.Text.ToString()), (float)Convert.ToDouble(txtChieuDaiNha.Text.ToString()), (float)Convert.ToDouble(txtChieuRongNha.Text.ToString()), Int32.Parse(txtSoTang.Text.ToString()), txtMoTaChiTiet.Text.ToString(), Int32.Parse( txtGiaBan.Text.ToString()), trangThaiKiemDuyet, trangThaiMuaBan);
+                    DiaOcDTO diaOcDTO = new DiaOcDTO(
+                                   Int32.Parse(cbKhachHang.SelectedValue.ToString()),
+                                   Int32.Parse(cbLoaiDiaOc.SelectedValue.ToString()),
+                                   Int32.Parse(cbLoaiNha.SelectedValue.ToString()),
+                                   txtDiaChi.Text.ToString(),
+                                   Double.Parse(txtDienTichKhuonVien.Text.ToString()),
+                                   Double.Parse(txtDienTichSuDung.Text.ToString()),
+                                   txtHuongNha.Text.ToString(),
+                                   Double.Parse(txtChieuDaiDat.Text.ToString()),
+                                   Double.Parse(txtChieuRongDat.Text.ToString()),
+                                   Double.Parse(txtChieuDaiNha.Text.ToString()),
+                                   Double.Parse(txtChieuRongNha.Text.ToString()),
+                                   Int32.Parse(txtSoTang.Text.ToString()),
+                                   txtMoTaChiTiet.Text.ToString(),
+                                   Double.Parse(txtGiaBan.Text.ToString()),
+                                   trangThaiKiemDuyet, trangThaiMuaBan);
 
                     try
                     {
@@ -107,29 +122,48 @@ namespace QuanLyDiaOc.GUI
         {
             if (KiemTraThongTinTrong())
             {
-                MessageBox.Show("Làm ơn điền đầy đủ thông tin nhân viên");
+                MessageBox.Show("Làm ơn điền đầy đủ thông tin địa ốc");
             }
             else
             {
                 if (KiemTraThongTinHopLe())
                 {
-                    int gioiTinh = 1;
-                    if (rbNu.Checked)
-                        gioiTinh = 0;
+                    int trangThaiKiemDuyet = 0;
+                    int trangThaiMuaBan = 0;
+                    if (chkTrangThaiKiemDuyet.Checked)
+                        trangThaiKiemDuyet = 1;
+                    if (chkTrangThaiMuaBan.Checked)
+                        trangThaiMuaBan = 1;
 
-                    NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+                    DiaOcDTO diaOcDTO = new DiaOcDTO(
+                        Int32.Parse(txtMaDiaOc.Text.ToString()),
+                        Int32.Parse(cbKhachHang.SelectedValue.ToString()), 
+                        Int32.Parse(cbLoaiDiaOc.SelectedValue.ToString()), 
+                        Int32.Parse(cbLoaiNha.SelectedValue.ToString()), 
+                        txtDiaChi.Text.ToString(), 
+                        Double.Parse(txtDienTichKhuonVien.Text.ToString()),
+                        Double.Parse(txtDienTichSuDung.Text.ToString()), 
+                        txtHuongNha.Text.ToString(),
+                        Double.Parse(txtChieuDaiDat.Text.ToString()),
+                        Double.Parse(txtChieuRongDat.Text.ToString()),
+                        Double.Parse(txtChieuDaiNha.Text.ToString()),
+                        Double.Parse(txtChieuRongNha.Text.ToString()), 
+                        Int32.Parse(txtSoTang.Text.ToString()), 
+                        txtMoTaChiTiet.Text.ToString(), 
+                        Double.Parse(txtGiaBan.Text.ToString()), 
+                        trangThaiKiemDuyet, trangThaiMuaBan);
 
                     try
                     {
-                        if (nhanVienBLL.SuaNhanVien(nhanVienDTO))
+                        if (diaOcBLL.SuaDiaOc(diaOcDTO))
                         {
-                            MessageBox.Show("Sửa nhân viên thành công");
-                            dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                            MessageBox.Show("Sửa địa ốc thành công");
+                            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
                             LamMoiThongTin();
                         }
                         else
                         {
-                            MessageBox.Show("Sửa nhân viên thất bại");
+                            MessageBox.Show("Sửa địa ốc thất bại");
                         }
                     }
                     catch
@@ -224,12 +258,12 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Chiều rộng nhà phải là số thực");
                 return false;
             }
-            Regex regexMoney = new Regex(@"^[0-9]+$");
-            if (!regexMoney.IsMatch(txtGiaBan.Text))
-            {
-                MessageBox.Show("Giá bán thuộc Money format");
-                return false;
-            }
+            //Regex regexMoney = new Regex(@"^[0-9]+$");
+            //if (!regexMoney.IsMatch(txtGiaBan.Text))
+            //{
+            //    MessageBox.Show("Giá bán thuộc Money format");
+            //    return false;
+            //}
 
             return true;
         }
@@ -254,7 +288,7 @@ namespace QuanLyDiaOc.GUI
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-
+            dgvDiaOc.DataSource = diaOcBLL.TimKiemNVTheoTen(txtTimKiem.Text);
         }
 
         private void btnThemKhachHang_Click(object sender, EventArgs e)
@@ -292,7 +326,41 @@ namespace QuanLyDiaOc.GUI
 
         private void dgvDiaOc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow row = this.dgvDiaOc.Rows[e.RowIndex];
+                    txtMaDiaOc.Text = row.Cells["MaDiaOc"].Value.ToString();
+                    id = row.Cells["MaDiaOc"].Value.ToString();
+                    cbKhachHang.Text = row.Cells["TenKhachHang"].Value.ToString();
+                    cbLoaiDiaOc.Text = row.Cells["TenLoaiDiaOc"].Value.ToString();
+                    cbLoaiNha.Text = row.Cells["TenLoaiNha"].Value.ToString();
+                    txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+                    txtDienTichKhuonVien.Text = row.Cells["DienTichKhuonVien"].Value.ToString();
+                    txtDienTichSuDung.Text = row.Cells["DienTichSuDung"].Value.ToString();
 
+                    if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("True"))
+                        chkTrangThaiKiemDuyet.Checked = true;
+                    else
+                        chkTrangThaiKiemDuyet.Checked = false;
+
+                    if (row.Cells["TrangThaiMuaBan"].Value.ToString().Equals("True"))
+                        chkTrangThaiMuaBan.Checked = true;
+                    else
+                        chkTrangThaiMuaBan.Checked = false;
+
+                    txtHuongNha.Text = row.Cells["HuongNha"].Value.ToString();
+                    txtChieuDaiDat.Text = row.Cells["ChieuDaiDat"].Value.ToString();
+                    txtChieuRongDat.Text = row.Cells["ChieuRongDat"].Value.ToString();
+                    txtChieuDaiNha.Text = row.Cells["ChieuDaiNha"].Value.ToString();
+                    txtChieuRongNha.Text = row.Cells["ChieuRongNha"].Value.ToString();
+                    txtSoTang.Text = row.Cells["SoTang"].Value.ToString();
+                    txtMoTaChiTiet.Text = row.Cells["MoTaChiTiet"].Value.ToString();
+                    txtGiaBan.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["GiaBan"].Value.ToString()));
+                }
+                catch { }
+            }
         }
     }
 }
