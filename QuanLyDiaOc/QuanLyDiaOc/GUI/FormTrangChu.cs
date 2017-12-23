@@ -215,5 +215,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formBao);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void ngưngĐăngKýDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHuyDangKy formHuyDangKy = new FormHuyDangKy();
+            formHuyDangKy.TopLevel = false;
+            formHuyDangKy.Visible = true;
+            formHuyDangKy.FormBorderStyle = FormBorderStyle.None;
+            formHuyDangKy.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Ngưng đăng ký");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formHuyDangKy);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
