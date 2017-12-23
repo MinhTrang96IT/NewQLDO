@@ -43,7 +43,7 @@ CREATE PROC sp_DiaOc_Sua
 	@maloaidiaoc int,				
 	@maloainha int,
 	@diachi	nvarchar(200),
-	@dientichkhuonvien	float,			
+	@dientichkhuonvien	float,	
 	@dientichsudung		float,		
 	@huongnha nvarchar(100),	
 	@chieudaidat float,
@@ -56,12 +56,12 @@ CREATE PROC sp_DiaOc_Sua
 	@trangthaikiemduyet	bit,				
 	@trangthaimuaban bit
 AS
-	UPDATE DiaOc SET MaKhachHang=@makhachhang, MaLoaiDiaOc=@maloaidiaoc, MaLoaiNha=@maloainha, DienTichKhuonVien=@dientichkhuonvien, DienTichSuDung=@dientichsudung, DiaChi=@diachi, HuongNha=@huongnha, ChieuDaiDat=@chieudaidat, ChieuRongDat=@chieurongdat, ChieuDaiNha=@chieudainha, ChieuRongNha = @chieurongnha, SoTang = @sotang, MoTaChiTiet = @motachitiet, GiaBan = @giaban, TrangThaiKiemDuyet = @trangthaikiemduyet, TrangThaiMuaBan = @trangthaimuaban WHERE MaDiaOc=@madiaoc
+	UPDATE DiaOc SET MaKhachHang=@makhachhang, MaLoaiDiaOc=@maloaidiaoc, MaLoaiNha=@maloainha, DienTichKhuonVien=@dientichkhuonvien, DienTichSuDung=@dientichsudung, DiaOc.DiaChi=@diachi, HuongNha=@huongnha, ChieuDaiDat=@chieudaidat, ChieuRongDat=@chieurongdat, ChieuDaiNha=@chieudainha, ChieuRongNha = @chieurongnha, SoTang = @sotang, MoTaChiTiet = @motachitiet, GiaBan = @giaban, TrangThaiKiemDuyet = @trangthaikiemduyet, TrangThaiMuaBan = @trangthaimuaban WHERE MaDiaOc=@madiaoc
 GO
 
 CREATE PROC sp_DiaOc_TimKiemTheoTen
 @ten nvarchar(50)
 
 AS
-	SELECT * FROM DiaOc WHERE DiaChi LIKE '%'+ @ten +'%'
+	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND TenKhachHang LIKE '%'+ @ten +'%'
 GO

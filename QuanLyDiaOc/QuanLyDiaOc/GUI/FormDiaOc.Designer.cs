@@ -49,23 +49,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvDiaOc = new System.Windows.Forms.DataGridView();
-            this.MaDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DienTichKhuonVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DienTichSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HuongNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChieuDaiDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChieuRongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChieuDaiNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChieuRongNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTaChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TrangThaiMuaBan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbDanhSanh = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,6 +72,23 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.MaDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienTichKhuonVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienTichSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HuongNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChieuDaiDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChieuRongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChieuDaiNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChieuRongNha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTaChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TrangThaiMuaBan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).BeginInit();
             this.gbDanhSanh.SuspendLayout();
             this.gbThongTin.SuspendLayout();
@@ -298,127 +298,6 @@
             this.dgvDiaOc.Size = new System.Drawing.Size(967, 309);
             this.dgvDiaOc.TabIndex = 0;
             this.dgvDiaOc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiaOc_CellClick);
-            // 
-            // MaDiaOc
-            // 
-            this.MaDiaOc.DataPropertyName = "MaDiaOc";
-            this.MaDiaOc.HeaderText = "Mã địa ốc";
-            this.MaDiaOc.Name = "MaDiaOc";
-            this.MaDiaOc.Width = 63;
-            // 
-            // TenKhachHang
-            // 
-            this.TenKhachHang.DataPropertyName = "TenKhachHang";
-            this.TenKhachHang.HeaderText = "Tên khách hàng";
-            this.TenKhachHang.Name = "TenKhachHang";
-            this.TenKhachHang.Width = 102;
-            // 
-            // TenLoaiDiaOc
-            // 
-            this.TenLoaiDiaOc.DataPropertyName = "TenLoaiDiaOc";
-            this.TenLoaiDiaOc.HeaderText = "Loại địa ốc";
-            this.TenLoaiDiaOc.Name = "TenLoaiDiaOc";
-            this.TenLoaiDiaOc.Width = 68;
-            // 
-            // TenLoaiNha
-            // 
-            this.TenLoaiNha.DataPropertyName = "TenLoaiNha";
-            this.TenLoaiNha.HeaderText = "Loại nhà";
-            this.TenLoaiNha.Name = "TenLoaiNha";
-            this.TenLoaiNha.Width = 68;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 48;
-            // 
-            // DienTichKhuonVien
-            // 
-            this.DienTichKhuonVien.DataPropertyName = "DienTichKhuonVien";
-            this.DienTichKhuonVien.HeaderText = "Diện tích khuôn viên";
-            this.DienTichKhuonVien.Name = "DienTichKhuonVien";
-            this.DienTichKhuonVien.Width = 103;
-            // 
-            // DienTichSuDung
-            // 
-            this.DienTichSuDung.DataPropertyName = "DienTichSuDung";
-            this.DienTichSuDung.HeaderText = "Diện tích sử dụng";
-            this.DienTichSuDung.Name = "DienTichSuDung";
-            this.DienTichSuDung.Width = 86;
-            // 
-            // HuongNha
-            // 
-            this.HuongNha.DataPropertyName = "HuongNha";
-            this.HuongNha.HeaderText = "Hướng nhà";
-            this.HuongNha.Name = "HuongNha";
-            this.HuongNha.Width = 78;
-            // 
-            // ChieuDaiDat
-            // 
-            this.ChieuDaiDat.DataPropertyName = "ChieuDaiDat";
-            this.ChieuDaiDat.HeaderText = "Chiều dài đất";
-            this.ChieuDaiDat.Name = "ChieuDaiDat";
-            this.ChieuDaiDat.Width = 73;
-            // 
-            // ChieuRongDat
-            // 
-            this.ChieuRongDat.DataPropertyName = "ChieuRongDat";
-            this.ChieuRongDat.HeaderText = "Chiều rộng đất";
-            this.ChieuRongDat.Name = "ChieuRongDat";
-            this.ChieuRongDat.Width = 79;
-            // 
-            // ChieuDaiNha
-            // 
-            this.ChieuDaiNha.DataPropertyName = "ChieuDaiNha";
-            this.ChieuDaiNha.HeaderText = "Chiều dài nhà";
-            this.ChieuDaiNha.Name = "ChieuDaiNha";
-            this.ChieuDaiNha.Width = 73;
-            // 
-            // ChieuRongNha
-            // 
-            this.ChieuRongNha.DataPropertyName = "ChieuRongNha";
-            this.ChieuRongNha.HeaderText = "Chiều rộng nhà";
-            this.ChieuRongNha.Name = "ChieuRongNha";
-            this.ChieuRongNha.Width = 79;
-            // 
-            // SoTang
-            // 
-            this.SoTang.DataPropertyName = "SoTang";
-            this.SoTang.HeaderText = "Số tầng";
-            this.SoTang.Name = "SoTang";
-            this.SoTang.Width = 64;
-            // 
-            // MoTaChiTiet
-            // 
-            this.MoTaChiTiet.DataPropertyName = "MoTaChiTiet";
-            this.MoTaChiTiet.HeaderText = "Mô tả chi tiết";
-            this.MoTaChiTiet.Name = "MoTaChiTiet";
-            this.MoTaChiTiet.Width = 73;
-            // 
-            // GiaBan
-            // 
-            this.GiaBan.DataPropertyName = "GiaBan";
-            this.GiaBan.HeaderText = "Giá bán";
-            this.GiaBan.Name = "GiaBan";
-            this.GiaBan.Width = 64;
-            // 
-            // TrangThaiKiemDuyet
-            // 
-            this.TrangThaiKiemDuyet.HeaderText = "Trạng thái kiểm duyệt";
-            this.TrangThaiKiemDuyet.Name = "TrangThaiKiemDuyet";
-            this.TrangThaiKiemDuyet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TrangThaiKiemDuyet.Width = 99;
-            // 
-            // TrangThaiMuaBan
-            // 
-            this.TrangThaiMuaBan.HeaderText = "Trạng thái mua bán";
-            this.TrangThaiMuaBan.Name = "TrangThaiMuaBan";
-            this.TrangThaiMuaBan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThaiMuaBan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TrangThaiMuaBan.Width = 97;
             // 
             // gbDanhSanh
             // 
@@ -662,6 +541,129 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Loại nhà:";
             // 
+            // MaDiaOc
+            // 
+            this.MaDiaOc.DataPropertyName = "MaDiaOc";
+            this.MaDiaOc.HeaderText = "Mã địa ốc";
+            this.MaDiaOc.Name = "MaDiaOc";
+            this.MaDiaOc.Width = 80;
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.DataPropertyName = "TenKhachHang";
+            this.TenKhachHang.HeaderText = "Tên khách hàng";
+            this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.Width = 102;
+            // 
+            // TenLoaiDiaOc
+            // 
+            this.TenLoaiDiaOc.DataPropertyName = "TenLoaiDiaOc";
+            this.TenLoaiDiaOc.HeaderText = "Loại địa ốc";
+            this.TenLoaiDiaOc.Name = "TenLoaiDiaOc";
+            this.TenLoaiDiaOc.Width = 68;
+            // 
+            // TenLoaiNha
+            // 
+            this.TenLoaiNha.DataPropertyName = "TenLoaiNha";
+            this.TenLoaiNha.HeaderText = "Loại nhà";
+            this.TenLoaiNha.Name = "TenLoaiNha";
+            this.TenLoaiNha.Width = 68;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 48;
+            // 
+            // DienTichKhuonVien
+            // 
+            this.DienTichKhuonVien.DataPropertyName = "DienTichKhuonVien";
+            this.DienTichKhuonVien.HeaderText = "Diện tích khuôn viên";
+            this.DienTichKhuonVien.Name = "DienTichKhuonVien";
+            this.DienTichKhuonVien.Width = 103;
+            // 
+            // DienTichSuDung
+            // 
+            this.DienTichSuDung.DataPropertyName = "DienTichSuDung";
+            this.DienTichSuDung.HeaderText = "Diện tích sử dụng";
+            this.DienTichSuDung.Name = "DienTichSuDung";
+            this.DienTichSuDung.Width = 86;
+            // 
+            // HuongNha
+            // 
+            this.HuongNha.DataPropertyName = "HuongNha";
+            this.HuongNha.HeaderText = "Hướng nhà";
+            this.HuongNha.Name = "HuongNha";
+            this.HuongNha.Width = 78;
+            // 
+            // ChieuDaiDat
+            // 
+            this.ChieuDaiDat.DataPropertyName = "ChieuDaiDat";
+            this.ChieuDaiDat.HeaderText = "Chiều dài đất";
+            this.ChieuDaiDat.Name = "ChieuDaiDat";
+            this.ChieuDaiDat.Width = 73;
+            // 
+            // ChieuRongDat
+            // 
+            this.ChieuRongDat.DataPropertyName = "ChieuRongDat";
+            this.ChieuRongDat.HeaderText = "Chiều rộng đất";
+            this.ChieuRongDat.Name = "ChieuRongDat";
+            this.ChieuRongDat.Width = 79;
+            // 
+            // ChieuDaiNha
+            // 
+            this.ChieuDaiNha.DataPropertyName = "ChieuDaiNha";
+            this.ChieuDaiNha.HeaderText = "Chiều dài nhà";
+            this.ChieuDaiNha.Name = "ChieuDaiNha";
+            this.ChieuDaiNha.Width = 73;
+            // 
+            // ChieuRongNha
+            // 
+            this.ChieuRongNha.DataPropertyName = "ChieuRongNha";
+            this.ChieuRongNha.HeaderText = "Chiều rộng nhà";
+            this.ChieuRongNha.Name = "ChieuRongNha";
+            this.ChieuRongNha.Width = 79;
+            // 
+            // SoTang
+            // 
+            this.SoTang.DataPropertyName = "SoTang";
+            this.SoTang.HeaderText = "Số tầng";
+            this.SoTang.Name = "SoTang";
+            this.SoTang.Width = 64;
+            // 
+            // MoTaChiTiet
+            // 
+            this.MoTaChiTiet.DataPropertyName = "MoTaChiTiet";
+            this.MoTaChiTiet.HeaderText = "Mô tả chi tiết";
+            this.MoTaChiTiet.Name = "MoTaChiTiet";
+            this.MoTaChiTiet.Width = 73;
+            // 
+            // GiaBan
+            // 
+            this.GiaBan.DataPropertyName = "GiaBan";
+            this.GiaBan.HeaderText = "Giá bán";
+            this.GiaBan.Name = "GiaBan";
+            this.GiaBan.Width = 64;
+            // 
+            // TrangThaiKiemDuyet
+            // 
+            this.TrangThaiKiemDuyet.DataPropertyName = "TrangThaiKiemDuyet";
+            this.TrangThaiKiemDuyet.HeaderText = "Trạng thái kiểm duyệt";
+            this.TrangThaiKiemDuyet.Name = "TrangThaiKiemDuyet";
+            this.TrangThaiKiemDuyet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TrangThaiKiemDuyet.Width = 99;
+            // 
+            // TrangThaiMuaBan
+            // 
+            this.TrangThaiMuaBan.DataPropertyName = "TrangThaiMuaBan";
+            this.TrangThaiMuaBan.HeaderText = "Trạng thái mua bán";
+            this.TrangThaiMuaBan.Name = "TrangThaiMuaBan";
+            this.TrangThaiMuaBan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrangThaiMuaBan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TrangThaiMuaBan.Width = 97;
+            // 
             // FormDiaOc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,23 +705,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvDiaOc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDiaOc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiDiaOc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiNha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DienTichKhuonVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DienTichSuDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HuongNha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuDaiDat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuRongDat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuDaiNha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuRongNha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoTaChiTiet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiMuaBan;
         private System.Windows.Forms.GroupBox gbDanhSanh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -743,5 +728,22 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDiaOc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiDiaOc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiNha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienTichKhuonVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienTichSuDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HuongNha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuDaiDat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuRongDat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuDaiNha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChieuRongNha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTaChiTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiMuaBan;
     }
 }
