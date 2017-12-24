@@ -48,11 +48,12 @@
             this.vịTríToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảngCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiQuảngCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giáTiềnQuảngCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoChíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quyĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNguoiDung = new System.Windows.Forms.Label();
-            this.giáTiềnQuảngCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bàiViếtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +122,8 @@
             this.quyềnHạnToolStripMenuItem,
             this.vịTríToolStripMenuItem,
             this.quảngCáoToolStripMenuItem,
-            this.báoChíToolStripMenuItem});
+            this.báoChíToolStripMenuItem,
+            this.bàiViếtToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
@@ -223,6 +225,13 @@
             this.loạiQuảngCáoToolStripMenuItem.Text = "Loại quảng cáo";
             this.loạiQuảngCáoToolStripMenuItem.Click += new System.EventHandler(this.loạiQuảngCáoToolStripMenuItem_Click);
             // 
+            // giáTiềnQuảngCáoToolStripMenuItem
+            // 
+            this.giáTiềnQuảngCáoToolStripMenuItem.Name = "giáTiềnQuảngCáoToolStripMenuItem";
+            this.giáTiềnQuảngCáoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.giáTiềnQuảngCáoToolStripMenuItem.Text = "Giá tiền quảng cáo";
+            this.giáTiềnQuảngCáoToolStripMenuItem.Click += new System.EventHandler(this.giáTiềnQuảngCáoToolStripMenuItem_Click);
+            // 
             // báoChíToolStripMenuItem
             // 
             this.báoChíToolStripMenuItem.Name = "báoChíToolStripMenuItem";
@@ -258,12 +267,12 @@
             this.lbNguoiDung.Text = "Người dùng: Trần Thị Minh Trang - Giám đốc";
             this.lbNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // giáTiềnQuảngCáoToolStripMenuItem
+            // bàiViếtToolStripMenuItem
             // 
-            this.giáTiềnQuảngCáoToolStripMenuItem.Name = "giáTiềnQuảngCáoToolStripMenuItem";
-            this.giáTiềnQuảngCáoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.giáTiềnQuảngCáoToolStripMenuItem.Text = "Giá tiền quảng cáo";
-            this.giáTiềnQuảngCáoToolStripMenuItem.Click += new System.EventHandler(this.giáTiềnQuảngCáoToolStripMenuItem_Click);
+            this.bàiViếtToolStripMenuItem.Name = "bàiViếtToolStripMenuItem";
+            this.bàiViếtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bàiViếtToolStripMenuItem.Text = "Bài viết";
+            this.bàiViếtToolStripMenuItem.Click += new System.EventHandler(this.bàiViếtToolStripMenuItem_Click);
             // 
             // FormTrangChu
             // 
@@ -313,5 +322,6 @@
         private System.Windows.Forms.ToolStripMenuItem quyĐịnhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoChíToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giáTiềnQuảngCáoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bàiViếtToolStripMenuItem;
     }
 }

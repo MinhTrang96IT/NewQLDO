@@ -239,5 +239,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formGiaTienQC);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void bàiViếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBaiViet formBaiViet = new FormBaiViet();
+            formBaiViet.TopLevel = false;
+            formBaiViet.Visible = true;
+            formBaiViet.FormBorderStyle = FormBorderStyle.None;
+            formBaiViet.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Bài viết");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formBaiViet);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
