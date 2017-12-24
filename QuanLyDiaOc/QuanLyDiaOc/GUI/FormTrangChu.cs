@@ -227,5 +227,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formHuyDangKy);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void giáTiềnQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGiaTienQC formGiaTienQC = new FormGiaTienQC();
+            formGiaTienQC.TopLevel = false;
+            formGiaTienQC.Visible = true;
+            formGiaTienQC.FormBorderStyle = FormBorderStyle.None;
+            formGiaTienQC.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Giá tiền QC");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formGiaTienQC);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }

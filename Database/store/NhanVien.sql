@@ -80,3 +80,16 @@ CREATE PROC sp_NhanVien_TimKiemTheoTen
 AS
 	SELECT * FROM NhanVien WHERE TenNhanVien LIKE '%'+ @ten +'%'
 GO
+
+CREATE PROC sp_NhanVien_ChinhSuaThongTin
+@maNV int,
+@ten nvarchar(50),
+@cmnd nvarchar(15),
+@diachi nvarchar(100),
+@sdt varchar(20),
+@email varchar(100),
+@mk varchar(15)
+
+AS
+	UPDATE NhanVien SET TenNhanVien=@ten, CMND=@cmnd, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email, MatKhau=@mk WHERE MaNhanVien=@maNV
+GO

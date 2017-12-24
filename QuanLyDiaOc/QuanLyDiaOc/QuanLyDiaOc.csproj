@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="BLL\BaoBLL.cs" />
     <Compile Include="BLL\DiaOcBLL.cs" />
+    <Compile Include="BLL\GiaTienQuangCaoBLL.cs" />
     <Compile Include="BLL\HuyDangKyBLL.cs" />
     <Compile Include="BLL\KhachHangBLL.cs" />
     <Compile Include="BLL\LoaiDiaOcBLL.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="BLL\ViTriBLL.cs" />
     <Compile Include="DAL\BaoDAL.cs" />
     <Compile Include="DAL\DiaOcDAL.cs" />
+    <Compile Include="DAL\GiaTienQuangCaoDAL.cs" />
     <Compile Include="DAL\HuyDangKyDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="DAL\ViTriDAL.cs" />
     <Compile Include="DTO\BaoDTO.cs" />
     <Compile Include="DTO\DiaOcDTO.cs" />
+    <Compile Include="DTO\GiaTienQuangCaoDTO.cs" />
     <Compile Include="DTO\HuyDangKyDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiDiaOcDTO.cs" />
@@ -115,6 +118,12 @@
     <Compile Include="GUI\FormBao.Designer.cs">
       <DependentUpon>FormBao.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormChinhSuaThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChinhSuaThongTin.Designer.cs">
+      <DependentUpon>FormChinhSuaThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +135,12 @@
     </Compile>
     <Compile Include="GUI\FormDiaOc.Designer.cs">
       <DependentUpon>FormDiaOc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiaTienQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiaTienQC.Designer.cs">
+      <DependentUpon>FormGiaTienQC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormHuyDangKy.cs">
       <SubType>Form</SubType>
@@ -204,11 +219,17 @@
     <EmbeddedResource Include="GUI\FormBao.resx">
       <DependentUpon>FormBao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormChinhSuaThongTin.resx">
+      <DependentUpon>FormChinhSuaThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDiaOc.resx">
       <DependentUpon>FormDiaOc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiaTienQC.resx">
+      <DependentUpon>FormGiaTienQC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormHuyDangKy.resx">
       <DependentUpon>FormHuyDangKy.cs</DependentUpon>
