@@ -13,6 +13,7 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormDangNhap : Form
     {
+        public static int maNhanVienDangNhap = 0;
         private NhanVienBLL nhanVienBLL;
         public FormDangNhap()
         {
@@ -22,8 +23,9 @@ namespace QuanLyDiaOc.GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text) != null)
+            if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text).Rows.Count > 0)
             {
+                maNhanVienDangNhap = nhanVienBLL.LayMaNhanVien(txtTaiKhoan.Text);
                 FormTrangChu formTrangChu = new FormTrangChu();
                 formTrangChu.TenNhanVien = nhanVienBLL.LayTenNhanVien(txtTaiKhoan.Text);
                 formTrangChu.LoaiNhanVien = nhanVienBLL.LayTenLoaiNhanVien(nhanVienBLL.LayMaLoaiNhanVien(txtTaiKhoan.Text));

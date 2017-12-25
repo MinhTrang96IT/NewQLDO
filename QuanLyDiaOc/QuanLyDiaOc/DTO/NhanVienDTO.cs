@@ -37,6 +37,17 @@ namespace QuanLyDiaOc.DTO
             MatKhau = matKhau;
         }
 
+        public NhanVienDTO(int maNhanVien, string tenNhanVien, string cMND, string diaChi, string soDienThoai, string email, string matKhau)
+        {
+            MaNhanVien = maNhanVien;
+            TenNhanVien = tenNhanVien;
+            CMND = cMND;
+            DiaChi = diaChi;
+            SoDienThoai = soDienThoai;
+            Email = email;
+            MatKhau = matKhau;
+        }
+
         public NhanVienDTO(int maLoaiNhanVien, int maPhongBan, string tenNhanVien, string cMND, int gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, string email, string tenDangNhap, string matKhau)
         {
             MaLoaiNhanVien = maLoaiNhanVien;
