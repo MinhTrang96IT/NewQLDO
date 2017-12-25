@@ -15,6 +15,13 @@ AS
 	SELECT TenNhanVien FROM NhanVien WHERE TenDangNhap=@tk
 GO
 
+CREATE PROC sp_NhanVien_LayMaNhanVien
+@tk nvarchar(30)
+
+AS
+	SELECT MaNhanVien FROM NhanVien WHERE TenDangNhap=@tk
+GO
+
 CREATE PROC sp_NhanVien_LayMaLoaiNhanVien
 @tk nvarchar(30)
 
@@ -81,15 +88,21 @@ AS
 	SELECT * FROM NhanVien WHERE TenNhanVien LIKE '%'+ @ten +'%'
 GO
 
-CREATE PROC sp_NhanVien_ChinhSuaThongTin
-@maNV int,
-@ten nvarchar(50),
+CREATE PROC sp_NhanVien_SuaThongTinTheoMaNhanVien
+@manhanvien int,
+@tennhanvien nvarchar(50),
 @cmnd nvarchar(15),
 @diachi nvarchar(100),
-@sdt varchar(20),
+@sodienthoai varchar(20),
 @email varchar(100),
-@mk varchar(15)
+@matkhau varchar(15)
 
 AS
-	UPDATE NhanVien SET TenNhanVien=@ten, CMND=@cmnd, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email, MatKhau=@mk WHERE MaNhanVien=@maNV
+	UPDATE NhanVien SET TenNhanVien=@tennhanvien, CMND=@cmnd, DiaChi=@diachi, SoDienThoai=@sodienthoai, Email=@email, MatKhau=@matkhau WHERE MaNhanVien=@manhanvien
+GO
+
+CREATE PROC sp_NhanVien_LayThongTinDangNhap
+@manhanvien int
+AS
+	SELECT * FROM NhanVien where MaNhanVien = @manhanvien
 GO

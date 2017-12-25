@@ -176,7 +176,18 @@ namespace QuanLyDiaOc.GUI
                     if (rbNu.Checked)
                         gioiTinh = 0;
 
-                    NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+                    NhanVienDTO nhanVienDTO = new NhanVienDTO(
+                        Int32.Parse(cbLoaiNV.SelectedValue.ToString()), 
+                        Int32.Parse(cbPhongBan.SelectedValue.ToString()), 
+                        txtTenNV.Text, 
+                        txtCMND.Text,
+                        gioiTinh, 
+                        Convert.ToDateTime(dtpNgaySinh.Text),
+                        txtDiaChi.Text, 
+                        txtSoDienThoai.Text,
+                        txtEmail.Text,
+                        txtTenDangNhap.Text,
+                        txtMatKhau.Text);
 
                     try
                     {

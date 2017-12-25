@@ -63,7 +63,7 @@ namespace QuanLyDiaOc.DAL
             {
                 OpenConnect();
                 DataTable data = new DataTable();
-                string store = "sp_DiaOc_LayDanhSachPhieuHuyDangKyCoTenNhanVien";
+                string store = "sp_PhieuDangKy_LayDanhSachPhieuHuyDangKyCoTenNhanVien";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlAdapter = new SqlDataAdapter(sqlCommand);

@@ -258,5 +258,17 @@ namespace QuanLyDiaOc.GUI
             diaglogChinhSuaThongTin.StartPosition = FormStartPosition.CenterScreen;
             if (diaglogChinhSuaThongTin.ShowDialog(this) == DialogResult.Yes) { }
         }
+
+        private void phiếuĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhieuDangKy formPhieuDangKy = new FormPhieuDangKy();
+            formPhieuDangKy.TopLevel = false;
+            formPhieuDangKy.Visible = true;
+            formPhieuDangKy.FormBorderStyle = FormBorderStyle.None;
+            formPhieuDangKy.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Phiếu đăng ký");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuDangKy);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }

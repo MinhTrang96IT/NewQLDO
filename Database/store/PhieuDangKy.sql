@@ -9,7 +9,7 @@ AS
 	SELECT * FROM PhieuDangKy
 GO
 
-CREATE PROC sp_PhieuDangKy_LayDanhSachPhieuHuyDangKyCoTenNhanVien
+CREATE PROC sp_DiaOc_LayDanhSachPhieuHuyDangKyCoTenNhanVien
 AS
 	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien
 GO

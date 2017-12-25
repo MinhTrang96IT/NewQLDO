@@ -81,6 +81,7 @@
     <Compile Include="BLL\LoaiNhanVienBLL.cs" />
     <Compile Include="BLL\LoaiQuangCaoBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\PhieuDangKyBLL.cs" />
     <Compile Include="BLL\PhongBanBLL.cs" />
     <Compile Include="BLL\QuyDinhBLL.cs" />
     <Compile Include="BLL\QuyenHanBLL.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="DAL\LoaiNhanVienDAL.cs" />
     <Compile Include="DAL\LoaiQuangCaoDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhieuDangKyDAL.cs" />
     <Compile Include="DAL\PhongBanDAL.cs" />
     <Compile Include="DAL\QuyDinhDAL.cs" />
     <Compile Include="DAL\QuyenHanDAL.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="DTO\LoaiNhanVienDTO.cs" />
     <Compile Include="DTO\LoaiQuangCaoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\PhieuDangKyDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\QuyenHanDTO.cs" />
     <Compile Include="DTO\ViTriDTO.cs" />
@@ -132,6 +135,12 @@
     </Compile>
     <Compile Include="GUI\FormChinhSuaThongTin.Designer.cs">
       <DependentUpon>FormChinhSuaThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormChiTietQuangCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChiTietQuangCao.Designer.cs">
+      <DependentUpon>FormChiTietQuangCao.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -193,6 +202,12 @@
     <Compile Include="GUI\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormPhieuDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPhieuDangKy.Designer.cs">
+      <DependentUpon>FormPhieuDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +249,9 @@
     <EmbeddedResource Include="GUI\FormChinhSuaThongTin.resx">
       <DependentUpon>FormChinhSuaThongTin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormChiTietQuangCao.resx">
+      <DependentUpon>FormChiTietQuangCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPhieuDangKy.resx">
+      <DependentUpon>FormPhieuDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormPhongBan.resx">
       <DependentUpon>FormPhongBan.cs</DependentUpon>

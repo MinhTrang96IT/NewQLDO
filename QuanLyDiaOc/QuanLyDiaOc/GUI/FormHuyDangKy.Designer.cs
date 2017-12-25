@@ -126,7 +126,7 @@
             // 
             this.dtpNgayLapPhieu.Location = new System.Drawing.Point(198, 145);
             this.dtpNgayLapPhieu.Name = "dtpNgayLapPhieu";
-            this.dtpNgayLapPhieu.Size = new System.Drawing.Size(139, 20);
+            this.dtpNgayLapPhieu.Size = new System.Drawing.Size(188, 20);
             this.dtpNgayLapPhieu.TabIndex = 35;
             // 
             // cbMaPhieuDangKy
