@@ -1,50 +1,51 @@
 ﻿
-CREATE PROC sp_HuyDangKy_LayDanhSach
-AS
-	SELECT * FROM PhieuNgungDangKyDichVu
-GO
-
-CREATE PROC sp_HuyDangKy_LayDanhSachPhieuDangKy
+CREATE PROC sp_PhieuDangKy_LayDanhSach
 AS
 	SELECT * FROM PhieuDangKy
 GO
 
-CREATE PROC sp_DiaOc_LayDanhSachPhieuHuyDangKyCoTenNhanVien
+
+CREATE PROC sp_PhieuDangKy_LayDanhSachPhieuDangKyCoTen
 AS
-	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien
+	SELECT MaPhieuDangKy, TenKhachHang, MaDiaOc , TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc, SoLanGiaHan, TrangThaiKiemDuyet, TongTien, DaTra,ConNo  FROM PhieuDangKy, KhachHang, NhanVien WHERE PhieuDangKy.MaNhanVien = NhanVien.MaNhanVien AND PhieuDangKy.MaKhachHang = KhachHang.MaKhachHang
 GO
 
-CREATE PROC sp_HuyDangKy_Them
-	@maphieudangky int,				
-	@manhanvien int,				
+CREATE PROC sp_PhieuDangKy_Them
+	@makhachhang int,
+	@madiaoc int,
+	@manhanvien int,
 	@ngaylap date,
-	@lydo	nvarchar(500),	
-	@trangthaikiemduyet int	
+	@ngaybatdau date,
+	@ngayketthuc date,
+	@solangiahan int,
+	@trangthaikiemduyet int,
+	@tongtien money,
+	@datra money,
+	@conno money
 AS
-	INSERT INTO PhieuNgungDangKyDichVu VALUES(@maphieudangky, @manhanvien, @ngaylap, @lydo, @trangthaikiemduyet)
+	INSERT INTO PhieuDangKy VALUES(@makhachhang, @madiaoc, @manhanvien, @ngaylap, @ngaybatdau, @ngayketthuc, @solangiahan, @trangthaikiemduyet, @tongtien, @datra, @conno)
 GO
 
-CREATE PROC sp_HuyDangKy_Xoa
+CREATE PROC sp_PhieuDangKy_Xoa
 @ma int
 
 AS
-	DELETE FROM PhieuNgungDangKyDichVu WHERE MaPhieuNgungDangKyDichVu=@ma
+	DELETE FROM PhieuDangKy WHERE MaPhieuDangKy=@ma
 GO
 
-CREATE PROC sp_HuyDangKy_Sua
-	@maphieungungdangkydichvu int,
-	@maphieudangky int,				
-	@manhanvien int,				
+CREATE PROC sp_PhieuDangKy_Sua
+	@maphieudangky int,
+	@makhachhang int,
+	@madiaoc int,
+	@manhanvien int,
 	@ngaylap date,
-	@lydo	nvarchar(500),	
-	@trangthaikiemduyet int	
+	@ngaybatdau date,
+	@ngayketthuc date,
+	@solangiahan int,
+	@trangthaikiemduyet int,
+	@tongtien money,
+	@datra money,
+	@conno money	
 AS
-	UPDATE PhieuNgungDangKyDichVu SET MaPhieuDangKy=@maphieudangky, MaNhanVien=@manhanvien, NgayLap=@ngaylap, LyDo=@lydo, TrangThaiKiemDuyet=@trangthaikiemduyet WHERE MaPhieuNgungDangKyDichVu = @maphieungungdangkydichvu
-GO
-
-CREATE PROC sp_HuyDangKy_TimKiemTheoTen
-@ten nvarchar(50)
-
-AS
-	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien AND TenNhanVien LIKE '%'+ @ten +'%'
+	UPDATE PhieuDangKy SET MaKhachHang=@makhachhang, MaDiaOc=@madiaoc, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc, SoLanGiaHan = @solangiahan, TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, DaTra = @datra, ConNo = @conno WHERE MaPhieuDangKy = @maphieudangky
 GO

@@ -103,6 +103,7 @@
             this.đăngKýToolStripMenuItem.Name = "đăngKýToolStripMenuItem";
             this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.đăngKýToolStripMenuItem.Text = "Đăng ký quảng cáo";
+            this.đăngKýToolStripMenuItem.Click += new System.EventHandler(this.đăngKýToolStripMenuItem_Click);
             // 
             // ngưngĐăngKýDịchVụToolStripMenuItem
             // 

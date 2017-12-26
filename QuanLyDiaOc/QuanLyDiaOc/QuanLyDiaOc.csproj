@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="BLL\BaiVietBLL.cs" />
     <Compile Include="BLL\BaoBLL.cs" />
+    <Compile Include="BLL\ChiTietQuangCaoBLL.cs" />
     <Compile Include="BLL\DiaOcBLL.cs" />
     <Compile Include="BLL\GiaTienQuangCaoBLL.cs" />
     <Compile Include="BLL\HuyDangKyBLL.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="BLL\ViTriBLL.cs" />
     <Compile Include="DAL\BaiVietDAL.cs" />
     <Compile Include="DAL\BaoDAL.cs" />
+    <Compile Include="DAL\ChiTietQuangCaoDAL.cs" />
     <Compile Include="DAL\DiaOcDAL.cs" />
     <Compile Include="DAL\GiaTienQuangCaoDAL.cs" />
     <Compile Include="DAL\HuyDangKyDAL.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="DAL\ViTriDAL.cs" />
     <Compile Include="DTO\BaiVietDTO.cs" />
     <Compile Include="DTO\BaoDTO.cs" />
+    <Compile Include="DTO\ChiTietQuangCaoDTO.cs" />
     <Compile Include="DTO\DiaOcDTO.cs" />
     <Compile Include="DTO\GiaTienQuangCaoDTO.cs" />
     <Compile Include="DTO\HuyDangKyDTO.cs" />

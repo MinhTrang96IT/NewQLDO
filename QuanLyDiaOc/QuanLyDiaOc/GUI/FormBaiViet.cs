@@ -16,7 +16,7 @@ namespace QuanLyDiaOc.GUI
     {
         BaiVietBLL baiVietBLL;
         NhanVienBLL nhanVienBLL;
-      //  ChiTietQuangCaoBLL chiTietQuangCaoBLL;
+       ChiTietQuangCaoBLL chiTietQuangCaoBLL;
         string id;
 
         public FormBaiViet()
@@ -25,7 +25,7 @@ namespace QuanLyDiaOc.GUI
             id = "";
             baiVietBLL = new BaiVietBLL();
             nhanVienBLL = new NhanVienBLL();
-        //    chiTietQuangCaoBLL = new ChiTietQuangCaoBLL();
+            chiTietQuangCaoBLL = new ChiTietQuangCaoBLL();
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -48,8 +48,7 @@ namespace QuanLyDiaOc.GUI
                         trangThaiKiemDuyet = 1;
 
                     BaiVietDTO baiVietDTO = new BaiVietDTO(
-                                  // Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
-                                  1,
+                                   Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    txtNoiDungBaiViet.Text.ToString(),
                                    trangThaiKiemDuyet);
@@ -118,8 +117,7 @@ namespace QuanLyDiaOc.GUI
 
                     BaiVietDTO baiVietDTO = new BaiVietDTO(
                                    Int32.Parse(txtMaBaiViet.Text.ToString()),
-                                   // Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
-                                   1,
+                                   Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    txtNoiDungBaiViet.Text.ToString(),
                                    trangThaiKiemDuyet);
@@ -150,9 +148,9 @@ namespace QuanLyDiaOc.GUI
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";
-         /*   cbChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
+            cbChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
             cbChiTietQuangCao.DisplayMember = "MaChiTietQuangCao";
-            cbChiTietQuangCao.ValueMember = "MaChiTietQuangCao"; */
+            cbChiTietQuangCao.ValueMember = "MaChiTietQuangCao"; 
             LamMoiThongTin();
         }
 
@@ -218,13 +216,13 @@ namespace QuanLyDiaOc.GUI
 
         private void btnThemChiTietQuangCao_Click(object sender, EventArgs e)
         {
-          /*  FormChiTietQuangCao diaglogChiTietQuangCao = new FormChiTietQuangCao();
+            FormChiTietQuangCao diaglogChiTietQuangCao = new FormChiTietQuangCao();
             diaglogChiTietQuangCao.StartPosition = FormStartPosition.CenterScreen;
             if (diaglogChiTietQuangCao.ShowDialog(this) == DialogResult.Yes) { }
             else
             {
                 cbChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
-            } */
+            } 
         }
 
         private void dgvBaiViet_CellClick(object sender, DataGridViewCellEventArgs e)

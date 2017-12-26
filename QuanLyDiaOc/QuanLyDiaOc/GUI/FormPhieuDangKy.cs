@@ -19,6 +19,7 @@ namespace QuanLyDiaOc.GUI
         KhachHangBLL khachHangBLL;
         NhanVienBLL nhanVienBLL;
         DiaOcBLL diaOcBLL;
+        ChiTietQuangCaoBLL chiTietQuangCaoBLL;
         string id;
 
         public FormPhieuDangKy()
@@ -29,7 +30,7 @@ namespace QuanLyDiaOc.GUI
             khachHangBLL = new KhachHangBLL();
             nhanVienBLL = new NhanVienBLL();
             diaOcBLL = new DiaOcBLL();
-
+            chiTietQuangCaoBLL = new ChiTietQuangCaoBLL();
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -174,12 +175,19 @@ namespace QuanLyDiaOc.GUI
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";
+
+            if(txtMaPhieuDangKy.Text != "" && txtMaPhieuDangKy.Text != null)
+            {
+                cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
+                cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
+            }
             LamMoiThongTin();
         }
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuDangKy.Text = cbKhachHang.Text = cbDiaOc.Text = cbNhanVien.Text = txtDaTra.Text = txtSoLanGiaHan.Text = txtTongTien.Text = cbDanhSachQuangCao.Text =  "";
+            txtMaPhieuDangKy.Text = cbKhachHang.Text = cbDanhSachQuangCao.Text = cbDiaOc.Text = cbNhanVien.Text = txtDaTra.Text = txtSoLanGiaHan.Text = txtTongTien.Text = cbDanhSachQuangCao.Text =  "";
             rbChuaKiemDuyet.Checked = true;
             rbDaKiemDuyet.Checked = false;
             txtTongTien.Focus();
@@ -254,7 +262,9 @@ namespace QuanLyDiaOc.GUI
                     cbDiaOc.Text = row.Cells["MaDiaOc"].Value.ToString();
                     cbNhanVien.Text = row.Cells["TenNhanVien"].Value.ToString();
                     txtSoLanGiaHan.Text = row.Cells["SoLanGiaHan"].Value.ToString();
-
+                    cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                    cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
+                    cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
@@ -311,7 +321,7 @@ namespace QuanLyDiaOc.GUI
                 if (diaglogChiTietQuangCao.ShowDialog(this) == DialogResult.Yes) { }
                 else
                 {
-                    cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
+                    cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
                 }
             }
             else
