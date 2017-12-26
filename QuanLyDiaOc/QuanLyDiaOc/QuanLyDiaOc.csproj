@@ -81,6 +81,7 @@
     <Compile Include="BLL\LoaiNhanVienBLL.cs" />
     <Compile Include="BLL\LoaiQuangCaoBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\PhanQuyenBLL.cs" />
     <Compile Include="BLL\PhieuDangKyBLL.cs" />
     <Compile Include="BLL\PhongBanBLL.cs" />
     <Compile Include="BLL\QuyDinhBLL.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="DAL\LoaiNhanVienDAL.cs" />
     <Compile Include="DAL\LoaiQuangCaoDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhanQuyenDAL.cs" />
     <Compile Include="DAL\PhieuDangKyDAL.cs" />
     <Compile Include="DAL\PhongBanDAL.cs" />
     <Compile Include="DAL\QuyDinhDAL.cs" />
@@ -202,6 +204,12 @@
     <Compile Include="GUI\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPhanQuyen.Designer.cs">
+      <DependentUpon>FormPhanQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormPhieuDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPhanQuyen.resx">
+      <DependentUpon>FormPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormPhieuDangKy.resx">
       <DependentUpon>FormPhieuDangKy.cs</DependentUpon>
