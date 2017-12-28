@@ -294,5 +294,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhanQuyen);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void giaHạnĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhieuGiaHan formPhieuGiaHan = new FormPhieuGiaHan();
+            formPhieuGiaHan.TopLevel = false;
+            formPhieuGiaHan.Visible = true;
+            formPhieuGiaHan.FormBorderStyle = FormBorderStyle.None;
+            formPhieuGiaHan.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Phiếu gia hạn");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuGiaHan);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
