@@ -290,20 +290,32 @@ namespace QuanLyDiaOc.GUI
             formPhanQuyen.Visible = true;
             formPhanQuyen.FormBorderStyle = FormBorderStyle.None;
             formPhanQuyen.Dock = DockStyle.Fill;
-            tabCtlChinh.TabPages.Add("Phiếu đăng ký");
+            tabCtlChinh.TabPages.Add("Phân quyền");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhanQuyen);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
-        private void giaHạnĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hìnhẢnhToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormPhieuGiaHan formPhieuGiaHan = new FormPhieuGiaHan();
-            formPhieuGiaHan.TopLevel = false;
-            formPhieuGiaHan.Visible = true;
-            formPhieuGiaHan.FormBorderStyle = FormBorderStyle.None;
-            formPhieuGiaHan.Dock = DockStyle.Fill;
-            tabCtlChinh.TabPages.Add("Phiếu gia hạn");
-            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuGiaHan);
+            FormHinhAnh formHinhAnh = new FormHinhAnh();
+            formHinhAnh.TopLevel = false;
+            formHinhAnh.Visible = true;
+            formHinhAnh.FormBorderStyle = FormBorderStyle.None;
+            formHinhAnh.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Hình ảnh");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formHinhAnh);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void chiTiếtHìnhẢnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChiTietHinhAnh formChiTietHinhAnh = new FormChiTietHinhAnh();
+            formChiTietHinhAnh.TopLevel = false;
+            formChiTietHinhAnh.Visible = true;
+            formChiTietHinhAnh.FormBorderStyle = FormBorderStyle.None;
+            formChiTietHinhAnh.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Chi tiết hình ảnh");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formChiTietHinhAnh);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
     }

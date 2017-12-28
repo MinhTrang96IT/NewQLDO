@@ -263,7 +263,7 @@
             // 
             this.dtpNgaySinh.Location = new System.Drawing.Point(478, 104);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(184, 20);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(121, 20);
             this.dtpNgaySinh.TabIndex = 17;
             // 
             // txtCMND
