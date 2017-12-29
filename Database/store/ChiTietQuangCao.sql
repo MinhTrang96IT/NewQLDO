@@ -50,3 +50,9 @@ CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoMaPhieuDangKy
 AS
 	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaBao = Bao.MaBao AND ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
 GO
+
+CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa
+@machitietquangcao int
+AS
+	SELECT DonGia From ChiTietQuangCao, GiaTienQuangCao WHERE ChiTietQuangCao.MaChiTietQuangCao = @machitietquangcao AND ChiTietQuangCao.MaLoaiQuangCao = GiaTienQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = GiaTienQuangCao.MaViTri AND (ChiTietQuangCao.SoLuongPhatHanh between GiaTienQuangCao.SoLuongPhatHanhToiThieu and GiaTienQuangCao.SoLuongPhatHanhToiDa) AND (ChiTietQuangCao.KichThuoc between GiaTienQuangCao.KichCoToiThieu and GiaTienQuangCao.KichCoToiDa)
+GO

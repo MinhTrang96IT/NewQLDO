@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,9 +87,11 @@
     <Compile Include="BLL\NhanVienBLL.cs" />
     <Compile Include="BLL\PhanQuyenBLL.cs" />
     <Compile Include="BLL\PhieuDangKyBLL.cs" />
+    <Compile Include="BLL\PhieuGiaHanBLL.cs" />
     <Compile Include="BLL\PhongBanBLL.cs" />
     <Compile Include="BLL\QuyDinhBLL.cs" />
     <Compile Include="BLL\QuyenHanBLL.cs" />
+    <Compile Include="BLL\ThongKeBLL.cs" />
     <Compile Include="BLL\ViTriBLL.cs" />
     <Compile Include="DAL\BaiVietDAL.cs" />
     <Compile Include="DAL\BaoDAL.cs" />
@@ -107,9 +110,11 @@
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="DAL\PhanQuyenDAL.cs" />
     <Compile Include="DAL\PhieuDangKyDAL.cs" />
+    <Compile Include="DAL\PhieuGiaHanDAL.cs" />
     <Compile Include="DAL\PhongBanDAL.cs" />
     <Compile Include="DAL\QuyDinhDAL.cs" />
     <Compile Include="DAL\QuyenHanDAL.cs" />
+    <Compile Include="DAL\ThongKeDAL.cs" />
     <Compile Include="DAL\ViTriDAL.cs" />
     <Compile Include="DTO\BaiVietDTO.cs" />
     <Compile Include="DTO\BaoDTO.cs" />
@@ -125,6 +130,7 @@
     <Compile Include="DTO\LoaiQuangCaoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\PhieuDangKyDTO.cs" />
+    <Compile Include="DTO\PhieuGiaHanDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\QuyenHanDTO.cs" />
     <Compile Include="DTO\ViTriDTO.cs" />
@@ -236,6 +242,12 @@
     <Compile Include="GUI\FormPhieuDangKy.Designer.cs">
       <DependentUpon>FormPhieuDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormPhieuGiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPhieuGiaHan.Designer.cs">
+      <DependentUpon>FormPhieuGiaHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,12 @@
     </Compile>
     <Compile Include="GUI\FormQuyenHan.Designer.cs">
       <DependentUpon>FormQuyenHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormTrangChu.cs">
       <SubType>Form</SubType>
@@ -322,6 +340,9 @@
     <EmbeddedResource Include="GUI\FormPhieuDangKy.resx">
       <DependentUpon>FormPhieuDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPhieuGiaHan.resx">
+      <DependentUpon>FormPhieuGiaHan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormPhongBan.resx">
       <DependentUpon>FormPhongBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormQuyenHan.resx">
       <DependentUpon>FormQuyenHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>

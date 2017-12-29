@@ -346,7 +346,7 @@ namespace QuanLyDiaOc.GUI
                     cbViTri.Text = row.Cells["TenViTri"].Value.ToString();
                     cbBao.Text = row.Cells["TenBao"].Value.ToString();
                     txtSoLuong.Text = row.Cells["SoLuongPhatHanh"].Value.ToString();
-
+                    
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
@@ -355,6 +355,9 @@ namespace QuanLyDiaOc.GUI
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
                     txtKichThuoc.Text = row.Cells["KichThuoc"].Value.ToString();
+
+                    double ChiPhi = Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa(Int32.Parse(id)).Rows[0]["DonGia"].ToString()) * Double.Parse(txtSoLuong.Text);
+                    txtChiPhi.Text = String.Format("{0:#,###0}", ChiPhi.ToString() + " VNĐ");
                 }
                 catch { }
             }

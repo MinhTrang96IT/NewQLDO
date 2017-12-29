@@ -81,6 +81,30 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable LayDonGiaTheoMa(int machitietquangcao)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_ChiTietQuangCao_LayDonGiaTheoMa";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", machitietquangcao));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public bool ThemChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
             try

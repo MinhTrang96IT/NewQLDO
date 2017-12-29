@@ -318,5 +318,29 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formChiTietHinhAnh);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void giaHạnĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhieuGiaHan formPhieuGiaHan = new FormPhieuGiaHan();
+            formPhieuGiaHan.TopLevel = false;
+            formPhieuGiaHan.Visible = true;
+            formPhieuGiaHan.FormBorderStyle = FormBorderStyle.None;
+            formPhieuGiaHan.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Gia hạn QC");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuGiaHan);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void thôngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThongKe formThongKe = new FormThongKe();
+            formThongKe.TopLevel = false;
+            formThongKe.Visible = true;
+            formThongKe.FormBorderStyle = FormBorderStyle.None;
+            formThongKe.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Thống kê");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formThongKe);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }

@@ -65,7 +65,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnTaoMoi = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtChiPhi = new System.Windows.Forms.TextBox();
             this.txtKichThuoc = new System.Windows.Forms.TextBox();
             this.cbViTri = new System.Windows.Forms.ComboBox();
             this.cbBao = new System.Windows.Forms.ComboBox();
@@ -251,7 +251,7 @@
             this.gbThongTin.Controls.Add(this.btnThem);
             this.gbThongTin.Controls.Add(this.btnTaoMoi);
             this.gbThongTin.Controls.Add(this.txtSoLuong);
-            this.gbThongTin.Controls.Add(this.textBox1);
+            this.gbThongTin.Controls.Add(this.txtChiPhi);
             this.gbThongTin.Controls.Add(this.txtKichThuoc);
             this.gbThongTin.Controls.Add(this.cbViTri);
             this.gbThongTin.Controls.Add(this.cbBao);
@@ -449,12 +449,12 @@
             this.txtSoLuong.Size = new System.Drawing.Size(121, 20);
             this.txtSoLuong.TabIndex = 16;
             // 
-            // textBox1
+            // txtChiPhi
             // 
-            this.textBox1.Location = new System.Drawing.Point(675, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtChiPhi.Location = new System.Drawing.Point(675, 110);
+            this.txtChiPhi.Name = "txtChiPhi";
+            this.txtChiPhi.Size = new System.Drawing.Size(184, 20);
+            this.txtChiPhi.TabIndex = 16;
             // 
             // txtKichThuoc
             // 
@@ -584,7 +584,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtChiPhi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rbDaKiemDuyet;
         private System.Windows.Forms.RadioButton rbChuaKiemDuyet;
