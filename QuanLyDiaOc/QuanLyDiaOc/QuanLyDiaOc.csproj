@@ -200,6 +200,12 @@
     <Compile Include="GUI\FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormKiemDuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormKiemDuyet.Designer.cs">
+      <DependentUpon>FormKiemDuyet.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormLoaiDiaOc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormKiemDuyet.resx">
+      <DependentUpon>FormKiemDuyet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormLoaiDiaOc.resx">
       <DependentUpon>FormLoaiDiaOc.cs</DependentUpon>
