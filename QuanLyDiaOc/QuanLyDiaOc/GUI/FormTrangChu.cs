@@ -215,5 +215,144 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formBao);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void ngưngĐăngKýDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHuyDangKy formHuyDangKy = new FormHuyDangKy();
+            formHuyDangKy.TopLevel = false;
+            formHuyDangKy.Visible = true;
+            formHuyDangKy.FormBorderStyle = FormBorderStyle.None;
+            formHuyDangKy.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Ngưng đăng ký");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formHuyDangKy);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void giáTiềnQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGiaTienQC formGiaTienQC = new FormGiaTienQC();
+            formGiaTienQC.TopLevel = false;
+            formGiaTienQC.Visible = true;
+            formGiaTienQC.FormBorderStyle = FormBorderStyle.None;
+            formGiaTienQC.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Giá tiền QC");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formGiaTienQC);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void bàiViếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBaiViet formBaiViet = new FormBaiViet();
+            formBaiViet.TopLevel = false;
+            formBaiViet.Visible = true;
+            formBaiViet.FormBorderStyle = FormBorderStyle.None;
+            formBaiViet.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Bài viết");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formBaiViet);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void chỉnhSửaThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChinhSuaThongTin diaglogChinhSuaThongTin = new FormChinhSuaThongTin();
+            diaglogChinhSuaThongTin.StartPosition = FormStartPosition.CenterScreen;
+            if (diaglogChinhSuaThongTin.ShowDialog(this) == DialogResult.Yes) { }
+        }
+
+        private void phiếuĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhieuDangKy formPhieuDangKy = new FormPhieuDangKy();
+            formPhieuDangKy.TopLevel = false;
+            formPhieuDangKy.Visible = true;
+            formPhieuDangKy.FormBorderStyle = FormBorderStyle.None;
+            formPhieuDangKy.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Phiếu đăng ký");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuDangKy);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChiTietQuangCao formChiTietQuangCao = new FormChiTietQuangCao();
+            formChiTietQuangCao.TopLevel = false;
+            formChiTietQuangCao.Visible = true;
+            formChiTietQuangCao.FormBorderStyle = FormBorderStyle.None;
+            formChiTietQuangCao.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Đăng ký QC");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formChiTietQuangCao);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void phânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhanQuyen formPhanQuyen = new FormPhanQuyen();
+            formPhanQuyen.TopLevel = false;
+            formPhanQuyen.Visible = true;
+            formPhanQuyen.FormBorderStyle = FormBorderStyle.None;
+            formPhanQuyen.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Phân quyền");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhanQuyen);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void hìnhẢnhToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormHinhAnh formHinhAnh = new FormHinhAnh();
+            formHinhAnh.TopLevel = false;
+            formHinhAnh.Visible = true;
+            formHinhAnh.FormBorderStyle = FormBorderStyle.None;
+            formHinhAnh.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Hình ảnh");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formHinhAnh);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void chiTiếtHìnhẢnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChiTietHinhAnh formChiTietHinhAnh = new FormChiTietHinhAnh();
+            formChiTietHinhAnh.TopLevel = false;
+            formChiTietHinhAnh.Visible = true;
+            formChiTietHinhAnh.FormBorderStyle = FormBorderStyle.None;
+            formChiTietHinhAnh.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Chi tiết hình ảnh");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formChiTietHinhAnh);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void giaHạnĐăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPhieuGiaHan formPhieuGiaHan = new FormPhieuGiaHan();
+            formPhieuGiaHan.TopLevel = false;
+            formPhieuGiaHan.Visible = true;
+            formPhieuGiaHan.FormBorderStyle = FormBorderStyle.None;
+            formPhieuGiaHan.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Gia hạn QC");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formPhieuGiaHan);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void thôngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThongKe formThongKe = new FormThongKe();
+            formThongKe.TopLevel = false;
+            formThongKe.Visible = true;
+            formThongKe.FormBorderStyle = FormBorderStyle.None;
+            formThongKe.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Thống kê");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formThongKe);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void kiểmDuyệtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKiemDuyet formKiemDuyet = new FormKiemDuyet();
+            formKiemDuyet.TopLevel = false;
+            formKiemDuyet.Visible = true;
+            formKiemDuyet.FormBorderStyle = FormBorderStyle.None;
+            formKiemDuyet.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Kiểm duyệt");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formKiemDuyet);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }

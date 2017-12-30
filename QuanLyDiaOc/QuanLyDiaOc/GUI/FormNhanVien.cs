@@ -176,7 +176,18 @@ namespace QuanLyDiaOc.GUI
                     if (rbNu.Checked)
                         gioiTinh = 0;
 
-                    NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+                    NhanVienDTO nhanVienDTO = new NhanVienDTO(
+                        Int32.Parse(cbLoaiNV.SelectedValue.ToString()), 
+                        Int32.Parse(cbPhongBan.SelectedValue.ToString()), 
+                        txtTenNV.Text, 
+                        txtCMND.Text,
+                        gioiTinh, 
+                        Convert.ToDateTime(dtpNgaySinh.Text),
+                        txtDiaChi.Text, 
+                        txtSoDienThoai.Text,
+                        txtEmail.Text,
+                        txtTenDangNhap.Text,
+                        txtMatKhau.Text);
 
                     try
                     {
@@ -228,35 +239,42 @@ namespace QuanLyDiaOc.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTinTrong())
+            if (id == "")
             {
-                MessageBox.Show("Làm ơn điền đầy đủ thông tin nhân viên");
+                MessageBox.Show("Làm ơn chọn nhân viên muốn sửa");
             }
             else
             {
-                if (KiemTraThongTinHopLe())
+                if (KiemTraThongTinTrong())
                 {
-                    int gioiTinh = 1;
-                    if (rbNu.Checked)
-                        gioiTinh = 0;
-
-                    NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text) ,Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
-
-                    try
+                    MessageBox.Show("Làm ơn điền đầy đủ thông tin nhân viên");
+                }
+                else
+                {
+                    if (KiemTraThongTinHopLe())
                     {
-                        if (nhanVienBLL.SuaNhanVien(nhanVienDTO))
+                        int gioiTinh = 1;
+                        if (rbNu.Checked)
+                            gioiTinh = 0;
+
+                        NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+
+                        try
                         {
-                            MessageBox.Show("Sửa nhân viên thành công");
-                            dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
-                            LamMoiThongTin();
+                            if (nhanVienBLL.SuaNhanVien(nhanVienDTO))
+                            {
+                                MessageBox.Show("Sửa nhân viên thành công");
+                                dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                                LamMoiThongTin();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa nhân viên thất bại");
+                            }
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Sửa nhân viên thất bại");
                         }
-                    }
-                    catch
-                    {
                     }
                 }
             }

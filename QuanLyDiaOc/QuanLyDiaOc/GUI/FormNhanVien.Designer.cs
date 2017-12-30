@@ -203,28 +203,28 @@
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(721, 133);
+            this.txtMatKhau.Location = new System.Drawing.Point(760, 133);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(121, 20);
             this.txtMatKhau.TabIndex = 24;
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(721, 107);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(760, 107);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(121, 20);
             this.txtTenDangNhap.TabIndex = 23;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(721, 81);
+            this.txtEmail.Location = new System.Drawing.Point(760, 81);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
             this.txtEmail.TabIndex = 22;
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(721, 56);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(760, 56);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(121, 20);
             this.txtSoDienThoai.TabIndex = 21;
@@ -309,7 +309,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(635, 136);
+            this.label12.Location = new System.Drawing.Point(674, 136);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 11;
@@ -318,7 +318,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(635, 110);
+            this.label11.Location = new System.Drawing.Point(674, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 13);
             this.label11.TabIndex = 10;
@@ -327,7 +327,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(635, 84);
+            this.label10.Location = new System.Drawing.Point(674, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 9;
@@ -336,7 +336,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(635, 59);
+            this.label9.Location = new System.Drawing.Point(674, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 8;
@@ -454,28 +454,28 @@
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
             this.MaNhanVien.HeaderText = "Mã nhân viên";
             this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.Width = 97;
+            this.MaNhanVien.Width = 89;
             // 
             // TenLoaiNhanVien
             // 
             this.TenLoaiNhanVien.DataPropertyName = "TenLoaiNhanVien";
             this.TenLoaiNhanVien.HeaderText = "Loại nhân viên";
             this.TenLoaiNhanVien.Name = "TenLoaiNhanVien";
-            this.TenLoaiNhanVien.Width = 102;
+            this.TenLoaiNhanVien.Width = 94;
             // 
             // TenLPhongBan
             // 
             this.TenLPhongBan.DataPropertyName = "TenLPhongBan";
             this.TenLPhongBan.HeaderText = "Phòng ban";
             this.TenLPhongBan.Name = "TenLPhongBan";
-            this.TenLPhongBan.Width = 84;
+            this.TenLPhongBan.Width = 78;
             // 
             // TenNhanVien
             // 
             this.TenNhanVien.DataPropertyName = "TenNhanVien";
             this.TenNhanVien.HeaderText = "Tên nhân viên";
             this.TenNhanVien.Name = "TenNhanVien";
-            this.TenNhanVien.Width = 101;
+            this.TenNhanVien.Width = 93;
             // 
             // CMND
             // 
@@ -491,28 +491,28 @@
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GioiTinh.Width = 72;
+            this.GioiTinh.Width = 67;
             // 
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 79;
+            this.NgaySinh.Width = 73;
             // 
             // DiaChi
             // 
             this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 65;
+            this.DiaChi.Width = 48;
             // 
             // SoDienThoai
             // 
             this.SoDienThoai.DataPropertyName = "SoDienThoai";
             this.SoDienThoai.HeaderText = "Số điện thoại";
             this.SoDienThoai.Name = "SoDienThoai";
-            this.SoDienThoai.Width = 95;
+            this.SoDienThoai.Width = 87;
             // 
             // Email
             // 

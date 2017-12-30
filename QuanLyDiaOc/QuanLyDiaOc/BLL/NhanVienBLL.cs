@@ -23,6 +23,11 @@ namespace QuanLyDiaOc.BLL
             return nhanVienDAL.LayTenNhanVien(tk);
         }
 
+        public int LayMaNhanVien(string tk)
+        {
+            return nhanVienDAL.LayMaNhanVien(tk);
+        }
+
         public string LayTenLoaiNhanVien(string ma)
         {
             return nhanVienDAL.LayTenLoaiNhanVien(ma);
@@ -48,6 +53,10 @@ namespace QuanLyDiaOc.BLL
             return nhanVienDAL.ThemNhanVien(nhanVienDTO);
         }
 
+        public bool SuaThongTinTheoMaNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            return nhanVienDAL.SuaThongTinTheoMaNhanVien(nhanVienDTO);
+        }
         public bool XoaNhanVien(int ma)
         {
             return nhanVienDAL.XoaNhanVien(ma);
@@ -61,6 +70,11 @@ namespace QuanLyDiaOc.BLL
         public DataTable TimKiemNVTheoTen(string ten)
         {
             return nhanVienDAL.TimKiemNVTheoTen(ten);
+        }
+
+        public DataTable LayThongTinDangNhap(int maNhanVien)
+        {
+            return nhanVienDAL.LayThongTinDangNhap(maNhanVien);
         }
     }
 }
