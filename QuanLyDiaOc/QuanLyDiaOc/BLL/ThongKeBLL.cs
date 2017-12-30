@@ -15,5 +15,17 @@ namespace QuanLyDiaOc.BLL
         {
             return thongKeDAL.ThongKeKhachHangTheoNamSinh();
         }
+
+        public double LayDoanhThuTheoThang(int thang, int nam)
+        {
+            try
+            {
+                return thongKeDAL.LayDoanhThuTheoThang(thang, nam);
+            }
+            catch
+            {
+                return 0.0;
+            }
+        }
     }
 }

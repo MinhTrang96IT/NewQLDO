@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyDiaOc.DAL
 {
-    class ThongKeDAL :KetNoi
+    class ThongKeDAL : KetNoi
     {
         public DataTable ThongKeKhachHangTheoNamSinh()
         {
@@ -26,6 +26,35 @@ namespace QuanLyDiaOc.DAL
             catch
             {
                 return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public double LayDoanhThuTheoThang(int thang, int nam)
+        {
+            try
+            {
+                OpenConnect();
+                const string store = "sp_ThongKe_LayDoanhThu";
+                sqlCommand = new SqlCommand(store, connect) { CommandType = CommandType.StoredProcedure };
+                sqlCommand.Parameters.Add(new SqlParameter("@THANG", thang));
+                sqlCommand.Parameters.Add(new SqlParameter("@NAM", nam));
+                var reader = sqlCommand.ExecuteReader();
+
+                double tien = 0.0;
+                while (reader.Read())
+                {
+                    tien = double.Parse(reader[0].ToString());
+                }
+                CloseConnect();
+                return tien;
+            }
+            catch
+            {
+                return 0;
             }
             finally
             {
