@@ -61,9 +61,9 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiểmDuyệtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phânQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNguoiDung = new System.Windows.Forms.Label();
-            this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -328,6 +328,7 @@
             this.kiểmDuyệtToolStripMenuItem.Name = "kiểmDuyệtToolStripMenuItem";
             this.kiểmDuyệtToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.kiểmDuyệtToolStripMenuItem.Text = "Kiểm duyệt";
+            this.kiểmDuyệtToolStripMenuItem.Click += new System.EventHandler(this.kiểmDuyệtToolStripMenuItem_Click);
             // 
             // phânQuyềnToolStripMenuItem
             // 
@@ -335,6 +336,13 @@
             this.phânQuyềnToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.phânQuyềnToolStripMenuItem.Text = "Phân quyền";
             this.phânQuyềnToolStripMenuItem.Click += new System.EventHandler(this.phânQuyềnToolStripMenuItem_Click);
+            // 
+            // thôngKêToolStripMenuItem
+            // 
+            this.thôngKêToolStripMenuItem.Name = "thôngKêToolStripMenuItem";
+            this.thôngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.thôngKêToolStripMenuItem.Text = "Thống kê";
+            this.thôngKêToolStripMenuItem.Click += new System.EventHandler(this.thôngKêToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -356,13 +364,6 @@
             this.lbNguoiDung.TabIndex = 3;
             this.lbNguoiDung.Text = "Người dùng: Trần Thị Minh Trang - Giám đốc";
             this.lbNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // thôngKêToolStripMenuItem
-            // 
-            this.thôngKêToolStripMenuItem.Name = "thôngKêToolStripMenuItem";
-            this.thôngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.thôngKêToolStripMenuItem.Text = "Thống kê";
-            this.thôngKêToolStripMenuItem.Click += new System.EventHandler(this.thôngKêToolStripMenuItem_Click);
             // 
             // FormTrangChu
             // 

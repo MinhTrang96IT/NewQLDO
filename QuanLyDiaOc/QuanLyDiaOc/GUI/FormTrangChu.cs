@@ -342,5 +342,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formThongKe);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void kiểmDuyệtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKiemDuyet formKiemDuyet = new FormKiemDuyet();
+            formKiemDuyet.TopLevel = false;
+            formKiemDuyet.Visible = true;
+            formKiemDuyet.FormBorderStyle = FormBorderStyle.None;
+            formKiemDuyet.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Kiểm duyệt");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formKiemDuyet);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
