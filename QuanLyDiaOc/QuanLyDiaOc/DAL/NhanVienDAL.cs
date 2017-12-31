@@ -196,6 +196,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@maLoaiNV", nhanVienDTO.MaLoaiNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@maPB", nhanVienDTO.MaPhongBan));
+                sqlCommand.Parameters.Add(new SqlParameter("@mabc", nhanVienDTO.MaBangCap));
                 sqlCommand.Parameters.Add(new SqlParameter("@ten", nhanVienDTO.TenNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@cmnd", nhanVienDTO.CMND));
                 sqlCommand.Parameters.Add(new SqlParameter("@gioitinh", nhanVienDTO.GioiTinh));
@@ -251,6 +252,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@maNV", nhanVienDTO.MaNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@maLoaiNV", nhanVienDTO.MaLoaiNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@maPB", nhanVienDTO.MaPhongBan));
+                sqlCommand.Parameters.Add(new SqlParameter("@mabc", nhanVienDTO.MaBangCap));
                 sqlCommand.Parameters.Add(new SqlParameter("@ten", nhanVienDTO.TenNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@cmnd", nhanVienDTO.CMND));
                 sqlCommand.Parameters.Add(new SqlParameter("@gioitinh", nhanVienDTO.GioiTinh));

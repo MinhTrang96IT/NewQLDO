@@ -11,6 +11,7 @@ namespace QuanLyDiaOc.DTO
         public int MaNhanVien { get; set; }
         public int MaLoaiNhanVien { get; set; }
         public int MaPhongBan { get; set; }
+        public int MaBangCap { get; set; }
         public string TenNhanVien { get; set; }
         public string CMND { get; set; }
         public int GioiTinh { get; set; }
@@ -20,22 +21,6 @@ namespace QuanLyDiaOc.DTO
         public string Email { get; set; }
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
-
-        public NhanVienDTO(int maNhanVien, int maLoaiNhanVien, int maPhongBan, string tenNhanVien, string cMND, int gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, string email, string tenDangNhap, string matKhau)
-        {
-            MaNhanVien = maNhanVien;
-            MaLoaiNhanVien = maLoaiNhanVien;
-            MaPhongBan = maPhongBan;
-            TenNhanVien = tenNhanVien;
-            CMND = cMND;
-            GioiTinh = gioiTinh;
-            NgaySinh = ngaySinh;
-            DiaChi = diaChi;
-            SoDienThoai = soDienThoai;
-            Email = email;
-            TenDangNhap = tenDangNhap;
-            MatKhau = matKhau;
-        }
 
         public NhanVienDTO(int maNhanVien, string tenNhanVien, string cMND, string diaChi, string soDienThoai, string email, string matKhau)
         {
@@ -48,10 +33,28 @@ namespace QuanLyDiaOc.DTO
             MatKhau = matKhau;
         }
 
-        public NhanVienDTO(int maLoaiNhanVien, int maPhongBan, string tenNhanVien, string cMND, int gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, string email, string tenDangNhap, string matKhau)
+        public NhanVienDTO(int maNhanVien, int maLoaiNhanVien, int maPhongBan, int maBangCap, string tenNhanVien, string cMND, int gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, string email, string tenDangNhap, string matKhau)
+        {
+            MaNhanVien = maNhanVien;
+            MaLoaiNhanVien = maLoaiNhanVien;
+            MaPhongBan = maPhongBan;
+            MaBangCap = maBangCap;
+            TenNhanVien = tenNhanVien;
+            CMND = cMND;
+            GioiTinh = gioiTinh;
+            NgaySinh = ngaySinh;
+            DiaChi = diaChi;
+            SoDienThoai = soDienThoai;
+            Email = email;
+            TenDangNhap = tenDangNhap;
+            MatKhau = matKhau;
+        }
+
+        public NhanVienDTO(int maLoaiNhanVien, int maPhongBan, int maBangCap, string tenNhanVien, string cMND, int gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, string email, string tenDangNhap, string matKhau)
         {
             MaLoaiNhanVien = maLoaiNhanVien;
             MaPhongBan = maPhongBan;
+            MaBangCap = maBangCap;
             TenNhanVien = tenNhanVien;
             CMND = cMND;
             GioiTinh = gioiTinh;

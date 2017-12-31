@@ -31,6 +31,7 @@ namespace QuanLyDiaOc.GUI
         private void FormKiemDuyet_Load(object sender, EventArgs e)
         {
             dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+            dgvPhieuDangKy.Columns["TrangThaiKiemDuyet"].DisplayIndex = 7;
         }
 
         private void dgvPhieuDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)

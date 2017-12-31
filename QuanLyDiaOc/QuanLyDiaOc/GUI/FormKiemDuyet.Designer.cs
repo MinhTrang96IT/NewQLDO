@@ -30,8 +30,8 @@
         {
             this.tabctrKiemDuyet = new System.Windows.Forms.TabControl();
             this.tabPhieuDangKy = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvPhieuDangKy = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.MaPhieuDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDiaOc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,16 +73,6 @@
             this.tabPhieuDangKy.Text = "Phiếu đăng ký";
             this.tabPhieuDangKy.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(965, 219);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // dgvPhieuDangKy
             // 
             this.dgvPhieuDangKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -108,6 +98,16 @@
             this.dgvPhieuDangKy.Size = new System.Drawing.Size(959, 213);
             this.dgvPhieuDangKy.TabIndex = 0;
             this.dgvPhieuDangKy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuDangKy_CellContentClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(965, 219);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MaPhieuDangKy
             // 
@@ -168,7 +168,9 @@
             this.TrangThaiKiemDuyet.DataPropertyName = "TrangThaiKiemDuyet";
             this.TrangThaiKiemDuyet.HeaderText = "Kiểm duyệt";
             this.TrangThaiKiemDuyet.Name = "TrangThaiKiemDuyet";
-            this.TrangThaiKiemDuyet.Width = 59;
+            this.TrangThaiKiemDuyet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TrangThaiKiemDuyet.Width = 78;
             // 
             // XacNhan
             // 

@@ -36,12 +36,13 @@ GO
 
 CREATE PROC sp_NhanVien_LayDanhSachTheoTenLoai
 AS
-	SELECT MaNhanVien, TenLoaiNhanVien, TenLPhongBan, TenNhanVien, CMND, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email, TenDangNhap, MatKhau FROM NhanVien, LoaiNhanVien, PhongBan WHERE NhanVien.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND NhanVien.MaPhongBan = PhongBan.MaPhongBan
+	SELECT MaNhanVien, TenLoaiNhanVien, TenLPhongBan, TenNhanVien, TenBangCap, CMND, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email, TenDangNhap, MatKhau FROM NhanVien, LoaiNhanVien, PhongBan, BangCap WHERE NhanVien.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND NhanVien.MaPhongBan = PhongBan.MaPhongBan AND NhanVien.MaBangCap = BangCap.MaBangCap
 GO
 
 CREATE PROC sp_NhanVien_Them
 @maLoaiNV int,
 @maPB int,
+@mabc int,
 @ten nvarchar(50),
 @cmnd nvarchar(15),
 @gioitinh bit,
@@ -53,7 +54,7 @@ CREATE PROC sp_NhanVien_Them
 @mk varchar(15)
 
 AS
-	INSERT INTO NhanVien VALUES(@maLoaiNV, @maPB, @ten, @cmnd, @gioitinh, @ngaysinh, @diachi, @sdt, @email, @tk, @mk)
+	INSERT INTO NhanVien VALUES(@maLoaiNV, @maPB, @ten, @cmnd, @gioitinh, @ngaysinh, @diachi, @sdt, @email, @tk, @mk, @mabc)
 GO
 
 CREATE PROC sp_NhanVien_Xoa
@@ -67,6 +68,7 @@ CREATE PROC sp_NhanVien_Sua
 @maNV int,
 @maLoaiNV int,
 @maPB int,
+@mabc int,
 @ten nvarchar(50),
 @cmnd nvarchar(15),
 @gioitinh bit,
@@ -78,7 +80,7 @@ CREATE PROC sp_NhanVien_Sua
 @mk varchar(15)
 
 AS
-	UPDATE NhanVien SET MaLoaiNhanVien=@maLoaiNV, MaPhongBan=@maPB, TenNhanVien=@ten, CMND=@cmnd, GioiTinh=@gioitinh, NgaySinh=@ngaysinh, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email, TenDangNhap=@tk, MatKhau=@mk WHERE MaNhanVien=@maNV
+	UPDATE NhanVien SET MaLoaiNhanVien=@maLoaiNV, MaPhongBan=@maPB, TenNhanVien=@ten, CMND=@cmnd, GioiTinh=@gioitinh, NgaySinh=@ngaysinh, DiaChi=@diachi, SoDienThoai=@sdt, Email=@email, TenDangNhap=@tk, MatKhau=@mk, MaBangCap=@mabc WHERE MaNhanVien=@maNV
 GO
 
 CREATE PROC sp_NhanVien_TimKiemTheoTen

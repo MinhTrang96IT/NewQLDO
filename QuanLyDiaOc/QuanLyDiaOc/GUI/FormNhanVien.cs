@@ -18,6 +18,7 @@ namespace QuanLyDiaOc.GUI
         private NhanVienBLL nhanVienBLL;
         private LoaiNhanVienBLL loaiNhanVienBLL;
         private PhongBanBLL phongBanBLL;
+        private BangCapBLL bangCapBLL;
         private string id;
 
         public FormNhanVien()
@@ -27,6 +28,7 @@ namespace QuanLyDiaOc.GUI
             nhanVienBLL = new NhanVienBLL();
             loaiNhanVienBLL = new LoaiNhanVienBLL();
             phongBanBLL = new PhongBanBLL();
+            bangCapBLL = new BangCapBLL();
             id = "";
         }
 
@@ -39,16 +41,20 @@ namespace QuanLyDiaOc.GUI
             cbPhongBan.DataSource = phongBanBLL.LayDanhSachPhongBan();
             cbPhongBan.DisplayMember = "TenLPhongBan";
             cbPhongBan.ValueMember = "MaPhongBan";
+            cbBangCap.DataSource = bangCapBLL.LayDanhSachBangCap();
+            cbBangCap.DisplayMember = "TenBangCap";
+            cbBangCap.ValueMember = "MaBangCap";
             LamMoiThongTin();
         }
 
         private void LamMoiThongTin()
         {
-            txtMaNV.Text = cbLoaiNV.Text = cbPhongBan.Text = txtTenNV.Text = txtCMND.Text = txtDiaChi.Text = txtEmail.Text = txtSoDienThoai.Text = txtTenDangNhap.Text = txtMatKhau.Text = txtTimKiem.Text = "";
+            txtMaNV.Text = txtTenNV.Text = txtCMND.Text = txtDiaChi.Text = txtEmail.Text = txtSoDienThoai.Text = txtTenDangNhap.Text = txtMatKhau.Text = txtTimKiem.Text = "";
             rbNam.Checked = true;
             txtTenNV.Focus();
             cbLoaiNV.SelectedIndex = 0;
             cbPhongBan.SelectedIndex = 0;
+            cbBangCap.SelectedIndex = 0;
             dtpNgaySinh.Value = DateTime.Now;
             id = "";
         }
@@ -145,6 +151,7 @@ namespace QuanLyDiaOc.GUI
                     id = row.Cells["MaNhanVien"].Value.ToString();
                     cbLoaiNV.Text = row.Cells["TenLoaiNhanVien"].Value.ToString();
                     cbPhongBan.Text = row.Cells["TenLPhongBan"].Value.ToString();
+                    cbBangCap.Text = row.Cells["TenBangCap"].Value.ToString();
                     txtTenNV.Text = row.Cells["TenNhanVien"].Value.ToString();
                     txtCMND.Text = row.Cells["CMND"].Value.ToString();
                     if (row.Cells["GioiTinh"].Value.ToString().Equals("True"))
@@ -179,6 +186,7 @@ namespace QuanLyDiaOc.GUI
                     NhanVienDTO nhanVienDTO = new NhanVienDTO(
                         Int32.Parse(cbLoaiNV.SelectedValue.ToString()), 
                         Int32.Parse(cbPhongBan.SelectedValue.ToString()), 
+                        Int32.Parse(cbBangCap.SelectedValue.ToString()),
                         txtTenNV.Text, 
                         txtCMND.Text,
                         gioiTinh, 
@@ -257,7 +265,7 @@ namespace QuanLyDiaOc.GUI
                         if (rbNu.Checked)
                             gioiTinh = 0;
 
-                        NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+                        NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), Int32.Parse(cbBangCap.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
 
                         try
                         {
