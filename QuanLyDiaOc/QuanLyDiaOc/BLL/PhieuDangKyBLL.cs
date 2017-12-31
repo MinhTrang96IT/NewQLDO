@@ -37,5 +37,10 @@ namespace QuanLyDiaOc.BLL
         {
             return phieuDangKyDAL.SuaPhieuDangKy(phieuDangKyDTO);
         }
+
+        public bool SuaKiemDuyetPhieuDangKy(PhieuDangKyDTO phieuDangKyDTO)
+        {
+            return phieuDangKyDAL.SuaKiemDuyetPhieuDangKy(phieuDangKyDTO);
+        }
     }
 }

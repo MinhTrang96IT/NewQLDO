@@ -20,6 +20,7 @@ namespace QuanLyDiaOc.DTO
         public double TongTien { get; set; }
         public double DaTra { get; set; }
         public double ConNo { get; set; }
+        public string LyDoKhongDuyet { get; set; }
 
         public PhieuDangKyDTO(int maPhieuDangKy, int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo)
         {
@@ -52,5 +53,11 @@ namespace QuanLyDiaOc.DTO
             ConNo = conNo;
         }
 
+        public PhieuDangKyDTO(int maPhieuDangKy, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaPhieuDangKy = maPhieuDangKy;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
     }
 }

@@ -145,5 +145,31 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public bool SuaKiemDuyetPhieuDangKy(PhieuDangKyDTO phieuDangKyDTO)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_PhieuDangKy_SuaKiemDuyet";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", phieuDangKyDTO.MaPhieuDangKy));
+                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", phieuDangKyDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", phieuDangKyDTO.LyDoKhongDuyet));
+
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

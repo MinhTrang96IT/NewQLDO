@@ -40,6 +40,7 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XacNhan = new System.Windows.Forms.DataGridViewButtonColumn();
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +87,7 @@
             this.TongTien,
             this.ChiTiet,
             this.TrangThaiKiemDuyet,
+            this.LyDoKhongDuyet,
             this.XacNhan,
             this.NgayBatDau,
             this.NgayKetThuc,
@@ -172,6 +174,13 @@
             this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.TrangThaiKiemDuyet.Width = 78;
             // 
+            // LyDoKhongDuyet
+            // 
+            this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.HeaderText = "Lý do không kiểm duyệt";
+            this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.Width = 109;
+            // 
             // XacNhan
             // 
             this.XacNhan.HeaderText = "Xác nhận";
@@ -256,6 +265,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
         private System.Windows.Forms.DataGridViewButtonColumn XacNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;

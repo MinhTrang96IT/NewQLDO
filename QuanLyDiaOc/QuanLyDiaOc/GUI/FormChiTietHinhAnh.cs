@@ -34,7 +34,7 @@ namespace QuanLyDiaOc.GUI
         {
             kt = true;
             dgvChiTietHinhAnh.DataSource = chiTietHinhAnhBLL.LayDanhSachChiTietHinhAnhTheoMaHA(Int32.Parse(maHA));
-            cbMaHA.DropDownStyle = ComboBoxStyle.DropDown;
+            cbMaHA.DropDownStyle = ComboBoxStyle.Simple;
             cbMaHA.Text = maHA;
             AnThongTin();
         }
@@ -42,13 +42,7 @@ namespace QuanLyDiaOc.GUI
         private void AnThongTin()
         {
             cbMaHA.Enabled = false;
-            txtMoTa.Enabled = false;
             btnThemMaHA.Enabled = false;
-            btnThem.Enabled = false;
-            btnTaoMoi.Enabled = false;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnChonHA.Enabled = false;
         }
 
         private void FormChiTietHinhAnh_Load(object sender, EventArgs e)
