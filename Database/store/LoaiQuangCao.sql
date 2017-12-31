@@ -1,5 +1,4 @@
-﻿INSERT INTO LoaiQuangCao VALUES(N'quảng cáo web site', N'quảng cáo được dặt trên web google.com')
-
+﻿
 CREATE PROC sp_LoaiQuangCao_LayDanhSach
 AS
 	SELECT * FROM LoaiQuangCao

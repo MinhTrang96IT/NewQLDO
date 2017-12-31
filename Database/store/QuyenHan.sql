@@ -1,5 +1,4 @@
-﻿INSERT INTO QuyenHan VALUES(N'quyền hạn 1', N'mô tả quyền hạn 1')
-
+﻿
 CREATE PROC sp_QuyenHan_LayDanhSach
 AS
 	SELECT * FROM QuyenHan

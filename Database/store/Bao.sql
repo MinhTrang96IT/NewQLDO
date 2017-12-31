@@ -1,5 +1,4 @@
-﻿INSERT INTO Bao VALUES(N'sài gòn giải phóng', N'báo của sài gòn thì phải')
-
+﻿
 CREATE PROC sp_Bao_LayDanhSach
 AS
 	SELECT * FROM Bao

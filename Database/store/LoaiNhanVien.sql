@@ -1,5 +1,4 @@
-﻿INSERT INTO LoaiNhanVien VALUES(N'Nhân viên văn phòng', N'Ngồi chơi hoy')
-
+﻿
 CREATE PROC sp_LoaiNhanVien_LayDanhSach
 AS
 	SELECT * FROM LoaiNhanVien

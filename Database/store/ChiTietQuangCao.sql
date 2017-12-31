@@ -18,9 +18,10 @@ CREATE PROC sp_ChiTietQuangCao_Them
 	@ngayketthuc date,
 	@soluongphathanh int,
 	@kichthuoc float,
-	@trangthaikiemduyet int		
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)	
 AS
-	INSERT INTO ChiTietQuangCao VALUES(@maphieudangky, @maloaiquangcao, @mavitri, @mabao, @ngaybatdau, @ngayketthuc, @soluongphathanh, @kichthuoc, @trangthaikiemduyet)
+	INSERT INTO ChiTietQuangCao VALUES(@maphieudangky, @maloaiquangcao, @mavitri, @mabao, @ngaybatdau, @ngayketthuc, @soluongphathanh, @kichthuoc, @trangthaikiemduyet, @lydokhongduyet)
 GO
 
 CREATE PROC sp_ChiTietQuangCao_Xoa
@@ -40,15 +41,16 @@ CREATE PROC sp_ChiTietQuangCao_Sua
 	@ngayketthuc date,
 	@soluongphathanh int,
 	@kichthuoc float,
-	@trangthaikiemduyet int		
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet WHERE MaChiTietQuangCao=@machitietquangcao
+	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
 GO
 
 CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoMaPhieuDangKy
 @maphieudangky int
 AS
-	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaBao = Bao.MaBao AND ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
+	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet, LyDoKhongDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaBao = Bao.MaBao AND ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
 GO
 
 CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa

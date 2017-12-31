@@ -6,7 +6,7 @@ GO
 
 CREATE PROC sp_DiaOc_LayDanhSachTheoTenLoai
 AS
-	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang
+	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang
 GO
 
 CREATE PROC sp_DiaOc_Them
@@ -25,9 +25,10 @@ CREATE PROC sp_DiaOc_Them
 	@motachitiet nvarchar(500),
 	@giaban money,	
 	@trangthaikiemduyet	bit,				
-	@trangthaimuaban bit				
+	@trangthaimuaban bit,
+	@lydokhongduyet nvarchar(200)				
 AS
-	INSERT INTO DiaOc VALUES(@makhachhang, @maloaidiaoc, @maloainha, @diachi, @dientichkhuonvien, @dientichsudung, @huongnha, @chieudaidat, @chieurongdat, @chieudainha, @chieurongnha, @sotang, @motachitiet, @giaban, @trangthaikiemduyet, @trangthaimuaban)
+	INSERT INTO DiaOc VALUES(@makhachhang, @maloaidiaoc, @maloainha, @diachi, @dientichkhuonvien, @dientichsudung, @huongnha, @chieudaidat, @chieurongdat, @chieudainha, @chieurongnha, @sotang, @motachitiet, @giaban, @trangthaikiemduyet, @trangthaimuaban, @lydokhongduyet)
 GO
 
 CREATE PROC sp_DiaOc_Xoa
@@ -54,14 +55,15 @@ CREATE PROC sp_DiaOc_Sua
 	@motachitiet nvarchar(500),
 	@giaban money,	
 	@trangthaikiemduyet	bit,				
-	@trangthaimuaban bit
+	@trangthaimuaban bit,
+	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE DiaOc SET MaKhachHang=@makhachhang, MaLoaiDiaOc=@maloaidiaoc, MaLoaiNha=@maloainha, DienTichKhuonVien=@dientichkhuonvien, DienTichSuDung=@dientichsudung, DiaOc.DiaChi=@diachi, HuongNha=@huongnha, ChieuDaiDat=@chieudaidat, ChieuRongDat=@chieurongdat, ChieuDaiNha=@chieudainha, ChieuRongNha = @chieurongnha, SoTang = @sotang, MoTaChiTiet = @motachitiet, GiaBan = @giaban, TrangThaiKiemDuyet = @trangthaikiemduyet, TrangThaiMuaBan = @trangthaimuaban WHERE MaDiaOc=@madiaoc
+	UPDATE DiaOc SET MaKhachHang=@makhachhang, MaLoaiDiaOc=@maloaidiaoc, MaLoaiNha=@maloainha, DienTichKhuonVien=@dientichkhuonvien, DienTichSuDung=@dientichsudung, DiaOc.DiaChi=@diachi, HuongNha=@huongnha, ChieuDaiDat=@chieudaidat, ChieuRongDat=@chieurongdat, ChieuDaiNha=@chieudainha, ChieuRongNha = @chieurongnha, SoTang = @sotang, MoTaChiTiet = @motachitiet, GiaBan = @giaban, TrangThaiKiemDuyet = @trangthaikiemduyet, TrangThaiMuaBan = @trangthaimuaban, LyDoKhongDuyet = @lydokhongduyet WHERE MaDiaOc=@madiaoc
 GO
 
 CREATE PROC sp_DiaOc_TimKiemTheoTen
 @ten nvarchar(50)
 
 AS
-	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND TenKhachHang LIKE '%'+ @ten +'%'
+	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND TenKhachHang LIKE '%'+ @ten +'%'
 GO

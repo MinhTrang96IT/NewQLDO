@@ -1,5 +1,4 @@
-﻿INSERT INTO KhachHang VALUES(N'Hoàng Kim Tuấn', '251055042', 1, 1996, N'Dĩ An, Bình Dương', '0969987548', 'hoangkimtuan1996@gmail.com')
-
+﻿
 CREATE PROC sp_KhachHang_LayDanhSach
 AS
 	SELECT * FROM KhachHang

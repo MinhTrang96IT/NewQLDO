@@ -1,5 +1,4 @@
-﻿INSERT INTO LoaiDiaOc VALUES(N'Địa ốc chung cư', N'Địa ốc giá rẻ phải chăng tại chung cư Phú Mỹ Hưng quận 7')
-
+﻿
 CREATE PROC sp_LoaiDiaOc_LayDanhSach
 AS
 	SELECT * FROM LoaiDiaOc

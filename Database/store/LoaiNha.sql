@@ -1,5 +1,4 @@
-﻿INSERT INTO LoaiNha VALUES(N'Nhà đẹp đây', N'Nhà của tớ đẹp lắm á, 1 túp lều tranh 2 trái tim vàng')
-
+﻿
 CREATE PROC sp_LoaiNha_LayDanhSach
 AS
 	SELECT * FROM LoaiNha

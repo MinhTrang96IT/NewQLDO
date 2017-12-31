@@ -1,5 +1,4 @@
-﻿INSERT INTO PhongBan VALUES(N'Phòng hành chính', N'phòng này để xử lý giấy tờ')
-
+﻿
 CREATE PROC sp_PhongBan_LayDanhSach
 AS
 	SELECT * FROM PhongBan

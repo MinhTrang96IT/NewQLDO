@@ -1,5 +1,4 @@
-﻿INSERT INTO ViTri VALUES(N'vị trí 1', N'mô tả vị trí 1')
-
+﻿
 CREATE PROC sp_ViTri_LayDanhSach
 AS
 	SELECT * FROM ViTri
