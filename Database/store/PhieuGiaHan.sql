@@ -7,7 +7,7 @@ GO
 
 CREATE PROC sp_PhieuGiaHan_LayDanhSachPhieuGiaHanCoTen
 AS
-	SELECT MaPhieuGiaHan, MaPhieuDangKy,  TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc,  TrangThaiKiemDuyet, TongTien, DaTra,ConNo, LyDoKhongDuyet  FROM PhieuGiaHan,  NhanVien WHERE PhieuGiaHan.MaNhanVien = NhanVien.MaNhanVien
+	SELECT MaPhieuGiaHan, MaPhieuDangKy,  TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc,  TrangThaiKiemDuyet, TongTien, LyDoKhongDuyet  FROM PhieuGiaHan,  NhanVien WHERE PhieuGiaHan.MaNhanVien = NhanVien.MaNhanVien
 GO
 
 CREATE PROC sp_PhieuGiaHan_Them
@@ -18,11 +18,9 @@ CREATE PROC sp_PhieuGiaHan_Them
 	@ngayketthuc date,
 	@trangthaikiemduyet int,
 	@tongtien money,
-	@datra money,
-	@conno money,
 	@lydokhongduyet nvarchar(200)
 AS
-	INSERT INTO PhieuGiaHan VALUES(@maphieudangky, @manhanvien, @ngaylap, @ngaybatdau, @ngayketthuc,  @trangthaikiemduyet, @tongtien, @datra, @conno, @lydokhongduyet)
+	INSERT INTO PhieuGiaHan VALUES(@maphieudangky, @manhanvien, @ngaylap, @ngaybatdau, @ngayketthuc,  @trangthaikiemduyet, @tongtien, @lydokhongduyet)
 GO
 
 CREATE PROC sp_PhieuGiaHan_Xoa
@@ -41,9 +39,7 @@ CREATE PROC sp_PhieuGiaHan_Sua
 	@ngayketthuc date,
 	@trangthaikiemduyet int,
 	@tongtien money,
-	@datra money,
-	@conno money,
 	@lydokhongduyet nvarchar(200)	
 AS
-	UPDATE PhieuGiaHan SET MaPhieuDangKy=@maphieudangky, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc,  TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, DaTra = @datra, ConNo = @conno, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuGiaHan = @maphieugiahan
+	UPDATE PhieuGiaHan SET MaPhieuDangKy=@maphieudangky, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc,  TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuGiaHan = @maphieugiahan
 GO

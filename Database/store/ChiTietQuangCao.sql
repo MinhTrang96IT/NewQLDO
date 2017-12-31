@@ -6,7 +6,7 @@ GO
 
 CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoTenLoai
 AS
-	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaBao = Bao.MaBao
+	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, MaViTri, MaBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet FROM ChiTietQuangCao, LoaiQuangCao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao
 GO
 
 CREATE PROC sp_ChiTietQuangCao_Them
@@ -50,7 +50,7 @@ GO
 CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoMaPhieuDangKy
 @maphieudangky int
 AS
-	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet, LyDoKhongDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaBao = Bao.MaBao AND ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
+	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, MaViTri, MaBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet, LyDoKhongDuyet FROM ChiTietQuangCao, LoaiQuangCao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND  ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
 GO
 
 CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa

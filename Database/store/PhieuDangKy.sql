@@ -7,7 +7,7 @@ GO
 
 CREATE PROC sp_PhieuDangKy_LayDanhSachPhieuDangKyCoTen
 AS
-	SELECT MaPhieuDangKy, TenKhachHang, MaDiaOc , TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc, SoLanGiaHan, TrangThaiKiemDuyet, TongTien, DaTra,ConNo, LyDoKhongDuyet  FROM PhieuDangKy, KhachHang, NhanVien WHERE PhieuDangKy.MaNhanVien = NhanVien.MaNhanVien AND PhieuDangKy.MaKhachHang = KhachHang.MaKhachHang
+	SELECT MaPhieuDangKy, TenKhachHang, MaDiaOc , TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc, SoLanGiaHan, TrangThaiKiemDuyet, TongTien, LyDoKhongDuyet  FROM PhieuDangKy, KhachHang, NhanVien WHERE PhieuDangKy.MaNhanVien = NhanVien.MaNhanVien AND PhieuDangKy.MaKhachHang = KhachHang.MaKhachHang
 GO
 
 CREATE PROC sp_PhieuDangKy_Them
@@ -20,11 +20,9 @@ CREATE PROC sp_PhieuDangKy_Them
 	@solangiahan int,
 	@trangthaikiemduyet int,
 	@tongtien money,
-	@datra money,
-	@conno money,
 	@lydokhongduyet nvarchar(200)
 AS
-	INSERT INTO PhieuDangKy VALUES(@makhachhang, @madiaoc, @manhanvien, @ngaylap, @ngaybatdau, @ngayketthuc, @solangiahan, @trangthaikiemduyet, @tongtien, @datra, @conno, @lydokhongduyet)
+	INSERT INTO PhieuDangKy VALUES(@makhachhang, @madiaoc, @manhanvien, @ngaylap, @ngaybatdau, @ngayketthuc, @solangiahan, @trangthaikiemduyet, @tongtien,@lydokhongduyet)
 GO
 
 CREATE PROC sp_PhieuDangKy_Xoa
@@ -45,11 +43,9 @@ CREATE PROC sp_PhieuDangKy_Sua
 	@solangiahan int,
 	@trangthaikiemduyet int,
 	@tongtien money,
-	@datra money,
-	@conno money,
 	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE PhieuDangKy SET MaKhachHang=@makhachhang, MaDiaOc=@madiaoc, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc, SoLanGiaHan = @solangiahan, TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, DaTra = @datra, ConNo = @conno, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuDangKy = @maphieudangky
+	UPDATE PhieuDangKy SET MaKhachHang=@makhachhang, MaDiaOc=@madiaoc, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc, SoLanGiaHan = @solangiahan, TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuDangKy = @maphieudangky
 GO
 
 CREATE PROC sp_PhieuDangKy_SuaKiemDuyet
