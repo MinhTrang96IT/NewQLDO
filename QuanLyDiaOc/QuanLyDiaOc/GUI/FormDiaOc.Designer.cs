@@ -89,6 +89,7 @@
             this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TrangThaiMuaBan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).BeginInit();
             this.gbDanhSanh.SuspendLayout();
             this.gbThongTin.SuspendLayout();
@@ -290,7 +291,8 @@
             this.MoTaChiTiet,
             this.GiaBan,
             this.TrangThaiKiemDuyet,
-            this.TrangThaiMuaBan});
+            this.TrangThaiMuaBan,
+            this.LyDoKhongDuyet});
             this.dgvDiaOc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiaOc.Location = new System.Drawing.Point(3, 16);
             this.dgvDiaOc.Name = "dgvDiaOc";
@@ -664,6 +666,13 @@
             this.TrangThaiMuaBan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.TrangThaiMuaBan.Width = 97;
             // 
+            // LyDoKhongDuyet
+            // 
+            this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
+            this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.Width = 110;
+            // 
             // FormDiaOc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -745,5 +754,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiMuaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

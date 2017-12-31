@@ -68,7 +68,7 @@ namespace QuanLyDiaOc.GUI
                                    Int32.Parse(txtSoTang.Text.ToString()),
                                    txtMoTaChiTiet.Text.ToString(),
                                    Double.Parse(txtGiaBan.Text.ToString()),
-                                   trangThaiKiemDuyet, trangThaiMuaBan);
+                                   trangThaiKiemDuyet, trangThaiMuaBan,"");
 
                     try
                     {
@@ -151,7 +151,7 @@ namespace QuanLyDiaOc.GUI
                         Int32.Parse(txtSoTang.Text.ToString()), 
                         txtMoTaChiTiet.Text.ToString(), 
                         Double.Parse(txtGiaBan.Text.ToString()), 
-                        trangThaiKiemDuyet, trangThaiMuaBan);
+                        trangThaiKiemDuyet, trangThaiMuaBan,"");
 
                     try
                     {

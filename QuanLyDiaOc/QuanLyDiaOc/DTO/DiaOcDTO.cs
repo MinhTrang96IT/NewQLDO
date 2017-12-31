@@ -25,8 +25,9 @@ namespace QuanLyDiaOc.DTO
         public double GiaBan { get; set; }
         public int TrangThaiKiemDuyet { get; set; }
         public int TrangThaiMuaBan { get; set; }
+        public string LyDoKhongDuyet { get; set; }
 
-        public DiaOcDTO(int maDiaOc, int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
+        public DiaOcDTO(int maDiaOc, int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan, string lyDoKhongDuyet)
         {
             MaDiaOc = maDiaOc;
             MaKhachHang = maKhachHang;
@@ -45,9 +46,10 @@ namespace QuanLyDiaOc.DTO
             GiaBan = giaBan;
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TrangThaiMuaBan = trangThaiMuaBan;
+            LyDoKhongDuyet = lyDoKhongDuyet;
         }
 
-        public DiaOcDTO( int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan)
+        public DiaOcDTO( int maKhachHang, int maLoaiDiaOc, int maLoaiNha, string diaChi, double dienTichKhuonVien, double dienTichSuDung, string huongNha, double chieuDaiDat, double chieuRongDat, double chieuDaiNha, double chieuRongNha, int soTang, string moTaChiTiet, double giaBan, int trangThaiKiemDuyet, int trangThaiMuaBan, string lyDoKhongDuyet)
         {
             MaKhachHang = maKhachHang;
             MaLoaiDiaOc = maLoaiDiaOc;
@@ -65,6 +67,7 @@ namespace QuanLyDiaOc.DTO
             GiaBan = giaBan;
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TrangThaiMuaBan = trangThaiMuaBan;
+            LyDoKhongDuyet = lyDoKhongDuyet;
         }
     }
 }

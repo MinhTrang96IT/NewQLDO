@@ -69,6 +69,7 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -187,7 +188,8 @@
             this.TrangThaiKiemDuyet,
             this.TongTien,
             this.DaTra,
-            this.ConNo});
+            this.ConNo,
+            this.LyDoKhongDuyet});
             this.dgvPhieuGiaHan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuGiaHan.Location = new System.Drawing.Point(3, 16);
             this.dgvPhieuGiaHan.Name = "dgvPhieuGiaHan";
@@ -467,6 +469,13 @@
             this.ConNo.Name = "ConNo";
             this.ConNo.Width = 51;
             // 
+            // LyDoKhongDuyet
+            // 
+            this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
+            this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.Width = 110;
+            // 
             // FormPhieuGiaHan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,16 +508,6 @@
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.GroupBox gbDanhSachKH;
         private System.Windows.Forms.DataGridView dgvPhieuGiaHan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuGiaHan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuDangKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DaTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
         private System.Windows.Forms.Button btnThemMaPhieuDangKy;
         private System.Windows.Forms.ComboBox cbNhanVien;
         private System.Windows.Forms.ComboBox cbMaPhieuDangKy;
@@ -528,5 +527,16 @@
         private System.Windows.Forms.GroupBox gbThongTinKH;
         private System.Windows.Forms.TextBox txtMaPhieuGiaHan;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuGiaHan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DaTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

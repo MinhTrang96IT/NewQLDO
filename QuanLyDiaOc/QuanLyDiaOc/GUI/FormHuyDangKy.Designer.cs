@@ -57,6 +57,7 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDangKy)).BeginInit();
@@ -296,7 +297,8 @@
             this.TenNhanVien,
             this.NgayLap,
             this.LyDo,
-            this.TrangThaiKiemDuyet});
+            this.TrangThaiKiemDuyet,
+            this.LyDoKhongDuyet});
             this.dgvHuyDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHuyDangKy.Location = new System.Drawing.Point(3, 16);
             this.dgvHuyDangKy.Name = "dgvHuyDangKy";
@@ -348,6 +350,13 @@
             this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.TrangThaiKiemDuyet.Width = 99;
             // 
+            // LyDoKhongDuyet
+            // 
+            this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.HeaderText = "Lý do không duyêt";
+            this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.Width = 110;
+            // 
             // FormHuyDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

@@ -51,7 +51,7 @@ namespace QuanLyDiaOc.GUI
                                    Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    txtNoiDungBaiViet.Text.ToString(),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet,"");
 
                     try
                     {
@@ -120,7 +120,7 @@ namespace QuanLyDiaOc.GUI
                                    Int32.Parse(cbChiTietQuangCao.SelectedValue.ToString()),
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    txtNoiDungBaiViet.Text.ToString(),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet, "");
 
                     try
                     {

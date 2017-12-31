@@ -51,7 +51,7 @@ namespace QuanLyDiaOc.GUI
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                    txtLyDoNgung.Text.ToString(),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet,"");
 
                     try
                     {
@@ -121,7 +121,7 @@ namespace QuanLyDiaOc.GUI
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                    txtLyDoNgung.Text.ToString(),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet,"");
 
                     try
                     {

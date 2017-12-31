@@ -105,7 +105,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    Int32.Parse(txtSoLuong.Text.ToString()),
                                    Double.Parse(txtKichThuoc.Text.ToString()),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet,"");
 
                     try
                     {
@@ -200,7 +200,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    Int32.Parse(txtSoLuong.Text.ToString()),
                                    Double.Parse(txtKichThuoc.Text.ToString()),
-                                   trangThaiKiemDuyet);
+                                   trangThaiKiemDuyet,"");
 
                     try
                     {

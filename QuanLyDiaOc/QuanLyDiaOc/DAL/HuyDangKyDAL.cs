@@ -93,6 +93,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@ngaylap", huyDangKyDTO.NgayLap));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydo", huyDangKyDTO.LyDo));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", huyDangKyDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", huyDangKyDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();
                 return true;
             }
@@ -143,6 +144,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@ngaylap", huyDangKyDTO.NgayLap));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydo", huyDangKyDTO.LyDo));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", huyDangKyDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", huyDangKyDTO.LyDoKhongDuyet));
 
                 sqlCommand.ExecuteNonQuery();
                 return true;

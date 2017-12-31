@@ -69,6 +69,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@manhanvien", baiVietDTO.MaNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@noidungbaiviet", baiVietDTO.NoiDungBaiViet));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", baiVietDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", baiVietDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();
                 return true;
             }
@@ -117,6 +118,7 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@manhanvien", baiVietDTO.MaNhanVien));
                 sqlCommand.Parameters.Add(new SqlParameter("@noidungbaiviet", baiVietDTO.NoiDungBaiViet));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", baiVietDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", baiVietDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();
                 return true;
             }
