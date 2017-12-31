@@ -53,9 +53,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayBatDau.Text),
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString()),
-                                   Double.Parse(txtDaTra.Text.ToString()),
-                                   Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
+                                   Double.Parse(txtTongTien.Text.ToString())
                                    ,"");
 
                     try
@@ -128,9 +126,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayBatDau.Text),
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString()),
-                                   Double.Parse(txtDaTra.Text.ToString()),
-                                   Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
+                                   Double.Parse(txtTongTien.Text.ToString())
                                    ,"");
 
                     try
@@ -168,7 +164,7 @@ namespace QuanLyDiaOc.GUI
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuGiaHan.Text = cbMaPhieuDangKy.Text  = cbNhanVien.Text = txtDaTra.Text =txtTongTien.Text = "";
+            txtMaPhieuGiaHan.Text = cbMaPhieuDangKy.Text  = cbNhanVien.Text  =txtTongTien.Text = "";
             rbChuaKiemDuyet.Checked = true;
             rbDaKiemDuyet.Checked = false;
             txtTongTien.Focus();
@@ -182,7 +178,7 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinTrong()
         {
-            if (txtDaTra.Text.ToString() == "" || txtTongTien.Text.ToString() == "")
+            if ( txtTongTien.Text.ToString() == "")
             {
                 return true;
             }
@@ -247,7 +243,6 @@ namespace QuanLyDiaOc.GUI
                     dtpNgayLapPhieu.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value.ToString());
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
-                    txtDaTra.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["DaTra"].Value.ToString()));
                     txtTongTien.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["TongTien"].Value.ToString()));
                 }
                 catch { }

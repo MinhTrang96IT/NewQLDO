@@ -60,9 +60,7 @@
             this.btnXuatHopDong = new System.Windows.Forms.Button();
             this.btnChiTietQuangCao = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtDaTra = new System.Windows.Forms.TextBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,8 +76,6 @@
             this.SoLanGiaHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
@@ -119,9 +115,7 @@
             this.gbThongTinKH.Controls.Add(this.btnXuatHopDong);
             this.gbThongTinKH.Controls.Add(this.btnChiTietQuangCao);
             this.gbThongTinKH.Controls.Add(this.btnThem);
-            this.gbThongTinKH.Controls.Add(this.txtDaTra);
             this.gbThongTinKH.Controls.Add(this.txtTongTien);
-            this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
@@ -183,7 +177,7 @@
             // 
             this.cbDanhSachQuangCao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDanhSachQuangCao.FormattingEnabled = true;
-            this.cbDanhSachQuangCao.Location = new System.Drawing.Point(430, 99);
+            this.cbDanhSachQuangCao.Location = new System.Drawing.Point(431, 104);
             this.cbDanhSachQuangCao.Name = "cbDanhSachQuangCao";
             this.cbDanhSachQuangCao.Size = new System.Drawing.Size(139, 21);
             this.cbDanhSachQuangCao.TabIndex = 49;
@@ -191,7 +185,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(308, 103);
+            this.label8.Location = new System.Drawing.Point(309, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 13);
             this.label8.TabIndex = 48;
@@ -361,7 +355,7 @@
             // 
             // btnXuatHoaDon
             // 
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(583, 150);
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(583, 148);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(113, 23);
             this.btnXuatHoaDon.TabIndex = 17;
@@ -397,7 +391,7 @@
             // 
             // btnChiTietQuangCao
             // 
-            this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 101);
+            this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 104);
             this.btnChiTietQuangCao.Name = "btnChiTietQuangCao";
             this.btnChiTietQuangCao.Size = new System.Drawing.Size(113, 23);
             this.btnChiTietQuangCao.TabIndex = 17;
@@ -415,28 +409,12 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtDaTra
-            // 
-            this.txtDaTra.Location = new System.Drawing.Point(430, 153);
-            this.txtDaTra.Name = "txtDaTra";
-            this.txtDaTra.Size = new System.Drawing.Size(139, 20);
-            this.txtDaTra.TabIndex = 8;
-            // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(430, 128);
+            this.txtTongTien.Location = new System.Drawing.Point(430, 146);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(139, 20);
             this.txtTongTien.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(381, 156);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Đã trả:";
             // 
             // txtMaPhieuDangKy
             // 
@@ -449,7 +427,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(365, 131);
+            this.label2.Location = new System.Drawing.Point(359, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -489,8 +467,6 @@
             this.SoLanGiaHan,
             this.TrangThaiKiemDuyet,
             this.TongTien,
-            this.DaTra,
-            this.ConNo,
             this.LyDoKhongDuyet});
             this.dgvPhieuDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuDangKy.Location = new System.Drawing.Point(3, 16);
@@ -572,20 +548,6 @@
             this.TongTien.Name = "TongTien";
             this.TongTien.Width = 71;
             // 
-            // DaTra
-            // 
-            this.DaTra.DataPropertyName = "DaTra";
-            this.DaTra.HeaderText = "Đã trả";
-            this.DaTra.Name = "DaTra";
-            this.DaTra.Width = 46;
-            // 
-            // ConNo
-            // 
-            this.ConNo.DataPropertyName = "ConNo";
-            this.ConNo.HeaderText = "Còn nợ";
-            this.ConNo.Name = "ConNo";
-            this.ConNo.Width = 51;
-            // 
             // LyDoKhongDuyet
             // 
             this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
@@ -643,8 +605,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.Button btnChiTietQuangCao;
-        private System.Windows.Forms.TextBox txtDaTra;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rbDaKiemDuyet;
         private System.Windows.Forms.RadioButton rbChuaKiemDuyet;
         private System.Windows.Forms.Label label10;
@@ -663,8 +623,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLanGiaHan;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DaTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

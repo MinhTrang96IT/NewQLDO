@@ -18,11 +18,9 @@ namespace QuanLyDiaOc.DTO
         public int SoLanGiaHan { get; set; }
         public int TrangThaiKiemDuyet { get; set; }
         public double TongTien { get; set; }
-        public double DaTra { get; set; }
-        public double ConNo { get; set; }
         public string LyDoKhongDuyet { get; set; }
 
-        public PhieuDangKyDTO(int maPhieuDangKy, int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo, string lyDoKhongDuyet)
+        public PhieuDangKyDTO(int maPhieuDangKy, int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, string lyDoKhongDuyet)
         {
             MaPhieuDangKy = maPhieuDangKy;
             MaKhachHang = maKhachHang;
@@ -34,12 +32,10 @@ namespace QuanLyDiaOc.DTO
             SoLanGiaHan = soLanGiaHan;
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TongTien = tongTien;
-            DaTra = daTra;
-            ConNo = conNo;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
 
-        public PhieuDangKyDTO( int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo, string lyDoKhongDuyet)
+        public PhieuDangKyDTO( int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, string lyDoKhongDuyet)
         {
             MaKhachHang = maKhachHang;
             MaDiaOc = maDiaOc;
@@ -50,8 +46,6 @@ namespace QuanLyDiaOc.DTO
             SoLanGiaHan = soLanGiaHan;
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             TongTien = tongTien;
-            DaTra = daTra;
-            ConNo = conNo;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
 

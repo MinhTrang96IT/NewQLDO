@@ -52,9 +52,7 @@
             this.btnHuyDichVu = new System.Windows.Forms.Button();
             this.btnXuatHopDong = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtDaTra = new System.Windows.Forms.TextBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
             this.txtMaPhieuGiaHan = new System.Windows.Forms.TextBox();
@@ -67,8 +65,6 @@
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
@@ -187,8 +183,6 @@
             this.NgayKetThuc,
             this.TrangThaiKiemDuyet,
             this.TongTien,
-            this.DaTra,
-            this.ConNo,
             this.LyDoKhongDuyet});
             this.dgvPhieuGiaHan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuGiaHan.Location = new System.Drawing.Point(3, 16);
@@ -311,28 +305,12 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtDaTra
-            // 
-            this.txtDaTra.Location = new System.Drawing.Point(431, 146);
-            this.txtDaTra.Name = "txtDaTra";
-            this.txtDaTra.Size = new System.Drawing.Size(190, 20);
-            this.txtDaTra.TabIndex = 8;
-            // 
             // txtTongTien
             // 
             this.txtTongTien.Location = new System.Drawing.Point(431, 120);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(190, 20);
             this.txtTongTien.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(375, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Đã trả:";
             // 
             // label1
             // 
@@ -367,9 +345,7 @@
             this.gbThongTinKH.Controls.Add(this.btnHuyDichVu);
             this.gbThongTinKH.Controls.Add(this.btnXuatHopDong);
             this.gbThongTinKH.Controls.Add(this.btnThem);
-            this.gbThongTinKH.Controls.Add(this.txtDaTra);
             this.gbThongTinKH.Controls.Add(this.txtTongTien);
-            this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtMaPhieuGiaHan);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
@@ -455,20 +431,6 @@
             this.TongTien.Name = "TongTien";
             this.TongTien.Width = 71;
             // 
-            // DaTra
-            // 
-            this.DaTra.DataPropertyName = "DaTra";
-            this.DaTra.HeaderText = "Đã trả";
-            this.DaTra.Name = "DaTra";
-            this.DaTra.Width = 46;
-            // 
-            // ConNo
-            // 
-            this.ConNo.DataPropertyName = "ConNo";
-            this.ConNo.HeaderText = "Còn nợ";
-            this.ConNo.Name = "ConNo";
-            this.ConNo.Width = 51;
-            // 
             // LyDoKhongDuyet
             // 
             this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
@@ -520,9 +482,7 @@
         private System.Windows.Forms.Button btnHuyDichVu;
         private System.Windows.Forms.Button btnXuatHopDong;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtDaTra;
         private System.Windows.Forms.TextBox txtTongTien;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbThongTinKH;
         private System.Windows.Forms.TextBox txtMaPhieuGiaHan;
@@ -535,8 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DaTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

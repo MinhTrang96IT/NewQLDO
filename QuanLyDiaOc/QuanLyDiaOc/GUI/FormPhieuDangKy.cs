@@ -61,9 +61,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    Int32.Parse(txtSoLanGiaHan.Text.ToString()),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString()),
-                                   Double.Parse(txtDaTra.Text.ToString()),
-                                   Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
+                                   Double.Parse(txtTongTien.Text.ToString())
                                    ,"");
 
                     try
@@ -138,9 +136,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    Int32.Parse(txtSoLanGiaHan.Text.ToString()),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString()),
-                                   Double.Parse(txtDaTra.Text.ToString()),
-                                   Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
+                                   Double.Parse(txtTongTien.Text.ToString())
                                    ,"");
 
                     try
@@ -187,7 +183,7 @@ namespace QuanLyDiaOc.GUI
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuDangKy.Text = cbKhachHang.Text = cbDanhSachQuangCao.Text = cbDiaOc.Text = cbNhanVien.Text = txtDaTra.Text = txtSoLanGiaHan.Text = txtTongTien.Text = cbDanhSachQuangCao.Text =  "";
+            txtMaPhieuDangKy.Text = cbKhachHang.Text = cbDanhSachQuangCao.Text = cbDiaOc.Text = cbNhanVien.Text = txtSoLanGiaHan.Text = txtTongTien.Text = cbDanhSachQuangCao.Text =  "";
             rbChuaKiemDuyet.Checked = true;
             rbDaKiemDuyet.Checked = false;
             txtTongTien.Focus();
@@ -202,7 +198,7 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinTrong()
         {
-            if (txtDaTra.Text.ToString() == "" || txtSoLanGiaHan.Text.ToString() == "" || txtTongTien.Text.ToString() == "" )
+            if ( txtSoLanGiaHan.Text.ToString() == "" || txtTongTien.Text.ToString() == "" )
             {
                 return true;
             }
@@ -272,7 +268,6 @@ namespace QuanLyDiaOc.GUI
                     dtpNgayLapPhieu.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value.ToString());
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
-                    txtDaTra.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["DaTra"].Value.ToString()));
                     txtTongTien.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["TongTien"].Value.ToString()));
                 }
                 catch { }

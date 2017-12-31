@@ -343,17 +343,18 @@ namespace QuanLyDiaOc.GUI
                     id = row.Cells["MaChiTietQuangCao"].Value.ToString();
                     cbMaPhieuDangKy.Text = row.Cells["MaPhieuDangKy"].Value.ToString();
                     cbLoaiQuangCao.Text = row.Cells["TenLoaiQuangCao"].Value.ToString();
-                    cbViTri.Text = row.Cells["TenViTri"].Value.ToString();
-                    cbBao.Text = row.Cells["TenBao"].Value.ToString();
+                    cbViTri.Text = row.Cells["MaViTri"].Value.ToString();
+                    cbBao.Text = row.Cells["MaBao"].Value.ToString();
                     txtSoLuong.Text = row.Cells["SoLuongPhatHanh"].Value.ToString();
                     
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
                         rbChuaKiemDuyet.Checked = true;
-
-                    dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
-                    dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
+                    if(row.Cells["NgayBatDau"].Value.ToString() != "")
+                         dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
+                    if (row.Cells["NgayKetThuc"].Value.ToString() != "")
+                        dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
                     txtKichThuoc.Text = row.Cells["KichThuoc"].Value.ToString();
 
                     double ChiPhi = Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa(Int32.Parse(id)).Rows[0]["DonGia"].ToString()) * Double.Parse(txtSoLuong.Text);

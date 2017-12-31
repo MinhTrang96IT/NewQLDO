@@ -98,8 +98,6 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@solangiahan", phieuDangKyDTO.SoLanGiaHan));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", phieuDangKyDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@tongtien", phieuDangKyDTO.TongTien));
-                sqlCommand.Parameters.Add(new SqlParameter("@datra", phieuDangKyDTO.DaTra));
-                sqlCommand.Parameters.Add(new SqlParameter("@conno", phieuDangKyDTO.ConNo));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", phieuDangKyDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();
                 return true;
@@ -155,8 +153,6 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@solangiahan", phieuDangKyDTO.SoLanGiaHan));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", phieuDangKyDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@tongtien", phieuDangKyDTO.TongTien));
-                sqlCommand.Parameters.Add(new SqlParameter("@datra", phieuDangKyDTO.DaTra));
-                sqlCommand.Parameters.Add(new SqlParameter("@conno", phieuDangKyDTO.ConNo));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", phieuDangKyDTO.LyDoKhongDuyet));
 
                 sqlCommand.ExecuteNonQuery();
