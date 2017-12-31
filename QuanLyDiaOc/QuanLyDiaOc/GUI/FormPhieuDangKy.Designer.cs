@@ -42,6 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNgayLapPhieu = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnThemNhanVien = new System.Windows.Forms.Button();
+            this.btnThemDiaOc = new System.Windows.Forms.Button();
+            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.cbDiaOc = new System.Windows.Forms.ComboBox();
             this.cbKhachHang = new System.Windows.Forms.ComboBox();
@@ -77,9 +80,7 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThemNhanVien = new System.Windows.Forms.Button();
-            this.btnThemDiaOc = new System.Windows.Forms.Button();
-            this.btnThemKhachHang = new System.Windows.Forms.Button();
+            this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDangKy)).BeginInit();
@@ -243,6 +244,36 @@
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 42;
             this.label7.Text = "Ngày lập phiếu:";
+            // 
+            // btnThemNhanVien
+            // 
+            this.btnThemNhanVien.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemNhanVien.Location = new System.Drawing.Point(271, 128);
+            this.btnThemNhanVien.Name = "btnThemNhanVien";
+            this.btnThemNhanVien.Size = new System.Drawing.Size(20, 20);
+            this.btnThemNhanVien.TabIndex = 40;
+            this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
+            // 
+            // btnThemDiaOc
+            // 
+            this.btnThemDiaOc.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemDiaOc.Location = new System.Drawing.Point(271, 103);
+            this.btnThemDiaOc.Name = "btnThemDiaOc";
+            this.btnThemDiaOc.Size = new System.Drawing.Size(20, 20);
+            this.btnThemDiaOc.TabIndex = 41;
+            this.btnThemDiaOc.UseVisualStyleBackColor = true;
+            this.btnThemDiaOc.Click += new System.EventHandler(this.btnThemDiaOc_Click);
+            // 
+            // btnThemKhachHang
+            // 
+            this.btnThemKhachHang.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemKhachHang.Location = new System.Drawing.Point(271, 76);
+            this.btnThemKhachHang.Name = "btnThemKhachHang";
+            this.btnThemKhachHang.Size = new System.Drawing.Size(20, 20);
+            this.btnThemKhachHang.TabIndex = 39;
+            this.btnThemKhachHang.UseVisualStyleBackColor = true;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
             // cbNhanVien
             // 
@@ -459,7 +490,8 @@
             this.TrangThaiKiemDuyet,
             this.TongTien,
             this.DaTra,
-            this.ConNo});
+            this.ConNo,
+            this.LyDoKhongDuyet});
             this.dgvPhieuDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuDangKy.Location = new System.Drawing.Point(3, 16);
             this.dgvPhieuDangKy.Name = "dgvPhieuDangKy";
@@ -554,35 +586,12 @@
             this.ConNo.Name = "ConNo";
             this.ConNo.Width = 51;
             // 
-            // btnThemNhanVien
+            // LyDoKhongDuyet
             // 
-            this.btnThemNhanVien.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemNhanVien.Location = new System.Drawing.Point(271, 128);
-            this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(20, 20);
-            this.btnThemNhanVien.TabIndex = 40;
-            this.btnThemNhanVien.UseVisualStyleBackColor = true;
-            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
-            // 
-            // btnThemDiaOc
-            // 
-            this.btnThemDiaOc.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemDiaOc.Location = new System.Drawing.Point(271, 103);
-            this.btnThemDiaOc.Name = "btnThemDiaOc";
-            this.btnThemDiaOc.Size = new System.Drawing.Size(20, 20);
-            this.btnThemDiaOc.TabIndex = 41;
-            this.btnThemDiaOc.UseVisualStyleBackColor = true;
-            this.btnThemDiaOc.Click += new System.EventHandler(this.btnThemDiaOc_Click);
-            // 
-            // btnThemKhachHang
-            // 
-            this.btnThemKhachHang.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemKhachHang.Location = new System.Drawing.Point(271, 76);
-            this.btnThemKhachHang.Name = "btnThemKhachHang";
-            this.btnThemKhachHang.Size = new System.Drawing.Size(20, 20);
-            this.btnThemKhachHang.TabIndex = 39;
-            this.btnThemKhachHang.UseVisualStyleBackColor = true;
-            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
+            this.LyDoKhongDuyet.DataPropertyName = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
+            this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
+            this.LyDoKhongDuyet.Width = 110;
             // 
             // FormPhieuDangKy
             // 
@@ -656,5 +665,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
     }
 }

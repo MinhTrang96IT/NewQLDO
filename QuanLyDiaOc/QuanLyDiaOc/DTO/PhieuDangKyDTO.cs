@@ -22,7 +22,7 @@ namespace QuanLyDiaOc.DTO
         public double ConNo { get; set; }
         public string LyDoKhongDuyet { get; set; }
 
-        public PhieuDangKyDTO(int maPhieuDangKy, int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo)
+        public PhieuDangKyDTO(int maPhieuDangKy, int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo, string lyDoKhongDuyet)
         {
             MaPhieuDangKy = maPhieuDangKy;
             MaKhachHang = maKhachHang;
@@ -36,9 +36,10 @@ namespace QuanLyDiaOc.DTO
             TongTien = tongTien;
             DaTra = daTra;
             ConNo = conNo;
+            LyDoKhongDuyet = lyDoKhongDuyet;
         }
 
-        public PhieuDangKyDTO( int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo)
+        public PhieuDangKyDTO( int maKhachHang, int maDiaOc, int maNhanVien, DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, int soLanGiaHan, int trangThaiKiemDuyet, double tongTien, double daTra, double conNo, string lyDoKhongDuyet)
         {
             MaKhachHang = maKhachHang;
             MaDiaOc = maDiaOc;
@@ -51,6 +52,7 @@ namespace QuanLyDiaOc.DTO
             TongTien = tongTien;
             DaTra = daTra;
             ConNo = conNo;
+            LyDoKhongDuyet = lyDoKhongDuyet;
         }
 
         public PhieuDangKyDTO(int maPhieuDangKy, int trangThaiKiemDuyet, string lyDoKhongDuyet)

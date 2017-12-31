@@ -64,7 +64,7 @@ namespace QuanLyDiaOc.GUI
                                    Double.Parse(txtTongTien.Text.ToString()),
                                    Double.Parse(txtDaTra.Text.ToString()),
                                    Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
-                                   );
+                                   ,"");
 
                     try
                     {
@@ -141,7 +141,7 @@ namespace QuanLyDiaOc.GUI
                                    Double.Parse(txtTongTien.Text.ToString()),
                                    Double.Parse(txtDaTra.Text.ToString()),
                                    Double.Parse(txtTongTien.Text.ToString()) - Double.Parse(txtDaTra.Text.ToString())
-                                   );
+                                   ,"");
 
                     try
                     {
