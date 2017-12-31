@@ -23,6 +23,11 @@ namespace QuanLyDiaOc.BLL
             return phieuDangKyDAL.LayDanhSachPhieuDangKyCoTen();
         }
 
+        public DataTable LayDanhSachPhieuDangKyTheoMa(int ma)
+        {
+            return phieuDangKyDAL.LayDanhSachPhieuDangKyTheoMa(ma);
+        }
+
         public bool ThemPhieuDangKy(PhieuDangKyDTO phieuDangKyDTO)
         {
             return phieuDangKyDAL.ThemPhieuDangKy(phieuDangKyDTO);
