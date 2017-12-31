@@ -48,6 +48,11 @@ namespace QuanLyDiaOc.BLL
             return nhanVienDAL.LayDanhSachNhanVienTheoTenLoai();
         }
 
+        public DataTable LayDanhSachNhanVienTheoMa(int ma)
+        {
+            return nhanVienDAL.LayDanhSachNhanVienTheoMa(ma);
+        }
+
         public bool ThemNhanVien(NhanVienDTO nhanVienDTO)
         {
             return nhanVienDAL.ThemNhanVien(nhanVienDTO);

@@ -60,9 +60,9 @@ AS
 	UPDATE PhieuDangKy SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuDangKy = @maphieudangky
 GO
 
-CREATE PROC sp_PhieuDangKy_LayDanhSachTheoMaPDK
-@mapdk int
+CREATE PROC sp_PhieuDangKy_LayDanhSachTheoMa
+@ma int
 
 AS
-	SELECT * FROM PhieuDangKy WHERE MaPhieuDangKy=@mapdk
+	SELECT * FROM PhieuDangKy WHERE MaPhieuDangKy=@ma
 GO

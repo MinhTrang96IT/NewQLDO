@@ -44,3 +44,10 @@ CREATE PROC sp_KhachHang_TimKiemTheoTen
 AS
 	SELECT * FROM KhachHang WHERE TenKhachHang LIKE '%'+ @ten +'%'
 GO
+
+CREATE PROC sp_KhachHang_LayDanhSachTheoMa
+@ma int
+
+AS
+	SELECT * FROM KhachHang WHERE MaKhachHang=@ma
+GO

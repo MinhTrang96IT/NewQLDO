@@ -165,6 +165,12 @@
     <Compile Include="GUI\FormChiTietHinhAnh.Designer.cs">
       <DependentUpon>FormChiTietHinhAnh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormChiTietPhieuDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChiTietPhieuDangKy.Designer.cs">
+      <DependentUpon>FormChiTietPhieuDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormChiTietQuangCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormChiTietHinhAnh.resx">
       <DependentUpon>FormChiTietHinhAnh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormChiTietPhieuDangKy.resx">
+      <DependentUpon>FormChiTietPhieuDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormChiTietQuangCao.resx">
       <DependentUpon>FormChiTietQuangCao.cs</DependentUpon>

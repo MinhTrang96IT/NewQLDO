@@ -17,6 +17,11 @@ namespace QuanLyDiaOc.BLL
             return khachHangDAL.LayDanhSachKhachHang();
         }
 
+        public DataTable LayDanhSachKhachHangTheoMa(int ma)
+        {
+            return khachHangDAL.LayDanhSachKhachHangTheoMa(ma);
+        }
+
         public bool ThemKhachHang(KhachHangDTO khachHangDTO)
         {
             return khachHangDAL.ThemKhachHang(khachHangDTO);

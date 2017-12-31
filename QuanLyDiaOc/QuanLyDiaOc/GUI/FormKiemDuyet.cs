@@ -55,13 +55,9 @@ namespace QuanLyDiaOc.GUI
 
                     if (columnName.Equals("ChiTiet"))
                     {
-                        //FormPhieuDangKy diaglogPhieuDangKy = new FormPhieuDangKy(maPhieuDK);
-                        //diaglogPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //if (diaglogPhieuDangKy.ShowDialog(this) == DialogResult.Yes) { }
-                        //else
-                        //{
-                        //    LoadPhieuDangKy();
-                        //}
+                        FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuDK);
+                        diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
+                        diaglogChiTietPhieuDangKy.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhan"))

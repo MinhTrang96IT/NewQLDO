@@ -63,10 +63,10 @@ namespace QuanLyDiaOc.DAL
             {
                 OpenConnect();
                 DataTable data = new DataTable();
-                string store = "sp_PhieuDangKy_LayDanhSachTheoMaPDK";
+                string store = "sp_PhieuDangKy_LayDanhSachTheoMa";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.Add(new SqlParameter("@mapdk", ma));
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", ma));
                 sqlAdapter = new SqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(data);
                 return data;

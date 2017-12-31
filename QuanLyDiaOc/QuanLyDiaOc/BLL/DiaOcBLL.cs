@@ -23,6 +23,11 @@ namespace QuanLyDiaOc.BLL
             return diaOcDAL.LayDanhSachDiaOcTheoTenLoai();
         }
 
+        public DataTable LayDanhSachDiaOcTheoMa(int ma)
+        {
+            return diaOcDAL.LayDanhSachDiaOcTheoMa(ma);
+        }
+
         public bool ThemDiaOc(DiaOcDTO diaOcDTO)
         {
             return diaOcDAL.ThemDiaOc(diaOcDTO);

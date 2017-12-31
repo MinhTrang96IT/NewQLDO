@@ -107,3 +107,10 @@ CREATE PROC sp_NhanVien_LayThongTinDangNhap
 AS
 	SELECT * FROM NhanVien where MaNhanVien = @manhanvien
 GO
+
+CREATE PROC sp_NhanVien_LayDanhSachTheoMa
+@ma int
+
+AS
+	SELECT MaNhanVien, TenLoaiNhanVien, TenLPhongBan, TenNhanVien, TenBangCap, CMND, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email, TenDangNhap, MatKhau FROM NhanVien, LoaiNhanVien, PhongBan, BangCap WHERE NhanVien.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND NhanVien.MaPhongBan = PhongBan.MaPhongBan AND NhanVien.MaBangCap = BangCap.MaBangCap AND MaNhanVien=@ma
+GO
