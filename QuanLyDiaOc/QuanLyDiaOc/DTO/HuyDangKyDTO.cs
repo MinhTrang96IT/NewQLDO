@@ -36,5 +36,12 @@ namespace QuanLyDiaOc.DTO
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
+
+        public HuyDangKyDTO(int maPhieuNgungDangKyDichVu, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaPhieuNgungDangKyDichVu = maPhieuNgungDangKyDichVu;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
     }
 }

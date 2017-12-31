@@ -43,3 +43,11 @@ CREATE PROC sp_PhieuGiaHan_Sua
 AS
 	UPDATE PhieuGiaHan SET MaPhieuDangKy=@maphieudangky, MaNhanVien=@manhanvien, NgayLap = @ngaylap, NgayBatDau = @ngaybatdau, NgayKetThuc = @ngayketthuc,  TrangThaiKiemDuyet = @trangthaikiemduyet, TongTien = @tongtien, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuGiaHan = @maphieugiahan
 GO
+
+CREATE PROC sp_PhieuGiaHan_SuaKiemDuyet
+	@maphieugiahan int,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE PhieuGiaHan SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuGiaHan = @maphieugiahan
+GO

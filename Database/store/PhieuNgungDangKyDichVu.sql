@@ -50,3 +50,11 @@ CREATE PROC sp_HuyDangKy_TimKiemTheoTen
 AS
 	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet, LyDoKhongDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien AND TenNhanVien LIKE '%'+ @ten +'%'
 GO
+
+CREATE PROC sp_PhieuNgungDangKyDichVu_SuaKiemDuyet
+	@maphieungungdichvu int,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE PhieuNgungDangKyDichVu SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuNgungDangKyDichVu = @maphieungungdichvu
+GO
