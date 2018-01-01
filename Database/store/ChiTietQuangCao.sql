@@ -58,3 +58,11 @@ CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa
 AS
 	SELECT DonGia From ChiTietQuangCao, GiaTienQuangCao WHERE ChiTietQuangCao.MaChiTietQuangCao = @machitietquangcao AND ChiTietQuangCao.MaLoaiQuangCao = GiaTienQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = GiaTienQuangCao.MaViTri AND (ChiTietQuangCao.SoLuongPhatHanh between GiaTienQuangCao.SoLuongPhatHanhToiThieu and GiaTienQuangCao.SoLuongPhatHanhToiDa) AND (ChiTietQuangCao.KichThuoc between GiaTienQuangCao.KichCoToiThieu and GiaTienQuangCao.KichCoToiDa)
 GO
+
+CREATE PROC sp_ChiTietQuangCao_SuaKiemDuyet
+	@machitietquangcao int,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE ChiTietQuangCao SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao = @machitietquangcao
+GO

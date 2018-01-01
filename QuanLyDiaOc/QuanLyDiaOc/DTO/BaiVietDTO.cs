@@ -33,5 +33,12 @@ namespace QuanLyDiaOc.DTO
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
+
+        public BaiVietDTO(int maBaiViet, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaBaiViet = maBaiViet;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
     }
 }

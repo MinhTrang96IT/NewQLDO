@@ -36,3 +36,11 @@ CREATE PROC sp_BaiViet_Sua
 AS
 	UPDATE BaiViet SET MaChiTietQuangCao=@machitietquangcao, MaNhanVien=@manhanvien, NoiDungBaiViet=@noidungbaiviet, TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaBaiViet=@mabaiviet
 GO
+
+CREATE PROC sp_BaiViet_SuaKiemDuyet
+	@mabaiviet int,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE BaiViet SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaBaiViet = @mabaiviet
+GO

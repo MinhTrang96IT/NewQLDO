@@ -69,5 +69,12 @@ namespace QuanLyDiaOc.DTO
             TrangThaiMuaBan = trangThaiMuaBan;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
+
+        public DiaOcDTO(int maDiaOc, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaDiaOc = maDiaOc;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
     }
 }

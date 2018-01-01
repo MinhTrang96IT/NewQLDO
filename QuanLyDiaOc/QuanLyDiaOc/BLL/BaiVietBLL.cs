@@ -37,5 +37,10 @@ namespace QuanLyDiaOc.BLL
         {
             return baiVietDAL.SuaBaiViet(baiVietDTO);
         }
+
+        public bool SuaKiemDuyetBaiViet(BaiVietDTO baiVietDTO)
+        {
+            return baiVietDAL.SuaKiemDuyetBaiViet(baiVietDTO);
+        }
     }
 }

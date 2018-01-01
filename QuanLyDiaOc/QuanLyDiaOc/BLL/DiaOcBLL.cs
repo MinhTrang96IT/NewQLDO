@@ -47,5 +47,10 @@ namespace QuanLyDiaOc.BLL
         {
             return diaOcDAL.TimKiemNVTheoTen(ten);
         }
+
+        public bool SuaKiemDuyetDiaOc(DiaOcDTO diaOcDTO)
+        {
+            return diaOcDAL.SuaKiemDuyetDiaOc(diaOcDTO);
+        }
     }
 }

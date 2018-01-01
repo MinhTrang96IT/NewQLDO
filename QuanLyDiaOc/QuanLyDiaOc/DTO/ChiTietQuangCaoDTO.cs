@@ -48,5 +48,12 @@ namespace QuanLyDiaOc.DTO
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }
+
+        public ChiTietQuangCaoDTO(int maChiTietQuangCao, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaChiTietQuangCao = maChiTietQuangCao;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
     }
 }

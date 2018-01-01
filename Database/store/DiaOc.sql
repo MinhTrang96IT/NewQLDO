@@ -74,3 +74,11 @@ CREATE PROC sp_DiaOc_LayDanhSachTheoMa
 AS
 	SELECT MaDiaOc, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND MaDiaOc=@ma
 GO
+
+CREATE PROC sp_DiaOc_SuaKiemDuyet
+	@madiaoc int,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE DiaOc SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaDiaOc = @madiaoc
+GO

@@ -17,6 +17,9 @@ namespace QuanLyDiaOc.GUI
         private PhieuDangKyBLL phieuDangKyBLL;
         private PhieuGiaHanBLL phieuGiaHanBLL;
         private HuyDangKyBLL huyDangKyBLL;
+        private ChiTietQuangCaoBLL chiTietQuangCaoBLL;
+        private BaiVietBLL baiVietBLL;
+        private DiaOcBLL diaOcBLL;
 
         public FormKiemDuyet()
         {
@@ -24,6 +27,9 @@ namespace QuanLyDiaOc.GUI
             phieuDangKyBLL = new PhieuDangKyBLL();
             phieuGiaHanBLL = new PhieuGiaHanBLL();
             huyDangKyBLL = new HuyDangKyBLL();
+            chiTietQuangCaoBLL = new ChiTietQuangCaoBLL();
+            baiVietBLL = new BaiVietBLL();
+            diaOcBLL = new DiaOcBLL();
         }
 
         private void tabctrKiemDuyet_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,6 +47,21 @@ namespace QuanLyDiaOc.GUI
             if (tabctrKiemDuyet.SelectedIndex == 2)
             {
                 LoadPhieuNgungDV();
+            }
+
+            if (tabctrKiemDuyet.SelectedIndex == 3)
+            {
+                LoadChiTietQuangCao();
+            }
+
+            if (tabctrKiemDuyet.SelectedIndex == 4)
+            {
+                LoadBaiViet();
+            }
+
+            if (tabctrKiemDuyet.SelectedIndex == 5)
+            {
+                LoadDiaOc();
             }
         }
 
@@ -68,6 +89,23 @@ namespace QuanLyDiaOc.GUI
             dgvNgungDichVu.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
             dgvNgungDichVu.Columns["TrangThaiKiemDuyetNDV"].DisplayIndex = 6;
             dgvNgungDichVu.Columns["LyDoKhongDuyetNDV"].DisplayIndex = 7;
+        }
+
+        private void LoadChiTietQuangCao()
+        {
+            dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
+        }
+
+        private void LoadBaiViet()
+        {
+            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+        }
+
+        private void LoadDiaOc()
+        {
+            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOc();
+            dgvDiaOc.Columns["TrangThaiKiemDuyetDO"].DisplayIndex = 17;
+            dgvDiaOc.Columns["LyDoKhongDuyetDO"].DisplayIndex = 18;
         }
 
         private void dgvPhieuDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -205,6 +243,153 @@ namespace QuanLyDiaOc.GUI
                             else
                             {
                                 MessageBox.Show("Sửa trạng thái phiếu ngưng dịch vụ thất bại");
+                            }
+                        }
+                        catch
+                        {
+                        }
+                    }
+
+                }
+                catch { }
+            }
+        }
+
+        private void dgvChiTietQuangCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow row = dgvChiTietQuangCao.Rows[e.RowIndex];
+                    int columnIndex = dgvChiTietQuangCao.CurrentCell.ColumnIndex;
+                    string columnName = dgvChiTietQuangCao.Columns[columnIndex].Name;
+                    int maPhieuCT = Int32.Parse(row.Cells["MaChiTietQuangCao"].Value.ToString());
+
+                    if (columnName.Equals("ChiTietCT"))
+                    {
+                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
+                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
+                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                    }
+
+                    if (columnName.Equals("XacNhanCT"))
+                    {
+                        int trangThai = 0;
+                        if (row.Cells["TrangThaiKiemDuyetCT"].Value.ToString().Equals("1"))
+                            trangThai = 1;
+                        string lyDo = "";
+                        if (trangThai == 0)
+                            lyDo = row.Cells["LyDoKhongDuyetCT"].Value.ToString();
+                        ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(maPhieuCT, trangThai, lyDo);
+                        try
+                        {
+                            if (chiTietQuangCaoBLL.SuaKiemDuyetChiTietQuangCao(chiTietQuangCaoDTO))
+                            {
+                                MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thành công");
+                                LoadChiTietQuangCao();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thất bại");
+                            }
+                        }
+                        catch
+                        {
+                        }
+                    }
+
+                }
+                catch { }
+            }
+        }
+
+        private void dgvBaiViet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow row = dgvBaiViet.Rows[e.RowIndex];
+                    int columnIndex = dgvBaiViet.CurrentCell.ColumnIndex;
+                    string columnName = dgvBaiViet.Columns[columnIndex].Name;
+                    int maPhieuBV = Int32.Parse(row.Cells["MaBaiViet"].Value.ToString());
+
+                    if (columnName.Equals("ChiTietBV"))
+                    {
+                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
+                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
+                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                    }
+
+                    if (columnName.Equals("XacNhanBV"))
+                    {
+                        int trangThai = 0;
+                        if (row.Cells["TrangThaiKiemDuyetBV"].Value.ToString().Equals("1"))
+                            trangThai = 1;
+                        string lyDo = "";
+                        if (trangThai == 0)
+                            lyDo = row.Cells["LyDoKhongDuyetBV"].Value.ToString();
+                        BaiVietDTO baiVietDTO = new BaiVietDTO(maPhieuBV, trangThai, lyDo);
+                        try
+                        {
+                            if (baiVietBLL.SuaKiemDuyetBaiViet(baiVietDTO))
+                            {
+                                MessageBox.Show("Sửa trạng thái bài viết thành công");
+                                LoadBaiViet();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa trạng thái bài viết thất bại");
+                            }
+                        }
+                        catch
+                        {
+                        }
+                    }
+
+                }
+                catch { }
+            }
+        }
+
+        private void dgvDiaOc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow row = dgvDiaOc.Rows[e.RowIndex];
+                    int columnIndex = dgvDiaOc.CurrentCell.ColumnIndex;
+                    string columnName = dgvDiaOc.Columns[columnIndex].Name;
+                    int maPhieuDO = Int32.Parse(row.Cells["MaDiaOcDO"].Value.ToString());
+
+                    if (columnName.Equals("ChiTietDO"))
+                    {
+                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
+                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
+                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                    }
+
+                    if (columnName.Equals("XacNhanDO"))
+                    {
+                        int trangThai = 0;
+                        if (row.Cells["TrangThaiKiemDuyetDO"].Value.ToString().Equals("1"))
+                            trangThai = 1;
+                        string lyDo = "";
+                        if (trangThai == 0)
+                            lyDo = row.Cells["LyDoKhongDuyetDO"].Value.ToString();
+                        DiaOcDTO diaOcDTO = new DiaOcDTO(maPhieuDO, trangThai, lyDo);
+                        try
+                        {
+                            if (diaOcBLL.SuaKiemDuyetDiaOc(diaOcDTO))
+                            {
+                                MessageBox.Show("Sửa trạng thái địa ốc thành công");
+                                LoadDiaOc();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa trạng thái địa ốc thất bại");
                             }
                         }
                         catch
