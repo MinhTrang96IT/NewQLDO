@@ -16,7 +16,9 @@ namespace QuanLyDiaOc.GUI
         PhieuGiaHanBLL phieuGiaHanBLL;
         PhieuDangKyBLL phieuDangKyBLL;
         NhanVienBLL nhanVienBLL;
+        QuyDinhBLL quyDinhBLL;
         string id;
+        bool checkFormLoad = true;
 
         public FormPhieuGiaHan()
         {
@@ -25,6 +27,7 @@ namespace QuanLyDiaOc.GUI
             phieuGiaHanBLL = new PhieuGiaHanBLL();
             phieuDangKyBLL = new PhieuDangKyBLL();
             nhanVienBLL = new NhanVienBLL();
+            quyDinhBLL = new QuyDinhBLL();
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -34,14 +37,14 @@ namespace QuanLyDiaOc.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTinTrong())
-            {
-                MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu gia hạn");
-            }
-            else
-            {
-                if (KiemTraThongTinHopLe())
-                {
+            //if (KiemTraThongTinTrong())
+            //{
+            //    MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu gia hạn");
+            //}
+            //else
+            //{
+            //    if (KiemTraThongTinHopLe())
+            //    {
                     int trangThaiKiemDuyet = 0;
                     if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
@@ -71,8 +74,8 @@ namespace QuanLyDiaOc.GUI
                     catch
                     {
                     }
-                }
-            }
+            //    }
+            //}
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -126,8 +129,8 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayBatDau.Text),
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString())
-                                   ,"");
+                                   Double.Parse(phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.Text.ToString())).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString())
+                                   , "");
 
                     try
                     {
@@ -158,13 +161,16 @@ namespace QuanLyDiaOc.GUI
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";
-            
+            txtPhanTramGiaHan.Text = quyDinhBLL.LayLaiSuatTreHanThanhToan();
+            double chiphi = Double.Parse(phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString())).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString());
+            txtTongTien.Text = chiphi.ToString();
             LamMoiThongTin();
+            checkFormLoad = false;
         }
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuGiaHan.Text = cbMaPhieuDangKy.Text  = cbNhanVien.Text  =txtTongTien.Text = "";
+            txtMaPhieuGiaHan.Text = cbMaPhieuDangKy.Text  = cbNhanVien.Text ="";
             rbChuaKiemDuyet.Checked = true;
             rbDaKiemDuyet.Checked = false;
             txtTongTien.Focus();
@@ -243,7 +249,11 @@ namespace QuanLyDiaOc.GUI
                     dtpNgayLapPhieu.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value.ToString());
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
-                    txtTongTien.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["TongTien"].Value.ToString()));
+
+                    double ChiPhi = 0.0;
+                    ChiPhi = Double.Parse( phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.Text.ToString())).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString());
+
+                    txtTongTien.Text = String.Format("{0:#,###0}", ChiPhi);
                 }
                 catch { }
             }
@@ -268,6 +278,17 @@ namespace QuanLyDiaOc.GUI
             else
             {
                 cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
+            }
+        }
+
+        private void cbMaPhieuDangKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!checkFormLoad)
+            {
+                double ChiPhi = 0.0;
+                ChiPhi = Double.Parse(phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.Text.ToString())).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString());
+
+                txtTongTien.Text = String.Format("{0:#,###0}", ChiPhi);
             }
         }
     }

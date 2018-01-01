@@ -55,6 +55,7 @@ namespace QuanLyDiaOc.GUI
             cbBao.DataSource = baoBLL.LayDanhSachBao();
             cbBao.DisplayMember = "TenBao";
             cbBao.ValueMember = "MaBao";
+           
             LamMoiThongTin();
         }
         
@@ -204,14 +205,14 @@ namespace QuanLyDiaOc.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTinTrong())
-            {
-                MessageBox.Show("Làm ơn điền đầy đủ thông tin chi tiết quảng cáo");
-            }
-            else
-            {
-                if (KiemTraThongTinHopLe())
-                {
+            //if (KiemTraThongTinTrong())
+            //{
+            //    MessageBox.Show("Làm ơn điền đầy đủ thông tin chi tiết quảng cáo");
+            //}
+            //else
+            //{
+                //if (KiemTraThongTinHopLe())
+                //{
                     int trangThaiKiemDuyet = 0;
                     if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
@@ -291,8 +292,8 @@ namespace QuanLyDiaOc.GUI
                         {
                         }
                     }
-                }
-            }
+                //}
+            //}
         }
 
         private void LamMoiThongTin()
@@ -422,9 +423,16 @@ namespace QuanLyDiaOc.GUI
                     if (row.Cells["NgayKetThuc"].Value.ToString() != "")
                         dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
                     txtKichThuoc.Text = row.Cells["KichThuoc"].Value.ToString();
-
-                    double ChiPhi = Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa(Int32.Parse(id)).Rows[0]["DonGia"].ToString()) * Double.Parse(txtSoLuong.Text);
-                    txtChiPhi.Text = String.Format("{0:#,###0}", ChiPhi.ToString() + " VNĐ");
+                    if(cbLoaiQuangCao.Text.ToString() == "Quảng cáo tờ bướm")
+                    {
+                        double ChiPhi = Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_ToBuom(Int32.Parse(id)).Rows[0]["DonGia"].ToString()) * Double.Parse(txtSoLuong.Text);
+                        txtChiPhi.Text = String.Format("{0:#,###0}", ChiPhi.ToString() + " VNĐ" + " ("+txtSoLuong.Text+" tờ)");
+                    }
+                    else
+                    {
+                        double ChiPhi = Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_LoaiKhac(Int32.Parse(id)).Rows[0]["DonGia"].ToString());
+                        txtChiPhi.Text = String.Format("{0:#,###0}", ChiPhi.ToString() + " VNĐ");
+                    }
                 }
                 catch { }
             }

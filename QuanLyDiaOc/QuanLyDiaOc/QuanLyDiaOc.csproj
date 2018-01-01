@@ -171,6 +171,12 @@
     <Compile Include="GUI\FormChiTietPhieuDangKy.Designer.cs">
       <DependentUpon>FormChiTietPhieuDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormChiTIetPhieuGiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChiTIetPhieuGiaHan.Designer.cs">
+      <DependentUpon>FormChiTIetPhieuGiaHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormChiTietQuangCao.cs">
       <SubType>Form</SubType>
     </Compile>

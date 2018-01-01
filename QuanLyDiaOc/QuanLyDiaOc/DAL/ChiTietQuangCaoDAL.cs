@@ -81,13 +81,13 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
-        public DataTable LayDonGiaTheoMa(int machitietquangcao)
+        public DataTable LayDonGiaTheoMa_ToBuom(int machitietquangcao)
         {
             try
             {
                 OpenConnect();
                 DataTable data = new DataTable();
-                string store = "sp_ChiTietQuangCao_LayDonGiaTheoMa";
+                string store = "sp_ChiTietQuangCao_LayDonGiaTheoMa_ToBuom";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", machitietquangcao));
@@ -105,6 +105,29 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable LayDonGiaTheoMa_LoaiKhac(int machitietquangcao)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_ChiTietQuangCao_LayDonGiaTheoMa_LoaiKhac";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", machitietquangcao));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
         public bool ThemChiTietQuangCaoToBuom(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
             try

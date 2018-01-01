@@ -73,11 +73,18 @@ AS
 	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, MaViTri, MaBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet, LyDoKhongDuyet FROM ChiTietQuangCao, LoaiQuangCao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND  ChiTietQuangCao.MaPhieuDangKy = @maphieudangky
 GO
 
-CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa
+CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa_ToBuom
 @machitietquangcao int
 AS
-	SELECT DonGia From ChiTietQuangCao, GiaTienQuangCao WHERE ChiTietQuangCao.MaChiTietQuangCao = @machitietquangcao AND ChiTietQuangCao.MaLoaiQuangCao = GiaTienQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = GiaTienQuangCao.MaViTri AND (ChiTietQuangCao.SoLuongPhatHanh between GiaTienQuangCao.SoLuongPhatHanhToiThieu and GiaTienQuangCao.SoLuongPhatHanhToiDa) AND (ChiTietQuangCao.KichThuoc between GiaTienQuangCao.KichCoToiThieu and GiaTienQuangCao.KichCoToiDa)
+	SELECT DonGia From ChiTietQuangCao, GiaTienQuangCao WHERE ChiTietQuangCao.MaChiTietQuangCao = @machitietquangcao AND (ChiTietQuangCao.SoLuongPhatHanh between GiaTienQuangCao.SoLuongPhatHanhToiThieu and GiaTienQuangCao.SoLuongPhatHanhToiDa) AND (ChiTietQuangCao.KichThuoc between GiaTienQuangCao.KichCoToiThieu and GiaTienQuangCao.KichCoToiDa)
 GO
+
+CREATE PROC sp_ChiTietQuangCao_LayDonGiaTheoMa_LoaiKhac
+@machitietquangcao int
+AS
+	SELECT DonGia From ChiTietQuangCao, GiaTienQuangCao WHERE ChiTietQuangCao.MaChiTietQuangCao = @machitietquangcao AND ChiTietQuangCao.MaLoaiQuangCao = GiaTienQuangCao.MaLoaiQuangCao AND ChiTietQuangCao.MaViTri = GiaTienQuangCao.MaViTri
+GO
+
 
 CREATE PROC sp_ChiTietQuangCao_SuaKiemDuyet
 	@machitietquangcao int,

@@ -21,6 +21,7 @@ namespace QuanLyDiaOc.GUI
         DiaOcBLL diaOcBLL;
         ChiTietQuangCaoBLL chiTietQuangCaoBLL;
         string id;
+        private List<int> listIdLoaiQuangCao;
 
         public FormPhieuDangKy()
         {
@@ -177,7 +178,9 @@ namespace QuanLyDiaOc.GUI
                 cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
                 cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
                 cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
+
             }
+    
             LamMoiThongTin();
         }
 
@@ -261,6 +264,24 @@ namespace QuanLyDiaOc.GUI
                     cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
                     cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
                     cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
+                    DataTable dtChiTiet = new DataTable();
+                    dtChiTiet = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                    listIdLoaiQuangCao = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString())).AsEnumerable()
+                           .Select(r => r.Field<int>("MaChiTietQuangCao"))
+                           .ToList();
+                    double TongTien = 0.0;
+                    for(int i = 0; i< listIdLoaiQuangCao.Count;i++)
+                    {
+                        if (dtChiTiet.Rows[i]["TenLoaiQuangCao"].ToString() == "Quảng cáo tờ bướm")
+                        {
+                             TongTien += Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_ToBuom(listIdLoaiQuangCao[i]).Rows[0]["DonGia"].ToString()) * Double.Parse(dtChiTiet.Rows[i]["SoLuongPhatHanh"].ToString());
+                        }
+                        else
+                        {
+                             TongTien += Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_LoaiKhac(listIdLoaiQuangCao[i]).Rows[0]["DonGia"].ToString());
+                        }
+                    }
+
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
@@ -268,7 +289,7 @@ namespace QuanLyDiaOc.GUI
                     dtpNgayLapPhieu.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value.ToString());
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
-                    txtTongTien.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["TongTien"].Value.ToString()));
+                    txtTongTien.Text = String.Format("{0:#,###0}", TongTien);
                 }
                 catch { }
             }
