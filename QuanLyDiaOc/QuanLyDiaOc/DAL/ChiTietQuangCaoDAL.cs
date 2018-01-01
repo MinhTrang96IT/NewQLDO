@@ -105,12 +105,39 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
-        public bool ThemChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        public bool ThemChiTietQuangCaoToBuom(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
             try
             {
                 OpenConnect();
-                string store = "sp_ChiTietQuangCao_Them";
+                string store = "sp_ChiTietQuangCao_ThemLoaiToBuom";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", chiTietQuangCaoDTO.MaPhieuDangKy));
+                sqlCommand.Parameters.Add(new SqlParameter("@maloaiquangcao", chiTietQuangCaoDTO.MaLoaiQuangCao));
+                sqlCommand.Parameters.Add(new SqlParameter("@soluongphathanh", chiTietQuangCaoDTO.SoLuongPhatHanh));
+                sqlCommand.Parameters.Add(new SqlParameter("@kichthuoc", chiTietQuangCaoDTO.KichThuoc));
+                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", chiTietQuangCaoDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", chiTietQuangCaoDTO.LyDoKhongDuyet));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public bool ThemChiTietQuangCaoLoaiKhac(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_ChiTietQuangCao_ThemLoaiKhac";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", chiTietQuangCaoDTO.MaPhieuDangKy));
@@ -119,8 +146,6 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@mabao", chiTietQuangCaoDTO.MaBao));
                 sqlCommand.Parameters.Add(new SqlParameter("@ngaybatdau", chiTietQuangCaoDTO.NgayBatDau));
                 sqlCommand.Parameters.Add(new SqlParameter("@ngayketthuc", chiTietQuangCaoDTO.NgayKetThuc));
-                sqlCommand.Parameters.Add(new SqlParameter("@soluongphathanh", chiTietQuangCaoDTO.SoLuongPhatHanh));
-                sqlCommand.Parameters.Add(new SqlParameter("@kichthuoc", chiTietQuangCaoDTO.KichThuoc));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", chiTietQuangCaoDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", chiTietQuangCaoDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();
@@ -158,12 +183,40 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
-        public bool SuaChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        public bool SuaChiTietQuangCaoToBuom(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
             try
             {
                 OpenConnect();
-                string store = "sp_ChiTietQuangCao_Sua";
+                string store = "sp_ChiTietQuangCao_SuaToBuom";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", chiTietQuangCaoDTO.MaChiTietQuangCao));
+                sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", chiTietQuangCaoDTO.MaPhieuDangKy));
+                sqlCommand.Parameters.Add(new SqlParameter("@maloaiquangcao", chiTietQuangCaoDTO.MaLoaiQuangCao));
+                sqlCommand.Parameters.Add(new SqlParameter("@soluongphathanh", chiTietQuangCaoDTO.SoLuongPhatHanh));
+                sqlCommand.Parameters.Add(new SqlParameter("@kichthuoc", chiTietQuangCaoDTO.KichThuoc));
+                sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", chiTietQuangCaoDTO.TrangThaiKiemDuyet));
+                sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", chiTietQuangCaoDTO.LyDoKhongDuyet));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public bool SuaChiTietQuangCaoLoaiKhac(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_ChiTietQuangCao_SuaLoaiKhac";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", chiTietQuangCaoDTO.MaChiTietQuangCao));
@@ -173,8 +226,6 @@ namespace QuanLyDiaOc.DAL
                 sqlCommand.Parameters.Add(new SqlParameter("@mabao", chiTietQuangCaoDTO.MaBao));
                 sqlCommand.Parameters.Add(new SqlParameter("@ngaybatdau", chiTietQuangCaoDTO.NgayBatDau));
                 sqlCommand.Parameters.Add(new SqlParameter("@ngayketthuc", chiTietQuangCaoDTO.NgayKetThuc));
-                sqlCommand.Parameters.Add(new SqlParameter("@soluongphathanh", chiTietQuangCaoDTO.SoLuongPhatHanh));
-                sqlCommand.Parameters.Add(new SqlParameter("@kichthuoc", chiTietQuangCaoDTO.KichThuoc));
                 sqlCommand.Parameters.Add(new SqlParameter("@trangthaikiemduyet", chiTietQuangCaoDTO.TrangThaiKiemDuyet));
                 sqlCommand.Parameters.Add(new SqlParameter("@lydokhongduyet", chiTietQuangCaoDTO.LyDoKhongDuyet));
                 sqlCommand.ExecuteNonQuery();

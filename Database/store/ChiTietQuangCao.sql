@@ -9,19 +9,28 @@ AS
 	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, MaViTri, MaBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet FROM ChiTietQuangCao, LoaiQuangCao WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao
 GO
 
-CREATE PROC sp_ChiTietQuangCao_Them
+CREATE PROC sp_ChiTietQuangCao_ThemLoaiToBuom
+	@maphieudangky int,
+	@maloaiquangcao int,				
+	@soluongphathanh int,
+	@kichthuoc float,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)	
+AS
+	INSERT INTO ChiTietQuangCao(MaPhieuDangKy, MaLoaiQuangCao, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet,LyDoKhongDuyet) VALUES(@maphieudangky, @maloaiquangcao, @soluongphathanh, @kichthuoc, @trangthaikiemduyet, @lydokhongduyet)
+GO
+
+CREATE PROC sp_ChiTietQuangCao_ThemLoaiKhac
 	@maphieudangky int,
 	@maloaiquangcao int,				
 	@mavitri int,
 	@mabao int,		
 	@ngaybatdau date,
 	@ngayketthuc date,
-	@soluongphathanh int,
-	@kichthuoc float,
 	@trangthaikiemduyet int,
 	@lydokhongduyet nvarchar(200)	
 AS
-	INSERT INTO ChiTietQuangCao VALUES(@maphieudangky, @maloaiquangcao, @mavitri, @mabao, @ngaybatdau, @ngayketthuc, @soluongphathanh, @kichthuoc, @trangthaikiemduyet, @lydokhongduyet)
+	INSERT INTO ChiTietQuangCao(MaPhieuDangKy, MaLoaiQuangCao, MaViTri,MaBao, NgayBatDau, NgayKetThuc, TrangThaiKiemDuyet,LyDoKhongDuyet) VALUES(@maphieudangky, @maloaiquangcao, @mavitri, @mabao, @ngaybatdau, @ngayketthuc, @trangthaikiemduyet, @lydokhongduyet)
 GO
 
 CREATE PROC sp_ChiTietQuangCao_Xoa
@@ -31,7 +40,19 @@ AS
 	DELETE FROM ChiTietQuangCao WHERE MaChiTietQuangCao=@ma
 GO
 
-CREATE PROC sp_ChiTietQuangCao_Sua
+CREATE PROC sp_ChiTietQuangCao_SuaToBuom
+	@machitietquangcao int,				
+	@maphieudangky int,
+	@maloaiquangcao int,				
+	@soluongphathanh int,
+	@kichthuoc float,
+	@trangthaikiemduyet int,
+	@lydokhongduyet nvarchar(200)
+AS
+	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
+GO
+
+CREATE PROC sp_ChiTietQuangCao_SuaLoaiKhac
 	@machitietquangcao int,				
 	@maphieudangky int,
 	@maloaiquangcao int,				
@@ -39,13 +60,12 @@ CREATE PROC sp_ChiTietQuangCao_Sua
 	@mabao int,		
 	@ngaybatdau date,
 	@ngayketthuc date,
-	@soluongphathanh int,
-	@kichthuoc float,
 	@trangthaikiemduyet int,
 	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
+	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
 GO
+
 
 CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoMaPhieuDangKy
 @maphieudangky int

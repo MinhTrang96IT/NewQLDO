@@ -33,9 +33,14 @@ namespace QuanLyDiaOc.BLL
             return chiTietQuangCaoDAL.LayDonGiaTheoMa(machitietquangcao);
         }
 
-        public bool ThemChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        public bool ThemChiTietQuangCaoToBuom(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
-            return chiTietQuangCaoDAL.ThemChiTietQuangCao(chiTietQuangCaoDTO);
+            return chiTietQuangCaoDAL.ThemChiTietQuangCaoToBuom(chiTietQuangCaoDTO);
+        }
+
+        public bool ThemChiTietQuangCaoLoaiKhac(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        {
+            return chiTietQuangCaoDAL.ThemChiTietQuangCaoLoaiKhac(chiTietQuangCaoDTO);
         }
 
         public bool XoaChiTietQuangCao(int ma)
@@ -43,9 +48,14 @@ namespace QuanLyDiaOc.BLL
             return chiTietQuangCaoDAL.XoaChiTietQuangCao(ma);
         }
 
-        public bool SuaChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        public bool SuaChiTietQuangCaoToBuom(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
         {
-            return chiTietQuangCaoDAL.SuaChiTietQuangCao(chiTietQuangCaoDTO);
+            return chiTietQuangCaoDAL.SuaChiTietQuangCaoToBuom(chiTietQuangCaoDTO);
+        }
+
+        public bool SuaChiTietQuangCaoLoaiKhac(ChiTietQuangCaoDTO chiTietQuangCaoDTO)
+        {
+            return chiTietQuangCaoDAL.SuaChiTietQuangCaoLoaiKhac(chiTietQuangCaoDTO);
         }
 
         public bool SuaKiemDuyetChiTietQuangCao(ChiTietQuangCaoDTO chiTietQuangCaoDTO)

@@ -20,6 +20,7 @@ namespace QuanLyDiaOc.DTO
         public int TrangThaiKiemDuyet { get; set; }
         public string LyDoKhongDuyet { get; set; }
 
+
         public ChiTietQuangCaoDTO(int maChiTietQuangCao, int maPhieuDangKy , int maLoaiQuangCao, int maViTri, int maBao, DateTime ngayBatDau, DateTime ngayKetThuc, int soLuongPhatHanh, double kichThuoc, int trangThaiKiemDuyet, string lyDoKhongDuyet)
         {
             MaChiTietQuangCao = maChiTietQuangCao;
@@ -52,6 +53,28 @@ namespace QuanLyDiaOc.DTO
         public ChiTietQuangCaoDTO(int maChiTietQuangCao, int trangThaiKiemDuyet, string lyDoKhongDuyet)
         {
             MaChiTietQuangCao = maChiTietQuangCao;
+               TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
+        
+        public ChiTietQuangCaoDTO(int maPhieuDangKy, int maLoaiQuangCao, int maViTri, int maBao, DateTime ngayBatDau, DateTime ngayKetThuc, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaPhieuDangKy = maPhieuDangKy;
+            MaLoaiQuangCao = maLoaiQuangCao;
+            MaViTri = maViTri;
+            MaBao = maBao;
+            NgayBatDau = ngayBatDau;
+            NgayKetThuc = ngayKetThuc;
+            TrangThaiKiemDuyet = trangThaiKiemDuyet;
+            LyDoKhongDuyet = lyDoKhongDuyet;
+        }
+
+        public ChiTietQuangCaoDTO(int maPhieuDangKy, int maLoaiQuangCao, int soLuongPhatHanh, double kichThuoc, int trangThaiKiemDuyet, string lyDoKhongDuyet)
+        {
+            MaPhieuDangKy = maPhieuDangKy;
+            MaLoaiQuangCao = maLoaiQuangCao;
+            SoLuongPhatHanh = soLuongPhatHanh;
+            KichThuoc = kichThuoc;
             TrangThaiKiemDuyet = trangThaiKiemDuyet;
             LyDoKhongDuyet = lyDoKhongDuyet;
         }

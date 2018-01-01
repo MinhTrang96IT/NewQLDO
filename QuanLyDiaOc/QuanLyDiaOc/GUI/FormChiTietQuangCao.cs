@@ -96,37 +96,71 @@ namespace QuanLyDiaOc.GUI
                     {
                         maPhieuDangKy = MaPDKTuFormPDK;
                     }
-                    ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
+                    ChiTietQuangCaoDTO chiTietQuangCaoDTO;
+                    if(cbLoaiQuangCao.Text.ToString() == "Quảng cáo tờ bướm")
+                    {
+                         chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
+                                   maPhieuDangKy,
+                                   Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
+                                   Int32.Parse(txtSoLuong.Text.ToString()),
+                                   Double.Parse(txtKichThuoc.Text.ToString()),
+                                   trangThaiKiemDuyet, "");
+                        try
+                        {
+                            if (chiTietQuangCaoBLL.ThemChiTietQuangCaoToBuom(chiTietQuangCaoDTO))
+                            {
+                                MessageBox.Show("Thêm chi tiết quảng cáo thành công");
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
+                                }
+                                else
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm chi tiết quảng cáo thất bại");
+                            }
+                        }
+                        catch
+                        {
+                        }
+
+                    } else
+                    {
+                         chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
                                    maPhieuDangKy,
                                    Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
                                    Int32.Parse(cbViTri.SelectedValue.ToString()),
                                    Int32.Parse(cbBao.SelectedValue.ToString()),
                                    Convert.ToDateTime(dtpNgayBatDau.Text),
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
-                                   Int32.Parse(txtSoLuong.Text.ToString()),
-                                   Double.Parse(txtKichThuoc.Text.ToString()),
-                                   trangThaiKiemDuyet,"");
+                                   trangThaiKiemDuyet, "");
 
-                    try
-                    {
-                        if (chiTietQuangCaoBLL.ThemChiTietQuangCao(chiTietQuangCaoDTO))
+                        try
                         {
-                            MessageBox.Show("Thêm chi tiết quảng cáo thành công");
-                            if(MaPDKTuFormPDK == 0)
+                            if (chiTietQuangCaoBLL.ThemChiTietQuangCaoLoaiKhac(chiTietQuangCaoDTO))
                             {
-                                dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
-                            } else
+                                MessageBox.Show("Thêm chi tiết quảng cáo thành công");
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
+                                }
+                                else
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                }
+                            }
+                            else
                             {
-                                dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                MessageBox.Show("Thêm chi tiết quảng cáo thất bại");
                             }
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Thêm chi tiết quảng cáo thất bại");
                         }
-                    }
-                    catch
-                    {
                     }
                 }
             }
@@ -190,40 +224,72 @@ namespace QuanLyDiaOc.GUI
                     {
                         maPhieuDangKy = MaPDKTuFormPDK;
                     }
-                    ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
-                                   Int32.Parse(txtMaChiTietQuangCao.Text.ToString()),
-                                   maPhieuDangKy,
-                                   Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
-                                   Int32.Parse(cbViTri.SelectedValue.ToString()),
-                                   Int32.Parse(cbBao.SelectedValue.ToString()),
-                                   Convert.ToDateTime(dtpNgayBatDau.Text),
-                                   Convert.ToDateTime(dtpNgayKetThuc.Text),
-                                   Int32.Parse(txtSoLuong.Text.ToString()),
-                                   Double.Parse(txtKichThuoc.Text.ToString()),
-                                   trangThaiKiemDuyet,"");
-
-                    try
+                    ChiTietQuangCaoDTO chiTietQuangCaoDTO;
+                    if (cbLoaiQuangCao.Text.ToString() == "Quảng cáo tờ bướm")
                     {
-                        if (chiTietQuangCaoBLL.SuaChiTietQuangCao(chiTietQuangCaoDTO))
+                        chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
+                                  maPhieuDangKy,
+                                  Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
+                                  Int32.Parse(txtSoLuong.Text.ToString()),
+                                  Double.Parse(txtKichThuoc.Text.ToString()),
+                                  trangThaiKiemDuyet, "");
+                        try
                         {
-                            MessageBox.Show("Sửa chi tiết quảng cáo thành công");
-                            if (MaPDKTuFormPDK == 0)
+                            if (chiTietQuangCaoBLL.SuaChiTietQuangCaoToBuom(chiTietQuangCaoDTO))
                             {
-                                dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
+                                MessageBox.Show("Sửa chi tiết quảng cáo thành công");
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
+                                }
+                                else
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                }
                             }
                             else
                             {
-                                dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                MessageBox.Show("Sửa chi tiết quảng cáo thất bại");
                             }
-                            LamMoiThongTin();
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Sửa chi tiết quảng cáo thất bại");
                         }
+
                     }
-                    catch
+                    else
                     {
+                        chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(
+                                  maPhieuDangKy,
+                                  Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
+                                  Int32.Parse(cbViTri.SelectedValue.ToString()),
+                                  Int32.Parse(cbBao.SelectedValue.ToString()),
+                                  Convert.ToDateTime(dtpNgayBatDau.Text),
+                                  Convert.ToDateTime(dtpNgayKetThuc.Text),
+                                  trangThaiKiemDuyet, "");
+
+                        try
+                        {
+                            if (chiTietQuangCaoBLL.SuaChiTietQuangCaoLoaiKhac(chiTietQuangCaoDTO))
+                            {
+                                MessageBox.Show("Sửa chi tiết quảng cáo thành công");
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoTenLoai();
+                                }
+                                else
+                                {
+                                    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(MaPDKTuFormPDK);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa chi tiết quảng cáo thất bại");
+                            }
+                        }
+                        catch
+                        {
+                        }
                     }
                 }
             }
@@ -361,6 +427,31 @@ namespace QuanLyDiaOc.GUI
                     txtChiPhi.Text = String.Format("{0:#,###0}", ChiPhi.ToString() + " VNĐ");
                 }
                 catch { }
+            }
+        }
+
+        private void cbLoaiQuangCao_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(cbLoaiQuangCao.Text.ToString() != "Quảng cáo tờ bướm")
+            {
+                txtSoLuong.Enabled = false;
+                txtKichThuoc.Enabled = false;
+                dtpNgayBatDau.Enabled = true;
+                dtpNgayKetThuc.Enabled = true;
+                cbViTri.Enabled = true;
+                cbBao.Enabled = true;
+                btnThemViTri.Enabled = true;
+                btnThemBao.Enabled = true;
+            } else
+            {
+                txtSoLuong.Enabled = true;
+                txtKichThuoc.Enabled = true;
+                dtpNgayBatDau.Enabled = false;
+                dtpNgayKetThuc.Enabled = false;
+                cbViTri.Enabled = false;
+                cbBao.Enabled = false;
+                btnThemViTri.Enabled = false;
+                btnThemBao.Enabled = false;
             }
         }
     }

@@ -417,6 +417,7 @@
             this.cbLoaiQuangCao.Name = "cbLoaiQuangCao";
             this.cbLoaiQuangCao.Size = new System.Drawing.Size(121, 21);
             this.cbLoaiQuangCao.TabIndex = 15;
+            this.cbLoaiQuangCao.SelectedValueChanged += new System.EventHandler(this.cbLoaiQuangCao_SelectedValueChanged);
             // 
             // cbMaPhieuDangKy
             // 
