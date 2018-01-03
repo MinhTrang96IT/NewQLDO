@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbHinhAnh = new System.Windows.Forms.GroupBox();
+            this.btnThemNV = new System.Windows.Forms.Button();
+            this.btnThemPDK = new System.Windows.Forms.Button();
+            this.btnTaoMoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -47,9 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gbDanhSach = new System.Windows.Forms.GroupBox();
             this.dgvHinhAnh = new System.Windows.Forms.DataGridView();
-            this.btnTaoMoi = new System.Windows.Forms.Button();
-            this.btnThemPDK = new System.Windows.Forms.Button();
-            this.btnThemNV = new System.Windows.Forms.Button();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbHinhAnh.SuspendLayout();
             this.gbDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHinhAnh)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // gbHinhAnh
             // 
+            this.gbHinhAnh.Controls.Add(this.txtMaPhieuDangKy);
             this.gbHinhAnh.Controls.Add(this.btnThemNV);
             this.gbHinhAnh.Controls.Add(this.btnThemPDK);
             this.gbHinhAnh.Controls.Add(this.btnTaoMoi);
@@ -82,6 +84,36 @@
             this.gbHinhAnh.TabIndex = 0;
             this.gbHinhAnh.TabStop = false;
             this.gbHinhAnh.Text = "Thông tin hình ảnh";
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemNV.Location = new System.Drawing.Point(313, 130);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(20, 20);
+            this.btnThemNV.TabIndex = 46;
+            this.btnThemNV.UseVisualStyleBackColor = true;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
+            // 
+            // btnThemPDK
+            // 
+            this.btnThemPDK.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemPDK.Location = new System.Drawing.Point(313, 94);
+            this.btnThemPDK.Name = "btnThemPDK";
+            this.btnThemPDK.Size = new System.Drawing.Size(20, 20);
+            this.btnThemPDK.TabIndex = 45;
+            this.btnThemPDK.UseVisualStyleBackColor = true;
+            this.btnThemPDK.Click += new System.EventHandler(this.btnThemPDK_Click);
+            // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.Location = new System.Drawing.Point(232, 191);
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnTaoMoi.TabIndex = 44;
+            this.btnTaoMoi.Text = "Tạo mới";
+            this.btnTaoMoi.UseVisualStyleBackColor = true;
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
             // btnSua
             // 
@@ -248,35 +280,13 @@
             this.dgvHinhAnh.TabIndex = 0;
             this.dgvHinhAnh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHinhAnh_CellClick);
             // 
-            // btnTaoMoi
+            // txtMaPhieuDangKy
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(232, 191);
-            this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
-            this.btnTaoMoi.TabIndex = 44;
-            this.btnTaoMoi.Text = "Tạo mới";
-            this.btnTaoMoi.UseVisualStyleBackColor = true;
-            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
-            // 
-            // btnThemPDK
-            // 
-            this.btnThemPDK.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemPDK.Location = new System.Drawing.Point(313, 94);
-            this.btnThemPDK.Name = "btnThemPDK";
-            this.btnThemPDK.Size = new System.Drawing.Size(20, 20);
-            this.btnThemPDK.TabIndex = 45;
-            this.btnThemPDK.UseVisualStyleBackColor = true;
-            this.btnThemPDK.Click += new System.EventHandler(this.btnThemPDK_Click);
-            // 
-            // btnThemNV
-            // 
-            this.btnThemNV.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemNV.Location = new System.Drawing.Point(313, 130);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(20, 20);
-            this.btnThemNV.TabIndex = 46;
-            this.btnThemNV.UseVisualStyleBackColor = true;
-            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(186, 93);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(121, 20);
+            this.txtMaPhieuDangKy.TabIndex = 47;
             // 
             // FormHinhAnh
             // 
@@ -320,5 +330,6 @@
         private System.Windows.Forms.Button btnTaoMoi;
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.Button btnThemPDK;
+        private System.Windows.Forms.TextBox txtMaPhieuDangKy;
     }
 }

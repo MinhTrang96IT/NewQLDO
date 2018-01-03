@@ -34,7 +34,6 @@
             this.rbDaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.rbChuaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.cbDanhSachQuangCao = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSoLuongQuangCao = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDangKy)).BeginInit();
@@ -84,12 +84,12 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.txtSoLuongQuangCao);
             this.gbThongTinKH.Controls.Add(this.txtSoLanGiaHan);
             this.gbThongTinKH.Controls.Add(this.label11);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.rbChuaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.label10);
-            this.gbThongTinKH.Controls.Add(this.cbDanhSachQuangCao);
             this.gbThongTinKH.Controls.Add(this.label8);
             this.gbThongTinKH.Controls.Add(this.dtpNgayKetThuc);
             this.gbThongTinKH.Controls.Add(this.label6);
@@ -173,23 +173,14 @@
             this.label10.TabIndex = 50;
             this.label10.Text = "Trạng thái:";
             // 
-            // cbDanhSachQuangCao
-            // 
-            this.cbDanhSachQuangCao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDanhSachQuangCao.FormattingEnabled = true;
-            this.cbDanhSachQuangCao.Location = new System.Drawing.Point(431, 104);
-            this.cbDanhSachQuangCao.Name = "cbDanhSachQuangCao";
-            this.cbDanhSachQuangCao.Size = new System.Drawing.Size(139, 21);
-            this.cbDanhSachQuangCao.TabIndex = 49;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(309, 108);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 13);
+            this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 48;
-            this.label8.Text = "Danh sách quảng cáo:";
+            this.label8.Text = "Số lượng quảng cáo";
             // 
             // dtpNgayKetThuc
             // 
@@ -370,6 +361,7 @@
             this.btnHuyDichVu.TabIndex = 17;
             this.btnHuyDichVu.Text = "Hủy dịch vụ";
             this.btnHuyDichVu.UseVisualStyleBackColor = true;
+            this.btnHuyDichVu.Click += new System.EventHandler(this.btnHuyDichVu_Click);
             // 
             // btnGiaHanDichVu
             // 
@@ -379,6 +371,7 @@
             this.btnGiaHanDichVu.TabIndex = 17;
             this.btnGiaHanDichVu.Text = "Gia hạn dịch vụ";
             this.btnGiaHanDichVu.UseVisualStyleBackColor = true;
+            this.btnGiaHanDichVu.Click += new System.EventHandler(this.btnGiaHanDichVu_Click);
             // 
             // btnXuatHopDong
             // 
@@ -556,6 +549,14 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
+            // txtSoLuongQuangCao
+            // 
+            this.txtSoLuongQuangCao.Location = new System.Drawing.Point(430, 104);
+            this.txtSoLuongQuangCao.Name = "txtSoLuongQuangCao";
+            this.txtSoLuongQuangCao.ReadOnly = true;
+            this.txtSoLuongQuangCao.Size = new System.Drawing.Size(139, 20);
+            this.txtSoLuongQuangCao.TabIndex = 55;
+            // 
             // FormPhieuDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,7 +597,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbDanhSachQuangCao;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
         private System.Windows.Forms.Label label6;
@@ -625,5 +625,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
+        private System.Windows.Forms.TextBox txtSoLuongQuangCao;
     }
 }

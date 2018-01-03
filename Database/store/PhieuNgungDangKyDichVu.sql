@@ -14,6 +14,12 @@ AS
 	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet, LyDoKhongDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien
 GO
 
+CREATE PROC sp_HuyDangKy_LayDanhSachHuyDangKyTheoMaPDK
+@maphieudangky int
+AS
+	SELECT MaPhieuNgungDangKyDichVu, MaPhieuDangKy, TenNhanVien , NgayLap,LyDo, TrangThaiKiemDuyet, LyDoKhongDuyet  FROM PhieuNgungDangKyDichVu, NhanVien WHERE PhieuNgungDangKyDichVu.MaNhanVien = NhanVien.MaNhanVien AND MaPhieuDangKy = @maphieudangky
+GO
+
 CREATE PROC sp_HuyDangKy_Them
 	@maphieudangky int,				
 	@manhanvien int,				

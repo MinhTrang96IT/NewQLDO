@@ -9,7 +9,8 @@ namespace QuanLyDiaOc.GUI
     public partial class FormThongKe : Form
     {
         ThongKeBLL thongKeBLL;
-
+        LoaiQuangCaoBLL loaiQuangCaoBLL;
+        bool checkLoadDone = false;
         Excel.Application xlApp;
         Excel.Workbook xlWorkBook;
         Excel.Worksheet xlWorkSheet;
@@ -18,9 +19,11 @@ namespace QuanLyDiaOc.GUI
         public FormThongKe()
         {
             InitializeComponent();
+            loaiQuangCaoBLL = new LoaiQuangCaoBLL();
             thongKeBLL = new ThongKeBLL();
             String[] Nam = {"2017","2018","2019" };
             cbDoanhThu_Nam.DataSource = Nam;
+            cbNamTheoLoaiQuangCao.DataSource = Nam;
             chartDoanhThuTheoThang.ChartAreas[0].AxisX.MajorGrid.Enabled = chartDoanhThuTheoThang.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chartDoanhThuTheoThang.Titles.Add("Doanh thu theo tháng năm " + cbDoanhThu_Nam.Text + " (VND)");
         }
@@ -34,6 +37,48 @@ namespace QuanLyDiaOc.GUI
 
             chartKhachHang.Series["TuoiKhachHang"].XValueMember = "NamSinh";
             chartKhachHang.Series["TuoiKhachHang"].YValueMembers = "SoLuong";
+
+            chartLoaiQuangCaoTheoNam.DataSource = thongKeBLL.ThongKeLoaiQuangCaoTheoNam(Int32.Parse(cbNamTheoLoaiQuangCao.Text));
+            chartLoaiQuangCaoTheoNam.ChartAreas["ChartLoaiQuangCaoTheoNam"].AxisX.Title = "Tên loại quảng cáo";
+            chartLoaiQuangCaoTheoNam.ChartAreas["ChartLoaiQuangCaoTheoNam"].AxisY.Title = "Số lượng";
+
+            chartLoaiQuangCaoTheoNam.Series["LoaiQuangCaoTheoNam"].XValueMember = "TenLoaiQuangCao";
+            chartLoaiQuangCaoTheoNam.Series["LoaiQuangCaoTheoNam"].YValueMembers = "SoLuong";
+
+            cbLoaiQuangCao.DataSource = loaiQuangCaoBLL.LayDanhSachLoaiQuangCao();
+            cbLoaiQuangCao.DisplayMember = "TenLoaiQuangCao";
+            cbLoaiQuangCao.ValueMember = "MaLoaiQuangCao";
+            checkLoadDone = true;
+
+            dataGridViewDoanhThuTheoLoaiQuangCao.Rows.Add();
+            int nam = int.Parse(cbNamTheoLoaiQuangCao.Text);
+            chartDoanhThuTheoLoaiQuangCao.Series.Clear();
+            double TongTien = 0.0;
+            Series series = new Series
+            {
+                Name = "series2",
+                IsVisibleInLegend = false,
+                ChartType = SeriesChartType.Column
+            };
+            chartDoanhThuTheoLoaiQuangCao.Series.Add(series);
+            for (int i = 1; i <= 12; i++)
+            {
+                double tien = thongKeBLL.LayDoanhThuTheoLoaiQuangCao(i, nam, Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()));
+                TongTien += tien;
+                series.Points.Add(tien);
+                var p1 = series.Points[i - 1];
+                p1.AxisLabel = "Tháng " + i;
+                p1.LegendText = "Tháng " + i;
+                if (tien > 0)
+                {
+                    p1.Label = string.Format("{0:#,###0}", tien);
+                }
+                dataGridViewDoanhThuTheoLoaiQuangCao.Columns[i + 1].DefaultCellStyle.Format = "N2";
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[i + 1].Value = tien;
+            }
+            dataGridViewDoanhThuTheoLoaiQuangCao.Columns[1].DefaultCellStyle.Format = "N2";
+            dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[1].Value = TongTien;
+           //     dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[0].Value = cbLoaiQuangCao.Text.ToString();
         }
 
 
@@ -116,6 +161,90 @@ namespace QuanLyDiaOc.GUI
             }
         }
 
+        private void cbNamTheoLoaiQuangCao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkLoadDone)
+            {
+                chartLoaiQuangCaoTheoNam.DataSource = thongKeBLL.ThongKeLoaiQuangCaoTheoNam(Int32.Parse(cbNamTheoLoaiQuangCao.Text));
+                chartLoaiQuangCaoTheoNam.ChartAreas["ChartLoaiQuangCaoTheoNam"].AxisX.Title = "Tên loại quảng cáo";
+                chartLoaiQuangCaoTheoNam.ChartAreas["ChartLoaiQuangCaoTheoNam"].AxisY.Title = "Số lượng";
 
+                chartLoaiQuangCaoTheoNam.Series["LoaiQuangCaoTheoNam"].XValueMember = "TenLoaiQuangCao";
+                chartLoaiQuangCaoTheoNam.Series["LoaiQuangCaoTheoNam"].YValueMembers = "SoLuong";
+
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows.Add();
+                int nam = int.Parse(cbNamTheoLoaiQuangCao.Text);
+                chartDoanhThuTheoLoaiQuangCao.Series.Clear();
+                double TongTien = 0.0;
+                Series series = new Series
+                {
+                    Name = "series2",
+                    IsVisibleInLegend = false,
+                    ChartType = SeriesChartType.Column
+                };
+                chartDoanhThuTheoLoaiQuangCao.Series.Add(series);
+                for (int i = 1; i <= 12; i++)
+                {
+                    double tien = thongKeBLL.LayDoanhThuTheoLoaiQuangCao(i, nam, Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()));
+                    TongTien += tien;
+                    series.Points.Add(tien);
+                    var p1 = series.Points[i - 1];
+                    p1.AxisLabel = "Tháng " + i;
+                    p1.LegendText = "Tháng " + i;
+                    if (tien > 0)
+                    {
+                        p1.Label = string.Format("{0:#,###0}", tien);
+                    }
+                    dataGridViewDoanhThuTheoLoaiQuangCao.Columns[i + 1].DefaultCellStyle.Format = "N2";
+                    dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[i + 1].Value = tien;
+                }
+                dataGridViewDoanhThuTheoLoaiQuangCao.Columns[1].DefaultCellStyle.Format = "N2";
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[1].Value = TongTien;
+
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[0].Value = cbLoaiQuangCao.Text.ToString();
+            }
+        }
+
+        private void cbLoaiQuangCao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkLoadDone)
+            {
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows.Add();
+                int nam = int.Parse(cbNamTheoLoaiQuangCao.Text);
+                chartDoanhThuTheoLoaiQuangCao.Series.Clear();
+                double TongTien = 0.0;
+                Series series = new Series
+                {
+                    Name = "series2",
+                    IsVisibleInLegend = false,
+                    ChartType = SeriesChartType.Column
+                };
+                chartDoanhThuTheoLoaiQuangCao.Series.Add(series);
+                for (int i = 1; i <= 12; i++)
+                {
+                    double tien = thongKeBLL.LayDoanhThuTheoLoaiQuangCao(i, nam, Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()));
+                    TongTien += tien;
+                    series.Points.Add(tien);
+                    var p1 = series.Points[i - 1];
+                    p1.AxisLabel = "Tháng " + i;
+                    p1.LegendText = "Tháng " + i;
+                    if (tien > 0)
+                    {
+                        p1.Label = string.Format("{0:#,###0}", tien);
+                    }
+                    dataGridViewDoanhThuTheoLoaiQuangCao.Columns[i+1].DefaultCellStyle.Format = "N2";
+                    dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[i+1].Value = tien;
+                }
+                dataGridViewDoanhThuTheoLoaiQuangCao.Columns[1].DefaultCellStyle.Format = "N2";
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[1].Value = TongTien;
+
+                dataGridViewDoanhThuTheoLoaiQuangCao.Rows[0].Cells[0].Value = cbLoaiQuangCao.Text.ToString();
+            }
+        }
+
+        private void btnXuatRaExel_Click(object sender, EventArgs e)
+        {
+            SaveExcel(dataGridViewDoanhThuTheoLoaiQuangCao);
+        }
     }
 }

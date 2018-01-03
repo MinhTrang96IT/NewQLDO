@@ -52,5 +52,10 @@ namespace QuanLyDiaOc.BLL
         {
             return huyDangKyDAL.SuaKiemDuyetPhieunNgungDichVu(huyDangKyDTO);
         }
+
+        public DataTable LayDanhSachHuyDangKyTheoMaPDK(int maphieudangky)
+        {
+            return huyDangKyDAL.LayDanhSachHuyDangKyTheoMaPDK(maphieudangky);
+        }
     }
 }

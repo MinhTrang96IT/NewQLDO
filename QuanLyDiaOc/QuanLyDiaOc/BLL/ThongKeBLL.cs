@@ -16,11 +16,28 @@ namespace QuanLyDiaOc.BLL
             return thongKeDAL.ThongKeKhachHangTheoNamSinh();
         }
 
+        public DataTable ThongKeLoaiQuangCaoTheoNam(int nam)
+        {
+            return thongKeDAL.ThongKeLoaiQuangCaoTheoNam(nam);
+        }
+
         public double LayDoanhThuTheoThang(int thang, int nam)
         {
             try
             {
                 return thongKeDAL.LayDoanhThuTheoThang(thang, nam);
+            }
+            catch
+            {
+                return 0.0;
+            }
+        }
+
+        public double LayDoanhThuTheoLoaiQuangCao(int thang, int nam, int maloaiquangcao)
+        {
+            try
+            {
+                return thongKeDAL.LayDoanhThuTheoLoaiQuangCao(thang, nam, maloaiquangcao);
             }
             catch
             {

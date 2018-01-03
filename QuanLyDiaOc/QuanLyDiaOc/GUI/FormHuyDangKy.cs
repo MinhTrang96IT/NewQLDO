@@ -15,9 +15,15 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormHuyDangKy : Form
     {
+        private int MaPDKTuFormPDK = 0;
         HuyDangKyBLL huyDangKyBLL;
         NhanVienBLL nhanVienBLL;
         string id;
+
+        public FormHuyDangKy(int maPhieuDangKy) : this()
+        {
+            MaPDKTuFormPDK = maPhieuDangKy;
+        }
 
         public FormHuyDangKy()
         {
@@ -58,7 +64,14 @@ namespace QuanLyDiaOc.GUI
                         if (huyDangKyBLL.ThemHuyDangKy(huyDangKyDTO))
                         {
                             MessageBox.Show("Thêm phiếu hủy đăng ký thành công");
-                            dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                            if (MaPDKTuFormPDK == 0)
+                            {
+                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                            }
+                            else
+                            {
+                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+                            }
                         }
                         else
                         {
@@ -86,7 +99,14 @@ namespace QuanLyDiaOc.GUI
                     if (huyDangKyBLL.XoaHuyDangKy(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách phiếu hủy đăng ký thành công");
-                        dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                        if (MaPDKTuFormPDK == 0)
+                        {
+                            dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                        }
+                        else
+                        {
+                            dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+                        }
                         LamMoiThongTin();
                     }
                     else
@@ -128,7 +148,14 @@ namespace QuanLyDiaOc.GUI
                         if (huyDangKyBLL.SuaHuyDangKy(huyDangKyDTO))
                         {
                             MessageBox.Show("Sửa phiếu hủy đăng ký thành công");
-                            dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                            if (MaPDKTuFormPDK == 0)
+                            {
+                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                            }
+                            else
+                            {
+                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+                            }
                             LamMoiThongTin();
                         }
                         else
@@ -145,7 +172,17 @@ namespace QuanLyDiaOc.GUI
 
         private void FormHuyDangKy_Load(object sender, EventArgs e)
         {
-            dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+            if (MaPDKTuFormPDK == 0)
+            {
+                txtMaPhieuDangKy.Visible = false;
+                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+            }
+            else
+            {
+                cbMaPhieuDangKy.Visible = false;
+                txtMaPhieuDangKy.Text = MaPDKTuFormPDK.ToString();
+                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+            }
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";

@@ -14,11 +14,16 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormHinhAnh : Form
     {
+        private int MaPDKTuFormPDK = 0;
         private HinhAnhBLL hinhAnhBLL;
         private PhieuDangKyBLL phieuDangKyBLL;
         private NhanVienBLL nhanVienBLL;
         private string id;
 
+        public FormHinhAnh(int maPhieuDangKy) : this()
+        {
+            MaPDKTuFormPDK = maPhieuDangKy;
+        }
         public FormHinhAnh()
         {
             InitializeComponent();
@@ -30,7 +35,19 @@ namespace QuanLyDiaOc.GUI
 
         private void FormHinhAnh_Load(object sender, EventArgs e)
         {
-            dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+            if (MaPDKTuFormPDK == 0)
+            {
+                txtMaPhieuDangKy.Visible = false;
+                dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+            }
+            else
+            {
+                cbMaPDK.Visible = false;
+                txtMaPhieuDangKy.Text = MaPDKTuFormPDK.ToString();
+                btnThemPDK.Visible = false;
+                dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+            }
+
             cbMaPDK.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKy();
             cbMaPDK.DisplayMember = "MaPhieuDangKy";
             cbMaPDK.ValueMember = "MaPhieuDangKy";
@@ -124,7 +141,14 @@ namespace QuanLyDiaOc.GUI
                         if (hinhAnhBLL.ThemHinhAnh(hinhAnhDTO))
                         {
                             MessageBox.Show("Thêm hình ảnh thành công");
-                            dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                            if (MaPDKTuFormPDK == 0)
+                            {
+                                dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                            }
+                            else
+                            {
+                                dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                            }
                         }
                         else
                         {
@@ -152,7 +176,14 @@ namespace QuanLyDiaOc.GUI
                     if (hinhAnhBLL.XoaHinhAnh(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách hình ảnh thành công");
-                        dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                        if (MaPDKTuFormPDK == 0)
+                        {
+                            dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                        }
+                        else
+                        {
+                            dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                        }
                         LamMoiThongTin();
                     }
                     else
@@ -195,7 +226,14 @@ namespace QuanLyDiaOc.GUI
                             if (hinhAnhBLL.SuaHinhAnh(hinhAnhDTO))
                             {
                                 MessageBox.Show("Sửa hình ảnh thành công");
-                                dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+                                }
+                                else
+                                {
+                                    dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                                }
                                 LamMoiThongTin();
                             }
                             else

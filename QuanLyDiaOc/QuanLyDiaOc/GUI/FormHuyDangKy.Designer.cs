@@ -58,6 +58,7 @@
             this.LyDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDangKy)).BeginInit();
@@ -65,6 +66,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.rbChuaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.label6);
@@ -357,6 +359,14 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
+            // txtMaPhieuDangKy
+            // 
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(198, 74);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
+            this.txtMaPhieuDangKy.TabIndex = 39;
+            // 
             // FormHuyDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +417,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
+        private System.Windows.Forms.TextBox txtMaPhieuDangKy;
     }
 }

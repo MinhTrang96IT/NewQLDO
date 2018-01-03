@@ -3,6 +3,12 @@ AS
 	SELECT * FROM HinhAnh
 GO
 
+CREATE PROC sp_HinhAnh_LayDanhSachTheoMaPDK
+@maphieudangky int
+AS	
+	Select * from HinhAnh where MaPhieuDangKy = @maphieudangky
+GO
+
 CREATE PROC sp_HinhAnh_Them
 @mapdk int,
 @manv int,

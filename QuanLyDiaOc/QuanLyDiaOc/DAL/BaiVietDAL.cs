@@ -157,5 +157,29 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public DataTable LayDanhSachBaiVietTheoMaChiTietQuangCao(int machitietquangcao)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_ChiTietQuangCao_LayDanhSachBaiVietTheoMaChiTietQuangCao";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@machitietquangcao", machitietquangcao));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

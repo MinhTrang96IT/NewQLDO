@@ -64,10 +64,11 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
-            this.txtMaPhieuGiaHan = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtPhanTramGiaHan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtMaPhieuGiaHan = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -392,6 +393,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.txtPhanTramGiaHan);
             this.gbThongTinKH.Controls.Add(this.label4);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
@@ -427,6 +429,23 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin phiếu gia hạn";
             // 
+            // txtPhanTramGiaHan
+            // 
+            this.txtPhanTramGiaHan.Location = new System.Drawing.Point(431, 149);
+            this.txtPhanTramGiaHan.Name = "txtPhanTramGiaHan";
+            this.txtPhanTramGiaHan.ReadOnly = true;
+            this.txtPhanTramGiaHan.Size = new System.Drawing.Size(87, 20);
+            this.txtPhanTramGiaHan.TabIndex = 54;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(346, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "% Gia hạn:";
+            // 
             // txtMaPhieuGiaHan
             // 
             this.txtMaPhieuGiaHan.Enabled = false;
@@ -444,22 +463,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chi phí:";
             // 
-            // txtPhanTramGiaHan
+            // txtMaPhieuDangKy
             // 
-            this.txtPhanTramGiaHan.Location = new System.Drawing.Point(431, 149);
-            this.txtPhanTramGiaHan.Name = "txtPhanTramGiaHan";
-            this.txtPhanTramGiaHan.ReadOnly = true;
-            this.txtPhanTramGiaHan.Size = new System.Drawing.Size(87, 20);
-            this.txtPhanTramGiaHan.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(346, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "% Gia hạn:";
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(123, 84);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
+            this.txtMaPhieuDangKy.TabIndex = 55;
             // 
             // FormPhieuGiaHan
             // 
@@ -521,5 +531,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
         private System.Windows.Forms.TextBox txtPhanTramGiaHan;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMaPhieuDangKy;
     }
 }

@@ -14,6 +14,7 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormBaiViet : Form
     {
+        private int MaChiTietQuangCaoPoup = 0;
         BaiVietBLL baiVietBLL;
         NhanVienBLL nhanVienBLL;
        ChiTietQuangCaoBLL chiTietQuangCaoBLL;
@@ -26,6 +27,11 @@ namespace QuanLyDiaOc.GUI
             baiVietBLL = new BaiVietBLL();
             nhanVienBLL = new NhanVienBLL();
             chiTietQuangCaoBLL = new ChiTietQuangCaoBLL();
+        }
+
+        public FormBaiViet(int maChiTietQuangCao) : this()
+        {
+            MaChiTietQuangCaoPoup = maChiTietQuangCao;
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -58,7 +64,13 @@ namespace QuanLyDiaOc.GUI
                         if (baiVietBLL.ThemBaiViet(baiVietDTO))
                         {
                             MessageBox.Show("Thêm bài viết thành công");
-                            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                            if(MaChiTietQuangCaoPoup == 0)
+                            {
+                                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                            } else
+                            {
+                                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoMaChiTietQuangCao(MaChiTietQuangCaoPoup);
+                            }
                         }
                         else
                         {
@@ -86,7 +98,14 @@ namespace QuanLyDiaOc.GUI
                     if (baiVietBLL.XoaBaiViet(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách bài viết thành công");
-                        dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                        if (MaChiTietQuangCaoPoup == 0)
+                        {
+                            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                        }
+                        else
+                        {
+                            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoMaChiTietQuangCao(MaChiTietQuangCaoPoup);
+                        }
                         LamMoiThongTin();
                     }
                     else
@@ -127,7 +146,14 @@ namespace QuanLyDiaOc.GUI
                         if (baiVietBLL.SuaBaiViet(baiVietDTO))
                         {
                             MessageBox.Show("Sửa bài viết thành công");
-                            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                            if (MaChiTietQuangCaoPoup == 0)
+                            {
+                                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+                            }
+                            else
+                            {
+                                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoMaChiTietQuangCao(MaChiTietQuangCaoPoup);
+                            }
                             LamMoiThongTin();
                         }
                         else
@@ -144,7 +170,17 @@ namespace QuanLyDiaOc.GUI
 
         private void FormBaiViet_Load(object sender, EventArgs e)
         {
-            dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+            if(MaChiTietQuangCaoPoup == 0)
+            {
+                txtMaChiTietQuangCao.Visible = false;
+                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoTenNhanVien();
+            } else
+            {
+                cbChiTietQuangCao.Visible = false;
+                btnThemChiTietQuangCao.Visible = false;
+                txtMaChiTietQuangCao.Text = MaChiTietQuangCaoPoup.ToString();
+                dgvBaiViet.DataSource = baiVietBLL.LayDanhSachBaiVietTheoMaChiTietQuangCao(MaChiTietQuangCaoPoup);
+            }
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";

@@ -42,5 +42,10 @@ namespace QuanLyDiaOc.BLL
         {
             return baiVietDAL.SuaKiemDuyetBaiViet(baiVietDTO);
         }
+
+        public DataTable LayDanhSachBaiVietTheoMaChiTietQuangCao(int machitietquangcao)
+        {
+            return baiVietDAL.LayDanhSachBaiVietTheoMaChiTietQuangCao(machitietquangcao);
+        }
     }
 }

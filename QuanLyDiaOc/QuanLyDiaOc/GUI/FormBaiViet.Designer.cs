@@ -54,6 +54,7 @@
             this.NoiDungBaiViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaChiTietQuangCao = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.txtMaChiTietQuangCao);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.rbChuaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.label6);
@@ -280,7 +282,7 @@
             this.MaBaiViet.DataPropertyName = "MaBaiViet";
             this.MaBaiViet.HeaderText = "Mã bài viết";
             this.MaBaiViet.Name = "MaBaiViet";
-            this.MaBaiViet.Width = 84;
+            this.MaBaiViet.Width = 78;
             // 
             // MaChiTietQuangCao
             // 
@@ -316,6 +318,14 @@
             this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
+            // 
+            // txtMaChiTietQuangCao
+            // 
+            this.txtMaChiTietQuangCao.Location = new System.Drawing.Point(145, 83);
+            this.txtMaChiTietQuangCao.Name = "txtMaChiTietQuangCao";
+            this.txtMaChiTietQuangCao.ReadOnly = true;
+            this.txtMaChiTietQuangCao.Size = new System.Drawing.Size(139, 20);
+            this.txtMaChiTietQuangCao.TabIndex = 42;
             // 
             // FormBaiViet
             // 
@@ -363,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiDungBaiViet;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
+        private System.Windows.Forms.TextBox txtMaChiTietQuangCao;
     }
 }

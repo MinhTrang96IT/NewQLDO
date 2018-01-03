@@ -208,5 +208,30 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public DataTable LayDanhSachHuyDangKyTheoMaPDK(int maphieudangky)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_HuyDangKy_LayDanhSachHuyDangKyTheoMaPDK";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", maphieudangky));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
     }
 }

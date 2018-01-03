@@ -175,10 +175,7 @@ namespace QuanLyDiaOc.GUI
 
             if(txtMaPhieuDangKy.Text != "" && txtMaPhieuDangKy.Text != null)
             {
-                cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
-                cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
-                cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
-
+                txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
             }
     
             LamMoiThongTin();
@@ -186,8 +183,9 @@ namespace QuanLyDiaOc.GUI
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuDangKy.Text = cbKhachHang.Text = cbDanhSachQuangCao.Text = cbDiaOc.Text = cbNhanVien.Text = txtSoLanGiaHan.Text = txtTongTien.Text = cbDanhSachQuangCao.Text =  "";
+            txtMaPhieuDangKy.Text = cbKhachHang.Text  = cbDiaOc.Text = cbNhanVien.Text = txtSoLanGiaHan.Text = txtTongTien.Text = "";
             rbChuaKiemDuyet.Checked = true;
+            txtSoLuongQuangCao.Text = "0";
             rbDaKiemDuyet.Checked = false;
             txtTongTien.Focus();
             cbKhachHang.SelectedIndex = 0;
@@ -261,9 +259,8 @@ namespace QuanLyDiaOc.GUI
                     cbDiaOc.Text = row.Cells["MaDiaOc"].Value.ToString();
                     cbNhanVien.Text = row.Cells["TenNhanVien"].Value.ToString();
                     txtSoLanGiaHan.Text = row.Cells["SoLanGiaHan"].Value.ToString();
-                    cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
-                    cbDanhSachQuangCao.DisplayMember = "MaChiTietQuangCao";
-                    cbDanhSachQuangCao.ValueMember = "MaChiTietQuangCao";
+                    txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+
                     DataTable dtChiTiet = new DataTable();
                     dtChiTiet = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
                     listIdLoaiQuangCao = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString())).AsEnumerable()
@@ -337,12 +334,48 @@ namespace QuanLyDiaOc.GUI
                 if (diaglogChiTietQuangCao.ShowDialog(this) == DialogResult.Yes) { }
                 else
                 {
-                    cbDanhSachQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                    txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xem chi tiết quảng cáo!");
+            }
+        }
+
+        private void btnGiaHanDichVu_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormPhieuGiaHan diaglogPhieuGiaHan = new FormPhieuGiaHan(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogPhieuGiaHan.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogPhieuGiaHan.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                //    txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xem gia hạn");
+            }
+        }
+
+        private void btnHuyDichVu_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormHuyDangKy diaglogHuyDangKy = new FormHuyDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogHuyDangKy.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogHuyDangKy.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                  //  txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn Hủy đăng kí");
             }
         }
     }

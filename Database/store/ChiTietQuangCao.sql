@@ -49,7 +49,7 @@ CREATE PROC sp_ChiTietQuangCao_SuaToBuom
 	@trangthaikiemduyet int,
 	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
+	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, SoLuongPhatHanh=@soluongphathanh, KichThuoc=@kichthuoc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet, NgayBatDau = null, NgayKetThuc = null, MaViTri = null, MaBao = null WHERE MaChiTietQuangCao=@machitietquangcao
 GO
 
 CREATE PROC sp_ChiTietQuangCao_SuaLoaiKhac
@@ -63,7 +63,7 @@ CREATE PROC sp_ChiTietQuangCao_SuaLoaiKhac
 	@trangthaikiemduyet int,
 	@lydokhongduyet nvarchar(200)
 AS
-	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao=@machitietquangcao
+	UPDATE ChiTietQuangCao SET MaPhieuDangKy = @maphieudangky, MaLoaiQuangCao=@maloaiquangcao, MaViTri=@mavitri, MaBao=@mabao, NgayBatDau=@ngaybatdau, NgayKetThuc=@ngayketthuc, TrangThaiKiemDuyet = @trangthaikiemduyet , LyDoKhongDuyet = @lydokhongduyet , SoLuongPhatHanh = null, KichThuoc = null WHERE MaChiTietQuangCao=@machitietquangcao
 GO
 
 

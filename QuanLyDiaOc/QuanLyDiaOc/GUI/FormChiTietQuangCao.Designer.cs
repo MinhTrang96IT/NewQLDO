@@ -31,6 +31,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.gbDanhSanh = new System.Windows.Forms.GroupBox();
             this.dgvChiTietQuangCao = new System.Windows.Forms.DataGridView();
+            this.MaChiTietQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhieuDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhatHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,16 +75,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.MaChiTietQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhieuDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).BeginInit();
             this.gbThongTin.SuspendLayout();
@@ -121,6 +121,78 @@
             this.dgvChiTietQuangCao.Size = new System.Drawing.Size(967, 309);
             this.dgvChiTietQuangCao.TabIndex = 0;
             this.dgvChiTietQuangCao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietQuangCao_CellClick_1);
+            // 
+            // MaChiTietQuangCao
+            // 
+            this.MaChiTietQuangCao.DataPropertyName = "MaChiTietQuangCao";
+            this.MaChiTietQuangCao.HeaderText = "Mã chi tiết quảng cáo";
+            this.MaChiTietQuangCao.Name = "MaChiTietQuangCao";
+            this.MaChiTietQuangCao.Width = 107;
+            // 
+            // MaPhieuDangKy
+            // 
+            this.MaPhieuDangKy.DataPropertyName = "MaPhieuDangKy";
+            this.MaPhieuDangKy.HeaderText = "Mã phiếu đăng ký";
+            this.MaPhieuDangKy.Name = "MaPhieuDangKy";
+            this.MaPhieuDangKy.Width = 98;
+            // 
+            // TenLoaiQuangCao
+            // 
+            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
+            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.Width = 97;
+            // 
+            // MaViTri
+            // 
+            this.MaViTri.DataPropertyName = "MaViTri";
+            this.MaViTri.HeaderText = "Mã vị trí";
+            this.MaViTri.Name = "MaViTri";
+            this.MaViTri.Width = 57;
+            // 
+            // MaBao
+            // 
+            this.MaBao.DataPropertyName = "MaBao";
+            this.MaBao.HeaderText = "Mã báo";
+            this.MaBao.Name = "MaBao";
+            this.MaBao.Width = 63;
+            // 
+            // NgayBatDau
+            // 
+            this.NgayBatDau.DataPropertyName = "NgayBatDau";
+            this.NgayBatDau.HeaderText = "Ngày bắt đầu";
+            this.NgayBatDau.Name = "NgayBatDau";
+            this.NgayBatDau.Width = 72;
+            // 
+            // NgayKetThuc
+            // 
+            this.NgayKetThuc.DataPropertyName = "NgayKetThuc";
+            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
+            this.NgayKetThuc.Name = "NgayKetThuc";
+            this.NgayKetThuc.Width = 72;
+            // 
+            // SoLuongPhatHanh
+            // 
+            this.SoLuongPhatHanh.DataPropertyName = "SoLuongPhatHanh";
+            this.SoLuongPhatHanh.HeaderText = "Số lượng phát hành";
+            this.SoLuongPhatHanh.Name = "SoLuongPhatHanh";
+            this.SoLuongPhatHanh.Width = 93;
+            // 
+            // KichThuoc
+            // 
+            this.KichThuoc.DataPropertyName = "KichThuoc";
+            this.KichThuoc.HeaderText = "Kích thước";
+            this.KichThuoc.Name = "KichThuoc";
+            this.KichThuoc.Width = 78;
+            // 
+            // TrangThaiKiemDuyet
+            // 
+            this.TrangThaiKiemDuyet.DataPropertyName = "TrangThaiKiemDuyet";
+            this.TrangThaiKiemDuyet.HeaderText = "Trạng thái kiểm duyệt";
+            this.TrangThaiKiemDuyet.Name = "TrangThaiKiemDuyet";
+            this.TrangThaiKiemDuyet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TrangThaiKiemDuyet.Width = 99;
             // 
             // label5
             // 
@@ -320,6 +392,7 @@
             this.btnQuanLyBaiViet.TabIndex = 28;
             this.btnQuanLyBaiViet.Text = "Quản lý bài viết";
             this.btnQuanLyBaiViet.UseVisualStyleBackColor = true;
+            this.btnQuanLyBaiViet.Click += new System.EventHandler(this.btnQuanLyBaiViet_Click);
             // 
             // btnQuanLyHinhAnh
             // 
@@ -329,6 +402,7 @@
             this.btnQuanLyHinhAnh.TabIndex = 28;
             this.btnQuanLyHinhAnh.Text = "Quản lý hình ảnh";
             this.btnQuanLyHinhAnh.UseVisualStyleBackColor = true;
+            this.btnQuanLyHinhAnh.Click += new System.EventHandler(this.btnQuanLyHinhAnh_Click);
             // 
             // btnSua
             // 
@@ -462,78 +536,6 @@
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 2;
             this.label14.Text = "Vị trí:";
-            // 
-            // MaChiTietQuangCao
-            // 
-            this.MaChiTietQuangCao.DataPropertyName = "MaChiTietQuangCao";
-            this.MaChiTietQuangCao.HeaderText = "Mã chi tiết quảng cáo";
-            this.MaChiTietQuangCao.Name = "MaChiTietQuangCao";
-            this.MaChiTietQuangCao.Width = 107;
-            // 
-            // MaPhieuDangKy
-            // 
-            this.MaPhieuDangKy.DataPropertyName = "MaPhieuDangKy";
-            this.MaPhieuDangKy.HeaderText = "Mã phiếu đăng ký";
-            this.MaPhieuDangKy.Name = "MaPhieuDangKy";
-            this.MaPhieuDangKy.Width = 98;
-            // 
-            // TenLoaiQuangCao
-            // 
-            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
-            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.Width = 97;
-            // 
-            // MaViTri
-            // 
-            this.MaViTri.DataPropertyName = "MaViTri";
-            this.MaViTri.HeaderText = "Mã vị trí";
-            this.MaViTri.Name = "MaViTri";
-            this.MaViTri.Width = 57;
-            // 
-            // MaBao
-            // 
-            this.MaBao.DataPropertyName = "MaBao";
-            this.MaBao.HeaderText = "Mã báo";
-            this.MaBao.Name = "MaBao";
-            this.MaBao.Width = 63;
-            // 
-            // NgayBatDau
-            // 
-            this.NgayBatDau.DataPropertyName = "NgayBatDau";
-            this.NgayBatDau.HeaderText = "Ngày bắt đầu";
-            this.NgayBatDau.Name = "NgayBatDau";
-            this.NgayBatDau.Width = 72;
-            // 
-            // NgayKetThuc
-            // 
-            this.NgayKetThuc.DataPropertyName = "NgayKetThuc";
-            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
-            this.NgayKetThuc.Name = "NgayKetThuc";
-            this.NgayKetThuc.Width = 72;
-            // 
-            // SoLuongPhatHanh
-            // 
-            this.SoLuongPhatHanh.DataPropertyName = "SoLuongPhatHanh";
-            this.SoLuongPhatHanh.HeaderText = "Số lượng phát hành";
-            this.SoLuongPhatHanh.Name = "SoLuongPhatHanh";
-            this.SoLuongPhatHanh.Width = 93;
-            // 
-            // KichThuoc
-            // 
-            this.KichThuoc.DataPropertyName = "KichThuoc";
-            this.KichThuoc.HeaderText = "Kích thước";
-            this.KichThuoc.Name = "KichThuoc";
-            this.KichThuoc.Width = 78;
-            // 
-            // TrangThaiKiemDuyet
-            // 
-            this.TrangThaiKiemDuyet.DataPropertyName = "TrangThaiKiemDuyet";
-            this.TrangThaiKiemDuyet.HeaderText = "Trạng thái kiểm duyệt";
-            this.TrangThaiKiemDuyet.Name = "TrangThaiKiemDuyet";
-            this.TrangThaiKiemDuyet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThaiKiemDuyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TrangThaiKiemDuyet.Width = 99;
             // 
             // FormChiTietQuangCao
             // 

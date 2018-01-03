@@ -9,6 +9,12 @@ AS
 	SELECT MaBaiViet, MaChiTietQuangCao, TenNhanVien, NoiDungBaiViet, TrangThaiKiemDuyet, LyDoKhongDuyet FROM BaiViet, NhanVien WHERE BaiViet.MaNhanVien = NhanVien.MaNhanVien
 GO
 
+CREATE PROC sp_ChiTietQuangCao_LayDanhSachBaiVietTheoMaChiTietQuangCao
+@machitietquangcao int
+AS
+	SELECT MaBaiViet, MaChiTietQuangCao, TenNhanVien, NoiDungBaiViet, TrangThaiKiemDuyet, LyDoKhongDuyet FROM BaiViet, NhanVien WHERE BaiViet.MaNhanVien = NhanVien.MaNhanVien AND MaChiTietQuangCao = @machitietquangcao
+GO
+
 CREATE PROC sp_BaiViet_Them
 	@machitietquangcao int,				
 	@manhanvien int,
