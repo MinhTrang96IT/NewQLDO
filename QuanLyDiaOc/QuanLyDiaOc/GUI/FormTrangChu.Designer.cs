@@ -64,6 +64,7 @@
             this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNguoiDung = new System.Windows.Forms.Label();
+            this.giấyTờToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +149,8 @@
             this.quảngCáoToolStripMenuItem,
             this.báoChíToolStripMenuItem,
             this.bàiViếtToolStripMenuItem,
-            this.hìnhẢnhToolStripMenuItem});
+            this.hìnhẢnhToolStripMenuItem,
+            this.giấyTờToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
@@ -365,6 +367,13 @@
             this.lbNguoiDung.Text = "Người dùng: Trần Thị Minh Trang - Giám đốc";
             this.lbNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // giấyTờToolStripMenuItem
+            // 
+            this.giấyTờToolStripMenuItem.Name = "giấyTờToolStripMenuItem";
+            this.giấyTờToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.giấyTờToolStripMenuItem.Text = "Giấy tờ";
+            this.giấyTờToolStripMenuItem.Click += new System.EventHandler(this.giấyTờToolStripMenuItem_Click);
+            // 
             // FormTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,5 +433,6 @@
         private System.Windows.Forms.ToolStripMenuItem hìnhẢnhToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem chiTiếtHìnhẢnhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giấyTờToolStripMenuItem;
     }
 }

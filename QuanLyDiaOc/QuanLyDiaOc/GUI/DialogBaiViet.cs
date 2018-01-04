@@ -26,7 +26,7 @@ namespace QuanLyDiaOc.GUI
 
         public DialogBaiViet(int maBV) : this()
         {
-            rowBV = baiVietBLL.LayDanhSachBaiViwtTheoMa(maBV).Rows[0];
+            rowBV = baiVietBLL.LayDanhSachBaiVietTheoMa(maBV).Rows[0];
             rowNV = nhanVienBLL.LayDanhSachNhanVienTheoMa(Int32.Parse(rowBV["MaNhanVien"].ToString())).Rows[0];
         }
 
@@ -56,11 +56,17 @@ namespace QuanLyDiaOc.GUI
             lblTenDN.Text = rowNV["TenDangNhap"].ToString();
         }
 
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            DialogChiTietQuangCao dialogChiTietQuangCao = new DialogChiTietQuangCao(Int32.Parse(rowBV["MaChiTietQuangCao"].ToString()));
+            dialogChiTietQuangCao.StartPosition = FormStartPosition.CenterScreen;
+            dialogChiTietQuangCao.ShowDialog(this);
+        }
+
         private void DialogBaiViet_Load(object sender, EventArgs e)
         {
             LoadGBNhanVien();
             LoadGBBaiViet();
-            btnChiTiet.Text = btnChiTiet.Text + " " + lblMaCTQC.Text;
         }
     }
 }

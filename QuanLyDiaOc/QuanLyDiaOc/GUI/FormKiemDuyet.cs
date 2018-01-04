@@ -170,9 +170,9 @@ namespace QuanLyDiaOc.GUI
 
                     if (columnName.Equals("ChiTietGH"))
                     {
-                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
-                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                        DialogPhieuGiaHan dialogPhieuGiaHan = new DialogPhieuGiaHan(maPhieuGH);
+                        dialogPhieuGiaHan.StartPosition = FormStartPosition.CenterScreen;
+                        dialogPhieuGiaHan.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhanGh"))
@@ -215,13 +215,13 @@ namespace QuanLyDiaOc.GUI
                     DataGridViewRow row = dgvNgungDichVu.Rows[e.RowIndex];
                     int columnIndex = dgvNgungDichVu.CurrentCell.ColumnIndex;
                     string columnName = dgvNgungDichVu.Columns[columnIndex].Name;
-                    int maPhieuNDV = Int32.Parse(row.Cells["MaPhieuNgungDangKyDichVu"].Value.ToString());
+                    int maNDV = Int32.Parse(row.Cells["MaPhieuNgungDangKyDichVu"].Value.ToString());
 
                     if (columnName.Equals("ChiTietNDV"))
                     {
-                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
-                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                        DialogHuyDangKy dialogHuyDangKy = new DialogHuyDangKy(maNDV);
+                        dialogHuyDangKy.StartPosition = FormStartPosition.CenterScreen;
+                        dialogHuyDangKy.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhanNDV"))
@@ -232,7 +232,7 @@ namespace QuanLyDiaOc.GUI
                         string lyDo = "";
                         if (trangThai == 0)
                             lyDo = row.Cells["LyDoKhongDuyetNDV"].Value.ToString();
-                        HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(maPhieuNDV, trangThai, lyDo);
+                        HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(maNDV, trangThai, lyDo);
                         try
                         {
                             if (huyDangKyBLL.SuaKiemDuyetPhieunNgungDichVu(huyDangKyDTO))
@@ -264,13 +264,13 @@ namespace QuanLyDiaOc.GUI
                     DataGridViewRow row = dgvChiTietQuangCao.Rows[e.RowIndex];
                     int columnIndex = dgvChiTietQuangCao.CurrentCell.ColumnIndex;
                     string columnName = dgvChiTietQuangCao.Columns[columnIndex].Name;
-                    int maPhieuCT = Int32.Parse(row.Cells["MaChiTietQuangCao"].Value.ToString());
+                    int maCTQC = Int32.Parse(row.Cells["MaChiTietQuangCao"].Value.ToString());
 
                     if (columnName.Equals("ChiTietCT"))
                     {
-                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
-                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                        DialogChiTietQuangCao dialogChiTietQuangCao = new DialogChiTietQuangCao(maCTQC);
+                        dialogChiTietQuangCao.StartPosition = FormStartPosition.CenterScreen;
+                        dialogChiTietQuangCao.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhanCT"))
@@ -281,7 +281,7 @@ namespace QuanLyDiaOc.GUI
                         string lyDo = "";
                         if (trangThai == 0)
                             lyDo = row.Cells["LyDoKhongDuyetCT"].Value.ToString();
-                        ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(maPhieuCT, trangThai, lyDo);
+                        ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(maCTQC, trangThai, lyDo);
                         try
                         {
                             if (chiTietQuangCaoBLL.SuaKiemDuyetChiTietQuangCao(chiTietQuangCaoDTO))

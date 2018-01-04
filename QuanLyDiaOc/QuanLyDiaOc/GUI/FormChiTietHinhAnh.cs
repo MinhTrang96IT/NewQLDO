@@ -54,7 +54,6 @@ namespace QuanLyDiaOc.GUI
                 cbMaHA.DisplayMember = "MaHinhAnh";
                 cbMaHA.ValueMember = "MaHinhAnh";
             }
-
         }
 
         private void LamMoiThongTin()
@@ -68,7 +67,7 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinTrong()
         {
-            if (txtMoTa.Text.ToString() == "")
+            if (txtMoTa.Text.ToString().Equals(""))
             {
                 return true;
             }

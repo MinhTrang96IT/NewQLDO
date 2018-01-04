@@ -81,6 +81,30 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable LayDanhSachPhieuGiaHanTheoMa(int ma)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_PhieuGiaHan_LayDanhSachTheoMa";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", ma));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public bool ThemPhieuGiaHan(PhieuGiaHanDTO phieuGiaHanDTO)
         {
             try

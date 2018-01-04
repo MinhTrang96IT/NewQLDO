@@ -83,6 +83,7 @@
     <Compile Include="BLL\ChiTietQuangCaoBLL.cs" />
     <Compile Include="BLL\DiaOcBLL.cs" />
     <Compile Include="BLL\GiaTienQuangCaoBLL.cs" />
+    <Compile Include="BLL\GiayToBLL.cs" />
     <Compile Include="BLL\HinhAnhBLL.cs" />
     <Compile Include="BLL\HuyDangKyBLL.cs" />
     <Compile Include="BLL\KhachHangBLL.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="DAL\ChiTietQuangCaoDAL.cs" />
     <Compile Include="DAL\DiaOcDAL.cs" />
     <Compile Include="DAL\GiaTienQuangCaoDAL.cs" />
+    <Compile Include="DAL\GiayToDAL.cs" />
     <Compile Include="DAL\HinhAnhDAL.cs" />
     <Compile Include="DAL\HuyDangKyDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
@@ -147,11 +149,29 @@
     <Compile Include="GUI\DialogBaiViet.Designer.cs">
       <DependentUpon>DialogBaiViet.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogChiTietQuangCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogChiTietQuangCao.Designer.cs">
+      <DependentUpon>DialogChiTietQuangCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DiaLogDiaOc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DiaLogDiaOc.Designer.cs">
       <DependentUpon>DiaLogDiaOc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogHuyDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogHuyDangKy.Designer.cs">
+      <DependentUpon>DialogHuyDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogPhieuGiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogPhieuGiaHan.Designer.cs">
+      <DependentUpon>DialogPhieuGiaHan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormBaiViet.cs">
       <SubType>Form</SubType>
@@ -212,6 +232,12 @@
     </Compile>
     <Compile Include="GUI\FormGiaTienQC.Designer.cs">
       <DependentUpon>FormGiaTienQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiayTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiayTo.Designer.cs">
+      <DependentUpon>FormGiayTo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormHinhAnh.cs">
       <SubType>Form</SubType>
@@ -326,8 +352,17 @@
     <EmbeddedResource Include="GUI\DialogBaiViet.resx">
       <DependentUpon>DialogBaiViet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogChiTietQuangCao.resx">
+      <DependentUpon>DialogChiTietQuangCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DiaLogDiaOc.resx">
       <DependentUpon>DiaLogDiaOc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogHuyDangKy.resx">
+      <DependentUpon>DialogHuyDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogPhieuGiaHan.resx">
+      <DependentUpon>DialogPhieuGiaHan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormBaiViet.resx">
       <DependentUpon>FormBaiViet.cs</DependentUpon>
@@ -355,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormGiaTienQC.resx">
       <DependentUpon>FormGiaTienQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiayTo.resx">
+      <DependentUpon>FormGiayTo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormHinhAnh.resx">
       <DependentUpon>FormHinhAnh.cs</DependentUpon>

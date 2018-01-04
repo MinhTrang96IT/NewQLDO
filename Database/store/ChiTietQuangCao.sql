@@ -93,3 +93,9 @@ CREATE PROC sp_ChiTietQuangCao_SuaKiemDuyet
 AS
 	UPDATE ChiTietQuangCao SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaChiTietQuangCao = @machitietquangcao
 GO
+
+CREATE PROC sp_ChiTietQuangCao_LayDanhSachTheoMaChiTietQuangCao
+@ma int
+AS
+	SELECT MaChiTietQuangCao, MaPhieuDangKy, TenLoaiQuangCao, TenViTri, TenBao, NgayBatDau, NgayKetThuc, SoLuongPhatHanh, KichThuoc, TrangThaiKiemDuyet, LyDoKhongDuyet FROM ChiTietQuangCao, LoaiQuangCao, ViTri, Bao WHERE ChiTietQuangCao.MaBao = Bao.MaBao AND ChiTietQuangCao.MaViTri = ViTri.MaViTri AND ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND  MaChiTietQuangCao = @ma
+GO
