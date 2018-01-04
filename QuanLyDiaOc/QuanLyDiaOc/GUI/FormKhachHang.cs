@@ -239,5 +239,23 @@ namespace QuanLyDiaOc.GUI
         {
             dgvKhachHang.DataSource = khachHangBLL.TimKiemKHTheoTen(txtTimKiem.Text);
         }
+
+        private void btnQuanLyDiaOc_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormDiaOc diaglogDiaOc = new FormDiaOc(Int32.Parse(txtMaKH.Text.ToString()));
+                diaglogDiaOc.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogDiaOc.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+             //       txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Khách hàng muốn thêm địa ốc!");
+            }
+        }
     }
 }

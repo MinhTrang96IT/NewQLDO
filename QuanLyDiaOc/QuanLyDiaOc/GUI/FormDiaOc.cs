@@ -15,12 +15,13 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormDiaOc : Form
     {
+        private int MaKhachHangPoup = 0;
         DiaOcBLL diaOcBLL;
         KhachHangBLL khachHangBLL;
         LoaiDiaOcBLL loaiDiaOcBLL;
         LoaiNhaBLL loaiNhaBLL;
         string id;
-
+        private bool checkLoadDone = false;
         public FormDiaOc()
         {
             InitializeComponent();
@@ -29,6 +30,11 @@ namespace QuanLyDiaOc.GUI
             khachHangBLL = new KhachHangBLL();
             loaiDiaOcBLL = new LoaiDiaOcBLL();
             loaiNhaBLL = new LoaiNhaBLL();
+        }
+
+        public FormDiaOc(int maKhachHang) : this()
+        {
+            MaKhachHangPoup = maKhachHang;
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -75,7 +81,13 @@ namespace QuanLyDiaOc.GUI
                         if (diaOcBLL.ThemDiaOc(diaOcDTO))
                         {
                             MessageBox.Show("Thêm địa ốc thành công");
-                            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                            if(MaKhachHangPoup == 0)
+                            {
+                                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                            } else
+                            {
+                                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(MaKhachHangPoup);
+                            }
                         }
                         else
                         {
@@ -103,7 +115,14 @@ namespace QuanLyDiaOc.GUI
                     if (diaOcBLL.XoaDiaOc(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách địa ốc thành công");
-                        dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                        if (MaKhachHangPoup == 0)
+                        {
+                            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                        }
+                        else
+                        {
+                            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(MaKhachHangPoup);
+                        }
                         LamMoiThongTin();
                     }
                     else
@@ -158,7 +177,14 @@ namespace QuanLyDiaOc.GUI
                         if (diaOcBLL.SuaDiaOc(diaOcDTO))
                         {
                             MessageBox.Show("Sửa địa ốc thành công");
-                            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                            if (MaKhachHangPoup == 0)
+                            {
+                                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                            }
+                            else
+                            {
+                                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(MaKhachHangPoup);
+                            }
                             LamMoiThongTin();
                         }
                         else
@@ -175,7 +201,19 @@ namespace QuanLyDiaOc.GUI
 
         private void FormDiaOc_Load(object sender, EventArgs e)
         {
-            dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+            if (MaKhachHangPoup == 0)
+            {
+                txtMaKhachHang.Visible = false;
+                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+            }
+            else
+            {
+                cbKhachHang.Visible = false;
+                btnThemKhachHang.Visible = false;
+                txtMaKhachHang.Text = MaKhachHangPoup.ToString();
+                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(MaKhachHangPoup);
+            }
+
             cbKhachHang.DataSource = khachHangBLL.LayDanhSachKhachHang();
             cbKhachHang.DisplayMember = "TenKhachHang";
             cbKhachHang.ValueMember = "MaKhachHang";
@@ -186,6 +224,7 @@ namespace QuanLyDiaOc.GUI
             cbLoaiNha.DisplayMember = "TenLoaiNha";
             cbLoaiNha.ValueMember = "MaLoaiNha";
             LamMoiThongTin();
+            checkLoadDone = true;
         }
 
         private void LamMoiThongTin()
@@ -339,7 +378,7 @@ namespace QuanLyDiaOc.GUI
                     txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
                     txtDienTichKhuonVien.Text = row.Cells["DienTichKhuonVien"].Value.ToString();
                     txtDienTichSuDung.Text = row.Cells["DienTichSuDung"].Value.ToString();
-
+                    txtCMND.Text = row.Cells["CMND"].Value.ToString();
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("True"))
                         chkTrangThaiKiemDuyet.Checked = true;
                     else
@@ -360,6 +399,32 @@ namespace QuanLyDiaOc.GUI
                     txtGiaBan.Text = String.Format("{0:#,###0}", double.Parse(row.Cells["GiaBan"].Value.ToString()));
                 }
                 catch { }
+            }
+        }
+
+        private void cbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkLoadDone)
+            {
+                txtCMND.Text = khachHangBLL.LayDanhSachKhachHangTheoMa(Int32.Parse(cbKhachHang.SelectedValue.ToString())).Rows[0]["CMND"].ToString();
+            }
+        }
+
+        private void btnQuanLyPhieuDangKy_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormPhieuDangKy diaglogPhieuDangKy = new FormPhieuDangKy(Int32.Parse(txtMaDiaOc.Text.ToString()));
+                diaglogPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogPhieuDangKy.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //       txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn địa ốc muốn quản lý phiếu đăng ký!");
             }
         }
     }

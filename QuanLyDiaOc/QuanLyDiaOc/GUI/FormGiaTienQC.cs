@@ -83,7 +83,15 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Kích cỡ tối thiểu chỉ được nhập số");
                 return false;
             }
+            if(Int32.Parse(txtSoLuongToiDa.Text) <= Int32.Parse(txtSoLuongToiThieu.Text))
+            {
+                MessageBox.Show("Số lượng tối đa phải lớn hơn số lượng tối thiểu");
+            }
 
+            if (Double.Parse(txtKichCoToiDa.Text) <= Double.Parse(txtKichCoToiThieu.Text))
+            {
+                MessageBox.Show("Kích thước tối đa phải lớn hơn kích thước tối thiểu");
+            }
             return true;
         }
 

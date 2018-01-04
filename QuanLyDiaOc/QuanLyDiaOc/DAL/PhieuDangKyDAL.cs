@@ -193,5 +193,29 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public DataTable LayDanhSachPhieuDangKyTheoMaDiaOc(int madiaoc)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_PhieuDangKy_LayDanhSachTheoMaDiaOc";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@madiaoc", madiaoc));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

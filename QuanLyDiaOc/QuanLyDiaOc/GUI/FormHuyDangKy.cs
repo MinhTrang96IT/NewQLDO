@@ -223,6 +223,7 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Chỉ được nhập tối đa 500 ký tự");
                 return false;
             }
+           
             return true;
         }
 

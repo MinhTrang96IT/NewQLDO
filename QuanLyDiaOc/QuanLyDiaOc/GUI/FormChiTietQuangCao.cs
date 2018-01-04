@@ -340,6 +340,11 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Kích thước phải là số thực");
                 return false;
             }
+            if (Convert.ToDateTime(dtpNgayBatDau.Text) > Convert.ToDateTime(dtpNgayKetThuc.Text))
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước hoặc trùng với ngày kết thúc");
+                return false;
+            }
             return true;
         }
 

@@ -62,3 +62,9 @@ CREATE PROC sp_PhieuDangKy_LayDanhSachTheoMa
 AS
 	SELECT * FROM PhieuDangKy WHERE MaPhieuDangKy=@ma
 GO
+
+CREATE PROC sp_PhieuDangKy_LayDanhSachTheoMaDiaOc
+@madiaoc int
+AS
+	SELECT MaPhieuDangKy, TenKhachHang, MaDiaOc , TenNhanVien,NgayLap, NgayBatDau, NgayKetThuc, SoLanGiaHan, TrangThaiKiemDuyet, TongTien, LyDoKhongDuyet  FROM PhieuDangKy, KhachHang, NhanVien WHERE PhieuDangKy.MaNhanVien = NhanVien.MaNhanVien AND PhieuDangKy.MaKhachHang = KhachHang.MaKhachHang AND MaDiaOc = @madiaoc
+Go

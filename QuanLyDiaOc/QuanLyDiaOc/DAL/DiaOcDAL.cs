@@ -253,5 +253,29 @@ namespace QuanLyDiaOc.DAL
                 CloseConnect();
             }
         }
+
+        public DataTable LayDanhSachDiaOcTheoMaKH(int makhachhang)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_DiaOc_LayDanhSachDiaOcTheoMaKH";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@makhachhang", makhachhang));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

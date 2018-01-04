@@ -113,7 +113,11 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Chỉ được nhập tối đa 15 ký tự!");
                 return false;
             }
-
+            if (Convert.ToDateTime(dtpNgaySinh.Text) > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh phải bé hơn ngày hiện tại ");
+                return false;
+            }
             return true;
         }
 

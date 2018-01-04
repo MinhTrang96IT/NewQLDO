@@ -42,15 +42,15 @@ namespace QuanLyDiaOc.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //if (KiemTraThongTinTrong())
-            //{
-            //    MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu gia hạn");
-            //}
-            //else
-            //{
-            //    if (KiemTraThongTinHopLe())
-            //    {
-            int trangThaiKiemDuyet = 0;
+            if (KiemTraThongTinTrong())
+            {
+                MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu gia hạn");
+            }
+            else
+            {
+                if (KiemTraThongTinHopLe())
+                {
+                    int trangThaiKiemDuyet = 0;
             if (rbDaKiemDuyet.Checked)
                 trangThaiKiemDuyet = 1;
 
@@ -86,8 +86,8 @@ namespace QuanLyDiaOc.GUI
             catch
             {
             }
-            //    }
-            //}
+                }
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -253,6 +253,11 @@ namespace QuanLyDiaOc.GUI
             //    MessageBox.Show("Tổng tiền chỉ được nhập số");
             //    return false;
             //}
+            if (Convert.ToDateTime(dtpNgayBatDau.Text) > Convert.ToDateTime(dtpNgayKetThuc.Text))
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước hoặc trùng với ngày kết thúc");
+                return false;
+            }
             return true;
         }
 

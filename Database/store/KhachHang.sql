@@ -51,3 +51,4 @@ CREATE PROC sp_KhachHang_LayDanhSachTheoMa
 AS
 	SELECT * FROM KhachHang WHERE MaKhachHang=@ma
 GO
+

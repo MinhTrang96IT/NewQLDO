@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.btnQuanLyDiaOc = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTaoMoi = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.btnQuanLyDiaOc);
             this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtTimKiem);
             this.gbThongTinKH.Controls.Add(this.btnTaoMoi);
@@ -99,11 +101,22 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin khách hàng";
             // 
+            // btnQuanLyDiaOc
+            // 
+            this.btnQuanLyDiaOc.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnQuanLyDiaOc.Location = new System.Drawing.Point(864, 96);
+            this.btnQuanLyDiaOc.Name = "btnQuanLyDiaOc";
+            this.btnQuanLyDiaOc.Size = new System.Drawing.Size(93, 44);
+            this.btnQuanLyDiaOc.TabIndex = 24;
+            this.btnQuanLyDiaOc.Text = "Quản lý địa ốc";
+            this.btnQuanLyDiaOc.UseVisualStyleBackColor = false;
+            this.btnQuanLyDiaOc.Click += new System.EventHandler(this.btnQuanLyDiaOc_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Image = global::QuanLyDiaOc.Properties.Resources.search;
-            this.label9.Location = new System.Drawing.Point(683, 191);
+            this.label9.Location = new System.Drawing.Point(683, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 13);
             this.label9.TabIndex = 23;
@@ -111,7 +124,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(702, 187);
+            this.txtTimKiem.Location = new System.Drawing.Point(702, 188);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(139, 20);
             this.txtTimKiem.TabIndex = 22;
@@ -450,5 +463,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.Button btnQuanLyDiaOc;
     }
 }

@@ -100,6 +100,11 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinHopLe()
         {
+            if(Convert.ToDateTime(dtpNgayChup.Text) < Convert.ToDateTime(dtpNgayHC.Text))
+            {
+                MessageBox.Show("Ngày chụp phải trùng hoặc sau ngày hẹn chụp");
+                return false;
+            }
             return true;
         }
 

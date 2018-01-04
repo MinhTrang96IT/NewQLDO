@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtSoLuongQuangCao = new System.Windows.Forms.TextBox();
             this.txtSoLanGiaHan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.rbDaKiemDuyet = new System.Windows.Forms.RadioButton();
@@ -76,7 +77,7 @@
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSoLuongQuangCao = new System.Windows.Forms.TextBox();
+            this.txtMaDiaOc = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDangKy)).BeginInit();
@@ -84,6 +85,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Controls.Add(this.txtMaDiaOc);
             this.gbThongTinKH.Controls.Add(this.txtSoLuongQuangCao);
             this.gbThongTinKH.Controls.Add(this.txtSoLanGiaHan);
             this.gbThongTinKH.Controls.Add(this.label11);
@@ -125,6 +127,14 @@
             this.gbThongTinKH.TabIndex = 14;
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin phiếu đăng ký";
+            // 
+            // txtSoLuongQuangCao
+            // 
+            this.txtSoLuongQuangCao.Location = new System.Drawing.Point(430, 104);
+            this.txtSoLuongQuangCao.Name = "txtSoLuongQuangCao";
+            this.txtSoLuongQuangCao.ReadOnly = true;
+            this.txtSoLuongQuangCao.Size = new System.Drawing.Size(139, 20);
+            this.txtSoLuongQuangCao.TabIndex = 55;
             // 
             // txtSoLanGiaHan
             // 
@@ -355,22 +365,24 @@
             // 
             // btnHuyDichVu
             // 
+            this.btnHuyDichVu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnHuyDichVu.Location = new System.Drawing.Point(806, 201);
             this.btnHuyDichVu.Name = "btnHuyDichVu";
             this.btnHuyDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnHuyDichVu.TabIndex = 17;
             this.btnHuyDichVu.Text = "Hủy dịch vụ";
-            this.btnHuyDichVu.UseVisualStyleBackColor = true;
+            this.btnHuyDichVu.UseVisualStyleBackColor = false;
             this.btnHuyDichVu.Click += new System.EventHandler(this.btnHuyDichVu_Click);
             // 
             // btnGiaHanDichVu
             // 
+            this.btnGiaHanDichVu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGiaHanDichVu.Location = new System.Drawing.Point(806, 161);
             this.btnGiaHanDichVu.Name = "btnGiaHanDichVu";
             this.btnGiaHanDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnGiaHanDichVu.TabIndex = 17;
             this.btnGiaHanDichVu.Text = "Gia hạn dịch vụ";
-            this.btnGiaHanDichVu.UseVisualStyleBackColor = true;
+            this.btnGiaHanDichVu.UseVisualStyleBackColor = false;
             this.btnGiaHanDichVu.Click += new System.EventHandler(this.btnGiaHanDichVu_Click);
             // 
             // btnXuatHopDong
@@ -384,12 +396,13 @@
             // 
             // btnChiTietQuangCao
             // 
+            this.btnChiTietQuangCao.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 104);
             this.btnChiTietQuangCao.Name = "btnChiTietQuangCao";
             this.btnChiTietQuangCao.Size = new System.Drawing.Size(113, 23);
             this.btnChiTietQuangCao.TabIndex = 17;
             this.btnChiTietQuangCao.Text = "Chi tiết quảng cáo";
-            this.btnChiTietQuangCao.UseVisualStyleBackColor = true;
+            this.btnChiTietQuangCao.UseVisualStyleBackColor = false;
             this.btnChiTietQuangCao.Click += new System.EventHandler(this.btnChiTietQuangCao_Click);
             // 
             // btnThem
@@ -549,13 +562,13 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
-            // txtSoLuongQuangCao
+            // txtMaDiaOc
             // 
-            this.txtSoLuongQuangCao.Location = new System.Drawing.Point(430, 104);
-            this.txtSoLuongQuangCao.Name = "txtSoLuongQuangCao";
-            this.txtSoLuongQuangCao.ReadOnly = true;
-            this.txtSoLuongQuangCao.Size = new System.Drawing.Size(139, 20);
-            this.txtSoLuongQuangCao.TabIndex = 55;
+            this.txtMaDiaOc.Location = new System.Drawing.Point(123, 102);
+            this.txtMaDiaOc.Name = "txtMaDiaOc";
+            this.txtMaDiaOc.ReadOnly = true;
+            this.txtMaDiaOc.Size = new System.Drawing.Size(139, 20);
+            this.txtMaDiaOc.TabIndex = 56;
             // 
             // FormPhieuDangKy
             // 
@@ -626,5 +639,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyet;
         private System.Windows.Forms.TextBox txtSoLuongQuangCao;
+        private System.Windows.Forms.TextBox txtMaDiaOc;
     }
 }

@@ -15,6 +15,7 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormPhieuDangKy : Form
     {
+        private int  MaDiaOcPoup = 0;
         PhieuDangKyBLL phieuDangKyBLL;
         KhachHangBLL khachHangBLL;
         NhanVienBLL nhanVienBLL;
@@ -22,6 +23,11 @@ namespace QuanLyDiaOc.GUI
         ChiTietQuangCaoBLL chiTietQuangCaoBLL;
         string id;
         private List<int> listIdLoaiQuangCao;
+
+        public FormPhieuDangKy(int maDiaOc) : this()
+        {
+            MaDiaOcPoup = maDiaOc;
+        }
 
         public FormPhieuDangKy()
         {
@@ -70,7 +76,14 @@ namespace QuanLyDiaOc.GUI
                         if (phieuDangKyBLL.ThemPhieuDangKy(phieuDangKyDTO))
                         {
                             MessageBox.Show("Thêm phiếu đăng ký thành công");
-                            dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                            if (MaDiaOcPoup == 0)
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                            }
+                            else
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMaDiaOc(MaDiaOcPoup);
+                            }
                         }
                         else
                         {
@@ -98,7 +111,14 @@ namespace QuanLyDiaOc.GUI
                     if (phieuDangKyBLL.XoaPhieuDangKy(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách phiếu đăng ký thành công");
-                        dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                        if (MaDiaOcPoup == 0)
+                        {
+                            dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                        }
+                        else
+                        {
+                            dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMaDiaOc(MaDiaOcPoup);
+                        }
                         LamMoiThongTin();
                     }
                     else
@@ -145,7 +165,14 @@ namespace QuanLyDiaOc.GUI
                         if (phieuDangKyBLL.SuaPhieuDangKy(phieuDangKyDTO))
                         {
                             MessageBox.Show("Sửa phiếu đăng ký thành công");
-                            dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                            if (MaDiaOcPoup == 0)
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                            }
+                            else
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMaDiaOc(MaDiaOcPoup);
+                            }
                             LamMoiThongTin();
                         }
                         else
@@ -162,7 +189,18 @@ namespace QuanLyDiaOc.GUI
 
         private void FormPhieuDangKy_Load(object sender, EventArgs e)
         {
-            dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+            if (MaDiaOcPoup == 0)
+            {
+                txtMaDiaOc.Visible = false;
+                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+            }
+            else
+            {
+                cbKhachHang.Visible = false;
+                btnThemDiaOc.Visible = false;
+                txtMaDiaOc.Text = MaDiaOcPoup.ToString();
+                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMaDiaOc(MaDiaOcPoup);
+            }
             cbKhachHang.DataSource = khachHangBLL.LayDanhSachKhachHang();
             cbKhachHang.DisplayMember = "TenKhachHang";
             cbKhachHang.ValueMember = "MaKhachHang";
@@ -224,6 +262,11 @@ namespace QuanLyDiaOc.GUI
             //    MessageBox.Show("Tổng tiền chỉ được nhập số");
             //    return false;
             //}
+            if (Convert.ToDateTime(dtpNgayBatDau.Text) > Convert.ToDateTime(dtpNgayKetThuc.Text))
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước hoặc trùng với ngày kết thúc");
+                return false;
+            }
             return true;
         }
 
