@@ -72,8 +72,6 @@
             this.XacNhanNDV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabChiTietQuangCao = new System.Windows.Forms.TabPage();
             this.dgvChiTietQuangCao = new System.Windows.Forms.DataGridView();
-            this.tabBaiViet = new System.Windows.Forms.TabPage();
-            this.tabDiaOc = new System.Windows.Forms.TabPage();
             this.MaChiTietQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhieuDangKyCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +85,7 @@
             this.TrangThaiKiemDuyetCT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyetCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XacNhanCT = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabBaiViet = new System.Windows.Forms.TabPage();
             this.dgvBaiViet = new System.Windows.Forms.DataGridView();
             this.MaBaiViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChiTietQuangCaoBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +95,7 @@
             this.TrangThaiKiemDuyetBV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyetBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XacNhanBV = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabDiaOc = new System.Windows.Forms.TabPage();
             this.dgvDiaOc = new System.Windows.Forms.DataGridView();
             this.MaDiaOcDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,8 +127,8 @@
             this.tabChiTietQuangCao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).BeginInit();
             this.tabBaiViet.SuspendLayout();
-            this.tabDiaOc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).BeginInit();
+            this.tabDiaOc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,10 +140,11 @@
             this.tabctrKiemDuyet.Controls.Add(this.tabChiTietQuangCao);
             this.tabctrKiemDuyet.Controls.Add(this.tabBaiViet);
             this.tabctrKiemDuyet.Controls.Add(this.tabDiaOc);
-            this.tabctrKiemDuyet.Location = new System.Drawing.Point(104, 52);
+            this.tabctrKiemDuyet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabctrKiemDuyet.Location = new System.Drawing.Point(0, 0);
             this.tabctrKiemDuyet.Name = "tabctrKiemDuyet";
             this.tabctrKiemDuyet.SelectedIndex = 0;
-            this.tabctrKiemDuyet.Size = new System.Drawing.Size(973, 245);
+            this.tabctrKiemDuyet.Size = new System.Drawing.Size(1182, 603);
             this.tabctrKiemDuyet.TabIndex = 0;
             this.tabctrKiemDuyet.SelectedIndexChanged += new System.EventHandler(this.tabctrKiemDuyet_SelectedIndexChanged);
             // 
@@ -153,7 +154,7 @@
             this.tabPhieuDangKy.Location = new System.Drawing.Point(4, 22);
             this.tabPhieuDangKy.Name = "tabPhieuDangKy";
             this.tabPhieuDangKy.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhieuDangKy.Size = new System.Drawing.Size(965, 219);
+            this.tabPhieuDangKy.Size = new System.Drawing.Size(1174, 577);
             this.tabPhieuDangKy.TabIndex = 0;
             this.tabPhieuDangKy.Text = "Phiếu đăng ký";
             this.tabPhieuDangKy.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@
             this.dgvPhieuDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuDangKy.Location = new System.Drawing.Point(3, 3);
             this.dgvPhieuDangKy.Name = "dgvPhieuDangKy";
-            this.dgvPhieuDangKy.Size = new System.Drawing.Size(959, 213);
+            this.dgvPhieuDangKy.Size = new System.Drawing.Size(1168, 571);
             this.dgvPhieuDangKy.TabIndex = 0;
             this.dgvPhieuDangKy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuDangKy_CellContentClick);
             // 
@@ -546,28 +547,6 @@
             this.dgvChiTietQuangCao.TabIndex = 0;
             this.dgvChiTietQuangCao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietQuangCao_CellContentClick);
             // 
-            // tabBaiViet
-            // 
-            this.tabBaiViet.Controls.Add(this.dgvBaiViet);
-            this.tabBaiViet.Location = new System.Drawing.Point(4, 22);
-            this.tabBaiViet.Name = "tabBaiViet";
-            this.tabBaiViet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBaiViet.Size = new System.Drawing.Size(965, 219);
-            this.tabBaiViet.TabIndex = 4;
-            this.tabBaiViet.Text = "Bài viết quảng cáo";
-            this.tabBaiViet.UseVisualStyleBackColor = true;
-            // 
-            // tabDiaOc
-            // 
-            this.tabDiaOc.Controls.Add(this.dgvDiaOc);
-            this.tabDiaOc.Location = new System.Drawing.Point(4, 22);
-            this.tabDiaOc.Name = "tabDiaOc";
-            this.tabDiaOc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiaOc.Size = new System.Drawing.Size(965, 219);
-            this.tabDiaOc.TabIndex = 5;
-            this.tabDiaOc.Text = "Địa ốc";
-            this.tabDiaOc.UseVisualStyleBackColor = true;
-            // 
             // MaChiTietQuangCao
             // 
             this.MaChiTietQuangCao.DataPropertyName = "MaChiTietQuangCao";
@@ -654,6 +633,17 @@
             this.XacNhanCT.Text = "Gửi";
             this.XacNhanCT.UseColumnTextForButtonValue = true;
             // 
+            // tabBaiViet
+            // 
+            this.tabBaiViet.Controls.Add(this.dgvBaiViet);
+            this.tabBaiViet.Location = new System.Drawing.Point(4, 22);
+            this.tabBaiViet.Name = "tabBaiViet";
+            this.tabBaiViet.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBaiViet.Size = new System.Drawing.Size(965, 219);
+            this.tabBaiViet.TabIndex = 4;
+            this.tabBaiViet.Text = "Bài viết quảng cáo";
+            this.tabBaiViet.UseVisualStyleBackColor = true;
+            // 
             // dgvBaiViet
             // 
             this.dgvBaiViet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -724,6 +714,17 @@
             this.XacNhanBV.Name = "XacNhanBV";
             this.XacNhanBV.Text = "Gửi";
             this.XacNhanBV.UseColumnTextForButtonValue = true;
+            // 
+            // tabDiaOc
+            // 
+            this.tabDiaOc.Controls.Add(this.dgvDiaOc);
+            this.tabDiaOc.Location = new System.Drawing.Point(4, 22);
+            this.tabDiaOc.Name = "tabDiaOc";
+            this.tabDiaOc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDiaOc.Size = new System.Drawing.Size(965, 219);
+            this.tabDiaOc.TabIndex = 5;
+            this.tabDiaOc.Text = "Địa ốc";
+            this.tabDiaOc.UseVisualStyleBackColor = true;
             // 
             // dgvDiaOc
             // 
@@ -916,8 +917,8 @@
             this.tabChiTietQuangCao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).EndInit();
             this.tabBaiViet.ResumeLayout(false);
-            this.tabDiaOc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).EndInit();
+            this.tabDiaOc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).EndInit();
             this.ResumeLayout(false);
 

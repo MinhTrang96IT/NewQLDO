@@ -64,3 +64,10 @@ CREATE PROC sp_PhieuNgungDangKyDichVu_SuaKiemDuyet
 AS
 	UPDATE PhieuNgungDangKyDichVu SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuNgungDangKyDichVu = @maphieungungdichvu
 GO
+
+CREATE PROC sp_PhieuNgungDangKyDichVu_LayDanhSachTheoMa
+@ma int
+
+AS
+	SELECT * FROM PhieuNgungDangKyDichVu WHERE MaPhieuNgungDangKyDichVu=@ma
+GO

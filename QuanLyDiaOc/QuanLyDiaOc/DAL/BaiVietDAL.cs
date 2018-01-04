@@ -57,7 +57,7 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
-        public DataTable LayDanhSachBaiViwtTheoMa(int ma)
+        public DataTable LayDanhSachBaiVietTheoMa(int ma)
         {
             try
             {

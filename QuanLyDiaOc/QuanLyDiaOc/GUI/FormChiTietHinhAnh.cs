@@ -34,6 +34,8 @@ namespace QuanLyDiaOc.GUI
         {
             kt = true;
             dgvChiTietHinhAnh.DataSource = chiTietHinhAnhBLL.LayDanhSachChiTietHinhAnhTheoMaHA(Int32.Parse(maHA));
+            cbMaHA.DisplayMember = "MaHinhAnh";
+            cbMaHA.ValueMember = "MaHinhAnh";
             cbMaHA.DropDownStyle = ComboBoxStyle.Simple;
             cbMaHA.Text = maHA;
             AnThongTin();
@@ -54,21 +56,20 @@ namespace QuanLyDiaOc.GUI
                 cbMaHA.DisplayMember = "MaHinhAnh";
                 cbMaHA.ValueMember = "MaHinhAnh";
             }
-
         }
 
         private void LamMoiThongTin()
         {
             txtMaChiTiet.Text = txtMoTa.Text = "";
             txtMoTa.Focus();
-            cbMaHA.SelectedIndex = 0;
+            //cbMaHA.SelectedIndex = 0;
             pbHinhAnh.Image = null;
             id = "";
         }
 
         private bool KiemTraThongTinTrong()
         {
-            if (txtMoTa.Text.ToString() == "")
+            if (txtMoTa.Text.ToString().Equals(""))
             {
                 return true;
             }
@@ -159,7 +160,7 @@ namespace QuanLyDiaOc.GUI
                 {
                     try
                     {
-                        if (chiTietHinhAnhBLL.ThemChiTietHinhAnh(Int32.Parse(cbMaHA.SelectedValue.ToString()), arr, txtMoTa.Text.ToString()))
+                        if (chiTietHinhAnhBLL.ThemChiTietHinhAnh(Int32.Parse(cbMaHA.Text.ToString()), arr, txtMoTa.Text.ToString()))
                         {
                             MessageBox.Show("Thêm chi tiết hình ảnh thành công");
                             dgvChiTietHinhAnh.DataSource = chiTietHinhAnhBLL.LayDanhSachChiTietHinhAnh();
@@ -223,7 +224,7 @@ namespace QuanLyDiaOc.GUI
                     {
                         try
                         {
-                            if (chiTietHinhAnhBLL.SuaChiTietHinhAnh(Int32.Parse(txtMaChiTiet.Text.ToString()), Int32.Parse(cbMaHA.SelectedValue.ToString()), arr, txtMoTa.Text.ToString()))
+                            if (chiTietHinhAnhBLL.SuaChiTietHinhAnh(Int32.Parse(txtMaChiTiet.Text.ToString()), Int32.Parse(cbMaHA.Text.ToString()), arr, txtMoTa.Text.ToString()))
                             {
                                 MessageBox.Show("Sửa chi tiết hình ảnh thành công");
                                 dgvChiTietHinhAnh.DataSource = chiTietHinhAnhBLL.LayDanhSachChiTietHinhAnh();

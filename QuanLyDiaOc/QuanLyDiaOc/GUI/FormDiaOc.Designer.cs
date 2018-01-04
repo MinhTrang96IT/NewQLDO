@@ -95,6 +95,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnGiayTo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).BeginInit();
             this.gbDanhSanh.SuspendLayout();
             this.gbThongTin.SuspendLayout();
@@ -511,6 +512,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Controls.Add(this.btnGiayTo);
             this.gbThongTin.Controls.Add(this.btnQuanLyPhieuDangKy);
             this.gbThongTin.Controls.Add(this.txtMaKhachHang);
             this.gbThongTin.Controls.Add(this.chkTrangThaiMuaBan);
@@ -569,6 +571,10 @@
             this.btnQuanLyPhieuDangKy.Location = new System.Drawing.Point(817, 180);
             this.btnQuanLyPhieuDangKy.Name = "btnQuanLyPhieuDangKy";
             this.btnQuanLyPhieuDangKy.Size = new System.Drawing.Size(139, 49);
+            this.btnQuanLyPhieuDangKy.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnQuanLyPhieuDangKy.Location = new System.Drawing.Point(817, 167);
+            this.btnQuanLyPhieuDangKy.Name = "btnQuanLyPhieuDangKy";
+            this.btnQuanLyPhieuDangKy.Size = new System.Drawing.Size(139, 29);
             this.btnQuanLyPhieuDangKy.TabIndex = 38;
             this.btnQuanLyPhieuDangKy.Text = "Quản lý Phiếu Đăng Ký";
             this.btnQuanLyPhieuDangKy.UseVisualStyleBackColor = false;
@@ -727,6 +733,17 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Loại nhà:";
             // 
+            // btnGiayTo
+            // 
+            this.btnGiayTo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGiayTo.Location = new System.Drawing.Point(817, 203);
+            this.btnGiayTo.Name = "btnGiayTo";
+            this.btnGiayTo.Size = new System.Drawing.Size(139, 29);
+            this.btnGiayTo.TabIndex = 39;
+            this.btnGiayTo.Text = "Xem giấy tờ";
+            this.btnGiayTo.UseVisualStyleBackColor = false;
+            this.btnGiayTo.Click += new System.EventHandler(this.btnGiayTo_Click);
+            // 
             // FormDiaOc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -814,5 +831,6 @@
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnQuanLyPhieuDangKy;
+        private System.Windows.Forms.Button btnGiayTo;
     }
 }

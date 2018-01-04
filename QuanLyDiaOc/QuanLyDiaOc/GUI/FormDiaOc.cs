@@ -444,5 +444,23 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Vui lòng chọn địa ốc muốn quản lý phiếu đăng ký!");
             }
         }
+
+        private void btnGiayTo_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormGiayTo dialogGiayTo = new FormGiayTo(txtMaDiaOc.Text.ToString());
+                dialogGiayTo.StartPosition = FormStartPosition.CenterScreen;
+                if (dialogGiayTo.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //       txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn địa ốc muốn xem giấy tờ!");
+            }
+        }
     }
 }

@@ -18,9 +18,9 @@ namespace QuanLyDiaOc.BLL
             return baiVietDAL.LayDanhSachBaiViet();
         }
 
-        public DataTable LayDanhSachBaiViwtTheoMa(int ma)
+        public DataTable LayDanhSachBaiVietTheoMa(int ma)
         {
-            return baiVietDAL.LayDanhSachBaiViwtTheoMa(ma);
+            return baiVietDAL.LayDanhSachBaiVietTheoMa(ma);
         }
 
         public DataTable LayDanhSachBaiVietTheoTenNhanVien()

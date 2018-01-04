@@ -364,6 +364,17 @@ namespace QuanLyDiaOc.GUI
             formTimKiem.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Tìm kiếm");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formTimKiem);
+  tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+        private void giấyTờToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGiayTo formGiayTo = new FormGiayTo();
+            formGiayTo.TopLevel = false;
+            formGiayTo.Visible = true;
+            formGiayTo.FormBorderStyle = FormBorderStyle.None;
+            formGiayTo.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Giấy tờ");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formGiayTo);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
     }

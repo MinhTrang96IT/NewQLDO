@@ -57,3 +57,10 @@ CREATE PROC sp_PhieuGiaHan_SuaKiemDuyet
 AS
 	UPDATE PhieuGiaHan SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaPhieuGiaHan = @maphieugiahan
 GO
+
+CREATE PROC sp_PhieuGiaHan_LayDanhSachTheoMa
+@ma int
+
+AS
+	SELECT * FROM PhieuGiaHan WHERE MaPhieuGiaHan=@ma
+GO
