@@ -141,6 +141,12 @@
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\QuyenHanDTO.cs" />
     <Compile Include="DTO\ViTriDTO.cs" />
+    <Compile Include="GUI\DialogBaiViet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBaiViet.Designer.cs">
+      <DependentUpon>DialogBaiViet.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DiaLogDiaOc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\DialogBaiViet.resx">
+      <DependentUpon>DialogBaiViet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DiaLogDiaOc.resx">
       <DependentUpon>DiaLogDiaOc.cs</DependentUpon>
     </EmbeddedResource>

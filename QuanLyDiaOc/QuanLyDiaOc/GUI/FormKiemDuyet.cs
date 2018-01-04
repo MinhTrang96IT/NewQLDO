@@ -313,13 +313,13 @@ namespace QuanLyDiaOc.GUI
                     DataGridViewRow row = dgvBaiViet.Rows[e.RowIndex];
                     int columnIndex = dgvBaiViet.CurrentCell.ColumnIndex;
                     string columnName = dgvBaiViet.Columns[columnIndex].Name;
-                    int maPhieuBV = Int32.Parse(row.Cells["MaBaiViet"].Value.ToString());
+                    int maBV = Int32.Parse(row.Cells["MaBaiViet"].Value.ToString());
 
                     if (columnName.Equals("ChiTietBV"))
                     {
-                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
-                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                        DialogBaiViet dialogBaiViet = new DialogBaiViet(maBV);
+                        dialogBaiViet.StartPosition = FormStartPosition.CenterScreen;
+                        dialogBaiViet.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhanBV"))
@@ -330,7 +330,7 @@ namespace QuanLyDiaOc.GUI
                         string lyDo = "";
                         if (trangThai == 0)
                             lyDo = row.Cells["LyDoKhongDuyetBV"].Value.ToString();
-                        BaiVietDTO baiVietDTO = new BaiVietDTO(maPhieuBV, trangThai, lyDo);
+                        BaiVietDTO baiVietDTO = new BaiVietDTO(maBV, trangThai, lyDo);
                         try
                         {
                             if (baiVietBLL.SuaKiemDuyetBaiViet(baiVietDTO))

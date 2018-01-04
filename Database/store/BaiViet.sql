@@ -50,3 +50,10 @@ CREATE PROC sp_BaiViet_SuaKiemDuyet
 AS
 	UPDATE BaiViet SET TrangThaiKiemDuyet=@trangthaikiemduyet, LyDoKhongDuyet = @lydokhongduyet WHERE MaBaiViet = @mabaiviet
 GO
+
+CREATE PROC sp_BaiViet_LayDanhSachTheoMa
+@ma int
+
+AS
+	SELECT * FROM BaiViet WHERE MaBaiViet=@ma
+GO

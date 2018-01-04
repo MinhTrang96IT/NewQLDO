@@ -18,6 +18,11 @@ namespace QuanLyDiaOc.BLL
             return baiVietDAL.LayDanhSachBaiViet();
         }
 
+        public DataTable LayDanhSachBaiViwtTheoMa(int ma)
+        {
+            return baiVietDAL.LayDanhSachBaiViwtTheoMa(ma);
+        }
+
         public DataTable LayDanhSachBaiVietTheoTenNhanVien()
         {
             return baiVietDAL.LayDanhSachBaiVietTheoTenNhanVien();

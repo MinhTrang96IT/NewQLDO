@@ -46,7 +46,7 @@
             this.lblDiaChiDO = new System.Windows.Forms.Label();
             this.lblTenLoaiNha = new System.Windows.Forms.Label();
             this.lblTenLoaiDiaOc = new System.Windows.Forms.Label();
-            this.lblTenKH = new System.Windows.Forms.Label();
+            this.lblMaKHDO = new System.Windows.Forms.Label();
             this.lblMaDO = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@
             this.gbDiaOc.Controls.Add(this.lblDiaChiDO);
             this.gbDiaOc.Controls.Add(this.lblTenLoaiNha);
             this.gbDiaOc.Controls.Add(this.lblTenLoaiDiaOc);
-            this.gbDiaOc.Controls.Add(this.lblTenKH);
+            this.gbDiaOc.Controls.Add(this.lblMaKHDO);
             this.gbDiaOc.Controls.Add(this.lblMaDO);
             this.gbDiaOc.Controls.Add(this.label25);
             this.gbDiaOc.Controls.Add(this.label24);
@@ -287,14 +287,14 @@
             this.lblTenLoaiDiaOc.TabIndex = 20;
             this.lblTenLoaiDiaOc.Text = "label28";
             // 
-            // lblTenKH
+            // lblMaKHDO
             // 
-            this.lblTenKH.AutoSize = true;
-            this.lblTenKH.Location = new System.Drawing.Point(136, 56);
-            this.lblTenKH.Name = "lblTenKH";
-            this.lblTenKH.Size = new System.Drawing.Size(41, 13);
-            this.lblTenKH.TabIndex = 19;
-            this.lblTenKH.Text = "label27";
+            this.lblMaKHDO.AutoSize = true;
+            this.lblMaKHDO.Location = new System.Drawing.Point(136, 56);
+            this.lblMaKHDO.Name = "lblMaKHDO";
+            this.lblMaKHDO.Size = new System.Drawing.Size(41, 13);
+            this.lblMaKHDO.TabIndex = 19;
+            this.lblMaKHDO.Text = "label27";
             // 
             // lblMaDO
             // 
@@ -445,9 +445,9 @@
             this.label0.AutoSize = true;
             this.label0.Location = new System.Drawing.Point(20, 56);
             this.label0.Name = "label0";
-            this.label0.Size = new System.Drawing.Size(89, 13);
+            this.label0.Size = new System.Drawing.Size(85, 13);
             this.label0.TabIndex = 2;
-            this.label0.Text = "Tên khách hàng:";
+            this.label0.Text = "Mã khách hàng:";
             // 
             // label9
             // 
@@ -666,7 +666,7 @@
         private System.Windows.Forms.Label lblDiaChiDO;
         private System.Windows.Forms.Label lblTenLoaiNha;
         private System.Windows.Forms.Label lblTenLoaiDiaOc;
-        private System.Windows.Forms.Label lblTenKH;
+        private System.Windows.Forms.Label lblMaKHDO;
         private System.Windows.Forms.Label lblMaDO;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;

@@ -33,7 +33,7 @@ namespace QuanLyDiaOc.GUI
         private void LoadGBDiaOc()
         {
             lblMaDO.Text = rowDO["MaDiaOc"].ToString();
-            lblTenKH.Text = rowDO["TenKhachHang"].ToString();
+            lblMaKHDO.Text = rowDO["MaKhachHang"].ToString();
             lblTenLoaiDiaOc.Text = rowDO["TenLoaiDiaOc"].ToString();
             lblTenLoaiNha.Text = rowDO["TenLoaiNha"].ToString();
             lblDiaChiDO.Text = rowDO["DiaChi"].ToString();
