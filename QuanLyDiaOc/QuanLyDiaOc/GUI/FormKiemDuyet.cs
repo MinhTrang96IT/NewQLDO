@@ -366,9 +366,9 @@ namespace QuanLyDiaOc.GUI
 
                     if (columnName.Equals("ChiTietDO"))
                     {
-                        //FormChiTietPhieuDangKy diaglogChiTietPhieuDangKy = new FormChiTietPhieuDangKy(maPhieuGH);
-                        //diaglogChiTietPhieuDangKy.StartPosition = FormStartPosition.CenterScreen;
-                        //diaglogChiTietPhieuDangKy.ShowDialog(this);
+                        DiaLogDiaOc diaLogDiaOc = new DiaLogDiaOc(maPhieuDO);
+                        diaLogDiaOc.StartPosition = FormStartPosition.CenterScreen;
+                        diaLogDiaOc.ShowDialog(this);
                     }
 
                     if (columnName.Equals("XacNhanDO"))
