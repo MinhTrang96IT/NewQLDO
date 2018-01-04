@@ -103,7 +103,7 @@
             // 
             // btnQuanLyDiaOc
             // 
-            this.btnQuanLyDiaOc.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnQuanLyDiaOc.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnQuanLyDiaOc.Location = new System.Drawing.Point(864, 96);
             this.btnQuanLyDiaOc.Name = "btnQuanLyDiaOc";
             this.btnQuanLyDiaOc.Size = new System.Drawing.Size(93, 44);

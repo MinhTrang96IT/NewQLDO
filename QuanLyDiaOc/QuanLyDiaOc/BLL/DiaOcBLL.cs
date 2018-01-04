@@ -53,9 +53,14 @@ namespace QuanLyDiaOc.BLL
             return diaOcDAL.SuaDiaOc(diaOcDTO);
         }
 
-        public DataTable TimKiemNVTheoTen(string ten)
+        public DataTable TimKiemDiaOcTheoMa(int ma)
         {
-            return diaOcDAL.TimKiemNVTheoTen(ten);
+            return diaOcDAL.TimKiemNVTheoMa(ma);
+        }
+
+        public DataTable LayDanhSachChiTietQuangCao(int ma)
+        {
+            return diaOcDAL.LayDanhSachChiTietQuangCao(ma);
         }
 
         public bool SuaKiemDuyetDiaOc(DiaOcDTO diaOcDTO)

@@ -67,11 +67,10 @@ AS
 	UPDATE DiaOc SET MaKhachHang=@makhachhang, MaLoaiDiaOc=@maloaidiaoc, MaLoaiNha=@maloainha, DienTichKhuonVien=@dientichkhuonvien, DienTichSuDung=@dientichsudung, DiaOc.DiaChi=@diachi, HuongNha=@huongnha, ChieuDaiDat=@chieudaidat, ChieuRongDat=@chieurongdat, ChieuDaiNha=@chieudainha, ChieuRongNha = @chieurongnha, SoTang = @sotang, MoTaChiTiet = @motachitiet, GiaBan = @giaban, TrangThaiKiemDuyet = @trangthaikiemduyet, TrangThaiMuaBan = @trangthaimuaban, LyDoKhongDuyet = @lydokhongduyet WHERE MaDiaOc=@madiaoc
 GO
 
-CREATE PROC sp_DiaOc_TimKiemTheoTen
-@ten nvarchar(50)
-
+CREATE PROC sp_DiaOc_TimKiemTheoMa
+@ma int
 AS
-	SELECT MaDiaOc, TenKhachHang,CMND, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND TenKhachHang LIKE '%'+ @ten +'%'
+	SELECT MaDiaOc, TenKhachHang,CMND, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND MaDiaOc = @ma
 GO
 
 CREATE PROC sp_DiaOc_LayDanhSachTheoMa
@@ -95,3 +94,25 @@ CREATE PROC sp_DiaOc_LayDanhSachTheoMa2
 AS
 	SELECT MaDiaOc, DiaOc.MaKhachHang, TenKhachHang, TenLoaiDiaOc, TenLoaiNha, DiaOc.DiaChi, DienTichKhuonVien, DienTichSuDung, HuongNha, ChieuDaiDat, ChieuRongDat, ChieuDaiNha, ChieuRongNha, SoTang, MoTaChiTiet, GiaBan, TrangThaiKiemDuyet, TrangThaiMuaBan, LyDoKhongDuyet FROM DiaOc, KhachHang, LoaiNha, LoaiDiaOc WHERE DiaOc.MaLoaiDiaOc = LoaiDiaOc.MaLoaiDiaOc AND DiaOc.MaLoaiNha = LoaiNha.MaLoaiNha AND DiaOc.MaKhachHang = KhachHang.MaKhachHang AND MaDiaOc=@ma
 GO
+
+CREATE PROC sp_DiaOc_LayMaPhieuDang
+
+CREATE PROC sp_DiaOC_LayChiTietQuangCao
+@madiaoc int
+AS
+	SELECT MaChiTietQuangCao, ChiTietQuangCao.MaPhieuDangKy, TenLoaiQuangCao, MaViTri, MaBao, ChiTietQuangCao.NgayBatDau, ChiTietQuangCao.NgayKetThuc, SoLuongPhatHanh, KichThuoc, ChiTietQuangCao.TrangThaiKiemDuyet
+	 FROM ChiTietQuangCao, LoaiQuangCao, DiaOc, PhieuDangKy
+	  WHERE ChiTietQuangCao.MaLoaiQuangCao = LoaiQuangCao.MaLoaiQuangCao AND DiaOc.MaDiaOc = @madiaoc AND DiaOc.MaDiaOc = PhieuDangKy.MaDiaOc AND PhieuDangKy.MaPhieuDangKy = ChiTietQuangCao.MaPhieuDangKy
+	   AND ChiTietQuangCao.MaPhieuDangKy NOT IN (
+	   select PhieuDangKy.MaPhieuDangKy 
+	   from PhieuNgungDangKyDichVu, DiaOc, PhieuDangKy 
+	   where DiaOc.MaDiaOc = @madiaoc and DiaOc.MaDiaOc = PhieuDangKy.MaDiaOc and PhieuDangKy.MaPhieuDangKy = PhieuNgungDangKyDichVu.MaPhieuDangKy)
+Go
+
+CREATE PROC sp_DiaOc_LayHinhAnh
+@madiaoc int
+AS
+	
+GO
+
+	

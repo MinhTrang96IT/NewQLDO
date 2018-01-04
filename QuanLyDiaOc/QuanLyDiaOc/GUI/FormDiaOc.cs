@@ -327,7 +327,24 @@ namespace QuanLyDiaOc.GUI
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            dgvDiaOc.DataSource = diaOcBLL.TimKiemNVTheoTen(txtTimKiem.Text);
+            Regex regexSo = new Regex("^[0-9]+$");
+            if (!regexSo.IsMatch(txtTimKiem.Text))
+            {
+                MessageBox.Show("Phải nhập số mã địa ốc vào đây");
+                dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+            } else
+            {
+                DataTable dtTimKiem = diaOcBLL.TimKiemDiaOcTheoMa(Int32.Parse(txtTimKiem.Text));
+                if (dtTimKiem.Rows.Count > 0)
+                {
+                    dgvDiaOc.DataSource = diaOcBLL.TimKiemDiaOcTheoMa(Int32.Parse(txtTimKiem.Text));
+                }
+                else
+                {
+                    dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoTenLoai();
+                }
+            }
+
         }
 
         private void btnThemKhachHang_Click(object sender, EventArgs e)

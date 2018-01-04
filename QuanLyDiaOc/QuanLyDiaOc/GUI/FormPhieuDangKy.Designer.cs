@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaDiaOc = new System.Windows.Forms.TextBox();
             this.txtSoLuongQuangCao = new System.Windows.Forms.TextBox();
             this.txtSoLanGiaHan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaDiaOc = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDangKy)).BeginInit();
@@ -127,6 +127,14 @@
             this.gbThongTinKH.TabIndex = 14;
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin phiếu đăng ký";
+            // 
+            // txtMaDiaOc
+            // 
+            this.txtMaDiaOc.Location = new System.Drawing.Point(123, 102);
+            this.txtMaDiaOc.Name = "txtMaDiaOc";
+            this.txtMaDiaOc.ReadOnly = true;
+            this.txtMaDiaOc.Size = new System.Drawing.Size(139, 20);
+            this.txtMaDiaOc.TabIndex = 56;
             // 
             // txtSoLuongQuangCao
             // 
@@ -356,16 +364,17 @@
             // 
             // btnXuatHoaDon
             // 
+            this.btnXuatHoaDon.BackColor = System.Drawing.Color.GreenYellow;
             this.btnXuatHoaDon.Location = new System.Drawing.Point(583, 148);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(113, 23);
             this.btnXuatHoaDon.TabIndex = 17;
             this.btnXuatHoaDon.Text = "Xuất hóa đơn";
-            this.btnXuatHoaDon.UseVisualStyleBackColor = true;
+            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
             // 
             // btnHuyDichVu
             // 
-            this.btnHuyDichVu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHuyDichVu.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnHuyDichVu.Location = new System.Drawing.Point(806, 201);
             this.btnHuyDichVu.Name = "btnHuyDichVu";
             this.btnHuyDichVu.Size = new System.Drawing.Size(104, 23);
@@ -376,7 +385,7 @@
             // 
             // btnGiaHanDichVu
             // 
-            this.btnGiaHanDichVu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGiaHanDichVu.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnGiaHanDichVu.Location = new System.Drawing.Point(806, 161);
             this.btnGiaHanDichVu.Name = "btnGiaHanDichVu";
             this.btnGiaHanDichVu.Size = new System.Drawing.Size(104, 23);
@@ -387,16 +396,17 @@
             // 
             // btnXuatHopDong
             // 
+            this.btnXuatHopDong.BackColor = System.Drawing.Color.GreenYellow;
             this.btnXuatHopDong.Location = new System.Drawing.Point(806, 121);
             this.btnXuatHopDong.Name = "btnXuatHopDong";
             this.btnXuatHopDong.Size = new System.Drawing.Size(104, 23);
             this.btnXuatHopDong.TabIndex = 17;
             this.btnXuatHopDong.Text = "Xuất hợp đồng";
-            this.btnXuatHopDong.UseVisualStyleBackColor = true;
+            this.btnXuatHopDong.UseVisualStyleBackColor = false;
             // 
             // btnChiTietQuangCao
             // 
-            this.btnChiTietQuangCao.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnChiTietQuangCao.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 104);
             this.btnChiTietQuangCao.Name = "btnChiTietQuangCao";
             this.btnChiTietQuangCao.Size = new System.Drawing.Size(113, 23);
@@ -561,14 +571,6 @@
             this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
-            // 
-            // txtMaDiaOc
-            // 
-            this.txtMaDiaOc.Location = new System.Drawing.Point(123, 102);
-            this.txtMaDiaOc.Name = "txtMaDiaOc";
-            this.txtMaDiaOc.ReadOnly = true;
-            this.txtMaDiaOc.Size = new System.Drawing.Size(139, 20);
-            this.txtMaDiaOc.TabIndex = 56;
             // 
             // FormPhieuDangKy
             // 

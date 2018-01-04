@@ -386,22 +386,24 @@
             // 
             // btnQuanLyBaiViet
             // 
+            this.btnQuanLyBaiViet.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnQuanLyBaiViet.Location = new System.Drawing.Point(842, 191);
             this.btnQuanLyBaiViet.Name = "btnQuanLyBaiViet";
             this.btnQuanLyBaiViet.Size = new System.Drawing.Size(101, 38);
             this.btnQuanLyBaiViet.TabIndex = 28;
             this.btnQuanLyBaiViet.Text = "Quản lý bài viết";
-            this.btnQuanLyBaiViet.UseVisualStyleBackColor = true;
+            this.btnQuanLyBaiViet.UseVisualStyleBackColor = false;
             this.btnQuanLyBaiViet.Click += new System.EventHandler(this.btnQuanLyBaiViet_Click);
             // 
             // btnQuanLyHinhAnh
             // 
+            this.btnQuanLyHinhAnh.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnQuanLyHinhAnh.Location = new System.Drawing.Point(702, 191);
             this.btnQuanLyHinhAnh.Name = "btnQuanLyHinhAnh";
             this.btnQuanLyHinhAnh.Size = new System.Drawing.Size(113, 38);
             this.btnQuanLyHinhAnh.TabIndex = 28;
             this.btnQuanLyHinhAnh.Text = "Quản lý hình ảnh";
-            this.btnQuanLyHinhAnh.UseVisualStyleBackColor = true;
+            this.btnQuanLyHinhAnh.UseVisualStyleBackColor = false;
             this.btnQuanLyHinhAnh.Click += new System.EventHandler(this.btnQuanLyHinhAnh_Click);
             // 
             // btnSua

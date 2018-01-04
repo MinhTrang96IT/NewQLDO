@@ -204,16 +204,40 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
-        public DataTable TimKiemNVTheoTen(string ten)
+        public DataTable TimKiemNVTheoMa(int ma)
         {
             try
             {
                 OpenConnect();
                 DataTable data = new DataTable();
-                string store = "sp_DiaOc_TimKiemTheoTen";
+                string store = "sp_DiaOc_TimKiemTheoMa";
                 sqlCommand = new SqlCommand(store, connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.Add(new SqlParameter("@ten", ten));
+                sqlCommand.Parameters.Add(new SqlParameter("@ma", ma));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public DataTable LayDanhSachChiTietQuangCao(int madiaoc)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_DiaOC_LayChiTietQuangCao";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@madiaoc", madiaoc));
                 sqlAdapter = new SqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(data);
                 return data;

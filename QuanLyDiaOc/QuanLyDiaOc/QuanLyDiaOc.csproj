@@ -309,6 +309,12 @@
     <Compile Include="GUI\FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTimKiem.Designer.cs">
+      <DependentUpon>FormTimKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTimKiem.resx">
+      <DependentUpon>FormTimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>

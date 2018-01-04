@@ -354,5 +354,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formKiemDuyet);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
+
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTimKiem formTimKiem = new FormTimKiem();
+            formTimKiem.TopLevel = false;
+            formTimKiem.Visible = true;
+            formTimKiem.FormBorderStyle = FormBorderStyle.None;
+            formTimKiem.Dock = DockStyle.Fill;
+            tabCtlChinh.TabPages.Add("Tìm kiếm");
+            tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formTimKiem);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
     }
 }
