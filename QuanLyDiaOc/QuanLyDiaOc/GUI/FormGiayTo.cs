@@ -34,6 +34,8 @@ namespace QuanLyDiaOc.GUI
         {
             kt = true;
             dgvGiayTo.DataSource = giayToBLL.LayDanhSachGiayToTheoMaDO(Int32.Parse(maDO));
+            cbMaDO.DisplayMember = "MaDiaOc";
+            cbMaDO.ValueMember = "MaDiaOc";
             cbMaDO.DropDownStyle = ComboBoxStyle.Simple;
             cbMaDO.Text = maDO;
             AnThongTin();
@@ -49,7 +51,7 @@ namespace QuanLyDiaOc.GUI
         {
             txtMaGiayTo.Text = txtTenGiayTo.Text = "";
             txtTenGiayTo.Focus();
-            cbMaDO.SelectedIndex = 0;
+            //cbMaDO.SelectedIndex = 0;
             pbHinhAnh.Image = null;
             id = "";
         }
@@ -104,7 +106,7 @@ namespace QuanLyDiaOc.GUI
                 {
                     try
                     {
-                        if (giayToBLL.ThemGiayTo(Int32.Parse(cbMaDO.SelectedValue.ToString()), arr, txtTenGiayTo.Text.ToString()))
+                        if (giayToBLL.ThemGiayTo(Int32.Parse(cbMaDO.Text.ToString()), arr, txtTenGiayTo.Text.ToString()))
                         {
                             MessageBox.Show("Thêm giấy tờ thành công");
                             dgvGiayTo.DataSource = giayToBLL.LayDanhSachGiayTo();
@@ -168,7 +170,7 @@ namespace QuanLyDiaOc.GUI
                     {
                         try
                         {
-                            if (giayToBLL.SuaGiayTo(Int32.Parse(txtMaGiayTo.Text.ToString()), Int32.Parse(cbMaDO.SelectedValue.ToString()), arr, txtTenGiayTo.Text.ToString()))
+                            if (giayToBLL.SuaGiayTo(Int32.Parse(txtMaGiayTo.Text.ToString()), Int32.Parse(cbMaDO.Text.ToString()), arr, txtTenGiayTo.Text.ToString()))
                             {
                                 MessageBox.Show("Sửa chi giấy tờ công");
                                 dgvGiayTo.DataSource = giayToBLL.LayDanhSachGiayTo();

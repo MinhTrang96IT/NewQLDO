@@ -240,9 +240,9 @@
             // MaDiaOc
             // 
             this.MaDiaOc.DataPropertyName = "MaDiaOc";
-            this.MaDiaOc.HeaderText = "Mã hình ảnh";
+            this.MaDiaOc.HeaderText = "Mã địa ốc";
             this.MaDiaOc.Name = "MaDiaOc";
-            this.MaDiaOc.Width = 91;
+            this.MaDiaOc.Width = 80;
             // 
             // TenGiayTo
             // 
