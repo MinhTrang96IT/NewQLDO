@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbChiTietQuangCao = new System.Windows.Forms.GroupBox();
+            this.btnPhieuDK = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.lblLyDoCTQC = new System.Windows.Forms.Label();
             this.lblTrangThai = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPhieuDK = new System.Windows.Forms.Button();
             this.gbChiTietQuangCao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,16 @@
             this.gbChiTietQuangCao.TabIndex = 1;
             this.gbChiTietQuangCao.TabStop = false;
             this.gbChiTietQuangCao.Text = "Chi tiết quảng cáo";
+            // 
+            // btnPhieuDK
+            // 
+            this.btnPhieuDK.Location = new System.Drawing.Point(190, 51);
+            this.btnPhieuDK.Name = "btnPhieuDK";
+            this.btnPhieuDK.Size = new System.Drawing.Size(122, 23);
+            this.btnPhieuDK.TabIndex = 23;
+            this.btnPhieuDK.Text = "Xem phiếu đăng ký";
+            this.btnPhieuDK.UseVisualStyleBackColor = true;
+            this.btnPhieuDK.Click += new System.EventHandler(this.btnPhieuDK_Click);
             // 
             // label14
             // 
@@ -306,16 +316,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã chi tiết quảng cáo:";
             // 
-            // btnPhieuDK
-            // 
-            this.btnPhieuDK.Location = new System.Drawing.Point(190, 51);
-            this.btnPhieuDK.Name = "btnPhieuDK";
-            this.btnPhieuDK.Size = new System.Drawing.Size(122, 23);
-            this.btnPhieuDK.TabIndex = 23;
-            this.btnPhieuDK.Text = "Xem phiếu đăng ký";
-            this.btnPhieuDK.UseVisualStyleBackColor = true;
-            this.btnPhieuDK.Click += new System.EventHandler(this.btnPhieuDK_Click);
-            // 
             // DialogChiTietQuangCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,7 +323,7 @@
             this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.gbChiTietQuangCao);
             this.Name = "DialogChiTietQuangCao";
-            this.Text = "DialogChiTietQuangCao";
+            this.Text = "Chi Tiết Quảng Cáo";
             this.Load += new System.EventHandler(this.DialogChiTietQuangCao_Load);
             this.gbChiTietQuangCao.ResumeLayout(false);
             this.gbChiTietQuangCao.PerformLayout();

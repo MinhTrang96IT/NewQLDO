@@ -662,7 +662,7 @@
             this.Controls.Add(this.gbKhachHang);
             this.Controls.Add(this.gbDiaOc);
             this.Name = "DiaLogDiaOc";
-            this.Text = "DiaLogDiaOc";
+            this.Text = "Chi Tiết Địa Ốc";
             this.Load += new System.EventHandler(this.DiaLogDiaOc_Load);
             this.gbDiaOc.ResumeLayout(false);
             this.gbDiaOc.PerformLayout();

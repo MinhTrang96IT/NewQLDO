@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaChiTietQuangCao = new System.Windows.Forms.TextBox();
             this.rbDaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.rbChuaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.NoiDungBaiViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaChiTietQuangCao = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).BeginInit();
@@ -86,6 +86,14 @@
             this.gbThongTinKH.TabIndex = 14;
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin bài viết";
+            // 
+            // txtMaChiTietQuangCao
+            // 
+            this.txtMaChiTietQuangCao.Location = new System.Drawing.Point(145, 83);
+            this.txtMaChiTietQuangCao.Name = "txtMaChiTietQuangCao";
+            this.txtMaChiTietQuangCao.ReadOnly = true;
+            this.txtMaChiTietQuangCao.Size = new System.Drawing.Size(139, 20);
+            this.txtMaChiTietQuangCao.TabIndex = 42;
             // 
             // rbDaKiemDuyet
             // 
@@ -319,14 +327,6 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
-            // txtMaChiTietQuangCao
-            // 
-            this.txtMaChiTietQuangCao.Location = new System.Drawing.Point(145, 83);
-            this.txtMaChiTietQuangCao.Name = "txtMaChiTietQuangCao";
-            this.txtMaChiTietQuangCao.ReadOnly = true;
-            this.txtMaChiTietQuangCao.Size = new System.Drawing.Size(139, 20);
-            this.txtMaChiTietQuangCao.TabIndex = 42;
-            // 
             // FormBaiViet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +335,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormBaiViet";
-            this.Text = "FormBaiViet";
+            this.Text = "Form Bài Viết";
             this.Load += new System.EventHandler(this.FormBaiViet_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

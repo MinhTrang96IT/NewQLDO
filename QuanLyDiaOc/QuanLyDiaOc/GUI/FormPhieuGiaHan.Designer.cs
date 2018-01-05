@@ -64,11 +64,11 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.txtPhanTramGiaHan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaPhieuGiaHan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -429,6 +429,14 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin phiếu gia hạn";
             // 
+            // txtMaPhieuDangKy
+            // 
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(123, 84);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
+            this.txtMaPhieuDangKy.TabIndex = 55;
+            // 
             // txtPhanTramGiaHan
             // 
             this.txtPhanTramGiaHan.Location = new System.Drawing.Point(431, 149);
@@ -463,14 +471,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chi phí:";
             // 
-            // txtMaPhieuDangKy
-            // 
-            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(123, 84);
-            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
-            this.txtMaPhieuDangKy.ReadOnly = true;
-            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
-            this.txtMaPhieuDangKy.TabIndex = 55;
-            // 
             // FormPhieuGiaHan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,7 +479,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormPhieuGiaHan";
-            this.Text = "FormPhieuGiaHan";
+            this.Text = "Form Phiếu Gia Hạn";
             this.Load += new System.EventHandler(this.FormPhieuGiaHan_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).EndInit();

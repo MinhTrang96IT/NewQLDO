@@ -67,7 +67,24 @@ namespace QuanLyDiaOc.GUI
 
         private void FormKiemDuyet_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
+            {
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Equals("Kiểm duyệt QC"))
+                {
+                    LoadBaiViet();
+                    AnTabPage();
+                }
+            }
             LoadPhieuDangKy();
+        }
+
+        private void AnTabPage()
+        {
+            tabctrKiemDuyet.TabPages.Remove(tabPhieuDangKy);
+            tabctrKiemDuyet.TabPages.Remove(tabPhieuGiaHan);
+            tabctrKiemDuyet.TabPages.Remove(tabPhieuNgungDV);
+            tabctrKiemDuyet.TabPages.Remove(tabChiTietQuangCao);
+            tabctrKiemDuyet.TabPages.Remove(tabDiaOc);
         }
 
         private void LoadPhieuDangKy()

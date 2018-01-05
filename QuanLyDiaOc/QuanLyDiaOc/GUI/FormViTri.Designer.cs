@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormViTri";
-            this.Text = "FormViTri";
+            this.Text = "Form Vị Trí";
             this.Load += new System.EventHandler(this.FormViTri_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViTri)).EndInit();

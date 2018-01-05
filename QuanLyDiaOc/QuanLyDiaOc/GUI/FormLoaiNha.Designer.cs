@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormLoaiNha";
-            this.Text = "FormLoaiNha";
+            this.Text = "Form Loại Nhà";
             this.Load += new System.EventHandler(this.FormLoaiNha_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

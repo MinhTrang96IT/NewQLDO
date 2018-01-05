@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormLoaiQuangCao";
-            this.Text = "FormLoaiQuangCao";
+            this.Text = "Form Loại Quảng Cáo";
             this.Load += new System.EventHandler(this.FormLoaiQuangCao_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiQuangCao)).EndInit();

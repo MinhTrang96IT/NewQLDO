@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbHinhAnh = new System.Windows.Forms.GroupBox();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.btnThemNV = new System.Windows.Forms.Button();
             this.btnThemPDK = new System.Windows.Forms.Button();
             this.btnTaoMoi = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gbDanhSach = new System.Windows.Forms.GroupBox();
             this.dgvHinhAnh = new System.Windows.Forms.DataGridView();
-            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbHinhAnh.SuspendLayout();
             this.gbDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHinhAnh)).BeginInit();
@@ -84,6 +84,14 @@
             this.gbHinhAnh.TabIndex = 0;
             this.gbHinhAnh.TabStop = false;
             this.gbHinhAnh.Text = "Thông tin hình ảnh";
+            // 
+            // txtMaPhieuDangKy
+            // 
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(186, 93);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(121, 20);
+            this.txtMaPhieuDangKy.TabIndex = 47;
             // 
             // btnThemNV
             // 
@@ -280,14 +288,6 @@
             this.dgvHinhAnh.TabIndex = 0;
             this.dgvHinhAnh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHinhAnh_CellClick);
             // 
-            // txtMaPhieuDangKy
-            // 
-            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(186, 93);
-            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
-            this.txtMaPhieuDangKy.ReadOnly = true;
-            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(121, 20);
-            this.txtMaPhieuDangKy.TabIndex = 47;
-            // 
             // FormHinhAnh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,7 +296,7 @@
             this.Controls.Add(this.gbDanhSach);
             this.Controls.Add(this.gbHinhAnh);
             this.Name = "FormHinhAnh";
-            this.Text = "FormHinhAnh";
+            this.Text = "Form Hình Ảnh";
             this.Load += new System.EventHandler(this.FormHinhAnh_Load);
             this.gbHinhAnh.ResumeLayout(false);
             this.gbHinhAnh.PerformLayout();

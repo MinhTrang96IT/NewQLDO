@@ -80,9 +80,43 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
+        private void AnGiaoDien()
+        {
+            kiểmDuyệtToolStripMenuItem.Visible = false;
+            thôngKêToolStripMenuItem.Visible = false;
+            quyĐịnhToolStripMenuItem.Visible = false;
+            phânQuyềnToolStripMenuItem.Visible = false;
+        }
+
+        private void HienGiaoDien()
+        {
+            thôngKêToolStripMenuItem.Visible = true;
+            quyĐịnhToolStripMenuItem.Visible = true;
+            phânQuyềnToolStripMenuItem.Visible = true;
+        }
+
+        private void FormTrangChu_FormClosed(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
+            Chung.loaiNhanVien = LoaiNhanVien;
             lbNguoiDung.Text = "Người dùng: " + TenNhanVien + " - " + LoaiNhanVien;
+            AnGiaoDien();
+            foreach(string quyenHan in Chung.LayDSQuyenHan(Chung.loaiNhanVien))
+            {
+                if (quyenHan.Equals("Điều hành"))
+                {
+                    HienGiaoDien();
+                }
+
+                if (quyenHan.Contains("Kiểm duyệt"))
+                {
+                    kiểmDuyệtToolStripMenuItem.Visible = true;
+                }
+            }
         }
 
         private void loạiĐịaỐcToolStripMenuItem_Click(object sender, EventArgs e)

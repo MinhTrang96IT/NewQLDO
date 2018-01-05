@@ -34,6 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvBao = new System.Windows.Forms.DataGridView();
+            this.MaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDanhSachKH = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTaoMoi = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
-            this.MaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBao)).BeginInit();
             this.gbDanhSachKH.SuspendLayout();
             this.gbThongTinKH.SuspendLayout();
@@ -109,6 +109,27 @@
             this.dgvBao.Size = new System.Drawing.Size(967, 309);
             this.dgvBao.TabIndex = 0;
             this.dgvBao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBao_CellClick);
+            // 
+            // MaBao
+            // 
+            this.MaBao.DataPropertyName = "MaBao";
+            this.MaBao.HeaderText = "Mã báo";
+            this.MaBao.Name = "MaBao";
+            this.MaBao.Width = 68;
+            // 
+            // TenBao
+            // 
+            this.TenBao.DataPropertyName = "TenBao";
+            this.TenBao.HeaderText = "Tên báo";
+            this.TenBao.Name = "TenBao";
+            this.TenBao.Width = 72;
+            // 
+            // MoTaBao
+            // 
+            this.MoTaBao.DataPropertyName = "MoTaBao";
+            this.MoTaBao.HeaderText = "Mô tả";
+            this.MoTaBao.Name = "MoTaBao";
+            this.MoTaBao.Width = 59;
             // 
             // gbDanhSachKH
             // 
@@ -206,27 +227,6 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin báo";
             // 
-            // MaBao
-            // 
-            this.MaBao.DataPropertyName = "MaBao";
-            this.MaBao.HeaderText = "Mã báo";
-            this.MaBao.Name = "MaBao";
-            this.MaBao.Width = 68;
-            // 
-            // TenBao
-            // 
-            this.TenBao.DataPropertyName = "TenBao";
-            this.TenBao.HeaderText = "Tên báo";
-            this.TenBao.Name = "TenBao";
-            this.TenBao.Width = 72;
-            // 
-            // MoTaBao
-            // 
-            this.MoTaBao.DataPropertyName = "MoTaBao";
-            this.MoTaBao.HeaderText = "Mô tả";
-            this.MoTaBao.Name = "MoTaBao";
-            this.MoTaBao.Width = 59;
-            // 
             // FormBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormBao";
-            this.Text = "FormBao";
+            this.Text = "Form Báo";
             this.Load += new System.EventHandler(this.FormBao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBao)).EndInit();
             this.gbDanhSachKH.ResumeLayout(false);

@@ -489,7 +489,7 @@
             this.Controls.Add(this.gbBaiViet);
             this.Controls.Add(this.gbNhanVien);
             this.Name = "DialogBaiViet";
-            this.Text = "DialogBaiViet";
+            this.Text = "Chi Tiết Bài Viết";
             this.Load += new System.EventHandler(this.DialogBaiViet_Load);
             this.gbNhanVien.ResumeLayout(false);
             this.gbNhanVien.PerformLayout();

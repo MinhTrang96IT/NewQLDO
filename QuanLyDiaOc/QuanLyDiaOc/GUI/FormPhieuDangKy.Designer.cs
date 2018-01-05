@@ -580,7 +580,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormPhieuDangKy";
-            this.Text = "FormPhieuDangKy";
+            this.Text = "Form Phiếu Đăng Ký";
             this.Load += new System.EventHandler(this.FormPhieuDangKy_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

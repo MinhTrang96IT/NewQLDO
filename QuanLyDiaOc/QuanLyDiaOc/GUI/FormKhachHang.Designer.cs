@@ -417,7 +417,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormKhachHang";
-            this.Text = "FormKhachHang";
+            this.Text = "Form Khách Hàng";
             this.Load += new System.EventHandler(this.FormKhachHang_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

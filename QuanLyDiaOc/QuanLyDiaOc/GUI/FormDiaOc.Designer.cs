@@ -76,6 +76,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.btnGiayTo = new System.Windows.Forms.Button();
             this.btnQuanLyPhieuDangKy = new System.Windows.Forms.Button();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.chkTrangThaiMuaBan = new System.Windows.Forms.CheckBox();
@@ -95,7 +96,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnGiayTo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).BeginInit();
             this.gbDanhSanh.SuspendLayout();
             this.gbThongTin.SuspendLayout();
@@ -565,12 +565,19 @@
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin địa ốc";
             // 
+            // btnGiayTo
+            // 
+            this.btnGiayTo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGiayTo.Location = new System.Drawing.Point(817, 203);
+            this.btnGiayTo.Name = "btnGiayTo";
+            this.btnGiayTo.Size = new System.Drawing.Size(139, 29);
+            this.btnGiayTo.TabIndex = 39;
+            this.btnGiayTo.Text = "Xem giấy tờ";
+            this.btnGiayTo.UseVisualStyleBackColor = false;
+            this.btnGiayTo.Click += new System.EventHandler(this.btnGiayTo_Click);
+            // 
             // btnQuanLyPhieuDangKy
             // 
-            this.btnQuanLyPhieuDangKy.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnQuanLyPhieuDangKy.Location = new System.Drawing.Point(817, 180);
-            this.btnQuanLyPhieuDangKy.Name = "btnQuanLyPhieuDangKy";
-            this.btnQuanLyPhieuDangKy.Size = new System.Drawing.Size(139, 49);
             this.btnQuanLyPhieuDangKy.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnQuanLyPhieuDangKy.Location = new System.Drawing.Point(817, 167);
             this.btnQuanLyPhieuDangKy.Name = "btnQuanLyPhieuDangKy";
@@ -733,17 +740,6 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Loại nhà:";
             // 
-            // btnGiayTo
-            // 
-            this.btnGiayTo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGiayTo.Location = new System.Drawing.Point(817, 203);
-            this.btnGiayTo.Name = "btnGiayTo";
-            this.btnGiayTo.Size = new System.Drawing.Size(139, 29);
-            this.btnGiayTo.TabIndex = 39;
-            this.btnGiayTo.Text = "Xem giấy tờ";
-            this.btnGiayTo.UseVisualStyleBackColor = false;
-            this.btnGiayTo.Click += new System.EventHandler(this.btnGiayTo_Click);
-            // 
             // FormDiaOc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,7 +748,7 @@
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormDiaOc";
-            this.Text = "FormDiaOc";
+            this.Text = "Form Địa Ốc";
             this.Load += new System.EventHandler(this.FormDiaOc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiaOc)).EndInit();
             this.gbDanhSanh.ResumeLayout(false);

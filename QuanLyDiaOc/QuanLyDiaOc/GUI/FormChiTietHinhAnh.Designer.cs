@@ -260,7 +260,7 @@
             this.Controls.Add(this.gbDanhSach);
             this.Controls.Add(this.gbChiTietHinhAnh);
             this.Name = "FormChiTietHinhAnh";
-            this.Text = "FormChiTietHinhAnh";
+            this.Text = "Form Chi Tiết Hình Ảnh";
             this.Load += new System.EventHandler(this.FormChiTietHinhAnh_Load);
             this.gbChiTietHinhAnh.ResumeLayout(false);
             this.gbChiTietHinhAnh.PerformLayout();

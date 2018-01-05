@@ -47,8 +47,23 @@ namespace QuanLyDiaOc.GUI
             btnThemMaHA.Enabled = false;
         }
 
+        private void AnButton()
+        {
+            btnTaoMoi.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+        }
+
         private void FormChiTietHinhAnh_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
+            {
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Contains("Chỉnh sửa"))
+                    break;
+                if (i == Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count - 1)
+                    AnButton();
+            }
             if (!kt)
             {
                 dgvChiTietHinhAnh.DataSource = chiTietHinhAnhBLL.LayDanhSachChiTietHinhAnh();

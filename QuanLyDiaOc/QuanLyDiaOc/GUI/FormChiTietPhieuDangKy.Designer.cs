@@ -1166,7 +1166,7 @@
             this.Controls.Add(this.gbDiaOc);
             this.Controls.Add(this.gbPhieuDK);
             this.Name = "FormChiTietPhieuDangKy";
-            this.Text = "FormChiTietPhieuDangKy";
+            this.Text = "Chi Tiết Phiếu Đăng Ký";
             this.Load += new System.EventHandler(this.FormChiTietPhieuDangKy_Load);
             this.gbPhieuDK.ResumeLayout(false);
             this.gbPhieuDK.PerformLayout();

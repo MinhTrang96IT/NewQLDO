@@ -39,6 +39,14 @@
             this.d = new System.Windows.Forms.Label();
             this.gbDanhSanh = new System.Windows.Forms.GroupBox();
             this.dgvGiaTienQC = new System.Windows.Forms.DataGridView();
+            this.MaGiaTienQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhatHanhToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhatHanhToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KichCoToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KichCoToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,14 +63,6 @@
             this.cbViTri = new System.Windows.Forms.ComboBox();
             this.cbLoaiQuangCao = new System.Windows.Forms.ComboBox();
             this.txtMaGiaTienQC = new System.Windows.Forms.TextBox();
-            this.MaGiaTienQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanhToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanhToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichCoToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichCoToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTienQC)).BeginInit();
             this.gbThongTin.SuspendLayout();
@@ -171,6 +171,62 @@
             this.dgvGiaTienQC.Size = new System.Drawing.Size(967, 309);
             this.dgvGiaTienQC.TabIndex = 0;
             this.dgvGiaTienQC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaTienQC_CellClick);
+            // 
+            // MaGiaTienQuangCao
+            // 
+            this.MaGiaTienQuangCao.DataPropertyName = "MaGiaTienQuangCao";
+            this.MaGiaTienQuangCao.HeaderText = "Mã giá tiền QC";
+            this.MaGiaTienQuangCao.Name = "MaGiaTienQuangCao";
+            this.MaGiaTienQuangCao.Width = 80;
+            // 
+            // TenLoaiQuangCao
+            // 
+            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
+            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.Width = 97;
+            // 
+            // TenViTri
+            // 
+            this.TenViTri.DataPropertyName = "TenViTri";
+            this.TenViTri.HeaderText = "Tên loại vị trí";
+            this.TenViTri.Name = "TenViTri";
+            this.TenViTri.Width = 78;
+            // 
+            // SoLuongPhatHanhToiThieu
+            // 
+            this.SoLuongPhatHanhToiThieu.DataPropertyName = "SoLuongPhatHanhToiThieu";
+            this.SoLuongPhatHanhToiThieu.HeaderText = "Số lượng phát hành tối thiểu";
+            this.SoLuongPhatHanhToiThieu.Name = "SoLuongPhatHanhToiThieu";
+            this.SoLuongPhatHanhToiThieu.Width = 117;
+            // 
+            // SoLuongPhatHanhToiDa
+            // 
+            this.SoLuongPhatHanhToiDa.DataPropertyName = "SoLuongPhatHanhToiDa";
+            this.SoLuongPhatHanhToiDa.HeaderText = "Số lượng phát hành tối đa";
+            this.SoLuongPhatHanhToiDa.Name = "SoLuongPhatHanhToiDa";
+            this.SoLuongPhatHanhToiDa.Width = 114;
+            // 
+            // KichCoToiThieu
+            // 
+            this.KichCoToiThieu.DataPropertyName = "KichCoToiThieu";
+            this.KichCoToiThieu.HeaderText = "Kích cỡ tối thiểu";
+            this.KichCoToiThieu.Name = "KichCoToiThieu";
+            this.KichCoToiThieu.Width = 80;
+            // 
+            // KichCoToiDa
+            // 
+            this.KichCoToiDa.DataPropertyName = "KichCoToiDa";
+            this.KichCoToiDa.HeaderText = "Kích cỡ tối đa";
+            this.KichCoToiDa.Name = "KichCoToiDa";
+            this.KichCoToiDa.Width = 80;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn giá";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.Width = 64;
             // 
             // label3
             // 
@@ -343,62 +399,6 @@
             this.txtMaGiaTienQC.Size = new System.Drawing.Size(121, 20);
             this.txtMaGiaTienQC.TabIndex = 12;
             // 
-            // MaGiaTienQuangCao
-            // 
-            this.MaGiaTienQuangCao.DataPropertyName = "MaGiaTienQuangCao";
-            this.MaGiaTienQuangCao.HeaderText = "Mã giá tiền QC";
-            this.MaGiaTienQuangCao.Name = "MaGiaTienQuangCao";
-            this.MaGiaTienQuangCao.Width = 102;
-            // 
-            // TenLoaiQuangCao
-            // 
-            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
-            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.Width = 97;
-            // 
-            // TenViTri
-            // 
-            this.TenViTri.DataPropertyName = "TenViTri";
-            this.TenViTri.HeaderText = "Tên loại vị trí";
-            this.TenViTri.Name = "TenViTri";
-            this.TenViTri.Width = 78;
-            // 
-            // SoLuongPhatHanhToiThieu
-            // 
-            this.SoLuongPhatHanhToiThieu.DataPropertyName = "SoLuongPhatHanhToiThieu";
-            this.SoLuongPhatHanhToiThieu.HeaderText = "Số lượng phát hành tối thiểu";
-            this.SoLuongPhatHanhToiThieu.Name = "SoLuongPhatHanhToiThieu";
-            this.SoLuongPhatHanhToiThieu.Width = 117;
-            // 
-            // SoLuongPhatHanhToiDa
-            // 
-            this.SoLuongPhatHanhToiDa.DataPropertyName = "SoLuongPhatHanhToiDa";
-            this.SoLuongPhatHanhToiDa.HeaderText = "Số lượng phát hành tối đa";
-            this.SoLuongPhatHanhToiDa.Name = "SoLuongPhatHanhToiDa";
-            this.SoLuongPhatHanhToiDa.Width = 114;
-            // 
-            // KichCoToiThieu
-            // 
-            this.KichCoToiThieu.DataPropertyName = "KichCoToiThieu";
-            this.KichCoToiThieu.HeaderText = "Kích cỡ tối thiểu";
-            this.KichCoToiThieu.Name = "KichCoToiThieu";
-            this.KichCoToiThieu.Width = 80;
-            // 
-            // KichCoToiDa
-            // 
-            this.KichCoToiDa.DataPropertyName = "KichCoToiDa";
-            this.KichCoToiDa.HeaderText = "Kích cỡ tối đa";
-            this.KichCoToiDa.Name = "KichCoToiDa";
-            this.KichCoToiDa.Width = 80;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.Width = 64;
-            // 
             // FormGiaTienQC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,7 +407,7 @@
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormGiaTienQC";
-            this.Text = "FormGiaTienQC";
+            this.Text = "Form Giá Tiền Quảng Cáo";
             this.Load += new System.EventHandler(this.FormGiaTienQC_Load);
             this.gbDanhSanh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTienQC)).EndInit();

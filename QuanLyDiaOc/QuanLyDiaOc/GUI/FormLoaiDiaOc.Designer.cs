@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormLoaiDiaOc";
-            this.Text = "FormLoaiDiaOc";
+            this.Text = "Form Loại Địa Ốc";
             this.Load += new System.EventHandler(this.FormLoaiDiaOc_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDiaOc)).EndInit();

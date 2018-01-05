@@ -54,6 +54,10 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.gbPhieuGiaHan = new System.Windows.Forms.GroupBox();
+            this.lblTongTien = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblNgayKT = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblNgayLap = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPhieuDK = new System.Windows.Forms.Button();
@@ -69,10 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblMaNDV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblNgayKT = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTongTien = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.gbNhanVien.SuspendLayout();
             this.gbPhieuGiaHan.SuspendLayout();
             this.SuspendLayout();
@@ -368,6 +368,46 @@
             this.gbPhieuGiaHan.TabStop = false;
             this.gbPhieuGiaHan.Text = "Phiếu gia hạn";
             // 
+            // lblTongTien
+            // 
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Location = new System.Drawing.Point(142, 184);
+            this.lblTongTien.MaximumSize = new System.Drawing.Size(120, 0);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(41, 13);
+            this.lblTongTien.TabIndex = 40;
+            this.lblTongTien.Text = "label26";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label9.Location = new System.Drawing.Point(26, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Tổng tiền:";
+            // 
+            // lblNgayKT
+            // 
+            this.lblNgayKT.AutoSize = true;
+            this.lblNgayKT.Location = new System.Drawing.Point(142, 158);
+            this.lblNgayKT.MaximumSize = new System.Drawing.Size(120, 0);
+            this.lblNgayKT.Name = "lblNgayKT";
+            this.lblNgayKT.Size = new System.Drawing.Size(41, 13);
+            this.lblNgayKT.TabIndex = 38;
+            this.lblNgayKT.Text = "label26";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label5.Location = new System.Drawing.Point(26, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Ngày kết thúc:";
+            // 
             // lblNgayLap
             // 
             this.lblNgayLap.AutoSize = true;
@@ -512,46 +552,6 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Mã phiếu gia hạn:";
             // 
-            // lblNgayKT
-            // 
-            this.lblNgayKT.AutoSize = true;
-            this.lblNgayKT.Location = new System.Drawing.Point(142, 158);
-            this.lblNgayKT.MaximumSize = new System.Drawing.Size(120, 0);
-            this.lblNgayKT.Name = "lblNgayKT";
-            this.lblNgayKT.Size = new System.Drawing.Size(41, 13);
-            this.lblNgayKT.TabIndex = 38;
-            this.lblNgayKT.Text = "label26";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(26, 158);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Ngày kết thúc:";
-            // 
-            // lblTongTien
-            // 
-            this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(142, 184);
-            this.lblTongTien.MaximumSize = new System.Drawing.Size(120, 0);
-            this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(41, 13);
-            this.lblTongTien.TabIndex = 40;
-            this.lblTongTien.Text = "label26";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(26, 184);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Tổng tiền:";
-            // 
             // DialogPhieuGiaHan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,7 +560,7 @@
             this.Controls.Add(this.gbPhieuGiaHan);
             this.Controls.Add(this.gbNhanVien);
             this.Name = "DialogPhieuGiaHan";
-            this.Text = "DialogPhieuGiaHan";
+            this.Text = "Chi Tiết Phiếu Gia Hạn";
             this.Load += new System.EventHandler(this.DialogPhieuGiaHan_Load);
             this.gbNhanVien.ResumeLayout(false);
             this.gbNhanVien.PerformLayout();

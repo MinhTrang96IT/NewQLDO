@@ -259,7 +259,7 @@
             this.Controls.Add(this.gbDanhSach);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormGiayTo";
-            this.Text = "FormGiayTo";
+            this.Text = "Form Giấy Tờ";
             this.Load += new System.EventHandler(this.FormGiayTo_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();

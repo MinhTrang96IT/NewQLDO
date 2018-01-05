@@ -54,6 +54,8 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.gbHuyDangKy = new System.Windows.Forms.GroupBox();
+            this.lblNgayLap = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnPhieuDK = new System.Windows.Forms.Button();
             this.lblLyDo = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblMaNDV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblNgayLap = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.gbNhanVien.SuspendLayout();
             this.gbHuyDangKy.SuspendLayout();
             this.SuspendLayout();
@@ -360,6 +360,25 @@
             this.gbHuyDangKy.TabStop = false;
             this.gbHuyDangKy.Text = "Ngừng gia hạn dịch vụ";
             // 
+            // lblNgayLap
+            // 
+            this.lblNgayLap.AutoSize = true;
+            this.lblNgayLap.Location = new System.Drawing.Point(142, 108);
+            this.lblNgayLap.Name = "lblNgayLap";
+            this.lblNgayLap.Size = new System.Drawing.Size(41, 13);
+            this.lblNgayLap.TabIndex = 36;
+            this.lblNgayLap.Text = "label26";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(26, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Ngày lập:";
+            // 
             // btnPhieuDK
             // 
             this.btnPhieuDK.Location = new System.Drawing.Point(189, 51);
@@ -485,25 +504,6 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Mã ngừng dịch vụ:";
             // 
-            // lblNgayLap
-            // 
-            this.lblNgayLap.AutoSize = true;
-            this.lblNgayLap.Location = new System.Drawing.Point(142, 108);
-            this.lblNgayLap.Name = "lblNgayLap";
-            this.lblNgayLap.Size = new System.Drawing.Size(41, 13);
-            this.lblNgayLap.TabIndex = 36;
-            this.lblNgayLap.Text = "label26";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(26, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Ngày lập:";
-            // 
             // DialogHuyDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,7 +512,7 @@
             this.Controls.Add(this.gbHuyDangKy);
             this.Controls.Add(this.gbNhanVien);
             this.Name = "DialogHuyDangKy";
-            this.Text = "DialogHuyDangKy";
+            this.Text = "Chi Tiết Phiếu Ngừng Dịch Vụ";
             this.Load += new System.EventHandler(this.DialogHuyDangKy_Load);
             this.gbNhanVien.ResumeLayout(false);
             this.gbNhanVien.PerformLayout();

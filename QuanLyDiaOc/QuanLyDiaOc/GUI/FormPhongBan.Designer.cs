@@ -235,7 +235,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormPhongBan";
-            this.Text = "FormPhongBan";
+            this.Text = "Form Phòng Ban";
             this.Load += new System.EventHandler(this.FormPhongBan_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).EndInit();

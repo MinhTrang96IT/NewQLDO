@@ -397,6 +397,7 @@
             this.Text = "FormTrangChu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTrangChu_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTrangChu_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

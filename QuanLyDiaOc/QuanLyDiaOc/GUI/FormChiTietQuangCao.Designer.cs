@@ -547,7 +547,7 @@
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormChiTietQuangCao";
-            this.Text = "Chi tiết quảng cáo";
+            this.Text = "Form Chi Tiết Quảng Cáo";
             this.Load += new System.EventHandler(this.FormChiTietQuangCao_Load);
             this.gbDanhSanh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).EndInit();
