@@ -112,7 +112,12 @@ Go
 CREATE PROC sp_DiaOc_LayHinhAnh
 @madiaoc int
 AS
-	
+	Select * from HinhAnh where HinhAnh.MaPhieuDangKy IN (
+		Select PhieuDangKy.MaPhieuDangKy from PhieuDangKy, DiaOc where 
+	PhieuDangKy.MaDiaOc = DiaOc.MaDiaOc AND DiaOc.MaDiaOc = @madiaoc AND PhieuDangKy.MaPhieuDangKy NOT IN (
+	select PhieuDangKy.MaPhieuDangKy 
+	   from PhieuNgungDangKyDichVu, DiaOc, PhieuDangKy 
+	   where DiaOc.MaDiaOc = @madiaoc and DiaOc.MaDiaOc = PhieuDangKy.MaDiaOc and PhieuDangKy.MaPhieuDangKy = PhieuNgungDangKyDichVu.MaPhieuDangKy)
+	)
 GO
 
-	

@@ -252,6 +252,30 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable LayDanhSachChiTietHinhAnh(int madiaoc)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_DiaOc_LayHinhAnh";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@madiaoc", madiaoc));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public bool SuaKiemDuyetDiaOc(DiaOcDTO diaOcDTO)
         {
             try

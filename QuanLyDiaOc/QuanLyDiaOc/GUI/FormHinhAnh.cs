@@ -14,6 +14,8 @@ namespace QuanLyDiaOc.GUI
 {
     public partial class FormHinhAnh : Form
     {
+        private DiaOcBLL diaOcBLL;
+        private int MaDiaOc = 0;
         private int MaPDKTuFormPDK = 0;
         private HinhAnhBLL hinhAnhBLL;
         private PhieuDangKyBLL phieuDangKyBLL;
@@ -24,31 +26,45 @@ namespace QuanLyDiaOc.GUI
         {
             MaPDKTuFormPDK = maPhieuDangKy;
         }
+
+        public FormHinhAnh(bool checkDiaOc,int maDiaOc) : this()
+        {
+            MaDiaOc = maDiaOc;
+        }
         public FormHinhAnh()
         {
             InitializeComponent();
             hinhAnhBLL = new HinhAnhBLL();
             phieuDangKyBLL = new PhieuDangKyBLL();
             nhanVienBLL = new NhanVienBLL();
+            diaOcBLL = new DiaOcBLL();
             id = "";
         }
 
         private void FormHinhAnh_Load(object sender, EventArgs e)
         {
-            if (MaPDKTuFormPDK == 0)
+            if (MaPDKTuFormPDK == 0 && MaDiaOc == 0)
             {
                 txtMaPhieuDangKy.Visible = false;
                 dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
+            } else if(MaDiaOc > 0 && MaPDKTuFormPDK == 0){
+                txtMaPhieuDangKy.Visible = false;
+                dgvHinhAnh.DataSource = diaOcBLL.LayDanhSachHinhAnh(MaDiaOc);
             }
-            else
+            else if(MaDiaOc == 0 && MaPDKTuFormPDK > 0)
             {
                 cbMaPDK.Visible = false;
                 txtMaPhieuDangKy.Text = MaPDKTuFormPDK.ToString();
                 btnThemPDK.Visible = false;
                 dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
             }
-
-            cbMaPDK.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKy();
+            if(MaDiaOc == 0)
+            {
+                cbMaPDK.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKy();
+            } else
+            {
+                cbMaPDK.DataSource = diaOcBLL.LayDanhSachHinhAnh(MaDiaOc);
+            }
             cbMaPDK.DisplayMember = "MaPhieuDangKy";
             cbMaPDK.ValueMember = "MaPhieuDangKy";
             cbMaNV.DataSource = nhanVienBLL.LayDanhSachNhanVien();
@@ -146,13 +162,16 @@ namespace QuanLyDiaOc.GUI
                         if (hinhAnhBLL.ThemHinhAnh(hinhAnhDTO))
                         {
                             MessageBox.Show("Thêm hình ảnh thành công");
-                            if (MaPDKTuFormPDK == 0)
+                            if (MaPDKTuFormPDK == 0 && MaDiaOc == 0)
                             {
                                 dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
                             }
-                            else
+                            else if(MaPDKTuFormPDK > 0 && MaDiaOc == 0)
                             {
                                 dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                            } else if (MaPDKTuFormPDK == 0 && MaDiaOc > 0)
+                            {
+                                dgvHinhAnh.DataSource = diaOcBLL.LayDanhSachHinhAnh(MaDiaOc);
                             }
                         }
                         else
@@ -181,13 +200,17 @@ namespace QuanLyDiaOc.GUI
                     if (hinhAnhBLL.XoaHinhAnh(Int32.Parse(id)))
                     {
                         MessageBox.Show("Xóa khách hình ảnh thành công");
-                        if (MaPDKTuFormPDK == 0)
+                        if (MaPDKTuFormPDK == 0 && MaDiaOc == 0)
                         {
                             dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
                         }
-                        else
+                        else if (MaPDKTuFormPDK > 0 && MaDiaOc == 0)
                         {
                             dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                        }
+                        else if (MaPDKTuFormPDK == 0 && MaDiaOc > 0)
+                        {
+                            dgvHinhAnh.DataSource = diaOcBLL.LayDanhSachHinhAnh(MaDiaOc);
                         }
                         LamMoiThongTin();
                     }
@@ -231,13 +254,17 @@ namespace QuanLyDiaOc.GUI
                             if (hinhAnhBLL.SuaHinhAnh(hinhAnhDTO))
                             {
                                 MessageBox.Show("Sửa hình ảnh thành công");
-                                if (MaPDKTuFormPDK == 0)
+                                if (MaPDKTuFormPDK == 0 && MaDiaOc == 0)
                                 {
                                     dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachHinhAnh();
                                 }
-                                else
+                                else if (MaPDKTuFormPDK > 0 && MaDiaOc == 0)
                                 {
                                     dgvHinhAnh.DataSource = hinhAnhBLL.LayDanhSachTheoMaPDK(MaPDKTuFormPDK);
+                                }
+                                else if (MaPDKTuFormPDK == 0 && MaDiaOc > 0)
+                                {
+                                    dgvHinhAnh.DataSource = diaOcBLL.LayDanhSachHinhAnh(MaDiaOc);
                                 }
                                 LamMoiThongTin();
                             }

@@ -63,6 +63,11 @@ namespace QuanLyDiaOc.BLL
             return diaOcDAL.LayDanhSachChiTietQuangCao(ma);
         }
 
+        public DataTable LayDanhSachHinhAnh(int ma)
+        {
+            return diaOcDAL.LayDanhSachChiTietHinhAnh(ma);
+        }
+
         public bool SuaKiemDuyetDiaOc(DiaOcDTO diaOcDTO)
         {
             return diaOcDAL.SuaKiemDuyetDiaOc(diaOcDTO);
