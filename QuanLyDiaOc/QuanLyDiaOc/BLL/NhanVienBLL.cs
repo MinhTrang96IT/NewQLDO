@@ -18,6 +18,11 @@ namespace QuanLyDiaOc.BLL
             return nhanVienDAL.KiemTraDangNhap(tk, mk);
         }
 
+        public DataTable KiemTraTaiKhoan(String ten)
+        {
+            return nhanVienDAL.KiemTraTaiKhoan(ten);
+        }
+
         public string LayTenNhanVien(string tk)
         {
             return nhanVienDAL.LayTenNhanVien(tk);

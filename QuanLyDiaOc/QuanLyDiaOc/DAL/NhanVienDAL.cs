@@ -36,6 +36,30 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable KiemTraTaiKhoan(String ten)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_NhanVien_KiemTra";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ten", ten));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public string LayTenNhanVien(string tk)
         {
             string s = null;
