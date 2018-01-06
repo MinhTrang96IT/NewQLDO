@@ -438,5 +438,23 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn Hủy đăng kí");
             }
         }
+
+        private void btnXuatHopDong_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormHopDong diaglogHopDong = new FormHopDong(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogHopDong.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogHopDong.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //  txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hợp đồng");
+            }
+        }
     }
 }

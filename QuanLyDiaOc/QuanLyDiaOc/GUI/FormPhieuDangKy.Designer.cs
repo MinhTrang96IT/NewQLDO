@@ -403,6 +403,7 @@
             this.btnXuatHopDong.TabIndex = 17;
             this.btnXuatHopDong.Text = "Xuất hợp đồng";
             this.btnXuatHopDong.UseVisualStyleBackColor = false;
+            this.btnXuatHopDong.Click += new System.EventHandler(this.btnXuatHopDong_Click);
             // 
             // btnChiTietQuangCao
             // 
