@@ -86,6 +86,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTin.Controls.Add(this.cbBangCap);
             this.gbThongTin.Controls.Add(this.label14);
             this.gbThongTin.Controls.Add(this.btnThemLoaiPB);
@@ -440,6 +441,7 @@
             // 
             // gbDanhSanh
             // 
+            this.gbDanhSanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSanh.Controls.Add(this.dgvNhanVien);
             this.gbDanhSanh.Location = new System.Drawing.Point(185, 269);
             this.gbDanhSanh.Name = "gbDanhSanh";

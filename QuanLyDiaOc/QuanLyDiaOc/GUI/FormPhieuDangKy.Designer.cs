@@ -43,6 +43,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNgayLapPhieu = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnThemNhanVien = new System.Windows.Forms.Button();
+            this.btnThemDiaOc = new System.Windows.Forms.Button();
+            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.cbDiaOc = new System.Windows.Forms.ComboBox();
             this.cbKhachHang = new System.Windows.Forms.ComboBox();
@@ -75,9 +78,6 @@
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThemNhanVien = new System.Windows.Forms.Button();
-            this.btnThemDiaOc = new System.Windows.Forms.Button();
-            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDangKy)).BeginInit();
@@ -163,6 +163,7 @@
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(863, 44);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -174,6 +175,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(749, 44);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -248,6 +250,36 @@
             this.label7.TabIndex = 42;
             this.label7.Text = "Ngày lập phiếu:";
             // 
+            // btnThemNhanVien
+            // 
+            this.btnThemNhanVien.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemNhanVien.Location = new System.Drawing.Point(271, 128);
+            this.btnThemNhanVien.Name = "btnThemNhanVien";
+            this.btnThemNhanVien.Size = new System.Drawing.Size(20, 20);
+            this.btnThemNhanVien.TabIndex = 40;
+            this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
+            // 
+            // btnThemDiaOc
+            // 
+            this.btnThemDiaOc.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemDiaOc.Location = new System.Drawing.Point(271, 103);
+            this.btnThemDiaOc.Name = "btnThemDiaOc";
+            this.btnThemDiaOc.Size = new System.Drawing.Size(20, 20);
+            this.btnThemDiaOc.TabIndex = 41;
+            this.btnThemDiaOc.UseVisualStyleBackColor = true;
+            this.btnThemDiaOc.Click += new System.EventHandler(this.btnThemDiaOc_Click);
+            // 
+            // btnThemKhachHang
+            // 
+            this.btnThemKhachHang.Image = global::QuanLyDiaOc.Properties.Resources.add;
+            this.btnThemKhachHang.Location = new System.Drawing.Point(271, 76);
+            this.btnThemKhachHang.Name = "btnThemKhachHang";
+            this.btnThemKhachHang.Size = new System.Drawing.Size(20, 20);
+            this.btnThemKhachHang.TabIndex = 39;
+            this.btnThemKhachHang.UseVisualStyleBackColor = true;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
+            // 
             // cbNhanVien
             // 
             this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -304,7 +336,7 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(339, 207);
+            this.btnTaoMoi.Location = new System.Drawing.Point(309, 207);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi.TabIndex = 21;
@@ -314,7 +346,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(615, 206);
+            this.btnSua.Location = new System.Drawing.Point(585, 206);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 19;
@@ -324,7 +356,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(521, 206);
+            this.btnXoa.Location = new System.Drawing.Point(491, 206);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 18;
@@ -335,9 +367,9 @@
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(583, 148);
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(841, 153);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-            this.btnXuatHoaDon.Size = new System.Drawing.Size(113, 23);
+            this.btnXuatHoaDon.Size = new System.Drawing.Size(104, 39);
             this.btnXuatHoaDon.TabIndex = 17;
             this.btnXuatHoaDon.Text = "Xuất hóa đơn";
             this.btnXuatHoaDon.UseVisualStyleBackColor = false;
@@ -346,7 +378,7 @@
             // btnHuyDichVu
             // 
             this.btnHuyDichVu.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnHuyDichVu.Location = new System.Drawing.Point(806, 201);
+            this.btnHuyDichVu.Location = new System.Drawing.Point(840, 206);
             this.btnHuyDichVu.Name = "btnHuyDichVu";
             this.btnHuyDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnHuyDichVu.TabIndex = 17;
@@ -357,7 +389,7 @@
             // btnGiaHanDichVu
             // 
             this.btnGiaHanDichVu.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnGiaHanDichVu.Location = new System.Drawing.Point(806, 161);
+            this.btnGiaHanDichVu.Location = new System.Drawing.Point(722, 206);
             this.btnGiaHanDichVu.Name = "btnGiaHanDichVu";
             this.btnGiaHanDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnGiaHanDichVu.TabIndex = 17;
@@ -368,9 +400,9 @@
             // btnXuatHopDong
             // 
             this.btnXuatHopDong.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHopDong.Location = new System.Drawing.Point(806, 121);
+            this.btnXuatHopDong.Location = new System.Drawing.Point(841, 107);
             this.btnXuatHopDong.Name = "btnXuatHopDong";
-            this.btnXuatHopDong.Size = new System.Drawing.Size(104, 23);
+            this.btnXuatHopDong.Size = new System.Drawing.Size(104, 40);
             this.btnXuatHopDong.TabIndex = 17;
             this.btnXuatHopDong.Text = "Xuất hợp đồng";
             this.btnXuatHopDong.UseVisualStyleBackColor = false;
@@ -379,7 +411,7 @@
             // btnChiTietQuangCao
             // 
             this.btnChiTietQuangCao.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 104);
+            this.btnChiTietQuangCao.Location = new System.Drawing.Point(581, 102);
             this.btnChiTietQuangCao.Name = "btnChiTietQuangCao";
             this.btnChiTietQuangCao.Size = new System.Drawing.Size(113, 23);
             this.btnChiTietQuangCao.TabIndex = 17;
@@ -389,7 +421,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(431, 207);
+            this.btnThem.Location = new System.Drawing.Point(401, 207);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 17;
@@ -543,36 +575,6 @@
             this.LyDoKhongDuyet.HeaderText = "Lý do không duyệt";
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
-            // 
-            // btnThemNhanVien
-            // 
-            this.btnThemNhanVien.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemNhanVien.Location = new System.Drawing.Point(271, 128);
-            this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(20, 20);
-            this.btnThemNhanVien.TabIndex = 40;
-            this.btnThemNhanVien.UseVisualStyleBackColor = true;
-            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
-            // 
-            // btnThemDiaOc
-            // 
-            this.btnThemDiaOc.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemDiaOc.Location = new System.Drawing.Point(271, 103);
-            this.btnThemDiaOc.Name = "btnThemDiaOc";
-            this.btnThemDiaOc.Size = new System.Drawing.Size(20, 20);
-            this.btnThemDiaOc.TabIndex = 41;
-            this.btnThemDiaOc.UseVisualStyleBackColor = true;
-            this.btnThemDiaOc.Click += new System.EventHandler(this.btnThemDiaOc_Click);
-            // 
-            // btnThemKhachHang
-            // 
-            this.btnThemKhachHang.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemKhachHang.Location = new System.Drawing.Point(271, 76);
-            this.btnThemKhachHang.Name = "btnThemKhachHang";
-            this.btnThemKhachHang.Size = new System.Drawing.Size(20, 20);
-            this.btnThemKhachHang.TabIndex = 39;
-            this.btnThemKhachHang.UseVisualStyleBackColor = true;
-            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
             // FormPhieuDangKy
             // 

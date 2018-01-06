@@ -39,32 +39,33 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageQuangCao = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numUDSoTuBaiViet = new System.Windows.Forms.NumericUpDown();
+            this.numUDThoiGianChupAnh = new System.Windows.Forms.NumericUpDown();
+            this.numUDPhanTramQuangCao = new System.Windows.Forms.NumericUpDown();
+            this.numUDSoNgayQuangCao = new System.Windows.Forms.NumericUpDown();
             this.btnHuyQC = new System.Windows.Forms.Button();
             this.btnQuangCao = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numUDSoNgayQuangCao = new System.Windows.Forms.NumericUpDown();
-            this.numUDPhanTramQuangCao = new System.Windows.Forms.NumericUpDown();
-            this.numUDThoiGianChupAnh = new System.Windows.Forms.NumericUpDown();
-            this.numUDSoTuBaiViet = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabCrlQuyDinh.SuspendLayout();
             this.tabPagePhieuThu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDPhanTramHoaDonGiaHan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDLaiSuat)).BeginInit();
             this.tabPageQuangCao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDSoNgayQuangCao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDPhanTramQuangCao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDThoiGianChupAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSoTuBaiViet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDThoiGianChupAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDPhanTramQuangCao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDSoNgayQuangCao)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCrlQuyDinh
             // 
+            this.tabCrlQuyDinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabCrlQuyDinh.Controls.Add(this.tabPagePhieuThu);
             this.tabCrlQuyDinh.Controls.Add(this.tabPageQuangCao);
             this.tabCrlQuyDinh.Location = new System.Drawing.Point(449, 100);
@@ -195,6 +196,72 @@
             this.tabPageQuangCao.Text = "Quảng cáo";
             this.tabPageQuangCao.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(251, 105);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "ngày";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(251, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "từ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(251, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "ngày";
+            // 
+            // numUDSoTuBaiViet
+            // 
+            this.numUDSoTuBaiViet.Location = new System.Drawing.Point(177, 67);
+            this.numUDSoTuBaiViet.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numUDSoTuBaiViet.Name = "numUDSoTuBaiViet";
+            this.numUDSoTuBaiViet.Size = new System.Drawing.Size(63, 20);
+            this.numUDSoTuBaiViet.TabIndex = 9;
+            // 
+            // numUDThoiGianChupAnh
+            // 
+            this.numUDThoiGianChupAnh.Location = new System.Drawing.Point(177, 103);
+            this.numUDThoiGianChupAnh.Name = "numUDThoiGianChupAnh";
+            this.numUDThoiGianChupAnh.Size = new System.Drawing.Size(63, 20);
+            this.numUDThoiGianChupAnh.TabIndex = 8;
+            // 
+            // numUDPhanTramQuangCao
+            // 
+            this.numUDPhanTramQuangCao.DecimalPlaces = 2;
+            this.numUDPhanTramQuangCao.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numUDPhanTramQuangCao.Location = new System.Drawing.Point(177, 141);
+            this.numUDPhanTramQuangCao.Name = "numUDPhanTramQuangCao";
+            this.numUDPhanTramQuangCao.Size = new System.Drawing.Size(63, 20);
+            this.numUDPhanTramQuangCao.TabIndex = 7;
+            // 
+            // numUDSoNgayQuangCao
+            // 
+            this.numUDSoNgayQuangCao.Location = new System.Drawing.Point(177, 32);
+            this.numUDSoNgayQuangCao.Name = "numUDSoNgayQuangCao";
+            this.numUDSoNgayQuangCao.Size = new System.Drawing.Size(63, 20);
+            this.numUDSoNgayQuangCao.TabIndex = 6;
+            // 
             // btnHuyQC
             // 
             this.btnHuyQC.Location = new System.Drawing.Point(156, 182);
@@ -250,72 +317,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Số ngày quảng cáo tối đa:";
             // 
-            // numUDSoNgayQuangCao
-            // 
-            this.numUDSoNgayQuangCao.Location = new System.Drawing.Point(177, 32);
-            this.numUDSoNgayQuangCao.Name = "numUDSoNgayQuangCao";
-            this.numUDSoNgayQuangCao.Size = new System.Drawing.Size(63, 20);
-            this.numUDSoNgayQuangCao.TabIndex = 6;
-            // 
-            // numUDPhanTramQuangCao
-            // 
-            this.numUDPhanTramQuangCao.DecimalPlaces = 2;
-            this.numUDPhanTramQuangCao.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numUDPhanTramQuangCao.Location = new System.Drawing.Point(177, 141);
-            this.numUDPhanTramQuangCao.Name = "numUDPhanTramQuangCao";
-            this.numUDPhanTramQuangCao.Size = new System.Drawing.Size(63, 20);
-            this.numUDPhanTramQuangCao.TabIndex = 7;
-            // 
-            // numUDThoiGianChupAnh
-            // 
-            this.numUDThoiGianChupAnh.Location = new System.Drawing.Point(177, 103);
-            this.numUDThoiGianChupAnh.Name = "numUDThoiGianChupAnh";
-            this.numUDThoiGianChupAnh.Size = new System.Drawing.Size(63, 20);
-            this.numUDThoiGianChupAnh.TabIndex = 8;
-            // 
-            // numUDSoTuBaiViet
-            // 
-            this.numUDSoTuBaiViet.Location = new System.Drawing.Point(177, 67);
-            this.numUDSoTuBaiViet.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numUDSoTuBaiViet.Name = "numUDSoTuBaiViet";
-            this.numUDSoTuBaiViet.Size = new System.Drawing.Size(63, 20);
-            this.numUDSoTuBaiViet.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(251, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "ngày";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(251, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(16, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "từ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(251, 105);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "ngày";
-            // 
             // FormQuyDinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,10 +333,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUDLaiSuat)).EndInit();
             this.tabPageQuangCao.ResumeLayout(false);
             this.tabPageQuangCao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDSoNgayQuangCao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDPhanTramQuangCao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDThoiGianChupAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSoTuBaiViet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDThoiGianChupAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDPhanTramQuangCao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDSoNgayQuangCao)).EndInit();
             this.ResumeLayout(false);
 
         }

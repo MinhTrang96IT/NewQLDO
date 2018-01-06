@@ -50,6 +50,7 @@
             // 
             // gbPhanQuyen
             // 
+            this.gbPhanQuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbPhanQuyen.Controls.Add(this.btnCapNhat);
             this.gbPhanQuyen.Controls.Add(this.label9);
             this.gbPhanQuyen.Controls.Add(this.txtTimKiem);
@@ -151,6 +152,7 @@
             // 
             // gbDanhSachPhanQuyen
             // 
+            this.gbDanhSachPhanQuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachPhanQuyen.Controls.Add(this.dgvPhanQuyen);
             this.gbDanhSachPhanQuyen.Location = new System.Drawing.Point(105, 259);
             this.gbDanhSachPhanQuyen.Name = "gbDanhSachPhanQuyen";

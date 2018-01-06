@@ -53,8 +53,9 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvLoaiDiaOc);
-            this.gbDanhSachKH.Location = new System.Drawing.Point(185, 269);
+            this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
             this.gbDanhSachKH.Size = new System.Drawing.Size(973, 328);
             this.gbDanhSachKH.TabIndex = 3;
@@ -190,6 +191,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtTimKiem);
             this.gbThongTinKH.Controls.Add(this.btnTaoMoi);
@@ -202,7 +204,7 @@
             this.gbThongTinKH.Controls.Add(this.label3);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
-            this.gbThongTinKH.Location = new System.Drawing.Point(185, 11);
+            this.gbThongTinKH.Location = new System.Drawing.Point(105, 8);
             this.gbThongTinKH.Name = "gbThongTinKH";
             this.gbThongTinKH.Size = new System.Drawing.Size(973, 245);
             this.gbThongTinKH.TabIndex = 2;

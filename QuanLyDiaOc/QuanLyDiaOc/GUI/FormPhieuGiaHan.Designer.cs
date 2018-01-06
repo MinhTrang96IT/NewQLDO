@@ -77,6 +77,7 @@
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(863, 58);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -88,6 +89,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(749, 58);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -165,6 +167,7 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvPhieuGiaHan);
             this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
@@ -393,6 +396,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.txtPhanTramGiaHan);
             this.gbThongTinKH.Controls.Add(this.label4);

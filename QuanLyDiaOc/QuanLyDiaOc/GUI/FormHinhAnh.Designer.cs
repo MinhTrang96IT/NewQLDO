@@ -58,6 +58,7 @@
             // 
             // gbHinhAnh
             // 
+            this.gbHinhAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbHinhAnh.Controls.Add(this.txtMaPhieuDangKy);
             this.gbHinhAnh.Controls.Add(this.btnThemNV);
             this.gbHinhAnh.Controls.Add(this.btnThemPDK);
@@ -268,6 +269,7 @@
             // 
             // gbDanhSach
             // 
+            this.gbDanhSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSach.Controls.Add(this.dgvHinhAnh);
             this.gbDanhSach.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSach.Name = "gbDanhSach";

@@ -200,7 +200,10 @@ namespace QuanLyDiaOc.GUI
             for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
             {
                 if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Equals("Xem thông tin"))
+                {
                     btnXuatHoaDon.Enabled = false;
+                    btnXuatHopDong.Enabled = false;
+                }
                 if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Contains("Chỉnh sửa"))
                     break;
                 if (i == Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count - 1)
@@ -232,7 +235,10 @@ namespace QuanLyDiaOc.GUI
             {
                 txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
             }
-    
+            if (rbChuaKiemDuyet.Checked)
+            {
+                btnHuyDichVu.Enabled = btnGiaHanDichVu.Enabled = btnXuatHopDong.Enabled = btnXuatHoaDon.Enabled = false;
+            }
             LamMoiThongTin();
         }
 

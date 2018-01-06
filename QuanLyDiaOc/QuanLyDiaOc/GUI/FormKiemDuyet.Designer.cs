@@ -134,13 +134,13 @@
             // 
             // tabctrKiemDuyet
             // 
+            this.tabctrKiemDuyet.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuDangKy);
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuGiaHan);
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuNgungDV);
             this.tabctrKiemDuyet.Controls.Add(this.tabChiTietQuangCao);
             this.tabctrKiemDuyet.Controls.Add(this.tabBaiViet);
             this.tabctrKiemDuyet.Controls.Add(this.tabDiaOc);
-            this.tabctrKiemDuyet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabctrKiemDuyet.Location = new System.Drawing.Point(0, 0);
             this.tabctrKiemDuyet.Name = "tabctrKiemDuyet";
             this.tabctrKiemDuyet.SelectedIndex = 0;
@@ -316,7 +316,7 @@
             this.tabPhieuGiaHan.Location = new System.Drawing.Point(4, 22);
             this.tabPhieuGiaHan.Name = "tabPhieuGiaHan";
             this.tabPhieuGiaHan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhieuGiaHan.Size = new System.Drawing.Size(965, 219);
+            this.tabPhieuGiaHan.Size = new System.Drawing.Size(1174, 577);
             this.tabPhieuGiaHan.TabIndex = 1;
             this.tabPhieuGiaHan.Text = "Phiếu gia hạn";
             this.tabPhieuGiaHan.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@
             this.dgvPhieuGiaHan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuGiaHan.Location = new System.Drawing.Point(3, 3);
             this.dgvPhieuGiaHan.Name = "dgvPhieuGiaHan";
-            this.dgvPhieuGiaHan.Size = new System.Drawing.Size(959, 213);
+            this.dgvPhieuGiaHan.Size = new System.Drawing.Size(1168, 571);
             this.dgvPhieuGiaHan.TabIndex = 0;
             this.dgvPhieuGiaHan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuGiaHan_CellContentClick);
             // 
@@ -425,7 +425,7 @@
             this.tabPhieuNgungDV.Location = new System.Drawing.Point(4, 22);
             this.tabPhieuNgungDV.Name = "tabPhieuNgungDV";
             this.tabPhieuNgungDV.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhieuNgungDV.Size = new System.Drawing.Size(965, 219);
+            this.tabPhieuNgungDV.Size = new System.Drawing.Size(1174, 577);
             this.tabPhieuNgungDV.TabIndex = 2;
             this.tabPhieuNgungDV.Text = "Ngừng dịch vụ";
             this.tabPhieuNgungDV.UseVisualStyleBackColor = true;
@@ -446,7 +446,7 @@
             this.dgvNgungDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNgungDichVu.Location = new System.Drawing.Point(3, 3);
             this.dgvNgungDichVu.Name = "dgvNgungDichVu";
-            this.dgvNgungDichVu.Size = new System.Drawing.Size(959, 213);
+            this.dgvNgungDichVu.Size = new System.Drawing.Size(1168, 571);
             this.dgvNgungDichVu.TabIndex = 0;
             this.dgvNgungDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNgungDichVu_CellContentClick);
             // 
@@ -518,7 +518,7 @@
             this.tabChiTietQuangCao.Location = new System.Drawing.Point(4, 22);
             this.tabChiTietQuangCao.Name = "tabChiTietQuangCao";
             this.tabChiTietQuangCao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChiTietQuangCao.Size = new System.Drawing.Size(965, 219);
+            this.tabChiTietQuangCao.Size = new System.Drawing.Size(1174, 577);
             this.tabChiTietQuangCao.TabIndex = 3;
             this.tabChiTietQuangCao.Text = "Thông tin quảng cáo";
             this.tabChiTietQuangCao.UseVisualStyleBackColor = true;
@@ -543,7 +543,7 @@
             this.dgvChiTietQuangCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietQuangCao.Location = new System.Drawing.Point(3, 3);
             this.dgvChiTietQuangCao.Name = "dgvChiTietQuangCao";
-            this.dgvChiTietQuangCao.Size = new System.Drawing.Size(959, 213);
+            this.dgvChiTietQuangCao.Size = new System.Drawing.Size(1168, 571);
             this.dgvChiTietQuangCao.TabIndex = 0;
             this.dgvChiTietQuangCao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietQuangCao_CellContentClick);
             // 
@@ -639,7 +639,7 @@
             this.tabBaiViet.Location = new System.Drawing.Point(4, 22);
             this.tabBaiViet.Name = "tabBaiViet";
             this.tabBaiViet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBaiViet.Size = new System.Drawing.Size(965, 219);
+            this.tabBaiViet.Size = new System.Drawing.Size(1174, 577);
             this.tabBaiViet.TabIndex = 4;
             this.tabBaiViet.Text = "Bài viết quảng cáo";
             this.tabBaiViet.UseVisualStyleBackColor = true;
@@ -659,7 +659,7 @@
             this.dgvBaiViet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBaiViet.Location = new System.Drawing.Point(3, 3);
             this.dgvBaiViet.Name = "dgvBaiViet";
-            this.dgvBaiViet.Size = new System.Drawing.Size(959, 213);
+            this.dgvBaiViet.Size = new System.Drawing.Size(1168, 571);
             this.dgvBaiViet.TabIndex = 0;
             this.dgvBaiViet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBaiViet_CellContentClick);
             // 
@@ -721,7 +721,7 @@
             this.tabDiaOc.Location = new System.Drawing.Point(4, 22);
             this.tabDiaOc.Name = "tabDiaOc";
             this.tabDiaOc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiaOc.Size = new System.Drawing.Size(965, 219);
+            this.tabDiaOc.Size = new System.Drawing.Size(1174, 577);
             this.tabDiaOc.TabIndex = 5;
             this.tabDiaOc.Text = "Địa ốc";
             this.tabDiaOc.UseVisualStyleBackColor = true;
@@ -753,7 +753,7 @@
             this.dgvDiaOc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiaOc.Location = new System.Drawing.Point(3, 3);
             this.dgvDiaOc.Name = "dgvDiaOc";
-            this.dgvDiaOc.Size = new System.Drawing.Size(959, 213);
+            this.dgvDiaOc.Size = new System.Drawing.Size(1168, 571);
             this.dgvDiaOc.TabIndex = 0;
             this.dgvDiaOc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiaOc_CellContentClick);
             // 

@@ -132,6 +132,7 @@
             // 
             // gbPhieuDK
             // 
+            this.gbPhieuDK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbPhieuDK.Controls.Add(this.lblTongTien);
             this.gbPhieuDK.Controls.Add(this.lblLyDo);
             this.gbPhieuDK.Controls.Add(this.lblTrangThai);
@@ -309,6 +310,7 @@
             // 
             // gbDiaOc
             // 
+            this.gbDiaOc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDiaOc.Controls.Add(this.lblHuongNha);
             this.gbDiaOc.Controls.Add(this.label26);
             this.gbDiaOc.Controls.Add(this.lblLyDoDO);
@@ -718,6 +720,7 @@
             // 
             // gbKhachHang
             // 
+            this.gbKhachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbKhachHang.Controls.Add(this.lblSDTKH);
             this.gbKhachHang.Controls.Add(this.label41);
             this.gbKhachHang.Controls.Add(this.lblEmailKH);

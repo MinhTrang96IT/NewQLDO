@@ -50,7 +50,7 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             reportDataSource1.Name = "DataSetXuatHopDong";
             reportDataSource1.Value = this.XuatHopDongBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);

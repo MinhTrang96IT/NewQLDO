@@ -58,6 +58,7 @@
             // 
             // gbChiTietQuangCao
             // 
+            this.gbChiTietQuangCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbChiTietQuangCao.Controls.Add(this.btnPhieuDK);
             this.gbChiTietQuangCao.Controls.Add(this.label14);
             this.gbChiTietQuangCao.Controls.Add(this.lblLyDoCTQC);

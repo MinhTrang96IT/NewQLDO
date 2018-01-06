@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabThongKe = new System.Windows.Forms.TabControl();
             this.tabDoanhThu = new System.Windows.Forms.TabPage();
             this.dataGridDoanhThu = new System.Windows.Forms.DataGridView();
@@ -62,16 +62,12 @@
             this.cbDoanhThu_Nam = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chartLoaiQuangCaoTheoNam = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbLoaiQuangCao = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbNamTheoLoaiQuangCao = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewDoanhThuTheoLoaiQuangCao = new System.Windows.Forms.DataGridView();
-            this.btnXuatRaExel = new System.Windows.Forms.Button();
-            this.chartDoanhThuTheoLoaiQuangCao = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.chartKhachHang = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartLoaiQuangCaoTheoNam = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,24 +82,28 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatRaExel = new System.Windows.Forms.Button();
+            this.chartDoanhThuTheoLoaiQuangCao = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chartKhachHang = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabThongKe.SuspendLayout();
             this.tabDoanhThu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoThang)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLoaiQuangCaoTheoNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoanhThuTheoLoaiQuangCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoLoaiQuangCao)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartKhachHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLoaiQuangCaoTheoNam)).BeginInit();
             this.SuspendLayout();
             // 
             // tabThongKe
             // 
+            this.tabThongKe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabThongKe.Controls.Add(this.tabDoanhThu);
             this.tabThongKe.Controls.Add(this.tabPage2);
             this.tabThongKe.Controls.Add(this.tabPage1);
-            this.tabThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabThongKe.Location = new System.Drawing.Point(0, 0);
             this.tabThongKe.Name = "tabThongKe";
             this.tabThongKe.SelectedIndex = 0;
@@ -248,10 +248,10 @@
             // 
             // chartDoanhThuTheoThang
             // 
-            chartArea15.Name = "ChartArea1";
-            this.chartDoanhThuTheoThang.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chartDoanhThuTheoThang.Legends.Add(legend15);
+            chartArea1.Name = "ChartArea1";
+            this.chartDoanhThuTheoThang.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDoanhThuTheoThang.Legends.Add(legend1);
             this.chartDoanhThuTheoThang.Location = new System.Drawing.Point(51, 67);
             this.chartDoanhThuTheoThang.Name = "chartDoanhThuTheoThang";
             this.chartDoanhThuTheoThang.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
@@ -295,6 +295,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh thu theo loại hình quảng cáo";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chartLoaiQuangCaoTheoNam
+            // 
+            chartArea2.Name = "ChartLoaiQuangCaoTheoNam";
+            this.chartLoaiQuangCaoTheoNam.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLoaiQuangCaoTheoNam.Legends.Add(legend2);
+            this.chartLoaiQuangCaoTheoNam.Location = new System.Drawing.Point(8, 66);
+            this.chartLoaiQuangCaoTheoNam.Name = "chartLoaiQuangCaoTheoNam";
+            series1.ChartArea = "ChartLoaiQuangCaoTheoNam";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "LoaiQuangCaoTheoNam";
+            this.chartLoaiQuangCaoTheoNam.Series.Add(series1);
+            this.chartLoaiQuangCaoTheoNam.Size = new System.Drawing.Size(450, 353);
+            this.chartLoaiQuangCaoTheoNam.TabIndex = 47;
+            this.chartLoaiQuangCaoTheoNam.Text = "chartLoaiQuangCaoTheoNam";
             // 
             // cbLoaiQuangCao
             // 
@@ -367,86 +384,6 @@
             this.dataGridViewDoanhThuTheoLoaiQuangCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDoanhThuTheoLoaiQuangCao.Size = new System.Drawing.Size(1304, 90);
             this.dataGridViewDoanhThuTheoLoaiQuangCao.TabIndex = 44;
-            // 
-            // btnXuatRaExel
-            // 
-            this.btnXuatRaExel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXuatRaExel.Location = new System.Drawing.Point(550, 544);
-            this.btnXuatRaExel.Name = "btnXuatRaExel";
-            this.btnXuatRaExel.Size = new System.Drawing.Size(190, 28);
-            this.btnXuatRaExel.TabIndex = 43;
-            this.btnXuatRaExel.Text = "Xuất ra Excel";
-            this.btnXuatRaExel.UseVisualStyleBackColor = true;
-            this.btnXuatRaExel.Click += new System.EventHandler(this.btnXuatRaExel_Click);
-            // 
-            // chartDoanhThuTheoLoaiQuangCao
-            // 
-            chartArea14.Name = "ChartArea1";
-            this.chartDoanhThuTheoLoaiQuangCao.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chartDoanhThuTheoLoaiQuangCao.Legends.Add(legend14);
-            this.chartDoanhThuTheoLoaiQuangCao.Location = new System.Drawing.Point(422, 54);
-            this.chartDoanhThuTheoLoaiQuangCao.Name = "chartDoanhThuTheoLoaiQuangCao";
-            series17.ChartArea = "ChartArea1";
-            series17.Legend = "Legend1";
-            series17.Name = "Series1";
-            series18.ChartArea = "ChartArea1";
-            series18.Legend = "Legend1";
-            series18.Name = "Series2";
-            series19.ChartArea = "ChartArea1";
-            series19.Legend = "Legend1";
-            series19.Name = "Series3";
-            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series17);
-            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series18);
-            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series19);
-            this.chartDoanhThuTheoLoaiQuangCao.Size = new System.Drawing.Size(944, 395);
-            this.chartDoanhThuTheoLoaiQuangCao.TabIndex = 1;
-            this.chartDoanhThuTheoLoaiQuangCao.Text = "chart2";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.chartKhachHang);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1362, 577);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Độ tuổi Khách Hàng";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // chartKhachHang
-            // 
-            chartArea16.Name = "ChartKhachHang";
-            this.chartKhachHang.ChartAreas.Add(chartArea16);
-            this.chartKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend16.Name = "Legend1";
-            this.chartKhachHang.Legends.Add(legend16);
-            this.chartKhachHang.Location = new System.Drawing.Point(3, 3);
-            this.chartKhachHang.Name = "chartKhachHang";
-            series20.ChartArea = "ChartKhachHang";
-            series20.Legend = "Legend1";
-            series20.Name = "TuoiKhachHang";
-            this.chartKhachHang.Series.Add(series20);
-            this.chartKhachHang.Size = new System.Drawing.Size(1356, 571);
-            this.chartKhachHang.TabIndex = 0;
-            this.chartKhachHang.Text = "A";
-            // 
-            // chartLoaiQuangCaoTheoNam
-            // 
-            chartArea13.Name = "ChartLoaiQuangCaoTheoNam";
-            this.chartLoaiQuangCaoTheoNam.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.chartLoaiQuangCaoTheoNam.Legends.Add(legend13);
-            this.chartLoaiQuangCaoTheoNam.Location = new System.Drawing.Point(8, 66);
-            this.chartLoaiQuangCaoTheoNam.Name = "chartLoaiQuangCaoTheoNam";
-            series16.ChartArea = "ChartLoaiQuangCaoTheoNam";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series16.Legend = "Legend1";
-            series16.Name = "LoaiQuangCaoTheoNam";
-            this.chartLoaiQuangCaoTheoNam.Series.Add(series16);
-            this.chartLoaiQuangCaoTheoNam.Size = new System.Drawing.Size(450, 353);
-            this.chartLoaiQuangCaoTheoNam.TabIndex = 47;
-            this.chartLoaiQuangCaoTheoNam.Text = "chartLoaiQuangCaoTheoNam";
             // 
             // TenLoaiQuangCao
             // 
@@ -533,6 +470,69 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
+            // btnXuatRaExel
+            // 
+            this.btnXuatRaExel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatRaExel.Location = new System.Drawing.Point(550, 544);
+            this.btnXuatRaExel.Name = "btnXuatRaExel";
+            this.btnXuatRaExel.Size = new System.Drawing.Size(190, 28);
+            this.btnXuatRaExel.TabIndex = 43;
+            this.btnXuatRaExel.Text = "Xuất ra Excel";
+            this.btnXuatRaExel.UseVisualStyleBackColor = true;
+            this.btnXuatRaExel.Click += new System.EventHandler(this.btnXuatRaExel_Click);
+            // 
+            // chartDoanhThuTheoLoaiQuangCao
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chartDoanhThuTheoLoaiQuangCao.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartDoanhThuTheoLoaiQuangCao.Legends.Add(legend3);
+            this.chartDoanhThuTheoLoaiQuangCao.Location = new System.Drawing.Point(422, 54);
+            this.chartDoanhThuTheoLoaiQuangCao.Name = "chartDoanhThuTheoLoaiQuangCao";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series2";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series3";
+            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series2);
+            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series3);
+            this.chartDoanhThuTheoLoaiQuangCao.Series.Add(series4);
+            this.chartDoanhThuTheoLoaiQuangCao.Size = new System.Drawing.Size(944, 395);
+            this.chartDoanhThuTheoLoaiQuangCao.TabIndex = 1;
+            this.chartDoanhThuTheoLoaiQuangCao.Text = "chart2";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chartKhachHang);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1362, 577);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Độ tuổi Khách Hàng";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chartKhachHang
+            // 
+            chartArea4.Name = "ChartKhachHang";
+            this.chartKhachHang.ChartAreas.Add(chartArea4);
+            this.chartKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.chartKhachHang.Legends.Add(legend4);
+            this.chartKhachHang.Location = new System.Drawing.Point(3, 3);
+            this.chartKhachHang.Name = "chartKhachHang";
+            series5.ChartArea = "ChartKhachHang";
+            series5.Legend = "Legend1";
+            series5.Name = "TuoiKhachHang";
+            this.chartKhachHang.Series.Add(series5);
+            this.chartKhachHang.Size = new System.Drawing.Size(1356, 571);
+            this.chartKhachHang.TabIndex = 0;
+            this.chartKhachHang.Text = "A";
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,11 +549,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoThang)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLoaiQuangCaoTheoNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoanhThuTheoLoaiQuangCao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoLoaiQuangCao)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartKhachHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLoaiQuangCaoTheoNam)).EndInit();
             this.ResumeLayout(false);
 
         }

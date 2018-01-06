@@ -33,9 +33,9 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.XuatHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetXuatHopDong = new QuanLyDiaOc.GUI.DataSetXuatHopDong();
+            this.layDanhSachTheoMaPhieuDangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.XuatHoaDonTableAdapter = new QuanLyDiaOc.GUI.DataSetXuatHopDongTableAdapters.XuatHoaDonTableAdapter();
-            this.layDanhSachTheoMaPhieuDangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.danhSachTheoMaPhieuDangKyTableAdapter = new QuanLyDiaOc.GUI.DataSetXuatHopDongTableAdapters.DanhSachTheoMaPhieuDangKyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.XuatHoaDonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).BeginInit();
@@ -52,9 +52,14 @@
             this.DataSetXuatHopDong.DataSetName = "DataSetXuatHopDong";
             this.DataSetXuatHopDong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // layDanhSachTheoMaPhieuDangKyBindingSource
+            // 
+            this.layDanhSachTheoMaPhieuDangKyBindingSource.DataMember = "LayDanhSachTheoMaPhieuDangKy";
+            this.layDanhSachTheoMaPhieuDangKyBindingSource.DataSource = this.DataSetXuatHopDong;
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             reportDataSource1.Name = "DataSetHoaDon";
             reportDataSource1.Value = this.XuatHoaDonBindingSource;
             reportDataSource2.Name = "DataSetHoaDon_ChiTietQuangCao";
@@ -72,11 +77,6 @@
             // 
             this.XuatHoaDonTableAdapter.ClearBeforeFill = true;
             // 
-            // layDanhSachTheoMaPhieuDangKyBindingSource
-            // 
-            this.layDanhSachTheoMaPhieuDangKyBindingSource.DataMember = "LayDanhSachTheoMaPhieuDangKy";
-            this.layDanhSachTheoMaPhieuDangKyBindingSource.DataSource = this.DataSetXuatHopDong;
-            // 
             // danhSachTheoMaPhieuDangKyTableAdapter
             // 
             this.danhSachTheoMaPhieuDangKyTableAdapter.ClearBeforeFill = true;
@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(818, 523);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormHoaDon";
-            this.Text = "FormHoaDon";
+            this.Text = "Xuất hóa đơn";
             this.Load += new System.EventHandler(this.FormHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.XuatHoaDonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).EndInit();

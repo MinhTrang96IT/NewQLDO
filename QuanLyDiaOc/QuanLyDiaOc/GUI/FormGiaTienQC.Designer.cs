@@ -99,7 +99,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(699, 40);
+            this.label16.Location = new System.Drawing.Point(662, 43);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 13);
             this.label16.TabIndex = 8;
@@ -108,7 +108,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(668, 113);
+            this.label7.Location = new System.Drawing.Point(661, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 6;
@@ -135,7 +135,7 @@
             // d
             // 
             this.d.AutoSize = true;
-            this.d.Location = new System.Drawing.Point(358, 87);
+            this.d.Location = new System.Drawing.Point(349, 87);
             this.d.Name = "d";
             this.d.Size = new System.Drawing.Size(133, 13);
             this.d.TabIndex = 4;
@@ -143,6 +143,7 @@
             // 
             // gbDanhSanh
             // 
+            this.gbDanhSanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSanh.Controls.Add(this.dgvGiaTienQC);
             this.gbDanhSanh.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSanh.Name = "gbDanhSanh";
@@ -257,6 +258,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTin.Controls.Add(this.btnThemViTri);
             this.gbThongTin.Controls.Add(this.btnThemLoaiQuangCao);
             this.gbThongTin.Controls.Add(this.label13);

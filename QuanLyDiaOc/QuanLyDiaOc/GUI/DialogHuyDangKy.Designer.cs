@@ -75,6 +75,7 @@
             // 
             // gbNhanVien
             // 
+            this.gbNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbNhanVien.Controls.Add(this.lblTenDN);
             this.gbNhanVien.Controls.Add(this.label57);
             this.gbNhanVien.Controls.Add(this.lblSDTNV);
@@ -338,6 +339,7 @@
             // 
             // gbHuyDangKy
             // 
+            this.gbHuyDangKy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbHuyDangKy.Controls.Add(this.lblNgayLap);
             this.gbHuyDangKy.Controls.Add(this.label3);
             this.gbHuyDangKy.Controls.Add(this.btnPhieuDK);
