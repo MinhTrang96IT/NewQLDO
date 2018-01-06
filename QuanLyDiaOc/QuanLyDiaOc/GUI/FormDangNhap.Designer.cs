@@ -65,9 +65,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(244, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 15);
+            this.label5.Size = new System.Drawing.Size(60, 15);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Mật khẩu";
+            this.label5.Text = "Mật khẩu:";
             // 
             // label4
             // 
@@ -75,9 +75,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(243, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Tài khoản";
+            this.label4.Text = "Tài khoản:";
             // 
             // label6
             // 

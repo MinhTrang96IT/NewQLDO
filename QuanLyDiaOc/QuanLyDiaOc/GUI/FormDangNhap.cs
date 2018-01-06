@@ -44,6 +44,7 @@ namespace QuanLyDiaOc.GUI
 
         protected override bool ProcessDialogKey(Keys keyData)
         {
+            base.ProcessDialogKey(keyData);
             if (keyData == (Keys.Enter))
             {
                 btnDangNhap_Click(null, null);

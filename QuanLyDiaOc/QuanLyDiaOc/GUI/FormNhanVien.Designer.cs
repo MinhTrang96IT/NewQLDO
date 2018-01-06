@@ -479,35 +479,35 @@
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
             this.MaNhanVien.HeaderText = "Mã nhân viên";
             this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.Width = 89;
+            this.MaNhanVien.Width = 97;
             // 
             // TenLoaiNhanVien
             // 
             this.TenLoaiNhanVien.DataPropertyName = "TenLoaiNhanVien";
             this.TenLoaiNhanVien.HeaderText = "Loại nhân viên";
             this.TenLoaiNhanVien.Name = "TenLoaiNhanVien";
-            this.TenLoaiNhanVien.Width = 94;
+            this.TenLoaiNhanVien.Width = 102;
             // 
             // TenLPhongBan
             // 
             this.TenLPhongBan.DataPropertyName = "TenLPhongBan";
             this.TenLPhongBan.HeaderText = "Phòng ban";
             this.TenLPhongBan.Name = "TenLPhongBan";
-            this.TenLPhongBan.Width = 78;
+            this.TenLPhongBan.Width = 84;
             // 
             // TenNhanVien
             // 
             this.TenNhanVien.DataPropertyName = "TenNhanVien";
             this.TenNhanVien.HeaderText = "Tên nhân viên";
             this.TenNhanVien.Name = "TenNhanVien";
-            this.TenNhanVien.Width = 93;
+            this.TenNhanVien.Width = 101;
             // 
             // TenBangCap
             // 
             this.TenBangCap.DataPropertyName = "TenBangCap";
             this.TenBangCap.HeaderText = "Tên bằng cấp";
             this.TenBangCap.Name = "TenBangCap";
-            this.TenBangCap.Width = 91;
+            this.TenBangCap.Width = 99;
             // 
             // CMND
             // 
@@ -523,28 +523,28 @@
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GioiTinh.Width = 67;
+            this.GioiTinh.Width = 72;
             // 
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 73;
+            this.NgaySinh.Width = 79;
             // 
             // DiaChi
             // 
             this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 48;
+            this.DiaChi.Width = 65;
             // 
             // SoDienThoai
             // 
             this.SoDienThoai.DataPropertyName = "SoDienThoai";
             this.SoDienThoai.HeaderText = "Số điện thoại";
             this.SoDienThoai.Name = "SoDienThoai";
-            this.SoDienThoai.Width = 87;
+            this.SoDienThoai.Width = 95;
             // 
             // Email
             // 
@@ -565,6 +565,7 @@
             this.MatKhau.DataPropertyName = "MatKhau";
             this.MatKhau.HeaderText = "Mật khẩu";
             this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Visible = false;
             this.MatKhau.Width = 71;
             // 
             // FormNhanVien
@@ -574,6 +575,8 @@
             this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormNhanVien";
             this.Text = "Form Nhân Viên";
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
@@ -623,6 +626,8 @@
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.Button btnThemLoaiPB;
         private System.Windows.Forms.Button btnThemLoaiNV;
+        private System.Windows.Forms.ComboBox cbBangCap;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLPhongBan;
@@ -636,7 +641,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.ComboBox cbBangCap;
-        private System.Windows.Forms.Label label14;
     }
 }
