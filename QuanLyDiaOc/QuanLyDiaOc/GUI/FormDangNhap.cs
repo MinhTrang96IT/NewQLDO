@@ -55,5 +55,17 @@ namespace QuanLyDiaOc.GUI
                 return false;
             }
         }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
+        {
+            btnDangNhap.TabStop = false;
+            btnCauHinh.TabStop = false;
+            btnThoat.TabStop = false;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

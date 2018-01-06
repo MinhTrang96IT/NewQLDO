@@ -52,12 +52,13 @@
             this.btnCauHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCauHinh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCauHinh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCauHinh.Location = new System.Drawing.Point(216, 209);
+            this.btnCauHinh.Location = new System.Drawing.Point(12, 12);
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.Size = new System.Drawing.Size(112, 47);
             this.btnCauHinh.TabIndex = 23;
             this.btnCauHinh.Text = "Cấu Hình";
             this.btnCauHinh.UseVisualStyleBackColor = false;
+            this.btnCauHinh.Visible = false;
             // 
             // label5
             // 
@@ -100,12 +101,13 @@
             this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(452, 209);
+            this.btnThoat.Location = new System.Drawing.Point(385, 209);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(106, 47);
             this.btnThoat.TabIndex = 20;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
@@ -117,7 +119,7 @@
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDangNhap.Location = new System.Drawing.Point(334, 209);
+            this.btnDangNhap.Location = new System.Drawing.Point(247, 209);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(112, 47);
             this.btnDangNhap.TabIndex = 19;
@@ -179,11 +181,13 @@
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
