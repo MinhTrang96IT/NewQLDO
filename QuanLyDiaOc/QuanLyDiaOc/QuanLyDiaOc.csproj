@@ -263,6 +263,12 @@
     <Compile Include="GUI\FormHinhAnh.Designer.cs">
       <DependentUpon>FormHinhAnh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormHoaDon.Designer.cs">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,9 @@
     <EmbeddedResource Include="GUI\FormHinhAnh.resx">
       <DependentUpon>FormHinhAnh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormHopDong.resx">
       <DependentUpon>FormHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,6 +495,7 @@
     <EmbeddedResource Include="GUI\FormViTri.resx">
       <DependentUpon>FormViTri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReportHoaDon.rdlc" />
     <EmbeddedResource Include="GUI\ReportXuatHopDong.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

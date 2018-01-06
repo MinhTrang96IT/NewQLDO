@@ -673,16 +673,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Email: </Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>contact@nso.com.vn</Value>
+                <Value>Email: contact@nso.com.vn</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontWeight>Normal</FontWeight>

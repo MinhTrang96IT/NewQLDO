@@ -456,5 +456,23 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hợp đồng");
             }
         }
+
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormHoaDon diaglogHoaDon = new FormHoaDon(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogHoaDon.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogHoaDon.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //  txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hóa đơn");
+            }
+        }
     }
 }
