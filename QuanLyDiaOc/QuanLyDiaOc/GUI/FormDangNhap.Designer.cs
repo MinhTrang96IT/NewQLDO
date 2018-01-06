@@ -163,7 +163,7 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Quản lý địa ốc";
             // 
-            // DangNhap
+            // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +179,9 @@
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "DangNhap";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

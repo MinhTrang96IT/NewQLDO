@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetXuatHopDong = new QuanLyDiaOc.GUI.DataSetXuatHopDong();
             this.XuatHopDongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetXuatHopDong = new QuanLyDiaOc.GUI.DataSetXuatHopDong();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.XuatHopDongTableAdapter = new QuanLyDiaOc.GUI.DataSetXuatHopDongTableAdapters.XuatHopDongTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XuatHopDongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).BeginInit();
             this.SuspendLayout();
+            // 
+            // XuatHopDongBindingSource
+            // 
+            this.XuatHopDongBindingSource.DataMember = "XuatHopDong";
+            this.XuatHopDongBindingSource.DataSource = this.DataSetXuatHopDong;
+            // 
+            // DataSetXuatHopDong
+            // 
+            this.DataSetXuatHopDong.DataSetName = "DataSetXuatHopDong";
+            this.DataSetXuatHopDong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(673, 529);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSetXuatHopDong
-            // 
-            this.DataSetXuatHopDong.DataSetName = "DataSetXuatHopDong";
-            this.DataSetXuatHopDong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // XuatHopDongBindingSource
-            // 
-            this.XuatHopDongBindingSource.DataMember = "XuatHopDong";
-            this.XuatHopDongBindingSource.DataSource = this.DataSetXuatHopDong;
-            // 
             // XuatHopDongTableAdapter
             // 
             this.XuatHopDongTableAdapter.ClearBeforeFill = true;
@@ -71,11 +71,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 529);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormHopDong";
-            this.Text = "FormHopDong";
+            this.Text = "Hợp Đồng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormHopDong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XuatHopDongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetXuatHopDong)).EndInit();
             this.ResumeLayout(false);
 
         }

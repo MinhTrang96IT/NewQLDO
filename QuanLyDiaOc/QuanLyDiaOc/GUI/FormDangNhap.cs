@@ -41,5 +41,18 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == (Keys.Enter))
+            {
+                btnDangNhap_Click(null, null);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
