@@ -91,6 +91,7 @@
             // 
             // gbDanhSanh
             // 
+            this.gbDanhSanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSanh.Controls.Add(this.dgvChiTietQuangCao);
             this.gbDanhSanh.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSanh.Name = "gbDanhSanh";
@@ -197,7 +198,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(344, 132);
+            this.label5.Location = new System.Drawing.Point(351, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 4;
@@ -206,7 +207,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 107);
+            this.label3.Location = new System.Drawing.Point(48, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 2;
@@ -224,7 +225,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 40);
+            this.label1.Location = new System.Drawing.Point(48, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 0;
@@ -232,6 +233,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTin.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTin.Controls.Add(this.rbChuaKiemDuyet);
             this.gbThongTin.Controls.Add(this.label9);
@@ -276,6 +278,7 @@
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(804, 145);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -287,6 +290,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(683, 145);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -515,7 +519,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(628, 115);
+            this.label8.Location = new System.Drawing.Point(600, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 4;
@@ -524,7 +528,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(374, 50);
+            this.label6.Location = new System.Drawing.Point(351, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 2;
@@ -533,7 +537,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(111, 144);
+            this.label14.Location = new System.Drawing.Point(48, 142);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 2;
@@ -547,7 +551,7 @@
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormChiTietQuangCao";
-            this.Text = "Chi tiết quảng cáo";
+            this.Text = "Form Chi Tiết Quảng Cáo";
             this.Load += new System.EventHandler(this.FormChiTietQuangCao_Load);
             this.gbDanhSanh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).EndInit();

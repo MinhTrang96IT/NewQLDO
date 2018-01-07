@@ -187,8 +187,28 @@ namespace QuanLyDiaOc.GUI
             }
         }
 
+        private void AnButton()
+        {
+            btnTaoMoi.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+        }
+
         private void FormPhieuDangKy_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
+            {
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Equals("Xem thông tin"))
+                {
+                    btnXuatHoaDon.Enabled = false;
+                    btnXuatHopDong.Enabled = false;
+                }
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Contains("Chỉnh sửa"))
+                    break;
+                if (i == Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count - 1)
+                    AnButton();
+            }
             if (MaDiaOcPoup == 0)
             {
                 txtMaDiaOc.Visible = false;
@@ -215,7 +235,10 @@ namespace QuanLyDiaOc.GUI
             {
                 txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
             }
-    
+            if (rbChuaKiemDuyet.Checked)
+            {
+                btnHuyDichVu.Enabled = btnGiaHanDichVu.Enabled = btnXuatHopDong.Enabled = btnXuatHoaDon.Enabled = false;
+            }
             LamMoiThongTin();
         }
 
@@ -419,6 +442,42 @@ namespace QuanLyDiaOc.GUI
             else
             {
                 MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn Hủy đăng kí");
+            }
+        }
+
+        private void btnXuatHopDong_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormHopDong diaglogHopDong = new FormHopDong(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogHopDong.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogHopDong.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //  txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hợp đồng");
+            }
+        }
+
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            if (id != "")
+            {
+                FormHoaDon diaglogHoaDon = new FormHoaDon(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                diaglogHoaDon.StartPosition = FormStartPosition.CenterScreen;
+                if (diaglogHoaDon.ShowDialog(this) == DialogResult.Yes) { }
+                else
+                {
+                    //  txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hóa đơn");
             }
         }
     }

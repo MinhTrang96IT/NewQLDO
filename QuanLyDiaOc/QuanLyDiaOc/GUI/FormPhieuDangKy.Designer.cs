@@ -163,6 +163,7 @@
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(863, 44);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -174,6 +175,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(749, 44);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -334,7 +336,7 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(339, 207);
+            this.btnTaoMoi.Location = new System.Drawing.Point(309, 207);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi.TabIndex = 21;
@@ -344,7 +346,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(615, 206);
+            this.btnSua.Location = new System.Drawing.Point(585, 206);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 19;
@@ -354,7 +356,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(521, 206);
+            this.btnXoa.Location = new System.Drawing.Point(491, 206);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 18;
@@ -365,17 +367,18 @@
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(583, 148);
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(841, 153);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-            this.btnXuatHoaDon.Size = new System.Drawing.Size(113, 23);
+            this.btnXuatHoaDon.Size = new System.Drawing.Size(104, 39);
             this.btnXuatHoaDon.TabIndex = 17;
             this.btnXuatHoaDon.Text = "Xuất hóa đơn";
             this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
             // 
             // btnHuyDichVu
             // 
             this.btnHuyDichVu.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnHuyDichVu.Location = new System.Drawing.Point(806, 201);
+            this.btnHuyDichVu.Location = new System.Drawing.Point(840, 206);
             this.btnHuyDichVu.Name = "btnHuyDichVu";
             this.btnHuyDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnHuyDichVu.TabIndex = 17;
@@ -386,7 +389,7 @@
             // btnGiaHanDichVu
             // 
             this.btnGiaHanDichVu.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnGiaHanDichVu.Location = new System.Drawing.Point(806, 161);
+            this.btnGiaHanDichVu.Location = new System.Drawing.Point(722, 206);
             this.btnGiaHanDichVu.Name = "btnGiaHanDichVu";
             this.btnGiaHanDichVu.Size = new System.Drawing.Size(104, 23);
             this.btnGiaHanDichVu.TabIndex = 17;
@@ -397,17 +400,18 @@
             // btnXuatHopDong
             // 
             this.btnXuatHopDong.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHopDong.Location = new System.Drawing.Point(806, 121);
+            this.btnXuatHopDong.Location = new System.Drawing.Point(841, 107);
             this.btnXuatHopDong.Name = "btnXuatHopDong";
-            this.btnXuatHopDong.Size = new System.Drawing.Size(104, 23);
+            this.btnXuatHopDong.Size = new System.Drawing.Size(104, 40);
             this.btnXuatHopDong.TabIndex = 17;
             this.btnXuatHopDong.Text = "Xuất hợp đồng";
             this.btnXuatHopDong.UseVisualStyleBackColor = false;
+            this.btnXuatHopDong.Click += new System.EventHandler(this.btnXuatHopDong_Click);
             // 
             // btnChiTietQuangCao
             // 
             this.btnChiTietQuangCao.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnChiTietQuangCao.Location = new System.Drawing.Point(583, 104);
+            this.btnChiTietQuangCao.Location = new System.Drawing.Point(581, 102);
             this.btnChiTietQuangCao.Name = "btnChiTietQuangCao";
             this.btnChiTietQuangCao.Size = new System.Drawing.Size(113, 23);
             this.btnChiTietQuangCao.TabIndex = 17;
@@ -417,7 +421,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(431, 207);
+            this.btnThem.Location = new System.Drawing.Point(401, 207);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 17;
@@ -580,7 +584,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormPhieuDangKy";
-            this.Text = "FormPhieuDangKy";
+            this.Text = "Form Phiếu Đăng Ký";
             this.Load += new System.EventHandler(this.FormPhieuDangKy_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

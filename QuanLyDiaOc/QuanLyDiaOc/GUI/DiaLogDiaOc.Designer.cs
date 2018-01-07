@@ -88,6 +88,7 @@
             // 
             // gbDiaOc
             // 
+            this.gbDiaOc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDiaOc.Controls.Add(this.lblHuongNha);
             this.gbDiaOc.Controls.Add(this.label26);
             this.gbDiaOc.Controls.Add(this.lblLyDoDO);
@@ -478,6 +479,7 @@
             // 
             // gbKhachHang
             // 
+            this.gbKhachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbKhachHang.Controls.Add(this.lblSDTKH);
             this.gbKhachHang.Controls.Add(this.label41);
             this.gbKhachHang.Controls.Add(this.lblEmailKH);
@@ -662,7 +664,7 @@
             this.Controls.Add(this.gbKhachHang);
             this.Controls.Add(this.gbDiaOc);
             this.Name = "DiaLogDiaOc";
-            this.Text = "DiaLogDiaOc";
+            this.Text = "Chi Tiết Địa Ốc";
             this.Load += new System.EventHandler(this.DiaLogDiaOc_Load);
             this.gbDiaOc.ResumeLayout(false);
             this.gbDiaOc.PerformLayout();

@@ -50,6 +50,7 @@
             // 
             // gbPhanQuyen
             // 
+            this.gbPhanQuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbPhanQuyen.Controls.Add(this.btnCapNhat);
             this.gbPhanQuyen.Controls.Add(this.label9);
             this.gbPhanQuyen.Controls.Add(this.txtTimKiem);
@@ -68,7 +69,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(647, 110);
+            this.btnCapNhat.Location = new System.Drawing.Point(479, 189);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhat.TabIndex = 41;
@@ -96,7 +97,7 @@
             // btnThemQuyenHan
             // 
             this.btnThemQuyenHan.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemQuyenHan.Location = new System.Drawing.Point(605, 111);
+            this.btnThemQuyenHan.Location = new System.Drawing.Point(697, 112);
             this.btnThemQuyenHan.Name = "btnThemQuyenHan";
             this.btnThemQuyenHan.Size = new System.Drawing.Size(20, 20);
             this.btnThemQuyenHan.TabIndex = 36;
@@ -116,9 +117,9 @@
             // clbQuyenHan
             // 
             this.clbQuyenHan.FormattingEnabled = true;
-            this.clbQuyenHan.Location = new System.Drawing.Point(479, 88);
+            this.clbQuyenHan.Location = new System.Drawing.Point(479, 66);
             this.clbQuyenHan.Name = "clbQuyenHan";
-            this.clbQuyenHan.Size = new System.Drawing.Size(120, 64);
+            this.clbQuyenHan.Size = new System.Drawing.Size(212, 109);
             this.clbQuyenHan.TabIndex = 3;
             this.clbQuyenHan.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbQuyenHan_ItemCheck);
             // 
@@ -151,6 +152,7 @@
             // 
             // gbDanhSachPhanQuyen
             // 
+            this.gbDanhSachPhanQuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachPhanQuyen.Controls.Add(this.dgvPhanQuyen);
             this.gbDanhSachPhanQuyen.Location = new System.Drawing.Point(105, 259);
             this.gbDanhSachPhanQuyen.Name = "gbDanhSachPhanQuyen";

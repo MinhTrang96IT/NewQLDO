@@ -56,6 +56,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTin.Controls.Add(this.btnSua);
             this.gbThongTin.Controls.Add(this.btnXoa);
             this.gbThongTin.Controls.Add(this.btnTaoMoi);
@@ -69,7 +70,7 @@
             this.gbThongTin.Controls.Add(this.label4);
             this.gbThongTin.Controls.Add(this.label2);
             this.gbThongTin.Controls.Add(this.label1);
-            this.gbThongTin.Location = new System.Drawing.Point(105, 12);
+            this.gbThongTin.Location = new System.Drawing.Point(105, 8);
             this.gbThongTin.Name = "gbThongTin";
             this.gbThongTin.Size = new System.Drawing.Size(973, 245);
             this.gbThongTin.TabIndex = 1;
@@ -197,6 +198,7 @@
             // 
             // gbDanhSach
             // 
+            this.gbDanhSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSach.Controls.Add(this.dgvGiayTo);
             this.gbDanhSach.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSach.Name = "gbDanhSach";
@@ -259,7 +261,7 @@
             this.Controls.Add(this.gbDanhSach);
             this.Controls.Add(this.gbThongTin);
             this.Name = "FormGiayTo";
-            this.Text = "FormGiayTo";
+            this.Text = "Form Giấy Tờ";
             this.Load += new System.EventHandler(this.FormGiayTo_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();

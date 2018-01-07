@@ -17,3 +17,9 @@ CREATE PROC sp_PhanQuyen_Xoa
 AS
 	DELETE FROM PhanQuyen WHERE MaLoaiNhanVien=@loai
 GO
+
+CREATE PROC sp_PhanQuyen_LayDanhSachTenQuyenHanTheoLoaiNhanVien
+@ten nvarchar(50)
+AS
+	SELECT TenQuyenHan FROM PhanQuyen, LoaiNhanVien, QuyenHan WHERE PhanQuyen.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND PhanQuyen.MaQuyenHan = QuyenHan.MaQuyenHan AND TenLoaiNhanVien=@ten
+GO

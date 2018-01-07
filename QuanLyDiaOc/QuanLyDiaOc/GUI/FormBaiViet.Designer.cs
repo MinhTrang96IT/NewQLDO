@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaChiTietQuangCao = new System.Windows.Forms.TextBox();
             this.rbDaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.rbChuaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.NoiDungBaiViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaChiTietQuangCao = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).BeginInit();
@@ -62,6 +62,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.txtMaChiTietQuangCao);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.rbChuaKiemDuyet);
@@ -87,10 +88,19 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin bài viết";
             // 
+            // txtMaChiTietQuangCao
+            // 
+            this.txtMaChiTietQuangCao.Location = new System.Drawing.Point(145, 83);
+            this.txtMaChiTietQuangCao.Name = "txtMaChiTietQuangCao";
+            this.txtMaChiTietQuangCao.ReadOnly = true;
+            this.txtMaChiTietQuangCao.Size = new System.Drawing.Size(139, 20);
+            this.txtMaChiTietQuangCao.TabIndex = 42;
+            // 
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
-            this.rbDaKiemDuyet.Location = new System.Drawing.Point(237, 152);
+            this.rbDaKiemDuyet.Enabled = false;
+            this.rbDaKiemDuyet.Location = new System.Drawing.Point(200, 147);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
             this.rbDaKiemDuyet.TabIndex = 41;
@@ -101,7 +111,8 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
-            this.rbChuaKiemDuyet.Location = new System.Drawing.Point(125, 152);
+            this.rbChuaKiemDuyet.Enabled = false;
+            this.rbChuaKiemDuyet.Location = new System.Drawing.Point(88, 147);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
             this.rbChuaKiemDuyet.TabIndex = 40;
@@ -112,7 +123,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 154);
+            this.label6.Location = new System.Drawing.Point(22, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 39;
@@ -150,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 115);
+            this.label2.Location = new System.Drawing.Point(21, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 32;
@@ -168,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 83);
+            this.label4.Location = new System.Drawing.Point(22, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 32;
@@ -242,7 +253,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 51);
+            this.label1.Location = new System.Drawing.Point(22, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
@@ -250,6 +261,7 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvBaiViet);
             this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
@@ -319,14 +331,6 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
-            // txtMaChiTietQuangCao
-            // 
-            this.txtMaChiTietQuangCao.Location = new System.Drawing.Point(145, 83);
-            this.txtMaChiTietQuangCao.Name = "txtMaChiTietQuangCao";
-            this.txtMaChiTietQuangCao.ReadOnly = true;
-            this.txtMaChiTietQuangCao.Size = new System.Drawing.Size(139, 20);
-            this.txtMaChiTietQuangCao.TabIndex = 42;
-            // 
             // FormBaiViet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +339,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormBaiViet";
-            this.Text = "FormBaiViet";
+            this.Text = "Form Bài Viết";
             this.Load += new System.EventHandler(this.FormBaiViet_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

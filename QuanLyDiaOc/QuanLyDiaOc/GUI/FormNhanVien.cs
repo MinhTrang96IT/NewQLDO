@@ -32,8 +32,23 @@ namespace QuanLyDiaOc.GUI
             id = "";
         }
 
+        private void AnButton()
+        {
+            btnTaoMoi.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+        }
+
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
+            {
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Contains("Chỉnh sửa - giám đốc"))
+                    break;
+                if (i == Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count - 1)
+                    AnButton();
+            }
             dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
             cbLoaiNV.DataSource = loaiNhanVienBLL.LayDanhSachLoaiNhanVien();
             cbLoaiNV.DisplayMember = "TenLoaiNhanVien";
@@ -183,39 +198,46 @@ namespace QuanLyDiaOc.GUI
             {
                 if (KiemTraThongTinHopLe())
                 {
-                    int gioiTinh = 1;
-                    if (rbNu.Checked)
-                        gioiTinh = 0;
-
-                    NhanVienDTO nhanVienDTO = new NhanVienDTO(
-                        Int32.Parse(cbLoaiNV.SelectedValue.ToString()), 
-                        Int32.Parse(cbPhongBan.SelectedValue.ToString()), 
-                        Int32.Parse(cbBangCap.SelectedValue.ToString()),
-                        txtTenNV.Text, 
-                        txtCMND.Text,
-                        gioiTinh, 
-                        Convert.ToDateTime(dtpNgaySinh.Text),
-                        txtDiaChi.Text, 
-                        txtSoDienThoai.Text,
-                        txtEmail.Text,
-                        txtTenDangNhap.Text,
-                        txtMatKhau.Text);
-
-                    try
+                    if (nhanVienBLL.KiemTraTaiKhoan(txtTenDangNhap.Text.ToString()).Rows.Count == 0)
                     {
-                        if (nhanVienBLL.ThemNhanVien(nhanVienDTO))
+                        int gioiTinh = 1;
+                        if (rbNu.Checked)
+                            gioiTinh = 0;
+
+                        NhanVienDTO nhanVienDTO = new NhanVienDTO(
+                            Int32.Parse(cbLoaiNV.SelectedValue.ToString()),
+                            Int32.Parse(cbPhongBan.SelectedValue.ToString()),
+                            Int32.Parse(cbBangCap.SelectedValue.ToString()),
+                            txtTenNV.Text,
+                            txtCMND.Text,
+                            gioiTinh,
+                            Convert.ToDateTime(dtpNgaySinh.Text),
+                            txtDiaChi.Text,
+                            txtSoDienThoai.Text,
+                            txtEmail.Text,
+                            txtTenDangNhap.Text,
+                            txtMatKhau.Text);
+
+                        try
                         {
-                            MessageBox.Show("Thêm nhân viên thành công");
-                            dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                            if (nhanVienBLL.ThemNhanVien(nhanVienDTO))
+                            {
+                                MessageBox.Show("Thêm nhân viên thành công");
+                                dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm nhân viên thất bại");
+                            }
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Thêm nhân viên thất bại");
                         }
                     }
-                    catch
+                    else
                     {
-                    }
+                        MessageBox.Show("Tên tài khoản đã tồn tại");
+                    }  
                 }
             }
         }
@@ -265,27 +287,34 @@ namespace QuanLyDiaOc.GUI
                 {
                     if (KiemTraThongTinHopLe())
                     {
-                        int gioiTinh = 1;
-                        if (rbNu.Checked)
-                            gioiTinh = 0;
-
-                        NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), Int32.Parse(cbBangCap.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
-
-                        try
+                        if (nhanVienBLL.KiemTraTaiKhoan(txtTenDangNhap.Text.ToString()).Rows.Count == 0)
                         {
-                            if (nhanVienBLL.SuaNhanVien(nhanVienDTO))
+                            int gioiTinh = 1;
+                            if (rbNu.Checked)
+                                gioiTinh = 0;
+
+                            NhanVienDTO nhanVienDTO = new NhanVienDTO(Int32.Parse(txtMaNV.Text), Int32.Parse(cbLoaiNV.SelectedValue.ToString()), Int32.Parse(cbPhongBan.SelectedValue.ToString()), Int32.Parse(cbBangCap.SelectedValue.ToString()), txtTenNV.Text, txtCMND.Text, gioiTinh, Convert.ToDateTime(dtpNgaySinh.Text), txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, txtTenDangNhap.Text, txtMatKhau.Text);
+
+                            try
                             {
-                                MessageBox.Show("Sửa nhân viên thành công");
-                                dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
-                                LamMoiThongTin();
+                                if (nhanVienBLL.SuaNhanVien(nhanVienDTO))
+                                {
+                                    MessageBox.Show("Sửa nhân viên thành công");
+                                    dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                                    LamMoiThongTin();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Sửa nhân viên thất bại");
+                                }
                             }
-                            else
+                            catch
                             {
-                                MessageBox.Show("Sửa nhân viên thất bại");
                             }
                         }
-                        catch
+                        else
                         {
+                            MessageBox.Show("Tên tài khoản đã tồn tại");
                         }
                     }
                 }

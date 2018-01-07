@@ -22,7 +22,7 @@ namespace QuanLyDiaOc.GUI
         public FormPhanQuyen()
         {
             InitializeComponent();
-
+            
             quyenHanBLL = new QuyenHanBLL();
             loaiNhanVienBLL = new LoaiNhanVienBLL();
             phanQuyenBLL = new PhanQuyenBLL();

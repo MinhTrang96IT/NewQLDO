@@ -63,6 +63,8 @@ namespace QuanLyDiaOc.GUI
                 if (e.X >= rect.Right - btnCloseSize && e.X <= rect.Right && e.Y >= rect.Top && e.Y <= rect.Top + btnCloseSize)
                 {
                     tabCtlChinh.TabPages.RemoveAt(tabCtlChinh.SelectedIndex);
+                    if (tabCtlChinh.TabCount == 0)
+                        pbHinhNen.Visible = true;
                     return;
                 }
             }
@@ -80,9 +82,43 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
+        private void AnGiaoDien()
+        {
+            kiểmDuyệtToolStripMenuItem.Visible = false;
+            thôngKêToolStripMenuItem.Visible = false;
+            quyĐịnhToolStripMenuItem.Visible = false;
+            phânQuyềnToolStripMenuItem.Visible = false;
+        }
+
+        private void HienGiaoDien()
+        {
+            thôngKêToolStripMenuItem.Visible = true;
+            quyĐịnhToolStripMenuItem.Visible = true;
+            phânQuyềnToolStripMenuItem.Visible = true;
+        }
+
+        private void FormTrangChu_FormClosed(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
+            Chung.loaiNhanVien = LoaiNhanVien;
             lbNguoiDung.Text = "Người dùng: " + TenNhanVien + " - " + LoaiNhanVien;
+            AnGiaoDien();
+            foreach(string quyenHan in Chung.LayDSQuyenHan(Chung.loaiNhanVien))
+            {
+                if (quyenHan.Equals("Điều hành"))
+                {
+                    HienGiaoDien();
+                }
+
+                if (quyenHan.Contains("Kiểm duyệt"))
+                {
+                    kiểmDuyệtToolStripMenuItem.Visible = true;
+                }
+            }
         }
 
         private void loạiĐịaỐcToolStripMenuItem_Click(object sender, EventArgs e)
@@ -364,7 +400,7 @@ namespace QuanLyDiaOc.GUI
             formTimKiem.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Tìm kiếm");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formTimKiem);
-  tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
         private void giấyTờToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -376,6 +412,17 @@ namespace QuanLyDiaOc.GUI
             tabCtlChinh.TabPages.Add("Giấy tờ");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formGiayTo);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (pbHinhNen.Visible == true)
+                pbHinhNen.Visible = false;
         }
     }
 }

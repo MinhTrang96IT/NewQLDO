@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.rbDaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.rbChuaKiemDuyet = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.LyDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiKiemDuyet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbThongTinKH.SuspendLayout();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDangKy)).BeginInit();
@@ -66,6 +66,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTinKH.Controls.Add(this.rbChuaKiemDuyet);
@@ -94,9 +95,18 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin ngưng đăng ký dịch vụ";
             // 
+            // txtMaPhieuDangKy
+            // 
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(198, 74);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
+            this.txtMaPhieuDangKy.TabIndex = 39;
+            // 
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(638, 150);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -108,6 +118,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(510, 150);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -281,6 +292,7 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvHuyDangKy);
             this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
@@ -359,14 +371,6 @@
             this.LyDoKhongDuyet.Name = "LyDoKhongDuyet";
             this.LyDoKhongDuyet.Width = 110;
             // 
-            // txtMaPhieuDangKy
-            // 
-            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(198, 74);
-            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
-            this.txtMaPhieuDangKy.ReadOnly = true;
-            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
-            this.txtMaPhieuDangKy.TabIndex = 39;
-            // 
             // FormHuyDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,7 +379,7 @@
             this.Controls.Add(this.gbThongTinKH);
             this.Controls.Add(this.gbDanhSachKH);
             this.Name = "FormHuyDangKy";
-            this.Text = "FormHuyDangKy";
+            this.Text = "Form Hủy Đăng Ký";
             this.Load += new System.EventHandler(this.FormHuyDangKy_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

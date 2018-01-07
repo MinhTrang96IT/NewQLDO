@@ -53,8 +53,9 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvLoaiQuangCao);
-            this.gbDanhSachKH.Location = new System.Drawing.Point(185, 269);
+            this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
             this.gbDanhSachKH.Size = new System.Drawing.Size(973, 328);
             this.gbDanhSachKH.TabIndex = 11;
@@ -165,7 +166,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 108);
+            this.label2.Location = new System.Drawing.Point(147, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 1;
@@ -174,7 +175,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 64);
+            this.label1.Location = new System.Drawing.Point(148, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
@@ -182,6 +183,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtTimKiem);
             this.gbThongTinKH.Controls.Add(this.btnTaoMoi);
@@ -194,7 +196,7 @@
             this.gbThongTinKH.Controls.Add(this.label3);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
-            this.gbThongTinKH.Location = new System.Drawing.Point(185, 11);
+            this.gbThongTinKH.Location = new System.Drawing.Point(105, 8);
             this.gbThongTinKH.Name = "gbThongTinKH";
             this.gbThongTinKH.Size = new System.Drawing.Size(973, 245);
             this.gbThongTinKH.TabIndex = 10;
@@ -235,7 +237,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormLoaiQuangCao";
-            this.Text = "FormLoaiQuangCao";
+            this.Text = "Form Loại Quảng Cáo";
             this.Load += new System.EventHandler(this.FormLoaiQuangCao_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiQuangCao)).EndInit();

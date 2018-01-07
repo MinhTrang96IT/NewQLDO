@@ -33,6 +33,30 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public DataTable LayDanhSachTenQuyenHanTheoLoaiNhanVien(string ten)
+        {
+            try
+            {
+                OpenConnect();
+                DataTable data = new DataTable();
+                string store = "sp_PhanQuyen_LayDanhSachTenQuyenHanTheoLoaiNhanVien";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@ten", ten));
+                sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(data);
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public bool CapNhatPhanQuyen(int loai, List<int> list)
         {
             if (!XoaPhanQuyen(loai)) return false;

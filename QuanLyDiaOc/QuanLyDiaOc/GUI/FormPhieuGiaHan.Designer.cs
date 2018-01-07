@@ -64,11 +64,11 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbThongTinKH = new System.Windows.Forms.GroupBox();
+            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.txtPhanTramGiaHan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaPhieuGiaHan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaPhieuDangKy = new System.Windows.Forms.TextBox();
             this.gbDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
             this.gbThongTinKH.SuspendLayout();
@@ -77,6 +77,7 @@
             // rbDaKiemDuyet
             // 
             this.rbDaKiemDuyet.AutoSize = true;
+            this.rbDaKiemDuyet.Enabled = false;
             this.rbDaKiemDuyet.Location = new System.Drawing.Point(863, 58);
             this.rbDaKiemDuyet.Name = "rbDaKiemDuyet";
             this.rbDaKiemDuyet.Size = new System.Drawing.Size(93, 17);
@@ -88,6 +89,7 @@
             // 
             this.rbChuaKiemDuyet.AutoSize = true;
             this.rbChuaKiemDuyet.Checked = true;
+            this.rbChuaKiemDuyet.Enabled = false;
             this.rbChuaKiemDuyet.Location = new System.Drawing.Point(749, 58);
             this.rbChuaKiemDuyet.Name = "rbChuaKiemDuyet";
             this.rbChuaKiemDuyet.Size = new System.Drawing.Size(104, 17);
@@ -165,6 +167,7 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvPhieuGiaHan);
             this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
@@ -393,6 +396,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.txtMaPhieuDangKy);
             this.gbThongTinKH.Controls.Add(this.txtPhanTramGiaHan);
             this.gbThongTinKH.Controls.Add(this.label4);
@@ -429,6 +433,14 @@
             this.gbThongTinKH.TabStop = false;
             this.gbThongTinKH.Text = "Thông tin phiếu gia hạn";
             // 
+            // txtMaPhieuDangKy
+            // 
+            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(123, 84);
+            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
+            this.txtMaPhieuDangKy.ReadOnly = true;
+            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
+            this.txtMaPhieuDangKy.TabIndex = 55;
+            // 
             // txtPhanTramGiaHan
             // 
             this.txtPhanTramGiaHan.Location = new System.Drawing.Point(431, 149);
@@ -463,14 +475,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chi phí:";
             // 
-            // txtMaPhieuDangKy
-            // 
-            this.txtMaPhieuDangKy.Location = new System.Drawing.Point(123, 84);
-            this.txtMaPhieuDangKy.Name = "txtMaPhieuDangKy";
-            this.txtMaPhieuDangKy.ReadOnly = true;
-            this.txtMaPhieuDangKy.Size = new System.Drawing.Size(139, 20);
-            this.txtMaPhieuDangKy.TabIndex = 55;
-            // 
             // FormPhieuGiaHan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,7 +483,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormPhieuGiaHan";
-            this.Text = "FormPhieuGiaHan";
+            this.Text = "Form Phiếu Gia Hạn";
             this.Load += new System.EventHandler(this.FormPhieuGiaHan_Load);
             this.gbDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).EndInit();

@@ -70,6 +70,7 @@
             // 
             // gbThongTinKH
             // 
+            this.gbThongTinKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTinKH.Controls.Add(this.btnQuanLyDiaOc);
             this.gbThongTinKH.Controls.Add(this.label9);
             this.gbThongTinKH.Controls.Add(this.txtTimKiem);
@@ -94,7 +95,7 @@
             this.gbThongTinKH.Controls.Add(this.label3);
             this.gbThongTinKH.Controls.Add(this.label2);
             this.gbThongTinKH.Controls.Add(this.label1);
-            this.gbThongTinKH.Location = new System.Drawing.Point(185, 11);
+            this.gbThongTinKH.Location = new System.Drawing.Point(105, 8);
             this.gbThongTinKH.Name = "gbThongTinKH";
             this.gbThongTinKH.Size = new System.Drawing.Size(973, 245);
             this.gbThongTinKH.TabIndex = 0;
@@ -320,8 +321,9 @@
             // 
             // gbDanhSachKH
             // 
+            this.gbDanhSachKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSachKH.Controls.Add(this.dgvKhachHang);
-            this.gbDanhSachKH.Location = new System.Drawing.Point(185, 269);
+            this.gbDanhSachKH.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSachKH.Name = "gbDanhSachKH";
             this.gbDanhSachKH.Size = new System.Drawing.Size(973, 328);
             this.gbDanhSachKH.TabIndex = 1;
@@ -417,7 +419,7 @@
             this.Controls.Add(this.gbDanhSachKH);
             this.Controls.Add(this.gbThongTinKH);
             this.Name = "FormKhachHang";
-            this.Text = "FormKhachHang";
+            this.Text = "Form Khách Hàng";
             this.Load += new System.EventHandler(this.FormKhachHang_Load);
             this.gbThongTinKH.ResumeLayout(false);
             this.gbThongTinKH.PerformLayout();

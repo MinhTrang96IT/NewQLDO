@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.cbBangCap = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnThemLoaiPB = new System.Windows.Forms.Button();
             this.btnThemLoaiNV = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -77,8 +79,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbBangCap = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.gbThongTin.SuspendLayout();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -86,6 +86,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbThongTin.Controls.Add(this.cbBangCap);
             this.gbThongTin.Controls.Add(this.label14);
             this.gbThongTin.Controls.Add(this.btnThemLoaiPB);
@@ -127,6 +128,24 @@
             this.gbThongTin.TabIndex = 0;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin nhân viên";
+            // 
+            // cbBangCap
+            // 
+            this.cbBangCap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBangCap.FormattingEnabled = true;
+            this.cbBangCap.Location = new System.Drawing.Point(128, 134);
+            this.cbBangCap.Name = "cbBangCap";
+            this.cbBangCap.Size = new System.Drawing.Size(121, 21);
+            this.cbBangCap.TabIndex = 52;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 137);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 13);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "Bằng cấp:";
             // 
             // btnThemLoaiPB
             // 
@@ -422,6 +441,7 @@
             // 
             // gbDanhSanh
             // 
+            this.gbDanhSanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSanh.Controls.Add(this.dgvNhanVien);
             this.gbDanhSanh.Location = new System.Drawing.Point(185, 269);
             this.gbDanhSanh.Name = "gbDanhSanh";
@@ -547,25 +567,8 @@
             this.MatKhau.DataPropertyName = "MatKhau";
             this.MatKhau.HeaderText = "Mật khẩu";
             this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Visible = false;
             this.MatKhau.Width = 71;
-            // 
-            // cbBangCap
-            // 
-            this.cbBangCap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBangCap.FormattingEnabled = true;
-            this.cbBangCap.Location = new System.Drawing.Point(128, 134);
-            this.cbBangCap.Name = "cbBangCap";
-            this.cbBangCap.Size = new System.Drawing.Size(121, 21);
-            this.cbBangCap.TabIndex = 52;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(33, 137);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 13);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Bằng cấp:";
             // 
             // FormNhanVien
             // 
@@ -574,8 +577,10 @@
             this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.gbDanhSanh);
             this.Controls.Add(this.gbThongTin);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormNhanVien";
-            this.Text = "FormNhanVien";
+            this.Text = "Form Nhân Viên";
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
@@ -623,6 +628,8 @@
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.Button btnThemLoaiPB;
         private System.Windows.Forms.Button btnThemLoaiNV;
+        private System.Windows.Forms.ComboBox cbBangCap;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLPhongBan;
@@ -636,7 +643,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.ComboBox cbBangCap;
-        private System.Windows.Forms.Label label14;
     }
 }

@@ -38,6 +38,13 @@ AS
 	SELECT MaNhanVien, TenLoaiNhanVien, TenLPhongBan, TenNhanVien, TenBangCap, CMND, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email, TenDangNhap, MatKhau FROM NhanVien, LoaiNhanVien, PhongBan, BangCap WHERE NhanVien.MaLoaiNhanVien = LoaiNhanVien.MaLoaiNhanVien AND NhanVien.MaPhongBan = PhongBan.MaPhongBan AND NhanVien.MaBangCap = BangCap.MaBangCap
 GO
 
+CREATE PROC sp_NhanVien_KiemTra
+@ten nvarchar(30)
+
+AS
+	SELECT * FROM NhanVien WHERE TenDangNhap=@ten
+GO
+
 CREATE PROC sp_NhanVien_Them
 @maLoaiNV int,
 @maPB int,

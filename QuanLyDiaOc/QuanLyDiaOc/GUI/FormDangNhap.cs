@@ -41,5 +41,31 @@ namespace QuanLyDiaOc.GUI
                 MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            base.ProcessDialogKey(keyData);
+            if (keyData == (Keys.Enter))
+            {
+                btnDangNhap_Click(null, null);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
+        {
+            btnDangNhap.TabStop = false;
+            btnCauHinh.TabStop = false;
+            btnThoat.TabStop = false;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -27,8 +27,23 @@ namespace QuanLyDiaOc.GUI
             MaPDKTuFormPDK = maPhieuDangKy;
         }
 
+        private void AnButton()
+        {
+            btnTaoMoi.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+        }
+
         private void FormChiTietQuangCao_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count; i++)
+            {
+                if (Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Contains("Chỉnh sửa") && !Chung.LayDSQuyenHan(Chung.loaiNhanVien)[i].Equals("Chỉnh sửa - nhân viên quảng cáo"))
+                    break;
+                if (i == Chung.LayDSQuyenHan(Chung.loaiNhanVien).Count - 1)
+                    AnButton();
+            }
             if (MaPDKTuFormPDK == 0)
             {
                 txtMaPhieuDangKy.Visible = false;

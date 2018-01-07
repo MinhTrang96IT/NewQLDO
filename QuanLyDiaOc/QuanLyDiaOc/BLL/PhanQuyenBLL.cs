@@ -17,6 +17,11 @@ namespace QuanLyDiaOc.BLL
             return phanQuyenDAL.LayDanhSachPhanQuyen();
         }
 
+        public DataTable LayDanhSachTenQuyenHanTheoLoaiNhanVien(string ten)
+        {
+            return phanQuyenDAL.LayDanhSachTenQuyenHanTheoLoaiNhanVien(ten);
+        }
+
         public bool CapNhatPhanQuyen(int loai, List<int> list)
         {
             return phanQuyenDAL.CapNhatPhanQuyen(loai, list);

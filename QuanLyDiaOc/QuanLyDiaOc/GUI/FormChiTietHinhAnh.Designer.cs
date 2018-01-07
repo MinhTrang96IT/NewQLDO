@@ -56,6 +56,7 @@
             // 
             // gbChiTietHinhAnh
             // 
+            this.gbChiTietHinhAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbChiTietHinhAnh.Controls.Add(this.btnSua);
             this.gbChiTietHinhAnh.Controls.Add(this.btnXoa);
             this.gbChiTietHinhAnh.Controls.Add(this.btnTaoMoi);
@@ -199,6 +200,7 @@
             // 
             // gbDanhSach
             // 
+            this.gbDanhSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbDanhSach.Controls.Add(this.dgvChiTietHinhAnh);
             this.gbDanhSach.Location = new System.Drawing.Point(105, 266);
             this.gbDanhSach.Name = "gbDanhSach";
@@ -260,7 +262,7 @@
             this.Controls.Add(this.gbDanhSach);
             this.Controls.Add(this.gbChiTietHinhAnh);
             this.Name = "FormChiTietHinhAnh";
-            this.Text = "FormChiTietHinhAnh";
+            this.Text = "Form Chi Tiết Hình Ảnh";
             this.Load += new System.EventHandler(this.FormChiTietHinhAnh_Load);
             this.gbChiTietHinhAnh.ResumeLayout(false);
             this.gbChiTietHinhAnh.PerformLayout();

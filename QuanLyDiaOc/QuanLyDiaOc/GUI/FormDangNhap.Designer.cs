@@ -52,12 +52,13 @@
             this.btnCauHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCauHinh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCauHinh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCauHinh.Location = new System.Drawing.Point(216, 209);
+            this.btnCauHinh.Location = new System.Drawing.Point(12, 12);
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.Size = new System.Drawing.Size(112, 47);
             this.btnCauHinh.TabIndex = 23;
             this.btnCauHinh.Text = "Cấu Hình";
             this.btnCauHinh.UseVisualStyleBackColor = false;
+            this.btnCauHinh.Visible = false;
             // 
             // label5
             // 
@@ -65,9 +66,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(244, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 15);
+            this.label5.Size = new System.Drawing.Size(60, 15);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Mật khẩu";
+            this.label5.Text = "Mật khẩu:";
             // 
             // label4
             // 
@@ -75,9 +76,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(243, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Tài khoản";
+            this.label4.Text = "Tài khoản:";
             // 
             // label6
             // 
@@ -100,12 +101,13 @@
             this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(452, 209);
+            this.btnThoat.Location = new System.Drawing.Point(385, 209);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(106, 47);
             this.btnThoat.TabIndex = 20;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
@@ -117,7 +119,7 @@
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDangNhap.Location = new System.Drawing.Point(334, 209);
+            this.btnDangNhap.Location = new System.Drawing.Point(247, 209);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(112, 47);
             this.btnDangNhap.TabIndex = 19;
@@ -163,7 +165,7 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Quản lý địa ốc";
             // 
-            // DangNhap
+            // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,9 +181,13 @@
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "DangNhap";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
