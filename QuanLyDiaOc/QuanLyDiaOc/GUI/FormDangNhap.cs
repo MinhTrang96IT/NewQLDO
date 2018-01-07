@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDiaOc.BLL;
+using System.Xml;
+using QuanLyDiaOc.DAL;
 
 namespace QuanLyDiaOc.GUI
 {
@@ -23,28 +25,34 @@ namespace QuanLyDiaOc.GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text).Rows.Count > 0)
+            if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text) != null)
             {
-                maNhanVienDangNhap = nhanVienBLL.LayMaNhanVien(txtTaiKhoan.Text);
-                FormTrangChu formTrangChu = new FormTrangChu();
-                formTrangChu.TenNhanVien = nhanVienBLL.LayTenNhanVien(txtTaiKhoan.Text);
-                formTrangChu.LoaiNhanVien = nhanVienBLL.LayTenLoaiNhanVien(nhanVienBLL.LayMaLoaiNhanVien(txtTaiKhoan.Text));
-                formTrangChu.Show();
-                this.Hide();
-            }
-            else if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
-            {
-                MessageBox.Show(this, "Phải nhập đủ tên đăng nhập và mật khẩu!!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (nhanVienBLL.KiemTraDangNhap(txtTaiKhoan.Text, txtMatKhau.Text).Rows.Count > 0)
+                {
+                    maNhanVienDangNhap = nhanVienBLL.LayMaNhanVien(txtTaiKhoan.Text);
+                    FormTrangChu formTrangChu = new FormTrangChu();
+                    formTrangChu.TenNhanVien = nhanVienBLL.LayTenNhanVien(txtTaiKhoan.Text);
+                    formTrangChu.LoaiNhanVien = nhanVienBLL.LayTenLoaiNhanVien(nhanVienBLL.LayMaLoaiNhanVien(txtTaiKhoan.Text));
+                    formTrangChu.Show();
+                    this.Hide();
+                }
+                else if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
+                {
+                    MessageBox.Show(this, "Phải nhập đủ tên đăng nhập và mật khẩu!!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Vui lòng kiểm tra lại cấu hình!", "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            base.ProcessDialogKey(keyData);
             if (keyData == (Keys.Enter))
             {
                 btnDangNhap_Click(null, null);
@@ -52,7 +60,7 @@ namespace QuanLyDiaOc.GUI
             }
             else
             {
-                return false;
+                return base.ProcessDialogKey(keyData);
             }
         }
 
@@ -61,11 +69,18 @@ namespace QuanLyDiaOc.GUI
             btnDangNhap.TabStop = false;
             btnCauHinh.TabStop = false;
             btnThoat.TabStop = false;
+            btnCauHinh.TabStop = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCauHinh_Click(object sender, EventArgs e)
+        {
+            DialogCauHinh dialogCauHinh = new DialogCauHinh();
+            dialogCauHinh.ShowDialog();
         }
     }
 }

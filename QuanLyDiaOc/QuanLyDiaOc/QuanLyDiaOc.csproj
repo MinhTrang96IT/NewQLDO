@@ -189,6 +189,12 @@
     <Compile Include="GUI\DialogBaiViet.Designer.cs">
       <DependentUpon>DialogBaiViet.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogCauHinh.Designer.cs">
+      <DependentUpon>DialogCauHinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogChiTietQuangCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +411,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="GUI\DialogBaiViet.resx">
       <DependentUpon>DialogBaiViet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogCauHinh.resx">
+      <DependentUpon>DialogCauHinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogChiTietQuangCao.resx">
       <DependentUpon>DialogChiTietQuangCao.cs</DependentUpon>

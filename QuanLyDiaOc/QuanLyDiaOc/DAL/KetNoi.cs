@@ -30,10 +30,13 @@ namespace QuanLyDiaOc.DAL
 
         public void CloseConnect()
         {
-            if (connect.State != ConnectionState.Closed)
+            if (connect != null)
             {
-                connect.Close();
-                connect.Dispose();
+                if (connect.State != ConnectionState.Closed)
+                {
+                    connect.Close();
+                    connect.Dispose();
+                }
             }
         }
 
