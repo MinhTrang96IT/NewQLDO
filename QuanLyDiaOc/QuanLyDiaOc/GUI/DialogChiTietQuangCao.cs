@@ -34,11 +34,14 @@ namespace QuanLyDiaOc.GUI
             lblLoaiQuangCao.Text = rowCTQC["TenLoaiQuangCao"].ToString();
             lblViTri.Text = rowCTQC["TenViTri"].ToString();
             lblTenBao.Text = rowCTQC["TenBao"].ToString();
-            lblNgayBD.Text = rowCTQC["NgayBatDau"].ToString();
-            lblNgayKT.Text = rowCTQC["NgayKetThuc"].ToString();
+            lblNgayBD.Text = rowCTQC["NgayBatDau"].ToString().Split(' ')[0];
+            lblNgayKT.Text = rowCTQC["NgayKetThuc"].ToString().Split(' ')[0];
             lblSoLuongPH.Text = rowCTQC["SoLuongPhatHanh"].ToString();
             lblKichThuoc.Text = rowCTQC["KichThuoc"].ToString();
-            lblTrangThai.Text = rowCTQC["TrangThaiKiemDuyet"].ToString();
+            if (rowCTQC["TrangThaiKiemDuyet"].ToString().Equals("1"))
+                lblTrangThai.Text = "Đã duyệt";
+            else
+                lblTrangThai.Text = "Chưa duyệt";
             lblLyDoCTQC.Text = rowCTQC["LyDoKhongDuyet"].ToString();
         }
 

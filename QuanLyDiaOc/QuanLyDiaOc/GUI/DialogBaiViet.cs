@@ -36,7 +36,10 @@ namespace QuanLyDiaOc.GUI
             lblMaCTQC.Text = rowBV["MaChiTietQuangCao"].ToString();
             lblMaNVBV.Text = rowBV["MaNhanVien"].ToString();
             lblNoiDung.Text = rowBV["NoiDungBaiViet"].ToString();
-            lblTrangThai.Text = rowBV["TrangThaiKiemDuyet"].ToString();
+            if (rowBV["TrangThaiKiemDuyet"].ToString().Equals("1"))
+                lblTrangThai.Text = "Đã duyệt";
+            else
+                lblTrangThai.Text = "Chưa duyệt";
             lblLyDo.Text = rowBV["LyDoKhongDuyet"].ToString();
         }
 
@@ -48,7 +51,10 @@ namespace QuanLyDiaOc.GUI
             lblTenNV.Text = rowNV["TenNhanVien"].ToString();
             lblTenBC.Text = rowNV["TenBangCap"].ToString();
             lblCMNDNV.Text = rowNV["CMND"].ToString();
-            lblGioiTinhNV.Text = rowNV["GioiTinh"].ToString();
+            if (rowNV["GioiTinh"].ToString().Equals("True"))
+                lblGioiTinhNV.Text = "Nam";
+            else
+                lblGioiTinhNV.Text = "Nữ";
             lblNgaySinhNV.Text = rowNV["NgaySinh"].ToString();
             lblDiaChiNV.Text = rowNV["DiaChi"].ToString();
             lblEmailNV.Text = rowNV["Email"].ToString();

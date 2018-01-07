@@ -65,10 +65,16 @@ namespace QuanLyDiaOc.GUI
             lblChieuDaiDat.Text = rowDO["ChieuDaiNha"].ToString();
             lblChieuRongDat.Text = rowDO["ChieuRongNha"].ToString();
             lblSoTang.Text = rowDO["SoTang"].ToString();
-            lblMoTaChiTiet.Text = rowDO["MoTaChiTiet"].ToString();
+            lblMoTaChiTiet.Text = rowDO["MoTaChiTiet"].ToString(); 
             lblGiaBan.Text = rowDO["GiaBan"].ToString();
-            lblTrangThaiKiemDuyet.Text = rowDO["TrangThaiKiemDuyet"].ToString();
-            lblTrangThaiMuaBan.Text = rowDO["TrangThaiMuaBan"].ToString();
+            if (rowDO["TrangThaiKiemDuyet"].ToString().Equals("1"))
+                lblTrangThaiKiemDuyet.Text = "Đã duyệt";
+            else
+                lblTrangThaiKiemDuyet.Text = "Chưa duyệt";
+            if (rowDO["TrangThaiMuaBan"].ToString().Equals("True"))
+                lblTrangThaiMuaBan.Text = "Đã mua";
+            else
+                lblTrangThaiMuaBan.Text = "Chưa mua";
             lblLyDoDO.Text = rowDO["LyDoKhongDuyet"].ToString();
         }
 
@@ -77,7 +83,10 @@ namespace QuanLyDiaOc.GUI
             lblMaKH.Text = rowKH["MaKhachHang"].ToString();
             lblTenKHang.Text = rowKH["TenKhachHang"].ToString();
             lblCMNDKH.Text = rowKH["CMND"].ToString();
-            lblGTKH.Text = rowKH["GioiTinh"].ToString();
+            if (rowKH["GioiTinh"].ToString().Equals("True"))
+                lblGTKH.Text = "Nam";
+            else
+                lblGTKH.Text = "Nữ";
             lblNamSinhKH.Text = rowKH["NamSinh"].ToString();
             lblDiaChiKH.Text = rowKH["DiaChi"].ToString();
             lblEmailKH.Text = rowKH["Email"].ToString();
@@ -92,7 +101,10 @@ namespace QuanLyDiaOc.GUI
             lblTenNV.Text = rowNV["TenNhanVien"].ToString();
             lblTenBC.Text = rowNV["TenBangCap"].ToString();
             lblCMNDNV.Text = rowNV["CMND"].ToString();
-            lblGioiTinhNV.Text = rowNV["GioiTinh"].ToString();
+            if (rowNV["GioiTinh"].ToString().Equals("True"))
+                lblGioiTinhNV.Text = "Nam";
+            else
+                lblGioiTinhNV.Text = "Nữ";
             lblNgaySinhNV.Text = rowNV["NgaySinh"].ToString();
             lblDiaChiNV.Text = rowNV["DiaChi"].ToString();
             lblEmailNV.Text = rowNV["Email"].ToString();

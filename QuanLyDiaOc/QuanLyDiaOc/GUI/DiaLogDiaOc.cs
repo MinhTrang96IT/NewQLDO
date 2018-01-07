@@ -47,8 +47,14 @@ namespace QuanLyDiaOc.GUI
             lblSoTang.Text = rowDO["SoTang"].ToString();
             lblMoTaChiTiet.Text = rowDO["MoTaChiTiet"].ToString();
             lblGiaBan.Text = rowDO["GiaBan"].ToString();
-            lblTrangThaiKiemDuyet.Text = rowDO["TrangThaiKiemDuyet"].ToString();
-            lblTrangThaiMuaBan.Text = rowDO["TrangThaiMuaBan"].ToString();
+            if (rowDO["TrangThaiKiemDuyet"].ToString().Equals("1"))
+                lblTrangThaiKiemDuyet.Text = "Đã duyệt";
+            else
+                lblTrangThaiKiemDuyet.Text = "Chưa duyệt";
+            if (rowDO["TrangThaiMuaBan"].ToString().Equals("True"))
+                lblTrangThaiMuaBan.Text = "Đã mua";
+            else
+                lblTrangThaiMuaBan.Text = "Chưa mua";
             lblLyDoDO.Text = rowDO["LyDoKhongDuyet"].ToString();
         }
 
@@ -57,7 +63,10 @@ namespace QuanLyDiaOc.GUI
             lblMaKH.Text = rowKH["MaKhachHang"].ToString();
             lblTenKHang.Text = rowKH["TenKhachHang"].ToString();
             lblCMNDKH.Text = rowKH["CMND"].ToString();
-            lblGTKH.Text = rowKH["GioiTinh"].ToString();
+            if (rowKH["GioiTinh"].ToString().Equals("True"))
+                lblGTKH.Text = "Nam";
+            else
+                lblGTKH.Text = "Nữ";
             lblNamSinhKH.Text = rowKH["NamSinh"].ToString();
             lblDiaChiKH.Text = rowKH["DiaChi"].ToString();
             lblEmailKH.Text = rowKH["Email"].ToString();
