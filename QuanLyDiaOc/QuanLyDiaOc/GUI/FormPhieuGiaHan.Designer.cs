@@ -379,9 +379,9 @@
             // 
             // txtTongTien
             // 
+            this.txtTongTien.Enabled = false;
             this.txtTongTien.Location = new System.Drawing.Point(431, 120);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(190, 20);
             this.txtTongTien.TabIndex = 8;
             // 
@@ -443,9 +443,9 @@
             // 
             // txtPhanTramGiaHan
             // 
+            this.txtPhanTramGiaHan.Enabled = false;
             this.txtPhanTramGiaHan.Location = new System.Drawing.Point(431, 149);
             this.txtPhanTramGiaHan.Name = "txtPhanTramGiaHan";
-            this.txtPhanTramGiaHan.ReadOnly = true;
             this.txtPhanTramGiaHan.Size = new System.Drawing.Size(87, 20);
             this.txtPhanTramGiaHan.TabIndex = 54;
             // 

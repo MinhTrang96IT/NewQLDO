@@ -69,6 +69,7 @@ namespace QuanLyDiaOc.GUI
                 if (phieuGiaHanBLL.ThemPhieuGiaHan(phieuGiaHanDTO))
                 {
                     MessageBox.Show("Thêm phiếu gia hạn thành công");
+                            phieuGiaHanBLL.TangSoLanGiaHan(phieuGiaHanDTO.MaPhieuDangKy);
                     if (MaPDKTuFormPDK == 0)
                     {
                         dgvPhieuGiaHan.DataSource = phieuGiaHanBLL.LayDanhSachPhieuPhieuGiaHanCoTen();
@@ -223,7 +224,9 @@ namespace QuanLyDiaOc.GUI
             cbNhanVien.DisplayMember = "TenNhanVien";
             cbNhanVien.ValueMember = "MaNhanVien";
             txtPhanTramGiaHan.Text = quyDinhBLL.LayLaiSuatTreHanThanhToan();
-            double chiphi = Double.Parse(phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString())).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString());
+            if (txtPhanTramGiaHan.Text == "")
+                txtPhanTramGiaHan.Text = "0.1";
+            double chiphi = Double.Parse(phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMa(Int32.Parse(cbMaPhieuDangKy.Text)).Rows[0]["TongTien"].ToString()) * Double.Parse(txtPhanTramGiaHan.Text.ToString());
             txtTongTien.Text = chiphi.ToString();
             LamMoiThongTin();
             checkFormLoad = false;

@@ -52,15 +52,22 @@ namespace QuanLyDiaOc.GUI
             {
                 if (KiemTraThongTinHopLe())
                 {
-                    int trangThaiKiemDuyet = 0;
                     int trangThaiMuaBan = 0;
-                    if (chkTrangThaiKiemDuyet.Checked)
+                    int trangThaiKiemDuyet = 0;
+                    if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
                     if (chkTrangThaiMuaBan.Checked)
                         trangThaiMuaBan = 1;
-
+                    int maKH = 0;
+                    if(MaKhachHangPoup == 0)
+                    {
+                        maKH = Int32.Parse(cbKhachHang.SelectedValue.ToString());
+                    } else
+                    {
+                        maKH = MaKhachHangPoup;
+                    }
                     DiaOcDTO diaOcDTO = new DiaOcDTO(
-                                   Int32.Parse(cbKhachHang.SelectedValue.ToString()),
+                                   maKH,
                                    Int32.Parse(cbLoaiDiaOc.SelectedValue.ToString()),
                                    Int32.Parse(cbLoaiNha.SelectedValue.ToString()),
                                    txtDiaChi.Text.ToString(),
@@ -147,16 +154,26 @@ namespace QuanLyDiaOc.GUI
             {
                 if (KiemTraThongTinHopLe())
                 {
-                    int trangThaiKiemDuyet = 0;
                     int trangThaiMuaBan = 0;
-                    if (chkTrangThaiKiemDuyet.Checked)
+                    int trangThaiKiemDuyet = 0;
+                    if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
                     if (chkTrangThaiMuaBan.Checked)
                         trangThaiMuaBan = 1;
 
+                    int maKH = 0;
+                    if (MaKhachHangPoup == 0)
+                    {
+                        maKH = Int32.Parse(cbKhachHang.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        maKH = MaKhachHangPoup;
+                    }
+
                     DiaOcDTO diaOcDTO = new DiaOcDTO(
                         Int32.Parse(txtMaDiaOc.Text.ToString()),
-                        Int32.Parse(cbKhachHang.SelectedValue.ToString()), 
+                        maKH, 
                         Int32.Parse(cbLoaiDiaOc.SelectedValue.ToString()), 
                         Int32.Parse(cbLoaiNha.SelectedValue.ToString()), 
                         txtDiaChi.Text.ToString(), 
@@ -227,6 +244,7 @@ namespace QuanLyDiaOc.GUI
                 btnThemKhachHang.Visible = false;
                 txtMaKhachHang.Text = MaKhachHangPoup.ToString();
                 dgvDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(MaKhachHangPoup);
+                txtCMND.Text = khachHangBLL.LayDanhSachKhachHangTheoMa(MaKhachHangPoup).Rows[0]["CMND"].ToString();
             }
 
             cbKhachHang.DataSource = khachHangBLL.LayDanhSachKhachHang();
@@ -245,7 +263,6 @@ namespace QuanLyDiaOc.GUI
         private void LamMoiThongTin()
         {
             txtMaDiaOc.Text = cbKhachHang.Text = cbLoaiDiaOc.Text = cbLoaiNha.Text = txtDienTichKhuonVien.Text = txtDiaChi.Text = txtDienTichSuDung.Text = txtHuongNha.Text = txtGiaBan.Text = txtChieuDaiDat.Text = txtChieuRongDat.Text = txtChieuDaiNha.Text = txtChieuRongNha.Text = txtSoTang.Text = txtMoTaChiTiet.Text =  "";
-            chkTrangThaiKiemDuyet.Checked = false;
             chkTrangThaiMuaBan.Checked = false;
             txtDienTichKhuonVien.Focus();
             cbKhachHang.SelectedIndex = 0;
@@ -412,9 +429,9 @@ namespace QuanLyDiaOc.GUI
                     txtDienTichSuDung.Text = row.Cells["DienTichSuDung"].Value.ToString();
                     txtCMND.Text = row.Cells["CMND"].Value.ToString();
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("True"))
-                        chkTrangThaiKiemDuyet.Checked = true;
+                        rbDaKiemDuyet.Checked = true;
                     else
-                        chkTrangThaiKiemDuyet.Checked = false;
+                        rbChuaKiemDuyet.Checked = false;
 
                     if (row.Cells["TrangThaiMuaBan"].Value.ToString().Equals("True"))
                         chkTrangThaiMuaBan.Checked = true;

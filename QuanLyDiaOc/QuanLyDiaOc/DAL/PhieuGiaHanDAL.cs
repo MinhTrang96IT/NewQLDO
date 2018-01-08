@@ -156,6 +156,28 @@ namespace QuanLyDiaOc.DAL
             }
         }
 
+        public bool TangSoLanGiaHan(int maphieudangky)
+        {
+            try
+            {
+                OpenConnect();
+                string store = "sp_PhieuGiaHan_TangSoLanGiaHan";
+                sqlCommand = new SqlCommand(store, connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@maphieudangky", maphieudangky));
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
         public bool SuaPhieuGiaHan(PhieuGiaHanDTO phieuGiaHanDTO)
         {
             try

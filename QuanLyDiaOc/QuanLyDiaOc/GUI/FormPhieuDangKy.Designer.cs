@@ -138,6 +138,7 @@
             // 
             // txtSoLuongQuangCao
             // 
+            this.txtSoLuongQuangCao.Enabled = false;
             this.txtSoLuongQuangCao.Location = new System.Drawing.Point(430, 104);
             this.txtSoLuongQuangCao.Name = "txtSoLuongQuangCao";
             this.txtSoLuongQuangCao.ReadOnly = true;
@@ -146,6 +147,7 @@
             // 
             // txtSoLanGiaHan
             // 
+            this.txtSoLanGiaHan.Enabled = false;
             this.txtSoLanGiaHan.Location = new System.Drawing.Point(806, 77);
             this.txtSoLanGiaHan.Name = "txtSoLanGiaHan";
             this.txtSoLanGiaHan.Size = new System.Drawing.Size(139, 20);
@@ -431,11 +433,13 @@
             // 
             // txtTongTien
             // 
+            this.txtTongTien.Enabled = false;
             this.txtTongTien.Location = new System.Drawing.Point(430, 146);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(139, 20);
             this.txtTongTien.TabIndex = 8;
+            this.txtTongTien.Text = "1000";
             // 
             // txtMaPhieuDangKy
             // 

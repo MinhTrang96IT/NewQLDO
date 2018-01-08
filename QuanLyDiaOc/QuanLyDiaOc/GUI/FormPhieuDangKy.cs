@@ -66,9 +66,10 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                    Convert.ToDateTime(dtpNgayBatDau.Text),
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
-                                   Int32.Parse(txtSoLanGiaHan.Text.ToString()),
+                                   0,
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString())
+                                   Double.Parse("0")
+                                  // Double.Parse(txtTongTien.Text.ToString())
                                    ,"");
 
                     try
@@ -157,7 +158,7 @@ namespace QuanLyDiaOc.GUI
                                    Convert.ToDateTime(dtpNgayKetThuc.Text),
                                    Int32.Parse(txtSoLanGiaHan.Text.ToString()),
                                    trangThaiKiemDuyet,
-                                   Double.Parse(txtTongTien.Text.ToString())
+                                   TinhTongTien()
                                    ,"");
 
                     try
@@ -244,7 +245,8 @@ namespace QuanLyDiaOc.GUI
 
         private void LamMoiThongTin()
         {
-            txtMaPhieuDangKy.Text = cbKhachHang.Text  = cbDiaOc.Text = cbNhanVien.Text = txtSoLanGiaHan.Text = txtTongTien.Text = "";
+            txtMaPhieuDangKy.Text = cbKhachHang.Text  = cbDiaOc.Text = cbNhanVien.Text = txtTongTien.Text = "";
+            txtSoLanGiaHan.Text = "0";
             rbChuaKiemDuyet.Checked = true;
             txtSoLuongQuangCao.Text = "0";
             rbDaKiemDuyet.Checked = false;
@@ -260,7 +262,7 @@ namespace QuanLyDiaOc.GUI
 
         private bool KiemTraThongTinTrong()
         {
-            if ( txtSoLanGiaHan.Text.ToString() == "" || txtTongTien.Text.ToString() == "" )
+            if ( txtSoLanGiaHan.Text.ToString() == "")
             {
                 return true;
             }
@@ -346,9 +348,17 @@ namespace QuanLyDiaOc.GUI
                     }
 
                     if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
+                    {
                         rbDaKiemDuyet.Checked = true;
+                        btnXuatHoaDon.Enabled = true;
+                        btnXuatHopDong.Enabled = true;
+                    }
                     else
+                    {
                         rbChuaKiemDuyet.Checked = true;
+                        btnXuatHoaDon.Enabled = false;
+                        btnXuatHopDong.Enabled = false;
+                    }
                     dtpNgayLapPhieu.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value.ToString());
                     dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value.ToString());
                     dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value.ToString());
@@ -391,6 +401,58 @@ namespace QuanLyDiaOc.GUI
             }
         }
 
+        private void LoadDuLieu()
+        {
+            if (KiemTraThongTinTrong())
+            {
+                MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu đăng ký");
+            }
+            else
+            {
+                if (KiemTraThongTinHopLe())
+                {
+                    int trangThaiKiemDuyet = 0;
+                    if (rbDaKiemDuyet.Checked)
+                        trangThaiKiemDuyet = 1;
+
+                    PhieuDangKyDTO phieuDangKyDTO = new PhieuDangKyDTO(
+                                   Int32.Parse(txtMaPhieuDangKy.Text.ToString()),
+                                   Int32.Parse(cbKhachHang.SelectedValue.ToString()),
+                                   Int32.Parse(cbDiaOc.SelectedValue.ToString()),
+                                   Int32.Parse(cbNhanVien.SelectedValue.ToString()),
+                                   Convert.ToDateTime(dtpNgayLapPhieu.Text),
+                                   Convert.ToDateTime(dtpNgayBatDau.Text),
+                                   Convert.ToDateTime(dtpNgayKetThuc.Text),
+                                   Int32.Parse(txtSoLanGiaHan.Text.ToString()),
+                                   trangThaiKiemDuyet,
+                                   TinhTongTien()
+                                   , "");
+
+                    try
+                    {
+                        if (phieuDangKyBLL.SuaPhieuDangKy(phieuDangKyDTO))
+                        {
+                            if (MaDiaOcPoup == 0)
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuPhieuDangKyCoTen();
+                            }
+                            else
+                            {
+                                dgvPhieuDangKy.DataSource = phieuDangKyBLL.LayDanhSachPhieuDangKyTheoMaDiaOc(MaDiaOcPoup);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sửa phiếu đăng ký thất bại");
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+        }
+
         private void btnChiTietQuangCao_Click(object sender, EventArgs e)
         {
             if(id != "")
@@ -401,6 +463,8 @@ namespace QuanLyDiaOc.GUI
                 else
                 {
                     txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                    txtTongTien.Text = TinhTongTien().ToString();
+                    LoadDuLieu();
                 }
             }
             else
@@ -479,6 +543,16 @@ namespace QuanLyDiaOc.GUI
             {
                 MessageBox.Show("Vui lòng chọn Phiếu đăng ký muốn xuất hóa đơn");
             }
+        }
+
+        private double TinhTongTien()
+        {
+            DataTable dtChiTiet = new DataTable();
+            dtChiTiet = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+            listIdLoaiQuangCao = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text.ToString())).AsEnumerable()
+                   .Select(r => r.Field<int>("MaChiTietQuangCao"))
+                   .ToList();
+            return phieuDangKyBLL.TinhTongTien(listIdLoaiQuangCao, dtChiTiet, chiTietQuangCaoBLL);
         }
     }
 }

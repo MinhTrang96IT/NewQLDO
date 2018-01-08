@@ -52,5 +52,22 @@ namespace QuanLyDiaOc.BLL
         {
             return phieuDangKyDAL.SuaKiemDuyetPhieuDangKy(phieuDangKyDTO);
         }
+
+        public double TinhTongTien(List<int> listIdLoaiQuangCao, DataTable dtChiTiet, ChiTietQuangCaoBLL chiTietQuangCaoBLL)
+        {
+            double tongTien = 0.0;
+            for (int i = 0; i < listIdLoaiQuangCao.Count; i++)
+            {
+                if (dtChiTiet.Rows[i]["TenLoaiQuangCao"].ToString() == "Quảng cáo tờ bướm")
+                {
+                    tongTien += Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_ToBuom(listIdLoaiQuangCao[i]).Rows[0]["DonGia"].ToString()) * Double.Parse(dtChiTiet.Rows[i]["SoLuongPhatHanh"].ToString());
+                }
+                else
+                {
+                    tongTien += Double.Parse(chiTietQuangCaoBLL.LayDonGiaTheoMa_LoaiKhac(listIdLoaiQuangCao[i]).Rows[0]["DonGia"].ToString());
+                }
+            }
+            return tongTien;
+        }
     }
 }

@@ -38,6 +38,11 @@ namespace QuanLyDiaOc.BLL
             return phieuGiaHanDAL.XoaPhieuGiaHan(ma);
         }
 
+        public bool TangSoLanGiaHan(int maphieudangky)
+        {
+            return phieuGiaHanDAL.TangSoLanGiaHan(maphieudangky);
+        }
+
         public bool SuaPhieuGiaHan(PhieuGiaHanDTO phieuGiaHanDTO)
         {
             return phieuGiaHanDAL.SuaPhieuGiaHan(phieuGiaHanDTO);
