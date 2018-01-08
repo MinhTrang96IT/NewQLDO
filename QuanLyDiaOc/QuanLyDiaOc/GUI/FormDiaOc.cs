@@ -428,10 +428,10 @@ namespace QuanLyDiaOc.GUI
                     txtDienTichKhuonVien.Text = row.Cells["DienTichKhuonVien"].Value.ToString();
                     txtDienTichSuDung.Text = row.Cells["DienTichSuDung"].Value.ToString();
                     txtCMND.Text = row.Cells["CMND"].Value.ToString();
-                    if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("True"))
+                    if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
-                        rbChuaKiemDuyet.Checked = false;
+                        rbChuaKiemDuyet.Checked = true;
 
                     if (row.Cells["TrangThaiMuaBan"].Value.ToString().Equals("True"))
                         chkTrangThaiMuaBan.Checked = true;

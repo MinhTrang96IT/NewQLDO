@@ -64,3 +64,9 @@ CREATE PROC sp_PhieuGiaHan_LayDanhSachTheoMa
 AS
 	SELECT * FROM PhieuGiaHan WHERE MaPhieuGiaHan=@ma
 GO
+
+CREATE PROC sp_PhieuGiaHan_TangSoLanGiaHan
+@maphieudangky int
+AS
+ UPDATE PhieuDangKy SET SoLanGiaHan = SoLanGiaHan+1 where MaPhieuDangKy = @maphieudangky
+Go

@@ -75,6 +75,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).BeginInit();
             this.gbThongTin.SuspendLayout();
@@ -83,7 +85,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(351, 92);
+            this.label15.Location = new System.Drawing.Point(340, 92);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 13);
             this.label15.TabIndex = 4;
@@ -198,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(351, 132);
+            this.label5.Location = new System.Drawing.Point(340, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 4;
@@ -234,6 +236,8 @@
             // gbThongTin
             // 
             this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbThongTin.Controls.Add(this.label11);
+            this.gbThongTin.Controls.Add(this.label10);
             this.gbThongTin.Controls.Add(this.rbDaKiemDuyet);
             this.gbThongTin.Controls.Add(this.rbChuaKiemDuyet);
             this.gbThongTin.Controls.Add(this.label9);
@@ -285,6 +289,7 @@
             this.rbDaKiemDuyet.TabIndex = 42;
             this.rbDaKiemDuyet.Text = "Đã kiểm duyệt";
             this.rbDaKiemDuyet.UseVisualStyleBackColor = true;
+            this.rbDaKiemDuyet.Visible = false;
             // 
             // rbChuaKiemDuyet
             // 
@@ -298,6 +303,7 @@
             this.rbChuaKiemDuyet.TabStop = true;
             this.rbChuaKiemDuyet.Text = "Chưa kiểm duyệt";
             this.rbChuaKiemDuyet.UseVisualStyleBackColor = true;
+            this.rbChuaKiemDuyet.Visible = false;
             // 
             // label9
             // 
@@ -307,6 +313,7 @@
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 40;
             this.label9.Text = "Trạng thái:";
+            this.label9.Visible = false;
             // 
             // dtpNgayKetThuc
             // 
@@ -361,7 +368,7 @@
             // btnThemBao
             // 
             this.btnThemBao.Image = global::QuanLyDiaOc.Properties.Resources.add;
-            this.btnThemBao.Location = new System.Drawing.Point(546, 47);
+            this.btnThemBao.Location = new System.Drawing.Point(535, 47);
             this.btnThemBao.Name = "btnThemBao";
             this.btnThemBao.Size = new System.Drawing.Size(20, 20);
             this.btnThemBao.TabIndex = 32;
@@ -452,13 +459,14 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(417, 87);
+            this.txtSoLuong.Location = new System.Drawing.Point(406, 87);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(121, 20);
             this.txtSoLuong.TabIndex = 16;
             // 
             // txtChiPhi
             // 
+            this.txtChiPhi.Enabled = false;
             this.txtChiPhi.Location = new System.Drawing.Point(675, 110);
             this.txtChiPhi.Name = "txtChiPhi";
             this.txtChiPhi.Size = new System.Drawing.Size(184, 20);
@@ -466,7 +474,7 @@
             // 
             // txtKichThuoc
             // 
-            this.txtKichThuoc.Location = new System.Drawing.Point(417, 128);
+            this.txtKichThuoc.Location = new System.Drawing.Point(406, 128);
             this.txtKichThuoc.Name = "txtKichThuoc";
             this.txtKichThuoc.Size = new System.Drawing.Size(121, 20);
             this.txtKichThuoc.TabIndex = 16;
@@ -484,7 +492,7 @@
             // 
             this.cbBao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBao.FormattingEnabled = true;
-            this.cbBao.Location = new System.Drawing.Point(416, 46);
+            this.cbBao.Location = new System.Drawing.Point(405, 46);
             this.cbBao.Name = "cbBao";
             this.cbBao.Size = new System.Drawing.Size(121, 21);
             this.cbBao.TabIndex = 15;
@@ -528,7 +536,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(351, 49);
+            this.label6.Location = new System.Drawing.Point(340, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 2;
@@ -542,6 +550,24 @@
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 2;
             this.label14.Text = "Vị trí:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(533, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "(tờ)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(532, 132);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "(m)";
             // 
             // FormChiTietQuangCao
             // 
@@ -610,5 +636,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongPhatHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn KichThuoc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyet;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
