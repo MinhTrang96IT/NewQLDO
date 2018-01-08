@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.cbBangCap = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnThemLoaiPB = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -130,6 +130,16 @@
             this.gbThongTin.TabIndex = 0;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin nhân viên";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(526, 188);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(100, 23);
+            this.btnExcel.TabIndex = 53;
+            this.btnExcel.Text = "Thêm từ excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // cbBangCap
             // 
@@ -299,6 +309,7 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(121, 20);
             this.txtCMND.TabIndex = 18;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChiNhapSo);
             // 
             // cbPhongBan
             // 
@@ -571,16 +582,6 @@
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.Visible = false;
             this.MatKhau.Width = 71;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Location = new System.Drawing.Point(526, 188);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(100, 23);
-            this.btnExcel.TabIndex = 53;
-            this.btnExcel.Text = "Thêm từ excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // FormNhanVien
             // 

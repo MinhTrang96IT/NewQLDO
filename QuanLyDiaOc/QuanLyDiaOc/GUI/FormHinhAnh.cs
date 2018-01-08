@@ -167,8 +167,13 @@ namespace QuanLyDiaOc.GUI
             {
                 if (KiemTraThongTinHopLe())
                 {
+                    int maPDK = 0;
+                    if (MaPDKTuFormPDK == 0)
+                        maPDK = Int32.Parse(cbMaPDK.SelectedValue.ToString());
+                    else
+                        maPDK = Int32.Parse(txtMaPhieuDangKy.Text);
                     HinhAnhDTO hinhAnhDTO = new HinhAnhDTO(
-                        Int32.Parse(cbMaPDK.SelectedValue.ToString()),
+                        maPDK,
                         Int32.Parse(cbMaNV.SelectedValue.ToString()),
                         Convert.ToDateTime(dtpNgayHC.Text),
                         Convert.ToDateTime(dtpNgayChup.Text));
@@ -257,9 +262,14 @@ namespace QuanLyDiaOc.GUI
                 {
                     if (KiemTraThongTinHopLe())
                     {
+                        int maPDK = 0;
+                        if (MaPDKTuFormPDK == 0)
+                            maPDK = Int32.Parse(cbMaPDK.SelectedValue.ToString());
+                        else
+                            maPDK = Int32.Parse(txtMaPhieuDangKy.Text);
                         HinhAnhDTO hinhAnhDTO = new HinhAnhDTO(
                             Int32.Parse(txtMaHA.Text.ToString()),
-                            Int32.Parse(cbMaPDK.SelectedValue.ToString()),
+                            maPDK,
                             Int32.Parse(cbMaNV.SelectedValue.ToString()),
                             Convert.ToDateTime(dtpNgayHC.Text),
                             Convert.ToDateTime(dtpNgayChup.Text));

@@ -311,6 +311,7 @@
             this.cbKhachHang.Name = "cbKhachHang";
             this.cbKhachHang.Size = new System.Drawing.Size(139, 21);
             this.cbKhachHang.TabIndex = 36;
+            this.cbKhachHang.TextChanged += new System.EventHandler(this.cbKhachHang_TextChanged);
             // 
             // label14
             // 
@@ -372,7 +373,8 @@
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(815, 153);
+            this.btnXuatHoaDon.Enabled = false;
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(841, 153);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(104, 39);
             this.btnXuatHoaDon.TabIndex = 17;
@@ -405,7 +407,8 @@
             // btnXuatHopDong
             // 
             this.btnXuatHopDong.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnXuatHopDong.Location = new System.Drawing.Point(815, 107);
+            this.btnXuatHopDong.Enabled = false;
+            this.btnXuatHopDong.Location = new System.Drawing.Point(841, 107);
             this.btnXuatHopDong.Name = "btnXuatHopDong";
             this.btnXuatHopDong.Size = new System.Drawing.Size(104, 40);
             this.btnXuatHopDong.TabIndex = 17;
