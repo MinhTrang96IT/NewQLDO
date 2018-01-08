@@ -79,6 +79,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -87,6 +88,7 @@
             // gbThongTin
             // 
             this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbThongTin.Controls.Add(this.btnExcel);
             this.gbThongTin.Controls.Add(this.cbBangCap);
             this.gbThongTin.Controls.Add(this.label14);
             this.gbThongTin.Controls.Add(this.btnThemLoaiPB);
@@ -481,35 +483,35 @@
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
             this.MaNhanVien.HeaderText = "Mã nhân viên";
             this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.Width = 97;
+            this.MaNhanVien.Width = 89;
             // 
             // TenLoaiNhanVien
             // 
             this.TenLoaiNhanVien.DataPropertyName = "TenLoaiNhanVien";
             this.TenLoaiNhanVien.HeaderText = "Loại nhân viên";
             this.TenLoaiNhanVien.Name = "TenLoaiNhanVien";
-            this.TenLoaiNhanVien.Width = 102;
+            this.TenLoaiNhanVien.Width = 94;
             // 
             // TenLPhongBan
             // 
             this.TenLPhongBan.DataPropertyName = "TenLPhongBan";
             this.TenLPhongBan.HeaderText = "Phòng ban";
             this.TenLPhongBan.Name = "TenLPhongBan";
-            this.TenLPhongBan.Width = 84;
+            this.TenLPhongBan.Width = 78;
             // 
             // TenNhanVien
             // 
             this.TenNhanVien.DataPropertyName = "TenNhanVien";
             this.TenNhanVien.HeaderText = "Tên nhân viên";
             this.TenNhanVien.Name = "TenNhanVien";
-            this.TenNhanVien.Width = 101;
+            this.TenNhanVien.Width = 93;
             // 
             // TenBangCap
             // 
             this.TenBangCap.DataPropertyName = "TenBangCap";
             this.TenBangCap.HeaderText = "Tên bằng cấp";
             this.TenBangCap.Name = "TenBangCap";
-            this.TenBangCap.Width = 99;
+            this.TenBangCap.Width = 91;
             // 
             // CMND
             // 
@@ -525,28 +527,28 @@
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GioiTinh.Width = 72;
+            this.GioiTinh.Width = 67;
             // 
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 79;
+            this.NgaySinh.Width = 73;
             // 
             // DiaChi
             // 
             this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 65;
+            this.DiaChi.Width = 48;
             // 
             // SoDienThoai
             // 
             this.SoDienThoai.DataPropertyName = "SoDienThoai";
             this.SoDienThoai.HeaderText = "Số điện thoại";
             this.SoDienThoai.Name = "SoDienThoai";
-            this.SoDienThoai.Width = 95;
+            this.SoDienThoai.Width = 87;
             // 
             // Email
             // 
@@ -569,6 +571,16 @@
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.Visible = false;
             this.MatKhau.Width = 71;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(526, 188);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(100, 23);
+            this.btnExcel.TabIndex = 53;
+            this.btnExcel.Text = "Thêm từ excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // FormNhanVien
             // 
@@ -643,5 +655,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.Button btnExcel;
     }
 }
