@@ -54,8 +54,18 @@ namespace QuanLyDiaOc.GUI
             if (rbDaKiemDuyet.Checked)
                 trangThaiKiemDuyet = 1;
 
-            PhieuGiaHanDTO phieuGiaHanDTO = new PhieuGiaHanDTO(
-                           Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
+                    int maPDK = 0;
+                    if (MaPDKTuFormPDK == 0)
+                    {
+                        maPDK = Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        maPDK = MaPDKTuFormPDK;
+                    }
+
+                    PhieuGiaHanDTO phieuGiaHanDTO = new PhieuGiaHanDTO(
+                           maPDK,
                            Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                            Convert.ToDateTime(dtpNgayLapPhieu.Text),
                            Convert.ToDateTime(dtpNgayBatDau.Text),
@@ -142,10 +152,19 @@ namespace QuanLyDiaOc.GUI
                         trangThaiKiemDuyet = 1;
                     if (txtMaPhieuGiaHan.Text != "")
                     {
+                        int maPDK = 0;
+                        if (MaPDKTuFormPDK == 0)
+                        {
+                            maPDK = Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString());
+                        }
+                        else
+                        {
+                            maPDK = MaPDKTuFormPDK;
+                        }
 
                         PhieuGiaHanDTO phieuGiaHanDTO = new PhieuGiaHanDTO(
                                        Int32.Parse(txtMaPhieuGiaHan.Text.ToString()),
-                                       Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
+                                       maPDK,
                                        Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                        Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                        Convert.ToDateTime(dtpNgayBatDau.Text),

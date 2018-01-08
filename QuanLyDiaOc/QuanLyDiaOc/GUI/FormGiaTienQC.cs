@@ -19,6 +19,7 @@ namespace QuanLyDiaOc.GUI
         private LoaiQuangCaoBLL loaiQuangCaoBLL;
         private ViTriBLL viTriBLL;
         private string id;
+        private bool checkLoadDone = false;
 
         public FormGiaTienQC()
         {
@@ -55,6 +56,18 @@ namespace QuanLyDiaOc.GUI
             cbViTri.DisplayMember = "TenViTri";
             cbViTri.ValueMember = "MaViTri";
             LamMoiThongTin();
+            checkLoadDone = true;
+            if (cbLoaiQuangCao.Text == "Quảng cáo tờ bướm")
+            {
+                cbViTri.Enabled = btnThemViTri.Enabled = false;
+                txtSoLuongToiDa.Enabled = txtSoLuongToiThieu.Enabled = txtKichCoToiThieu.Enabled = txtKichCoToiDa.Enabled = true;
+            }
+            else
+            {
+                cbViTri.Enabled = btnThemViTri.Enabled = true;
+                txtKichCoToiDa.Text = txtKichCoToiThieu.Text = txtSoLuongToiDa.Text = txtSoLuongToiThieu.Text = "0";
+                txtSoLuongToiDa.Enabled = txtSoLuongToiThieu.Enabled = txtKichCoToiThieu.Enabled = txtKichCoToiDa.Enabled = false;
+            }
         }
 
         private void LamMoiThongTin()
@@ -164,8 +177,6 @@ namespace QuanLyDiaOc.GUI
             {
                 if (KiemTraThongTinHopLe())
                 {
-
-
                     GiaTienQuangCaoDTO giaTienQuangCaoDTO = new GiaTienQuangCaoDTO(
                         Int32.Parse(cbLoaiQuangCao.SelectedValue.ToString()),
                         Int32.Parse(cbViTri.SelectedValue.ToString()),
@@ -287,6 +298,24 @@ namespace QuanLyDiaOc.GUI
             else
             {
                 cbViTri.DataSource = viTriBLL.LayDanhSachViTri();
+            }
+        }
+
+        private void cbLoaiQuangCao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkLoadDone)
+            {
+                if(cbLoaiQuangCao.Text == "Quảng cáo tờ bướm")
+                {
+                    cbViTri.Enabled = btnThemViTri.Enabled = false;
+                    txtSoLuongToiDa.Enabled = txtSoLuongToiThieu.Enabled = txtKichCoToiThieu.Enabled = txtKichCoToiDa.Enabled = true;
+                }
+                else
+                {
+                    cbViTri.Enabled = btnThemViTri.Enabled = true;
+                    txtKichCoToiDa.Text = txtKichCoToiThieu.Text = txtSoLuongToiDa.Text = txtSoLuongToiThieu.Text = "0";
+                    txtSoLuongToiDa.Enabled = txtSoLuongToiThieu.Enabled = txtKichCoToiThieu.Enabled = txtKichCoToiDa.Enabled = false;
+                }
             }
         }
     }

@@ -52,8 +52,17 @@ namespace QuanLyDiaOc.GUI
                     if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
 
+                    int maPDK = 0;
+                    if(MaPDKTuFormPDK == 0)
+                    {
+                        maPDK = Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString());
+                    } else
+                    {
+                        maPDK = MaPDKTuFormPDK;
+                    }
+
                     HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(
-                                   Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
+                                   maPDK,
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                    txtLyDoNgung.Text.ToString(),
@@ -135,9 +144,19 @@ namespace QuanLyDiaOc.GUI
                     if (rbDaKiemDuyet.Checked)
                         trangThaiKiemDuyet = 1;
 
+                    int maPDK = 0;
+                    if (MaPDKTuFormPDK == 0)
+                    {
+                        maPDK = Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        maPDK = MaPDKTuFormPDK;
+                    }
+
                     HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(
                                    Int32.Parse(txtMaNgungDichVu.Text.ToString()),
-                                   Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
+                                   maPDK,
                                    Int32.Parse(cbNhanVien.SelectedValue.ToString()),
                                    Convert.ToDateTime(dtpNgayLapPhieu.Text),
                                    txtLyDoNgung.Text.ToString(),
