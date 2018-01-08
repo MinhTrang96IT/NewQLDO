@@ -49,17 +49,17 @@ namespace QuanLyDiaOc.GUI
                 LoadPhieuNgungDV();
             }
 
-            if (tabctrKiemDuyet.SelectedIndex == 3)
-            {
-                LoadChiTietQuangCao();
-            }
+            //if (tabctrKiemDuyet.SelectedIndex == 3)
+            //{
+            //    LoadChiTietQuangCao();
+            //}
 
-            if (tabctrKiemDuyet.SelectedIndex == 4)
+            if (tabctrKiemDuyet.SelectedIndex == 3)
             {
                 LoadBaiViet();
             }
 
-            if (tabctrKiemDuyet.SelectedIndex == 5)
+            if (tabctrKiemDuyet.SelectedIndex == 4)
             {
                 LoadDiaOc();
             }
@@ -83,7 +83,7 @@ namespace QuanLyDiaOc.GUI
             tabctrKiemDuyet.TabPages.Remove(tabPhieuDangKy);
             tabctrKiemDuyet.TabPages.Remove(tabPhieuGiaHan);
             tabctrKiemDuyet.TabPages.Remove(tabPhieuNgungDV);
-            tabctrKiemDuyet.TabPages.Remove(tabChiTietQuangCao);
+            //tabctrKiemDuyet.TabPages.Remove(tabChiTietQuangCao);
             tabctrKiemDuyet.TabPages.Remove(tabDiaOc);
         }
 
@@ -108,10 +108,10 @@ namespace QuanLyDiaOc.GUI
             dgvNgungDichVu.Columns["LyDoKhongDuyetNDV"].DisplayIndex = 7;
         }
 
-        private void LoadChiTietQuangCao()
-        {
-            dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
-        }
+        //private void LoadChiTietQuangCao()
+        //{
+        //    dgvChiTietQuangCao.DataSource = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCao();
+        //}
 
         private void LoadBaiViet()
         {
@@ -272,54 +272,54 @@ namespace QuanLyDiaOc.GUI
             }
         }
 
-        private void dgvChiTietQuangCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                try
-                {
-                    DataGridViewRow row = dgvChiTietQuangCao.Rows[e.RowIndex];
-                    int columnIndex = dgvChiTietQuangCao.CurrentCell.ColumnIndex;
-                    string columnName = dgvChiTietQuangCao.Columns[columnIndex].Name;
-                    int maCTQC = Int32.Parse(row.Cells["MaChiTietQuangCao"].Value.ToString());
+        //private void dgvChiTietQuangCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex >= 0)
+        //    {
+        //        try
+        //        {
+        //            DataGridViewRow row = dgvChiTietQuangCao.Rows[e.RowIndex];
+        //            int columnIndex = dgvChiTietQuangCao.CurrentCell.ColumnIndex;
+        //            string columnName = dgvChiTietQuangCao.Columns[columnIndex].Name;
+        //            int maCTQC = Int32.Parse(row.Cells["MaChiTietQuangCao"].Value.ToString());
 
-                    if (columnName.Equals("ChiTietCT"))
-                    {
-                        DialogChiTietQuangCao dialogChiTietQuangCao = new DialogChiTietQuangCao(maCTQC);
-                        dialogChiTietQuangCao.StartPosition = FormStartPosition.CenterScreen;
-                        dialogChiTietQuangCao.ShowDialog(this);
-                    }
+        //            if (columnName.Equals("ChiTietCT"))
+        //            {
+        //                DialogChiTietQuangCao dialogChiTietQuangCao = new DialogChiTietQuangCao(maCTQC);
+        //                dialogChiTietQuangCao.StartPosition = FormStartPosition.CenterScreen;
+        //                dialogChiTietQuangCao.ShowDialog(this);
+        //            }
 
-                    if (columnName.Equals("XacNhanCT"))
-                    {
-                        int trangThai = 0;
-                        if (row.Cells["TrangThaiKiemDuyetCT"].Value.ToString().Equals("1"))
-                            trangThai = 1;
-                        string lyDo = "";
-                        if (trangThai == 0)
-                            lyDo = row.Cells["LyDoKhongDuyetCT"].Value.ToString();
-                        ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(maCTQC, trangThai, lyDo);
-                        try
-                        {
-                            if (chiTietQuangCaoBLL.SuaKiemDuyetChiTietQuangCao(chiTietQuangCaoDTO))
-                            {
-                                MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thành công");
-                                LoadChiTietQuangCao();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thất bại");
-                            }
-                        }
-                        catch
-                        {
-                        }
-                    }
+        //            if (columnName.Equals("XacNhanCT"))
+        //            {
+        //                int trangThai = 0;
+        //                if (row.Cells["TrangThaiKiemDuyetCT"].Value.ToString().Equals("1"))
+        //                    trangThai = 1;
+        //                string lyDo = "";
+        //                if (trangThai == 0)
+        //                    lyDo = row.Cells["LyDoKhongDuyetCT"].Value.ToString();
+        //                ChiTietQuangCaoDTO chiTietQuangCaoDTO = new ChiTietQuangCaoDTO(maCTQC, trangThai, lyDo);
+        //                try
+        //                {
+        //                    if (chiTietQuangCaoBLL.SuaKiemDuyetChiTietQuangCao(chiTietQuangCaoDTO))
+        //                    {
+        //                        MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thành công");
+        //                        LoadChiTietQuangCao();
+        //                    }
+        //                    else
+        //                    {
+        //                        MessageBox.Show("Sửa trạng thái chi tiết quảng cáo thất bại");
+        //                    }
+        //                }
+        //                catch
+        //                {
+        //                }
+        //            }
 
-                }
-                catch { }
-            }
-        }
+        //        }
+        //        catch { }
+        //    }
+        //}
 
         private void dgvBaiViet_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

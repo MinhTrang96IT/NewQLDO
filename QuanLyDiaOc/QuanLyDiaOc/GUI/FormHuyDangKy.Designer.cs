@@ -138,6 +138,7 @@
             // 
             // dtpNgayLapPhieu
             // 
+            this.dtpNgayLapPhieu.Enabled = false;
             this.dtpNgayLapPhieu.Location = new System.Drawing.Point(198, 145);
             this.dtpNgayLapPhieu.Name = "dtpNgayLapPhieu";
             this.dtpNgayLapPhieu.Size = new System.Drawing.Size(188, 20);

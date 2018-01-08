@@ -407,7 +407,7 @@ namespace QuanLyDiaOc.GUI
                             MessageBox.Show("File không có dữ liệu");
                         }
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("Dữ liệu không hợp lệ");
                     }

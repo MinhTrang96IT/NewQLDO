@@ -38,7 +38,7 @@ namespace QuanLyDiaOc.GUI
             lblNgayLap.Text = rowPGH["NgayLap"].ToString().Split(' ')[0];
             lblNgayBD.Text = rowPGH["NgayBatDau"].ToString().Split(' ')[0];
             lblNgayKT.Text = rowPGH["NgayKetThuc"].ToString().Split(' ')[0];
-            lblTongTien.Text = rowPGH["TongTien"].ToString();
+            lblTongTien.Text = rowPGH["TongTien"].ToString() + " m2";
             if (rowPGH["TrangThaiKiemDuyet"].ToString().Equals("1"))
                 lblTrangThai.Text = "Đã duyệt";
             else

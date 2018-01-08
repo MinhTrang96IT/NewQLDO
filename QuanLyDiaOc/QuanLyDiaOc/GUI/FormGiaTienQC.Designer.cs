@@ -39,14 +39,6 @@
             this.d = new System.Windows.Forms.Label();
             this.gbDanhSanh = new System.Windows.Forms.GroupBox();
             this.dgvGiaTienQC = new System.Windows.Forms.DataGridView();
-            this.MaGiaTienQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanhToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanhToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichCoToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichCoToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +55,17 @@
             this.cbViTri = new System.Windows.Forms.ComboBox();
             this.cbLoaiQuangCao = new System.Windows.Forms.ComboBox();
             this.txtMaGiaTienQC = new System.Windows.Forms.TextBox();
+            this.MaGiaTienQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhatHanhToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhatHanhToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KichCoToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KichCoToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.gbDanhSanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTienQC)).BeginInit();
             this.gbThongTin.SuspendLayout();
@@ -72,21 +75,21 @@
             // 
             this.txtDonGia.Location = new System.Drawing.Point(756, 37);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(121, 20);
+            this.txtDonGia.Size = new System.Drawing.Size(112, 20);
             this.txtDonGia.TabIndex = 21;
             // 
             // txtKichCoToiDa
             // 
             this.txtKichCoToiDa.Location = new System.Drawing.Point(755, 110);
             this.txtKichCoToiDa.Name = "txtKichCoToiDa";
-            this.txtKichCoToiDa.Size = new System.Drawing.Size(121, 20);
+            this.txtKichCoToiDa.Size = new System.Drawing.Size(113, 20);
             this.txtKichCoToiDa.TabIndex = 18;
             // 
             // txtKichCoToiThieu
             // 
             this.txtKichCoToiThieu.Location = new System.Drawing.Point(755, 75);
             this.txtKichCoToiThieu.Name = "txtKichCoToiThieu";
-            this.txtKichCoToiThieu.Size = new System.Drawing.Size(121, 20);
+            this.txtKichCoToiThieu.Size = new System.Drawing.Size(113, 20);
             this.txtKichCoToiThieu.TabIndex = 18;
             // 
             // txtSoLuongToiThieu
@@ -173,66 +176,10 @@
             this.dgvGiaTienQC.TabIndex = 0;
             this.dgvGiaTienQC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaTienQC_CellClick);
             // 
-            // MaGiaTienQuangCao
-            // 
-            this.MaGiaTienQuangCao.DataPropertyName = "MaGiaTienQuangCao";
-            this.MaGiaTienQuangCao.HeaderText = "Mã giá tiền QC";
-            this.MaGiaTienQuangCao.Name = "MaGiaTienQuangCao";
-            this.MaGiaTienQuangCao.Width = 80;
-            // 
-            // TenLoaiQuangCao
-            // 
-            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
-            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
-            this.TenLoaiQuangCao.Width = 97;
-            // 
-            // TenViTri
-            // 
-            this.TenViTri.DataPropertyName = "TenViTri";
-            this.TenViTri.HeaderText = "Tên loại vị trí";
-            this.TenViTri.Name = "TenViTri";
-            this.TenViTri.Width = 78;
-            // 
-            // SoLuongPhatHanhToiThieu
-            // 
-            this.SoLuongPhatHanhToiThieu.DataPropertyName = "SoLuongPhatHanhToiThieu";
-            this.SoLuongPhatHanhToiThieu.HeaderText = "Số lượng phát hành tối thiểu";
-            this.SoLuongPhatHanhToiThieu.Name = "SoLuongPhatHanhToiThieu";
-            this.SoLuongPhatHanhToiThieu.Width = 117;
-            // 
-            // SoLuongPhatHanhToiDa
-            // 
-            this.SoLuongPhatHanhToiDa.DataPropertyName = "SoLuongPhatHanhToiDa";
-            this.SoLuongPhatHanhToiDa.HeaderText = "Số lượng phát hành tối đa";
-            this.SoLuongPhatHanhToiDa.Name = "SoLuongPhatHanhToiDa";
-            this.SoLuongPhatHanhToiDa.Width = 114;
-            // 
-            // KichCoToiThieu
-            // 
-            this.KichCoToiThieu.DataPropertyName = "KichCoToiThieu";
-            this.KichCoToiThieu.HeaderText = "Kích cỡ tối thiểu";
-            this.KichCoToiThieu.Name = "KichCoToiThieu";
-            this.KichCoToiThieu.Width = 80;
-            // 
-            // KichCoToiDa
-            // 
-            this.KichCoToiDa.DataPropertyName = "KichCoToiDa";
-            this.KichCoToiDa.HeaderText = "Kích cỡ tối đa";
-            this.KichCoToiDa.Name = "KichCoToiDa";
-            this.KichCoToiDa.Width = 80;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.Width = 64;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 111);
+            this.label3.Location = new System.Drawing.Point(35, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 2;
@@ -241,7 +188,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 75);
+            this.label2.Location = new System.Drawing.Point(35, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 1;
@@ -250,15 +197,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 43);
+            this.label1.Location = new System.Drawing.Point(35, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã giá tiền QC:";
+            this.label1.Text = "Mã giá tiền quảng cáo:";
             // 
             // gbThongTin
             // 
             this.gbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbThongTin.Controls.Add(this.label8);
+            this.gbThongTin.Controls.Add(this.label5);
+            this.gbThongTin.Controls.Add(this.label4);
             this.gbThongTin.Controls.Add(this.btnThemViTri);
             this.gbThongTin.Controls.Add(this.btnThemLoaiQuangCao);
             this.gbThongTin.Controls.Add(this.label13);
@@ -401,6 +351,89 @@
             this.txtMaGiaTienQC.Size = new System.Drawing.Size(121, 20);
             this.txtMaGiaTienQC.TabIndex = 12;
             // 
+            // MaGiaTienQuangCao
+            // 
+            this.MaGiaTienQuangCao.DataPropertyName = "MaGiaTienQuangCao";
+            this.MaGiaTienQuangCao.HeaderText = "Mã giá tiền quảng cáo";
+            this.MaGiaTienQuangCao.Name = "MaGiaTienQuangCao";
+            this.MaGiaTienQuangCao.Width = 110;
+            // 
+            // TenLoaiQuangCao
+            // 
+            this.TenLoaiQuangCao.DataPropertyName = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.HeaderText = "Tên loại quảng cáo";
+            this.TenLoaiQuangCao.Name = "TenLoaiQuangCao";
+            this.TenLoaiQuangCao.Width = 97;
+            // 
+            // TenViTri
+            // 
+            this.TenViTri.DataPropertyName = "TenViTri";
+            this.TenViTri.HeaderText = "Tên loại vị trí";
+            this.TenViTri.Name = "TenViTri";
+            this.TenViTri.Width = 78;
+            // 
+            // SoLuongPhatHanhToiThieu
+            // 
+            this.SoLuongPhatHanhToiThieu.DataPropertyName = "SoLuongPhatHanhToiThieu";
+            this.SoLuongPhatHanhToiThieu.HeaderText = "Số lượng phát hành tối thiểu";
+            this.SoLuongPhatHanhToiThieu.Name = "SoLuongPhatHanhToiThieu";
+            this.SoLuongPhatHanhToiThieu.Width = 117;
+            // 
+            // SoLuongPhatHanhToiDa
+            // 
+            this.SoLuongPhatHanhToiDa.DataPropertyName = "SoLuongPhatHanhToiDa";
+            this.SoLuongPhatHanhToiDa.HeaderText = "Số lượng phát hành tối đa";
+            this.SoLuongPhatHanhToiDa.Name = "SoLuongPhatHanhToiDa";
+            this.SoLuongPhatHanhToiDa.Width = 114;
+            // 
+            // KichCoToiThieu
+            // 
+            this.KichCoToiThieu.DataPropertyName = "KichCoToiThieu";
+            this.KichCoToiThieu.HeaderText = "Kích cỡ tối thiểu";
+            this.KichCoToiThieu.Name = "KichCoToiThieu";
+            this.KichCoToiThieu.Width = 80;
+            // 
+            // KichCoToiDa
+            // 
+            this.KichCoToiDa.DataPropertyName = "KichCoToiDa";
+            this.KichCoToiDa.HeaderText = "Kích cỡ tối đa";
+            this.KichCoToiDa.Name = "KichCoToiDa";
+            this.KichCoToiDa.Width = 80;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn giá";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.Width = 64;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(874, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "VNĐ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(881, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "CM";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(881, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 13);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "CM";
+            // 
             // FormGiaTienQC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,5 +489,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KichCoToiThieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn KichCoToiDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
     }
 }

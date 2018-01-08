@@ -238,6 +238,7 @@ namespace QuanLyDiaOc.GUI
             formQuyDinh.Dock = DockStyle.Fill;
             tabCtlChinh.TabPages.Add("Quy định");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formQuyDinh);
+            tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
 
         private void báoChíToolStripMenuItem_Click(object sender, EventArgs e)
@@ -314,7 +315,7 @@ namespace QuanLyDiaOc.GUI
             formChiTietQuangCao.Visible = true;
             formChiTietQuangCao.FormBorderStyle = FormBorderStyle.None;
             formChiTietQuangCao.Dock = DockStyle.Fill;
-            tabCtlChinh.TabPages.Add("Đăng ký QC");
+            tabCtlChinh.TabPages.Add("Đăng ký quảng cáo");
             tabCtlChinh.TabPages[tabCtlChinh.TabPages.Count - 1].Controls.Add(formChiTietQuangCao);
             tabCtlChinh.SelectedIndex = tabCtlChinh.TabPages.Count - 1;
         }
