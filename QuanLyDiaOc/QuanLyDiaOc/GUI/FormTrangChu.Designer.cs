@@ -90,11 +90,11 @@
             this.nghiepVuToolStripMenuItem,
             this.quảnLýToolStripMenuItem,
             this.quyĐịnhToolStripMenuItem,
-            this.hệThốngToolStripMenuItem,
             this.kiểmDuyệtToolStripMenuItem,
             this.phânQuyềnToolStripMenuItem,
             this.thôngKêToolStripMenuItem,
-            this.tìmKiếmToolStripMenuItem});
+            this.tìmKiếmToolStripMenuItem,
+            this.hệThốngToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(685, 24);

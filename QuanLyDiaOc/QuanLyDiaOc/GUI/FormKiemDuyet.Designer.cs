@@ -70,21 +70,6 @@
             this.TrangThaiKiemDuyetNDV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LyDoKhongDuyetNDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XacNhanNDV = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabChiTietQuangCao = new System.Windows.Forms.TabPage();
-            this.dgvChiTietQuangCao = new System.Windows.Forms.DataGridView();
-            this.MaChiTietQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhieuDangKyCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiQuangCao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDauCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKetThucCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongPhatHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiTietCT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TrangThaiKiemDuyetCT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.LyDoKhongDuyetCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XacNhanCT = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabBaiViet = new System.Windows.Forms.TabPage();
             this.dgvBaiViet = new System.Windows.Forms.DataGridView();
             this.MaBaiViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,8 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).BeginInit();
             this.tabPhieuNgungDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNgungDichVu)).BeginInit();
-            this.tabChiTietQuangCao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).BeginInit();
             this.tabBaiViet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).BeginInit();
             this.tabDiaOc.SuspendLayout();
@@ -138,7 +121,6 @@
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuDangKy);
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuGiaHan);
             this.tabctrKiemDuyet.Controls.Add(this.tabPhieuNgungDV);
-            this.tabctrKiemDuyet.Controls.Add(this.tabChiTietQuangCao);
             this.tabctrKiemDuyet.Controls.Add(this.tabBaiViet);
             this.tabctrKiemDuyet.Controls.Add(this.tabDiaOc);
             this.tabctrKiemDuyet.Location = new System.Drawing.Point(0, 0);
@@ -182,6 +164,7 @@
             this.dgvPhieuDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuDangKy.Location = new System.Drawing.Point(3, 3);
             this.dgvPhieuDangKy.Name = "dgvPhieuDangKy";
+            this.dgvPhieuDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieuDangKy.Size = new System.Drawing.Size(1168, 571);
             this.dgvPhieuDangKy.TabIndex = 0;
             this.dgvPhieuDangKy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuDangKy_CellContentClick);
@@ -339,6 +322,7 @@
             this.dgvPhieuGiaHan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuGiaHan.Location = new System.Drawing.Point(3, 3);
             this.dgvPhieuGiaHan.Name = "dgvPhieuGiaHan";
+            this.dgvPhieuGiaHan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieuGiaHan.Size = new System.Drawing.Size(1168, 571);
             this.dgvPhieuGiaHan.TabIndex = 0;
             this.dgvPhieuGiaHan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuGiaHan_CellContentClick);
@@ -446,6 +430,7 @@
             this.dgvNgungDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNgungDichVu.Location = new System.Drawing.Point(3, 3);
             this.dgvNgungDichVu.Name = "dgvNgungDichVu";
+            this.dgvNgungDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNgungDichVu.Size = new System.Drawing.Size(1168, 571);
             this.dgvNgungDichVu.TabIndex = 0;
             this.dgvNgungDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNgungDichVu_CellContentClick);
@@ -512,127 +497,6 @@
             this.XacNhanNDV.Text = "Gửi";
             this.XacNhanNDV.UseColumnTextForButtonValue = true;
             // 
-            // tabChiTietQuangCao
-            // 
-            this.tabChiTietQuangCao.Controls.Add(this.dgvChiTietQuangCao);
-            this.tabChiTietQuangCao.Location = new System.Drawing.Point(4, 22);
-            this.tabChiTietQuangCao.Name = "tabChiTietQuangCao";
-            this.tabChiTietQuangCao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChiTietQuangCao.Size = new System.Drawing.Size(1174, 577);
-            this.tabChiTietQuangCao.TabIndex = 3;
-            this.tabChiTietQuangCao.Text = "Thông tin quảng cáo";
-            this.tabChiTietQuangCao.UseVisualStyleBackColor = true;
-            // 
-            // dgvChiTietQuangCao
-            // 
-            this.dgvChiTietQuangCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietQuangCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaChiTietQuangCao,
-            this.MaPhieuDangKyCT,
-            this.MaLoaiQuangCao,
-            this.MaViTri,
-            this.MaBao,
-            this.NgayBatDauCT,
-            this.NgayKetThucCT,
-            this.SoLuongPhatHanh,
-            this.KichThuoc,
-            this.ChiTietCT,
-            this.TrangThaiKiemDuyetCT,
-            this.LyDoKhongDuyetCT,
-            this.XacNhanCT});
-            this.dgvChiTietQuangCao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvChiTietQuangCao.Location = new System.Drawing.Point(3, 3);
-            this.dgvChiTietQuangCao.Name = "dgvChiTietQuangCao";
-            this.dgvChiTietQuangCao.Size = new System.Drawing.Size(1168, 571);
-            this.dgvChiTietQuangCao.TabIndex = 0;
-            this.dgvChiTietQuangCao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietQuangCao_CellContentClick);
-            // 
-            // MaChiTietQuangCao
-            // 
-            this.MaChiTietQuangCao.DataPropertyName = "MaChiTietQuangCao";
-            this.MaChiTietQuangCao.HeaderText = "Mã chi tiết quảng cáo";
-            this.MaChiTietQuangCao.Name = "MaChiTietQuangCao";
-            // 
-            // MaPhieuDangKyCT
-            // 
-            this.MaPhieuDangKyCT.DataPropertyName = "MaPhieuDangKy";
-            this.MaPhieuDangKyCT.HeaderText = "Mã phiếu đăng ký";
-            this.MaPhieuDangKyCT.Name = "MaPhieuDangKyCT";
-            this.MaPhieuDangKyCT.Visible = false;
-            // 
-            // MaLoaiQuangCao
-            // 
-            this.MaLoaiQuangCao.DataPropertyName = "MaLoaiQuangCao";
-            this.MaLoaiQuangCao.HeaderText = "Mã loại quảng cáo";
-            this.MaLoaiQuangCao.Name = "MaLoaiQuangCao";
-            this.MaLoaiQuangCao.Visible = false;
-            // 
-            // MaViTri
-            // 
-            this.MaViTri.DataPropertyName = "MaViTri";
-            this.MaViTri.HeaderText = "Mã vị trí";
-            this.MaViTri.Name = "MaViTri";
-            this.MaViTri.Visible = false;
-            // 
-            // MaBao
-            // 
-            this.MaBao.DataPropertyName = "MaBao";
-            this.MaBao.HeaderText = "Mã báo";
-            this.MaBao.Name = "MaBao";
-            this.MaBao.Visible = false;
-            // 
-            // NgayBatDauCT
-            // 
-            this.NgayBatDauCT.DataPropertyName = "NgayBatDau";
-            this.NgayBatDauCT.HeaderText = "Ngày bắt đầu";
-            this.NgayBatDauCT.Name = "NgayBatDauCT";
-            // 
-            // NgayKetThucCT
-            // 
-            this.NgayKetThucCT.DataPropertyName = "NgayKetThuc";
-            this.NgayKetThucCT.HeaderText = "Ngày kết thúc";
-            this.NgayKetThucCT.Name = "NgayKetThucCT";
-            // 
-            // SoLuongPhatHanh
-            // 
-            this.SoLuongPhatHanh.DataPropertyName = "SoLuongPhatHanh";
-            this.SoLuongPhatHanh.HeaderText = "Số lượng phát hành";
-            this.SoLuongPhatHanh.Name = "SoLuongPhatHanh";
-            // 
-            // KichThuoc
-            // 
-            this.KichThuoc.DataPropertyName = "KichThuoc";
-            this.KichThuoc.HeaderText = "Kích thước";
-            this.KichThuoc.Name = "KichThuoc";
-            // 
-            // ChiTietCT
-            // 
-            this.ChiTietCT.HeaderText = "";
-            this.ChiTietCT.Name = "ChiTietCT";
-            this.ChiTietCT.Text = "Xem chi tiết";
-            this.ChiTietCT.UseColumnTextForButtonValue = true;
-            // 
-            // TrangThaiKiemDuyetCT
-            // 
-            this.TrangThaiKiemDuyetCT.DataPropertyName = "TrangThaiKiemDuyet";
-            this.TrangThaiKiemDuyetCT.HeaderText = "Trạng thái";
-            this.TrangThaiKiemDuyetCT.Name = "TrangThaiKiemDuyetCT";
-            this.TrangThaiKiemDuyetCT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThaiKiemDuyetCT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // LyDoKhongDuyetCT
-            // 
-            this.LyDoKhongDuyetCT.DataPropertyName = "LyDoKhongDuyet";
-            this.LyDoKhongDuyetCT.HeaderText = "Lý do không duyệt";
-            this.LyDoKhongDuyetCT.Name = "LyDoKhongDuyetCT";
-            // 
-            // XacNhanCT
-            // 
-            this.XacNhanCT.HeaderText = "Xác nhận";
-            this.XacNhanCT.Name = "XacNhanCT";
-            this.XacNhanCT.Text = "Gửi";
-            this.XacNhanCT.UseColumnTextForButtonValue = true;
-            // 
             // tabBaiViet
             // 
             this.tabBaiViet.Controls.Add(this.dgvBaiViet);
@@ -659,6 +523,7 @@
             this.dgvBaiViet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBaiViet.Location = new System.Drawing.Point(3, 3);
             this.dgvBaiViet.Name = "dgvBaiViet";
+            this.dgvBaiViet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBaiViet.Size = new System.Drawing.Size(1168, 571);
             this.dgvBaiViet.TabIndex = 0;
             this.dgvBaiViet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBaiViet_CellContentClick);
@@ -753,6 +618,7 @@
             this.dgvDiaOc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiaOc.Location = new System.Drawing.Point(3, 3);
             this.dgvDiaOc.Name = "dgvDiaOc";
+            this.dgvDiaOc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiaOc.Size = new System.Drawing.Size(1168, 571);
             this.dgvDiaOc.TabIndex = 0;
             this.dgvDiaOc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiaOc_CellContentClick);
@@ -865,6 +731,7 @@
             this.TrangThaiMuaBan.Name = "TrangThaiMuaBan";
             this.TrangThaiMuaBan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TrangThaiMuaBan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TrangThaiMuaBan.Visible = false;
             // 
             // ChiTietDO
             // 
@@ -905,7 +772,7 @@
             this.ClientSize = new System.Drawing.Size(1182, 603);
             this.Controls.Add(this.tabctrKiemDuyet);
             this.Name = "FormKiemDuyet";
-            this.Text = "FormKiemDuyet";
+            this.Text = "Form Kiểm duyệt";
             this.Load += new System.EventHandler(this.FormKiemDuyet_Load);
             this.tabctrKiemDuyet.ResumeLayout(false);
             this.tabPhieuDangKy.ResumeLayout(false);
@@ -914,8 +781,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuGiaHan)).EndInit();
             this.tabPhieuNgungDV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNgungDichVu)).EndInit();
-            this.tabChiTietQuangCao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietQuangCao)).EndInit();
             this.tabBaiViet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiViet)).EndInit();
             this.tabDiaOc.ResumeLayout(false);
@@ -968,23 +833,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyetNDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyetNDV;
         private System.Windows.Forms.DataGridViewButtonColumn XacNhanNDV;
-        private System.Windows.Forms.TabPage tabChiTietQuangCao;
-        private System.Windows.Forms.DataGridView dgvChiTietQuangCao;
         private System.Windows.Forms.TabPage tabBaiViet;
         private System.Windows.Forms.TabPage tabDiaOc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietQuangCao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuDangKyCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiQuangCao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaViTri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDauCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThucCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongPhatHanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KichThuoc;
-        private System.Windows.Forms.DataGridViewButtonColumn ChiTietCT;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThaiKiemDuyetCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LyDoKhongDuyetCT;
-        private System.Windows.Forms.DataGridViewButtonColumn XacNhanCT;
         private System.Windows.Forms.DataGridView dgvBaiViet;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaBaiViet;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietQuangCaoBV;

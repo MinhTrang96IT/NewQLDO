@@ -62,7 +62,7 @@ namespace QuanLyDiaOc.GUI
                         txtTenBao.Text = rowChiTietQUangCao.Cells["MaBao"].Value.ToString();
                         txtSoLuong.Text = rowChiTietQUangCao.Cells["SoLuongPhatHanh"].Value.ToString();
 
-                        if (rowChiTietQUangCao.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
+                        if (rowChiTietQUangCao.Cells["TrangThaiKiemDuyet1"].Value.ToString().Equals("1"))
                             rbDaKiemDuyet.Checked = true;
                         else
                             rbChuaKiemDuyet.Checked = true;
@@ -140,7 +140,7 @@ namespace QuanLyDiaOc.GUI
                     txtTenBao.Text = row.Cells["MaBao"].Value.ToString();
                     txtSoLuong.Text = row.Cells["SoLuongPhatHanh"].Value.ToString();
 
-                    if (row.Cells["TrangThaiKiemDuyet"].Value.ToString().Equals("1"))
+                    if (row.Cells["TrangThaiKiemDuyet1"].Value.ToString().Equals("1"))
                         rbDaKiemDuyet.Checked = true;
                     else
                         rbChuaKiemDuyet.Checked = true;

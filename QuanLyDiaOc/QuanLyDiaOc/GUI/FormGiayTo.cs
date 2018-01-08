@@ -156,7 +156,7 @@ namespace QuanLyDiaOc.GUI
         {
             if (id == "")
             {
-                MessageBox.Show("Làm ơn chọn  giấy tờ muốn sửa", "Thông báo");
+                MessageBox.Show("Làm ơn chọn giấy tờ muốn sửa", "Thông báo");
             }
             else
             {
@@ -172,7 +172,7 @@ namespace QuanLyDiaOc.GUI
                         {
                             if (giayToBLL.SuaGiayTo(Int32.Parse(txtMaGiayTo.Text.ToString()), Int32.Parse(cbMaDO.Text.ToString()), arr, txtTenGiayTo.Text.ToString()))
                             {
-                                MessageBox.Show("Sửa chi giấy tờ công");
+                                MessageBox.Show("Sửa giấy tờ thành công");
                                 dgvGiayTo.DataSource = giayToBLL.LayDanhSachGiayTo();
                                 LamMoiThongTin();
                             }

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using QuanLyDiaOc.BLL;
 using QuanLyDiaOc.DTO;
 using System.Text.RegularExpressions;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Data.OleDb;
+using System.IO;
 
 namespace QuanLyDiaOc.GUI
 {
@@ -346,6 +349,94 @@ namespace QuanLyDiaOc.GUI
             {
                 cbPhongBan.DataSource = phongBanBLL.LayDanhSachPhongBan();
             }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            string filePath = string.Empty;
+            string fileExt = string.Empty;
+            OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file  
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
+            {
+                filePath = file.FileName; //get the path of the file  
+                fileExt = Path.GetExtension(filePath); //get the file extension  
+                if (fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0)
+                {
+                    try
+                    {
+                        DataTable dtExcel = new DataTable();
+                        dtExcel = ReadExcel(filePath, fileExt); //read excel file  
+                        if (dtExcel.Rows.Count >= 1)
+                        {
+                            for (int i = 1; i < dtExcel.Rows.Count; i++)
+                            {
+                                DataRow row = dtExcel.Rows[i];
+                                NhanVienDTO nhanVienDTO = new NhanVienDTO(
+                                    Int32.Parse(row[0].ToString()),
+                                    Int32.Parse(row[1].ToString()),
+                                    Int32.Parse(row[2].ToString()),
+                                    row[3].ToString(),
+                                    row[4].ToString(),
+                                    Int32.Parse(row[5].ToString()),
+                                    Convert.ToDateTime(row[6].ToString()),
+                                    row[7].ToString(),
+                                    row[8].ToString(),
+                                    row[9].ToString(),
+                                    row[10].ToString(),
+                                    row[11].ToString());
+
+                                try
+                                {
+                                    if (nhanVienBLL.ThemNhanVien(nhanVienDTO))
+                                    {
+                                        MessageBox.Show("Thêm nhân viên thành công");
+                                        dgvNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVienTheoTenLoai();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Thêm nhân viên thất bại");
+                                    }
+                                }
+                                catch
+                                {
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("File không có dữ liệu");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Dữ liệu không hợp lệ");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please choose .xls or .xlsx file only.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error); //custom messageBox to show error  
+                }
+            }
+        }
+
+        public DataTable ReadExcel(string fileName, string fileExt)
+        {
+            string conn = string.Empty;
+            DataTable dtexcel = new DataTable();
+            if (fileExt.CompareTo(".xls") == 0)
+                conn = @"provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fileName + ";Extended Properties='Excel 8.0;HRD=Yes;IMEX=1';"; //for below excel 2007  
+            else
+                conn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties='Excel 12.0;HDR=NO';"; //for above excel 2007  
+            using (OleDbConnection con = new OleDbConnection(conn))
+            {
+                try
+                {
+                    OleDbDataAdapter oleAdpt = new OleDbDataAdapter("select * from [Sheet1$]", con); //here we read data from sheet1  
+                    oleAdpt.Fill(dtexcel); //fill excel data into dataTable  
+                }
+                catch { }
+            }
+            return dtexcel;
         }
     }
 }

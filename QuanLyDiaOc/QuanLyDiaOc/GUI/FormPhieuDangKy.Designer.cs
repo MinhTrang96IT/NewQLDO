@@ -240,7 +240,8 @@
             // 
             // dtpNgayLapPhieu
             // 
-            this.dtpNgayLapPhieu.Location = new System.Drawing.Point(123, 166);
+            this.dtpNgayLapPhieu.Enabled = false;
+            this.dtpNgayLapPhieu.Location = new System.Drawing.Point(123, 157);
             this.dtpNgayLapPhieu.Name = "dtpNgayLapPhieu";
             this.dtpNgayLapPhieu.Size = new System.Drawing.Size(180, 20);
             this.dtpNgayLapPhieu.TabIndex = 43;
