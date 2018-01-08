@@ -123,48 +123,55 @@ namespace QuanLyDiaOc.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTinTrong())
+            if (id == "")
             {
-                MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu hủy đăng ký");
+                MessageBox.Show("Làm ơn chọn phiếu hủy đăng ký muốn sửa", "Thông báo");
             }
             else
             {
-                if (KiemTraThongTinHopLe())
+                if (KiemTraThongTinTrong())
                 {
-                    int trangThaiKiemDuyet = 0;
-                    if (rbDaKiemDuyet.Checked)
-                        trangThaiKiemDuyet = 1;
-
-                    HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(
-                                   Int32.Parse(txtMaNgungDichVu.Text.ToString()),
-                                   Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
-                                   Int32.Parse(cbNhanVien.SelectedValue.ToString()),
-                                   Convert.ToDateTime(dtpNgayLapPhieu.Text),
-                                   txtLyDoNgung.Text.ToString(),
-                                   trangThaiKiemDuyet,"");
-
-                    try
+                    MessageBox.Show("Làm ơn điền đầy đủ thông tin phiếu hủy đăng ký");
+                }
+                else
+                {
+                    if (KiemTraThongTinHopLe())
                     {
-                        if (huyDangKyBLL.SuaHuyDangKy(huyDangKyDTO))
+                        int trangThaiKiemDuyet = 0;
+                        if (rbDaKiemDuyet.Checked)
+                            trangThaiKiemDuyet = 1;
+
+                        HuyDangKyDTO huyDangKyDTO = new HuyDangKyDTO(
+                                       Int32.Parse(txtMaNgungDichVu.Text.ToString()),
+                                       Int32.Parse(cbMaPhieuDangKy.SelectedValue.ToString()),
+                                       Int32.Parse(cbNhanVien.SelectedValue.ToString()),
+                                       Convert.ToDateTime(dtpNgayLapPhieu.Text),
+                                       txtLyDoNgung.Text.ToString(),
+                                       trangThaiKiemDuyet, "");
+
+                        try
                         {
-                            MessageBox.Show("Sửa phiếu hủy đăng ký thành công");
-                            if (MaPDKTuFormPDK == 0)
+                            if (huyDangKyBLL.SuaHuyDangKy(huyDangKyDTO))
                             {
-                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                                MessageBox.Show("Sửa phiếu hủy đăng ký thành công");
+                                if (MaPDKTuFormPDK == 0)
+                                {
+                                    dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachPhieuHuyDangKyCoTenNhanVien();
+                                }
+                                else
+                                {
+                                    dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+                                }
+                                LamMoiThongTin();
                             }
                             else
                             {
-                                dgvHuyDangKy.DataSource = huyDangKyBLL.LayDanhSachHuyDangKyTheoMaPDK(MaPDKTuFormPDK);
+                                MessageBox.Show("Sửa phiếu hủy đăng ký thất bại");
                             }
-                            LamMoiThongTin();
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Sửa phiếu hủy đăng ký thất bại");
                         }
-                    }
-                    catch
-                    {
                     }
                 }
             }

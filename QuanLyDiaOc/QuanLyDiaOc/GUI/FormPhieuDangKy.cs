@@ -23,6 +23,7 @@ namespace QuanLyDiaOc.GUI
         ChiTietQuangCaoBLL chiTietQuangCaoBLL;
         string id;
         private List<int> listIdLoaiQuangCao;
+        private bool cb = false;
 
         public FormPhieuDangKy(int maDiaOc) : this()
         {
@@ -225,7 +226,7 @@ namespace QuanLyDiaOc.GUI
             cbKhachHang.DataSource = khachHangBLL.LayDanhSachKhachHang();
             cbKhachHang.DisplayMember = "TenKhachHang";
             cbKhachHang.ValueMember = "MaKhachHang";
-            cbDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOc();
+            cbDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(Int32.Parse(cbKhachHang.SelectedValue.ToString()));
             cbDiaOc.DisplayMember = "MaDiaOc";
             cbDiaOc.ValueMember = "MaDiaOc";
             cbNhanVien.DataSource = nhanVienBLL.LayDanhSachNhanVien();
@@ -236,11 +237,12 @@ namespace QuanLyDiaOc.GUI
             {
                 txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
             }
-            if (rbChuaKiemDuyet.Checked)
-            {
-                btnHuyDichVu.Enabled = btnGiaHanDichVu.Enabled = btnXuatHopDong.Enabled = btnXuatHoaDon.Enabled = false;
-            }
+            //if (rbChuaKiemDuyet.Checked)
+            //{
+            //    btnHuyDichVu.Enabled = btnGiaHanDichVu.Enabled = btnXuatHopDong.Enabled = btnXuatHoaDon.Enabled = false;
+            //}
             LamMoiThongTin();
+            cb = true;
         }
 
         private void LamMoiThongTin()
@@ -290,6 +292,11 @@ namespace QuanLyDiaOc.GUI
             if (Convert.ToDateTime(dtpNgayBatDau.Text) > Convert.ToDateTime(dtpNgayKetThuc.Text))
             {
                 MessageBox.Show("Ngày bắt đầu phải trước hoặc trùng với ngày kết thúc");
+                return false;
+            }
+            if (cbDiaOc.SelectedValue == null)
+            {
+                MessageBox.Show("Chưa có thông tin địa ốc của khách hàng " + cbKhachHang.Text);
                 return false;
             }
             return true;
@@ -386,7 +393,7 @@ namespace QuanLyDiaOc.GUI
             if (diaglogDiaOc.ShowDialog(this) == DialogResult.Yes) { }
             else
             {
-                cbDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOc();
+                cbDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(Int32.Parse(cbKhachHang.SelectedValue.ToString()));
             }
         }
 
@@ -477,12 +484,19 @@ namespace QuanLyDiaOc.GUI
         {
             if (id != "")
             {
-                FormPhieuGiaHan diaglogPhieuGiaHan = new FormPhieuGiaHan(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
-                diaglogPhieuGiaHan.StartPosition = FormStartPosition.CenterScreen;
-                if (diaglogPhieuGiaHan.ShowDialog(this) == DialogResult.Yes) { }
+                if (Convert.ToDateTime(dtpNgayKetThuc.Text) <= DateTime.Now)
+                {
+                    FormPhieuGiaHan diaglogPhieuGiaHan = new FormPhieuGiaHan(Int32.Parse(txtMaPhieuDangKy.Text.ToString()));
+                    diaglogPhieuGiaHan.StartPosition = FormStartPosition.CenterScreen;
+                    if (diaglogPhieuGiaHan.ShowDialog(this) == DialogResult.Yes) { }
+                    else
+                    {
+                        //    txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                    }
+                }
                 else
                 {
-                //    txtSoLuongQuangCao.Text = chiTietQuangCaoBLL.LayDanhSachChiTietQuangCaoTheoMaPhieuDangKy(Int32.Parse(txtMaPhieuDangKy.Text)).Rows.Count.ToString();
+                    MessageBox.Show("Ngày kết thúc phải nhỏ hơn hoặc bằng ngày hiện tại");
                 }
             }
             else
@@ -553,6 +567,12 @@ namespace QuanLyDiaOc.GUI
                    .Select(r => r.Field<int>("MaChiTietQuangCao"))
                    .ToList();
             return phieuDangKyBLL.TinhTongTien(listIdLoaiQuangCao, dtChiTiet, chiTietQuangCaoBLL);
+        }
+
+        private void cbKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            if (cb)
+                cbDiaOc.DataSource = diaOcBLL.LayDanhSachDiaOcTheoMaKH(Int32.Parse(cbKhachHang.SelectedValue.ToString()));
         }
     }
 }

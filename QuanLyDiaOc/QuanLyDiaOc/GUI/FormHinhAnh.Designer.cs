@@ -51,6 +51,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gbDanhSach = new System.Windows.Forms.GroupBox();
             this.dgvHinhAnh = new System.Windows.Forms.DataGridView();
+            this.MaHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhieuDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHenChupAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayChupAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbHinhAnh.SuspendLayout();
             this.gbDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHinhAnh)).BeginInit();
@@ -282,6 +287,12 @@
             // 
             this.dgvHinhAnh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvHinhAnh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHinhAnh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHinhAnh,
+            this.MaPhieuDangKy,
+            this.MaNhanVien,
+            this.NgayHenChupAnh,
+            this.NgayChupAnh});
             this.dgvHinhAnh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHinhAnh.Location = new System.Drawing.Point(3, 16);
             this.dgvHinhAnh.Name = "dgvHinhAnh";
@@ -289,6 +300,41 @@
             this.dgvHinhAnh.Size = new System.Drawing.Size(967, 309);
             this.dgvHinhAnh.TabIndex = 0;
             this.dgvHinhAnh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHinhAnh_CellClick);
+            // 
+            // MaHinhAnh
+            // 
+            this.MaHinhAnh.DataPropertyName = "MaHinhAnh";
+            this.MaHinhAnh.HeaderText = "Mã hình ảnh";
+            this.MaHinhAnh.Name = "MaHinhAnh";
+            this.MaHinhAnh.Width = 91;
+            // 
+            // MaPhieuDangKy
+            // 
+            this.MaPhieuDangKy.DataPropertyName = "MaPhieuDangKy";
+            this.MaPhieuDangKy.HeaderText = "Mã phiểu đăng ký";
+            this.MaPhieuDangKy.Name = "MaPhieuDangKy";
+            this.MaPhieuDangKy.Width = 98;
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaNhanVien.Width = 89;
+            // 
+            // NgayHenChupAnh
+            // 
+            this.NgayHenChupAnh.DataPropertyName = "NgayHenChupAnh";
+            this.NgayHenChupAnh.HeaderText = "Ngày hẹn chụp ảnh";
+            this.NgayHenChupAnh.Name = "NgayHenChupAnh";
+            this.NgayHenChupAnh.Width = 99;
+            // 
+            // NgayChupAnh
+            // 
+            this.NgayChupAnh.DataPropertyName = "NgayChupAnh";
+            this.NgayChupAnh.HeaderText = "Ngày chụp ảnh";
+            this.NgayChupAnh.Name = "NgayChupAnh";
+            this.NgayChupAnh.Width = 80;
             // 
             // FormHinhAnh
             // 
@@ -333,5 +379,10 @@
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.Button btnThemPDK;
         private System.Windows.Forms.TextBox txtMaPhieuDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayHenChupAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayChupAnh;
     }
 }
